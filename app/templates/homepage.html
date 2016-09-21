@@ -70,14 +70,14 @@ img.emoji {
     <div><center>
         <form align="center" action="" method="post" name="" style="">
           {{ form.hidden_tag() }}
-          <p align="center">
-              <b>State:</b> {{ form.state }} &nbsp &nbsp <b>County: </b>{{ form.county }}
-          </p>
+          <h4 align="center">
+              <b>State:</b> {{ form.state(class='form') }} &nbsp &nbsp <b>County: </b>{{ form.county }}
+          </h4>
 
-          <p align="center">
+          <h4 align="center">
              <b> Judge:</b> {{ form.judge }} &nbsp &nbsp &nbsp &nbsp <b>Charge: </b>{{ form.charge }}
-          </p>
-          <p align="center"><b>I understand that this is not legal advice {{form.agree}}</b></p>
+          </h4>
+          <h4 align="center"><b>I understand that this is not legal advice {{form.agree}}</b></h4>
 
     <p><input type="submit" value="Find Case Details"></p></center>
 
