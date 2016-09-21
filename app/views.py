@@ -29,8 +29,10 @@ def index():
   print state
   print judge
 
+  ###########   LOGIC ROUTING ################################
 
-  #small claims complaint
+
+  ###### DUI #################
   if state == 'fl' and county == 'hill' and judge == 'farr' and charge == 'dui' and agree == True and form.validate_on_submit():
     return redirect(url_for('farrdui'))
   
@@ -55,6 +57,35 @@ def index():
   elif state == 'fl' and county == 'hill' and judge == 'none' and charge == 'dui' and agree == True and form.validate_on_submit():
     return redirect(url_for('hilldui'))
 
+####### BATTERY ################
+
+  elif state == 'fl' and county == 'hill' and judge == 'farr' and charge == 'bat' and agree == True and form.validate_on_submit():
+    return redirect(url_for('farrbat'))
+  
+  elif state == 'fl' and county == 'hill' and judge == 'greco' and charge == 'bat' and agree == True and form.validate_on_submit():
+    return redirect(url_for('grecobat'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'jeske' and charge == 'bat' and agree == True and form.validate_on_submit():
+    return redirect(url_for('jeskebat'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'lefler' and charge == 'bat' and agree == True and form.validate_on_submit():
+    return redirect(url_for('leflerbat'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'mcneil' and charge == 'bat' and agree == True and form.validate_on_submit():
+    return redirect(url_for('mcneilbat'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'myers' and charge == 'bat' and agree == True and form.validate_on_submit():
+    return redirect(url_for('myersbat'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'taylor' and charge == 'bat' and agree == True and form.validate_on_submit():
+    return redirect(url_for('taylorbat'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'none' and charge == 'bat' and agree == True and form.validate_on_submit():
+    return redirect(url_for('hillbat'))
+
+
+######### END ###################
+
   elif state == 'fl':
     flash(try_again)
 
@@ -62,6 +93,9 @@ def index():
   return render_template('homepage.html',
                            title='My Court Case',
                            form=form)
+
+
+#######   DUI    ##########################
 
 
 @app.route('/fl/hillsborough/dui/farrdui.html', methods=['GET', 'POST'])
@@ -116,6 +150,62 @@ def hilldui():
   print "Top of index"
   return render_template('fl/hillsborough/dui/dui.html',
                            title='Hillsborough County DUI Cases')
+
+#######   BATTERY   #########
+
+@app.route('/fl/hillsborough/battery/battery.html', methods=['GET', 'POST'])
+def hillbat():
+  print "Top of index"
+  return render_template('fl/hillsborough/battery/battery.html',
+                           title='Hillsborough County Battery Cases')
+
+@app.route('/fl/hillsborough/battery/farrbattery.html', methods=['GET', 'POST'])
+def farrbat():
+  print "Top of index"
+  return render_template('fl/hillsborough/battery/farrbattery.html',
+                           title='Hillsborough County Judge Farr Battery Cases')
+
+
+@app.route('/fl/hillsborough/battery/grecobattery.html', methods=['GET', 'POST'])
+def grecobat():
+  print "Top of index"
+  return render_template('fl/hillsborough/battery/grecobattery.html',
+                           title='Hillsborough County Judge Greco Battery Cases')
+
+
+@app.route('/fl/hillsborough/battery/jeskebattery.html', methods=['GET', 'POST'])
+def jeskebat():
+  print "Top of index"
+  return render_template('fl/hillsborough/battery/jeskebattery.html',
+                           title='Hillsborough County Judge Jeske Battery Cases')
+
+
+@app.route('/fl/hillsborough/battery/leflerbattery.html', methods=['GET', 'POST'])
+def leflerbat():
+  print "Top of index"
+  return render_template('fl/hillsborough/battery/leflerbattery.html',
+                           title='Hillsborough County Judge Lefler Battery Cases')
+
+
+@app.route('/fl/hillsborough/battery/mcneilbattery.html', methods=['GET', 'POST'])
+def mcneilbat():
+  print "Top of index"
+  return render_template('fl/hillsborough/battery/mcneilbattery.html',
+                           title='Hillsborough County Judge McNeil Battery Cases')
+
+
+@app.route('/fl/hillsborough/battery/myersbattery.html', methods=['GET', 'POST'])
+def myersbat():
+  print "Top of index"
+  return render_template('fl/hillsborough/battery/myersbattery.html',
+                           title='Hillsborough County Judge Myers Battery Cases')
+
+
+@app.route('/fl/hillsborough/battery/taylorbattery.html', methods=['GET', 'POST'])
+def taylorbat():
+  print "Top of index"
+  return render_template('fl/hillsborough/battery/taylorbattery.html',
+                           title='Hillsborough County Judge Taylor Battery Cases')
 
 #Error Handling:
     
