@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>My Court Case</title>
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+
+
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+
+
+<link rel='stylesheet' id='thefour-fonts-css'  href='https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C300italic%2C400italic%7CMontserrat%3A400&#038;subset=latin%2Clatin-ext&#038;ver=4.6.1' type='text/css' media='all' />
+
+<link rel='stylesheet' id='style-css'  href='https://samharden.github.io/stylesheets/style.css' type='text/css' media='all' />
+
+
+</head>
+
+<body class="home page page-id-10 page-template-default navbar-fixed">
+
+<div class="wrapper">
+	<div class="header-wrapper">
+				<header class="header" style="background-image: url(http://www.mycourtcase.org/wp-content/uploads/2016/05/cropped-16359004332_1fcbdda246_o-1.png)" role="banner">
+			<div class="navbar">
+				<div class="container clearfix">
+										<a class="brand" href="http://www.mycourtcase.org">MY COURT CASE</a>
+
+					<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+				</div>
+			</div>
+			<div class="header-inner container title-center">
+				<h1 class="site-title"><a href="http://www.mycourtcase.org" title="MY COURT CASE" rel="home">MY COURT CASE</a></h1><h3 class="site-description">Know Your Case, Know Your Chances.</h3>			</div>
+		</header>
+	</div>
+	<main class="main container clearfix" role="main">
+
+<section id="content" class="content no-sidebar">
+
+	
+		
+<article id="post-10" class="post-10 page type-page status-publish hentry">
+
+	<div class="entry-content clearfix">
+		<div class="title custicon"></div>
+<h3 class="title-border" style="text-align: center;">Supply the Information About Your Case:</h3>
+
+</div><div  class="row  first_row"><div  class="col-sm-6  first_col"><div role="field" data-field-wrapper="fld_7795160" class="form-group">
+
+
+    <div><center>
+        <form align="center" action="" method="post" name="" style="">
+          {{ form.hidden_tag() }}
+          <p align="center">
+              <b>State:</b> {{ form.state }} &nbsp &nbsp <b>County: </b>{{ form.county }}
+          </p>
+
+          <p align="center">
+             <b> Judge:</b> {{ form.judge }} &nbsp &nbsp &nbsp &nbsp <b>Charge: </b>{{ form.charge }}
+          </p>
+          <p align="center"><b>I understand that this is not legal advice {{form.agree}}</b></p>
+
+    <p><input type="submit" value="Find Case Details"></p></center>
+
+
+        </form>
+    </div>
+
+
+
+
+<h2 class="landing-section-heading" style="text-align: center;"><strong>Know Your Case, Know Your Chances.</strong></h2>
+<p class="landing-section-heading" style="text-align: justify;">Criminal court shouldn&#8217;t be confusing. We&#8217;ve analyzed hundreds of thousands of cases like yours so that you can find out what happened in those cases and use that information to your advantage.</p>
+<h2 class="landing-section-heading" style="text-align: center;">Our Detailed Analysis. For Free.</h2>
+<p class="landing-section-heading" style="text-align: justify;">Our system analyzes hundreds of thousands of court case details from the start to finish of a case. Find out how judges ruled and how cases resolved in the past in order to determine what choices you can make to get the best results in your case.</p>
+<p class="landing-section-heading" style="text-align: justify;">Our reports are completely free. There&#8217;s no obligation to buy anything, sign up for anything, or give your personal information.</p>
+</div>
+	</div>
+
+</article>
+
+		
+	
+</section>
+
+
+</main>
+
+<footer class="footer"  role="contentinfo">
+	<div class="container">
+				
+		<div class="credits clearfix">
+
+			
+			<div class="left">
+				<a href="mailto:info@mycourtcase.org">Contact Us</a>.			</div>
+			<div class="right">
+				<a href="http://www.mycourtcase.org/open-source-data/">Open Source Data</a>.			</div>
+					
+	
+<p style="text-align: justify;"><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license"><img class="aligncenter" style="border-width: 0;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="Creative Commons License" /></a>
+This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+			
+
+
+		</div>
+	</div>
+</footer><!-- .footer -->
+
+</div><!-- .wrapper -->
+
+
+</body>
+</html>
+
+{% endblock %}

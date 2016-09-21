@@ -1,0 +1,87 @@
+<!-- extend from base layout -->
+
+<!DOCTYPE html>
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!DOCTYPE html> <html> <head> <meta charset='utf-8'> <meta
+http-equiv="X-UA-Compatible" content="chrome=1"> <link
+href='https://fonts.googleapis.com/css?family=Chivo:900'
+rel='stylesheet' type='text/css'> <link rel='stylesheet'
+id='open-sans-css' 
+href='https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%
+2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&
+#038;ver=4.5.3' type='text/css' media='all' /> <link rel='stylesheet'
+id='style-css' 
+href='style.css' type='text/css'
+media='all' />
+
+<style type="text/css" media="screen"> html { margin: 70px 70px 70px
+70px !important; } * html body { margin: 70px 70px 70px 70px !important;
+} @media screen and ( max-width: 782px ) { html { margin: 70px 70px 70px
+70px !important; } * html body { margin: 70px 70px 70px 70px !important;
+}
+  }
+  }
+img.wp-smiley, img.emoji { display: inline !important; border: none
+!important; box-shadow: none !important; height: 1em !important; width:
+1em !important; margin: 0 .07em !important; vertical-align: -0.1em
+!important; background: none !important; padding: 0 !important;
+}
+</style>
+
+<body> <div id="container" margin="2cm 4cm 3cm 4cm"> <div
+  class="inner">
+  
+<div role="banner" id="top">
+  <div class="container">
+    <a class="logo" href="https://www.djangoproject.com/">Django</a>
+    <p class="meta">Know your case, know your chances.</p>
+    <div role="navigation">
+      <ul>
+        <li>
+          <a href="https://mycourtcase.org">Home</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<center><h1>MyCourtCase</h1></center>
+ <hr>
+  <hr>
+    <div>
+        <form action="" method="post" name="" autocorrect="">
+          {{ form.hidden_tag() }}
+          <left>
+          <p> Supply as Much Information as You Can About Your Case:
+            </p>
+          <p>
+              State: {{ form.state }} County: {{ form.county }}
+          </p>
+
+          <p>
+              Judge: {{ form.judge }}
+          </p>
+
+          <p>
+              Charge:
+              {{ form.charge }}
+          </p>
+
+
+    <p><input type="submit" value="Go"></p></center>
+
+          
+
+          
+        </form>
+    </div>
+
+
+{% endblock %}
