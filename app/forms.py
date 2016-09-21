@@ -11,7 +11,7 @@ class s_c_j_c(Form):
   judge = SelectField('judge', choices=[('farr','Farr'), ('greco','Greco'), 
                                         ('jeske','Jeske'),('lefler','Lefler'), 
                                         ('mcneil','McNeil'),('myers','Myers'),
-                                        ('taylor','Taylor'), ('none','Don\t Know') ])
+                                        ('taylor','Taylor'), ('none','Not Sure') ])
   charge = SelectField('charge', choices=[('dui','DUI')])
   first_name = TextField('first_name')
   last_name = TextField('last_name')
