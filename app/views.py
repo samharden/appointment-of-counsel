@@ -27,12 +27,15 @@ def index():
   agree = session['agree']
   first_name = session['first_name']
   last_name = session['last_name']
+  l_n_f_l = last_name[:1]
+
 
   print state
   print judge
   print charge
   print first_name
   print last_name
+  print l_n_f_l
 
   ###########   LOGIC ROUTING ################################
 
