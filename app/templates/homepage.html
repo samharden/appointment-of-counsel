@@ -75,9 +75,16 @@ img.emoji {
           </h4>
 
           <h4 align="center">
-             <b> Judge:</b> {{ form.judge }} &nbsp &nbsp &nbsp &nbsp <b>Charge: </b>{{ form.charge }}
+             <b>Charge: </b>{{ form.charge }}
           </h4>
-          <h4 align="center"><b>I understand that this is not legal advice {{form.agree}}</b></h4>
+          <h4>
+             <b> Judge:</b> {{ form.judge }} 
+          </h4>
+          <h4 align="center">Optional:</h4>
+          <h4> Your First Name: {{form.first_name(size=20)}}</h4>
+          <h4> Your Last Name: {{form.last_name(size=20)}}</h4>
+          <h4 align="center">Required:</h4>
+          <h4 align="center"><b>{{form.agree}} I understand that this is not legal advice.</b></h4>
 
     <p><input type="submit" value="Find Case Details"></p></center>
 
@@ -89,10 +96,10 @@ img.emoji {
 
 
 <h2 class="landing-section-heading" style="text-align: center;"><strong>Know Your Case, Know Your Chances.</strong></h2>
-<p class="landing-section-heading" style="text-align: justify;">Criminal court shouldn&#8217;t be confusing. We&#8217;ve analyzed hundreds of thousands of cases like yours so that you can find out what happened in those cases and use that information to your advantage.</p>
+<p class="landing-section-heading" style="text-align: justify;">Criminal court shouldn&#8217;t be confusing. Our system has analyzed hundreds of thousands of cases like yours so that you can find out what happened in those cases and use that information to your advantage.</p>
 <h2 class="landing-section-heading" style="text-align: center;">Our Detailed Analysis. For Free.</h2>
-<p class="landing-section-heading" style="text-align: justify;">Our system analyzes hundreds of thousands of court case details from the start to finish of a case. Find out how judges ruled and how cases resolved in the past in order to determine what choices you can make to get the best results in your case.</p>
-<p class="landing-section-heading" style="text-align: justify;">Our reports are completely free. There&#8217;s no obligation to buy anything, sign up for anything, or give your personal information.</p>
+<p class="landing-section-heading" style="text-align: justify;">Our system analyzes hundreds of thousands of court case details from the start to finish of a case. Find out if hiring an attorney gives you an edge in your case, as well as how judges rule and how cases resolve in order to determine what choices you can make to get the best results in your case.</p>
+
 </div>
 	</div>
 

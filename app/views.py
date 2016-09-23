@@ -25,9 +25,14 @@ def index():
   judge = session['judge']
   charge = session['charge']
   agree = session['agree']
+  first_name = session['first_name']
+  last_name = session['last_name']
 
   print state
   print judge
+  print charge
+  print first_name
+  print last_name
 
   ###########   LOGIC ROUTING ################################
 
@@ -83,6 +88,31 @@ def index():
   elif state == 'fl' and county == 'hill' and judge == 'none' and charge == 'bat' and agree == True and form.validate_on_submit():
     return redirect(url_for('hillbat'))
 
+######## DWLSR ######################
+
+  elif state == 'fl' and county == 'hill' and judge == 'farr' and charge == 'dwls' and agree == True and form.validate_on_submit():
+    return redirect(url_for('farrdwlsr'))
+  
+  elif state == 'fl' and county == 'hill' and judge == 'greco' and charge == 'dwls' and agree == True and form.validate_on_submit():
+    return redirect(url_for('grecodwlsr'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'jeske' and charge == 'dwls' and agree == True and form.validate_on_submit():
+    return redirect(url_for('jeskedwlsr'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'lefler' and charge == 'dwls' and agree == True and form.validate_on_submit():
+    return redirect(url_for('leflerdwlsr'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'mcneil' and charge == 'dwls' and agree == True and form.validate_on_submit():
+    return redirect(url_for('mcneildwlsr'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'myers' and charge == 'dwls' and agree == True and form.validate_on_submit():
+    return redirect(url_for('myersdwlsr'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'taylor' and charge == 'dwls' and agree == True and form.validate_on_submit():
+    return redirect(url_for('taylordwlsr'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'none' and charge == 'dwls' and agree == True and form.validate_on_submit():
+    return redirect(url_for('hilldwlsr'))
 
 ######### END ###################
 
@@ -206,6 +236,64 @@ def taylorbat():
   print "Top of index"
   return render_template('fl/hillsborough/battery/taylorbattery.html',
                            title='Hillsborough County Judge Taylor Battery Cases')
+
+
+#######   DWLSR  #########
+
+@app.route('/fl/hillsborough/dwlsr/dwlsr.html', methods=['GET', 'POST'])
+def hilldwlsr():
+  print "Top of index"
+  return render_template('fl/hillsborough/dwlsr/dwlsr.html',
+                           title='Hillsborough County DWLSR Cases')
+
+@app.route('/fl/hillsborough/dwlsr/farrdwlsr.html', methods=['GET', 'POST'])
+def farrdwlsr():
+  print "Top of index"
+  return render_template('fl/hillsborough/dwlsr/farrdwlsr.html',
+                           title='Hillsborough County Judge Farr DWLSR Cases')
+
+
+@app.route('/fl/hillsborough/dwlsr/grecodwlsr.html', methods=['GET', 'POST'])
+def grecodwlsr():
+  print "Top of index"
+  return render_template('fl/hillsborough/dwlsr/grecodwlsr.html',
+                           title='Hillsborough County Judge Greco DWLSR Cases')
+
+
+@app.route('/fl/hillsborough/dwlsr/jeskedwlsr.html', methods=['GET', 'POST'])
+def jeskedwlsr():
+  print "Top of index"
+  return render_template('fl/hillsborough/dwlsr/jeskedwlsr.html',
+                           title='Hillsborough County Judge Jeske DWLSR Cases')
+
+
+@app.route('/fl/hillsborough/dwlsr/leflerdwlsr.html', methods=['GET', 'POST'])
+def leflerdwlsr():
+  print "Top of index"
+  return render_template('fl/hillsborough/dwlsr/leflerdwlsr.html',
+                           title='Hillsborough County Judge Lefler DWLSR Cases')
+
+
+@app.route('/fl/hillsborough/dwlsr/mcneildwlsr.html', methods=['GET', 'POST'])
+def mcneildwlsr():
+  print "Top of index"
+  return render_template('fl/hillsborough/dwlsr/mcneildwlsr.html',
+                           title='Hillsborough County Judge McNeil DWLSR Cases')
+
+
+@app.route('/fl/hillsborough/dwlsr/myersdwlsr.html', methods=['GET', 'POST'])
+def myersdwlsr():
+  print "Top of index"
+  return render_template('fl/hillsborough/dwlsr/myersdwlsr.html',
+                           title='Hillsborough County Judge Myers DWLSR Cases')
+
+
+@app.route('/fl/hillsborough/dwlsr/taylordwlsr.html', methods=['GET', 'POST'])
+def taylordwlsr():
+  print "Top of index"
+  return render_template('fl/hillsborough/dwlsr/taylordwlsr.html',
+                           title='Hillsborough County Judge Taylor DWLSR Cases')
+
 
 #Error Handling:
     
