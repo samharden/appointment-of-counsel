@@ -117,6 +117,35 @@ def index():
   elif state == 'fl' and county == 'hill' and judge == 'none' and charge == 'dwls' and agree == True and form.validate_on_submit():
     return redirect(url_for('hilldwlsr'))
 
+
+######## PETIT THEFT ######################
+
+  elif state == 'fl' and county == 'hill' and judge == 'farr' and charge == 'petit_theft' and agree == True and form.validate_on_submit():
+    return redirect(url_for('farrpetittheft'))
+  
+  elif state == 'fl' and county == 'hill' and judge == 'greco' and charge == 'petit_theft' and agree == True and form.validate_on_submit():
+    return redirect(url_for('grecopetittheft'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'jeske' and charge == 'petit_theft' and agree == True and form.validate_on_submit():
+    return redirect(url_for('jeskepetittheft'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'lefler' and charge == 'petit_theft' and agree == True and form.validate_on_submit():
+    return redirect(url_for('leflerpetittheft'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'mcneil' and charge == 'petit_theft' and agree == True and form.validate_on_submit():
+    return redirect(url_for('mcneilpetittheft'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'myers' and charge == 'petit_theft' and agree == True and form.validate_on_submit():
+    return redirect(url_for('myerspetittheft'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'taylor' and charge == 'petit_theft' and agree == True and form.validate_on_submit():
+    return redirect(url_for('taylorpetittheft'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'none' and charge == 'petit_theft' and agree == True and form.validate_on_submit():
+    return redirect(url_for('hillpetittheft'))
+
+
+
 ######### END ###################
 
   elif state == 'fl':
@@ -297,6 +326,57 @@ def taylordwlsr():
   return render_template('fl/hillsborough/dwlsr/taylordwlsr.html',
                            title='Hillsborough County Judge Taylor DWLSR Cases')
 
+
+#######   Petit Theft    ##########################
+
+
+@app.route('/fl/hillsborough/petit-theft/farrpetittheft.html', methods=['GET', 'POST'])
+def farrpetittheft():
+  print "Top of index"
+  return render_template('fl/hillsborough/petit-theft/farrpetittheft.html',
+                           title='Judge Farr Petit Theft Cases')
+
+@app.route('/fl/hillsborough/petit-theft/greopetittheft.html', methods=['GET', 'POST'])
+def grecopetittheft():
+  print "Top of index"
+  return render_template('fl/hillsborough/petit-theft/grecopetittheft.html',
+                           title='Judge Greco Petit Theft Cases')
+
+@app.route('/fl/hillsborough/petit-theft/jeskepetittheft.html', methods=['GET', 'POST'])
+def jeskepetittheft():
+  print "Top of index"
+  return render_template('fl/hillsborough/petit-theft/jeskepetittheft.html',
+                           title='Judge Jeske Petit Theft Cases')
+
+@app.route('/fl/hillsborough/petit-theft/leflerpetittheft.html', methods=['GET', 'POST'])
+def leflerpetittheft():
+  print "Top of index"
+  return render_template('fl/hillsborough/petit-theft/leflerpetittheft.html',
+                           title='Judge Lefler Petit Theft Cases')
+
+@app.route('/fl/hillsborough/petit-theft/mcneilpetittheft.html', methods=['GET', 'POST'])
+def mcneilpetittheft():
+  print "Top of index"
+  return render_template('fl/hillsborough/petit-theft/mcneilpetittheft.html',
+                           title='Judge McNeil Petit Theft Cases')
+
+@app.route('/fl/hillsborough/petit-theft/myerspetittheft.html', methods=['GET', 'POST'])
+def myerspetittheft():
+  print "Top of index"
+  return render_template('fl/hillsborough/petit-theft/myerspetittheft.html',
+                           title='Judge Myers Petit Theft Cases')
+
+@app.route('/fl/hillsborough/petit-theft/taylorpetittheft.html', methods=['GET', 'POST'])
+def taylorpetittheft():
+  print "Top of index"
+  return render_template('fl/hillsborough/petit-theft/taylorpetittheft.html',
+                           title='Judge Taylor Petit Theft Cases')
+
+@app.route('/fl/hillsborough/petit-theft/petittheft.html', methods=['GET', 'POST'])
+def hillpetittheft():
+  print "Top of index"
+  return render_template('fl/hillsborough/petit-theft/petittheft.html',
+                           title='Hillsborough County Petit Theft Cases')
 
 #Error Handling:
     

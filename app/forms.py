@@ -12,7 +12,9 @@ class s_c_j_c(Form):
                                         ('jeske','Jeske'),('lefler','Lefler'), 
                                         ('mcneil','McNeil'),('myers','Myers'),
                                         ('taylor','Taylor'), ('none','Not Sure') ])
-  charge = SelectField('charge', choices=[('dui','DUI'), ('bat','Battery'), ('dwls', 'Driving While License Suspended')])
+  charge = SelectField('charge', choices=[('dui','DUI'), ('bat','Battery'), 
+                                          ('dwls', 'Driving While License Suspended'),
+                                          ('petit_theft', 'Petit Theft')])
   first_name = TextField('first_name')
   last_name = TextField('last_name')
   agree = BooleanField('agree')
