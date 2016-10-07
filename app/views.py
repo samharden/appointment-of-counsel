@@ -144,7 +144,31 @@ def index():
   elif state == 'fl' and county == 'hill' and judge == 'none' and charge == 'petit_theft' and agree == True and form.validate_on_submit():
     return redirect(url_for('hillpetittheft'))
 
+  ###### MJ POSS #################
 
+  elif state == 'fl' and county == 'hill' and judge == 'farr' and charge == 'mjposs' and agree == True and form.validate_on_submit():
+    return redirect(url_for('farrmjposs'))
+  
+  elif state == 'fl' and county == 'hill' and judge == 'greco' and charge == 'mjposs' and agree == True and form.validate_on_submit():
+    return redirect(url_for('grecomjposs'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'jeske' and charge == 'mjposs' and agree == True and form.validate_on_submit():
+    return redirect(url_for('jeskemjposs'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'lefler' and charge == 'mjposs' and agree == True and form.validate_on_submit():
+    return redirect(url_for('leflermjposs'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'mcneil' and charge == 'mjposs' and agree == True and form.validate_on_submit():
+    return redirect(url_for('mcneilmjposs'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'myers' and charge == 'mjposs' and agree == True and form.validate_on_submit():
+    return redirect(url_for('myersmjposs'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'taylor' and charge == 'mjposs' and agree == True and form.validate_on_submit():
+    return redirect(url_for('taylormjposs'))
+
+  elif state == 'fl' and county == 'hill' and judge == 'none' and charge == 'mjposs' and agree == True and form.validate_on_submit():
+    return redirect(url_for('hillmjposs'))
 
 ######### END ###################
 
@@ -325,6 +349,60 @@ def taylordwlsr():
   print "Top of index"
   return render_template('fl/hillsborough/dwlsr/taylordwlsr.html',
                            title='Hillsborough County Judge Taylor DWLSR Cases')
+
+
+
+#######   MJ POSS    ##########################
+
+
+@app.route('/fl/hillsborough/marijuana-possession/farr-marijuana-possession.html', methods=['GET', 'POST'])
+def farrmjposs():
+  print "Top of index"
+  return render_template('fl/hillsborough/marijuana-possession/farr-marijuana-possession.html',
+                           title='Judge Farr Marijuana Possession Cases')
+
+@app.route('/fl/hillsborough/marijuana-possession/greco-marijuana-possession.html', methods=['GET', 'POST'])
+def grecomjposs():
+  print "Top of index"
+  return render_template('fl/hillsborough/marijuana-possession/greco-marijuana-possession.html',
+                           title='Judge Greco Marijuana Possession Cases')
+
+@app.route('/fl/hillsborough/marijuana-possession/jeske-marijuana-possession.html', methods=['GET', 'POST'])
+def jeskemjposs():
+  print "Top of index"
+  return render_template('fl/hillsborough/marijuana-possession/jeske-marijuana-possession.html',
+                           title='Judge Jeske Marijuana Possession Cases')
+
+@app.route('/fl/hillsborough/marijuana-possession/lefler-marijuana-possession.html', methods=['GET', 'POST'])
+def leflermjposs():
+  print "Top of index"
+  return render_template('fl/hillsborough/marijuana-possession/lefler-marijuana-possession.html',
+                           title='Judge Lefler Marijuana Possession Cases')
+
+@app.route('/fl/hillsborough/marijuana-possession/mcneil-marijuana-possession.html', methods=['GET', 'POST'])
+def mcneilmjposs():
+  print "Top of index"
+  return render_template('fl/hillsborough/marijuana-possession/mcneil-marijuana-possession.html',
+                           title='Judge McNeil Marijuana Possession Cases')
+
+@app.route('/fl/hillsborough/marijuana-possession/myers-marijuana-possession.html', methods=['GET', 'POST'])
+def myersmjposs():
+  print "Top of index"
+  return render_template('fl/hillsborough/marijuana-possession/myers-marijuana-possession.html',
+                           title='Judge Myers Marijuana Possession Cases')
+
+@app.route('/fl/hillsborough/marijuana-possession/taylor-marijuana-possession.html', methods=['GET', 'POST'])
+def taylormjposs():
+  print "Top of index"
+  return render_template('fl/hillsborough/marijuana-possession/taylor-marijuana-possession.html',
+                           title='Judge Taylor Marijuana Possession Cases')
+
+
+@app.route('/fl/hillsborough/marijuana-possession/marijuana-possession.html', methods=['GET', 'POST'])
+def hillmjposs():
+  print "Top of index"
+  return render_template('fl/hillsborough/marijuana-possession/marijuana-possession.html',
+                           title='Hillsborough County Marijuana Possession Cases')
 
 
 #######   Petit Theft    ##########################

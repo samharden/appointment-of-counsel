@@ -14,6 +14,7 @@ class s_c_j_c(Form):
                                         ('taylor','Taylor'), ('none','Not Sure') ])
   charge = SelectField('charge', choices=[('dui','DUI'), ('bat','Battery'), 
                                           ('dwls', 'Driving While License Suspended'),
+                                          ('mjposs', 'Marijuana Possession'),
                                           ('petit_theft', 'Petit Theft')])
   first_name = TextField('first_name')
   last_name = TextField('last_name')
