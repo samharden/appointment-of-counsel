@@ -25,7 +25,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <link rel='stylesheet' id='thefour-fonts-css'  href='https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C300italic%2C400italic%7CMontserrat%3A400&#038;subset=latin%2Clatin-ext&#038;ver=4.6.1' type='text/css' media='all' />
 
@@ -79,7 +79,46 @@ img.wp-smiley, img.emoji { display: inline !important; border: none
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 In Judge Myers' courtroom 47% of people accused of a DUI are convicted. 37% have their case reduced to the lesser charge of Reckless Driving, and only 16% of DUI cases are dismissed.</p>
-<p style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460102/hills-dui/myers/DUI_CASE_OUTCOMES_MYERS.png" rel="attachment wp-att-245"><img class="aligncenter wp-image-2068 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460102/hills-dui/myers/DUI_CASE_OUTCOMES_MYERS.png" alt="dui case outcomes judge myers hillsborough county florida" width="760" height="664" /></a></p>
+
+<script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Outcome', 'Percent'],
+          ['Convicted of DUI',     47],
+          ['Dismissed',      37],
+          ['Reduced to Reckless Driving',  16],
+        ]);
+
+        var options = {
+          align: 'center',
+          backgroundColor: {fill: 'transparent'}, 
+          chartArea:{width:'90%'},
+          is3D: true,
+          title: "What Happens in DUI Cases in Judge Myers' Courtroom",
+          legend: {position: 'bottom',
+      				maxLines: '3',
+      				textStyle: {fontSize: '16'}
+      			},
+      	  slices: {
+            0: { color: '#121ca5' },
+            1: { color: '#4651f2' },
+            2: { color: '#84b1f9'}},
+      	  pieSliceText: 'percentage',
+      	  tooltip: {text: 'percentage'},
+      	  animation: {"startup": true}
+        };
+
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('DUI-outcomes'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+    <div class='chart' id="DUI-outcomes" align="center" size="75%"></div>
 
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
@@ -87,7 +126,47 @@ Do people hire an attorney for DUI cases in Judge Myers' courtroom?
 </h3> 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 Nearly everyone in Judge Myers' courtroom who was accused of DUI has an attorney for their case. The majority of people (69%) hire a private attorney, while about a quarter (26%) use the public defender. Only 5% of people do not hire an attorney, which is called "Pro Se".</p>
-<p style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460102/hills-dui/myers/DUI_ATTY_HIRING_MYERS.png" rel="attachment wp-att-247"><img class="aligncenter wp-image-2066 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460102/hills-dui/myers/DUI_ATTY_HIRING_MYERS.png" alt="dui attorney hiring judge myers hillsborough county florida" width="760" height="661" /></a></p>
+
+
+<script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Attorney', 'Percent', { role: "style" }],
+          ['Private Attorney',     69, "color: #121ca5"],
+          ['Public Defender',      26, "color: #4651f2"],
+          ['No Attorney',  5, "color: #84b1f9"],
+        ]);
+
+        var options = {
+          align: 'center',
+          backgroundColor: {fill: 'transparent'}, 
+          chartArea:{width:'90%'},
+          is3D: true,
+          legend: {position: 'bottom',
+      				maxLines: '3',
+      				textStyle: {fontSize: '16'}
+      			},
+      	  title: "Who Hired an Attorney for Their DUI Case in Judge Myers' Courtroom",
+      	  pieSliceText: 'percentage',
+      	  slices: {
+            0: { color: '#121ca5' },
+            1: { color: '#4651f2' },
+            2: { color: '#84b1f9'}},
+      	  tooltip: {text: 'percentage'},
+      	  animation: {"startup": true}
+        };
+
+        
+
+        var chart = new google.visualization.PieChart(document.getElementById('DUI-atty-hire'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+    <div class='chart' id="DUI-atty-hire" align="center" size="75%"></div>
 
 
 
@@ -96,9 +175,110 @@ Does hiring a private attorney make a difference?
 </h3> 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 People who hire a private attorney are able to avoid a DUI conviction 53% of the time, while people who use the public defender avoid a DUI conviction 54% of the time. People who go without an attorney ("Pro Se") avoid a DUI conviction 49% of the time.</p>
-<p style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460105/hills-dui/myers/DUI_AVOIDANCE_BY_ATTY_MYERS.png" rel="attachment wp-att-397"><img class="aligncenter wp-image-2067 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460105/hills-dui/myers/DUI_AVOIDANCE_BY_ATTY_MYERS.png" alt="dui avoidance judge myers hillsborough county florida" width="760" height="496" /></a></p>
+
+
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" } ],
+        ["Private Attorney", 53, "color: #121ca5"],
+        ["Public Defender", 54, "color: #4651f2"],
+        ["No Attorney", 49, "color: #84b1f9"]
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage'},
+        title: "Percent of People who Avoid a DUI Conviction in Judge Myers' Courtroom",
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("dui_avoidance"));
+      chart.draw(view, options);
+  }
+
+  </script>
+
+<div id="dui_avoidance" class="chart" align="center" size="75%"></div>
+
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >People avoid a DUI conviction in Judge Myers' courtroom more often than the average rate for Hillsborough County. People who hire a private attorney are able to avoid a DUI conviction 51% of the time, while people who use the public defender only avoid a DUI conviction 40% of the time. People who go without an attorney avoid a DUI conviction only 26% of the time.</p>
-<p style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460216/hills-dui/all-judges/DUI_AVOIDANCE.png" rel="attachment wp-att-397"><img class="aligncenter wp-image-2067 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460216/hills-dui/all-judges/DUI_AVOIDANCE.png" alt="dui avoidance hillsborough county florida" width="760" height="661" /></a></p>
+
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" } ],
+        ["Private Attorney", 51, "color: #121ca5"],
+        ["Public Defender", 40, "color: #4651f2"],
+        ["No Attorney", 26, "color: #84b1f9"]
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage'},
+        title: "Percent of People who Avoided a DUI Conviction in Hillsborough County",
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("hill_dui_avoidance"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="hill_dui_avoidance" class="chart" align="center" size="75%"></div>
+
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 Why is avoiding a DUI conviction so important?</h3> 
@@ -147,23 +327,175 @@ width="91">Yes</td> <td style="text-align: center;" width="91">No</td>
 Can I get my DUI case dismissed or dropped?</h3> 
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-Only 15% of the total DUI cases in Judge Myers’ courtroom are dismissed or dropped. People who hire a private attorney have their case dropped or dismissed 9% of the time. People represented by the Public Defender have their case dropped or dismissed 31% of the time, and people who go without an attorney (“Pro Se”) get their case dismissed or dropped 27% of the time.
+Only 15% of the total DUI cases in Judge Myers’ courtroom are dismissed or dropped. People who hire a private attorney have their case dropped or dismissed 9% of the time. People represented by the Public Defender have their case dropped or dismissed 31% of the time, and people who go without an attorney (“Pro Se”) get their case dismissed or dropped 27% of the time.</p>
 
-</p> <p style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460105/hills-dui/myers/DUI_DIS_BY_ATTY_MYERS.png" rel="attachment wp-att-398"><img class="aligncenter wp-image-2070 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460105/hills-dui/myers/DUI_DIS_BY_ATTY_MYERS.png" alt="dui cases dismissed driving judge myers hillsborough county florida" width="760" height="497" /></a>
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" } ],
+        ["Private Attorney", 9, "color: #121ca5"],
+        ["Public Defender", 31, "color: #4651f2"],
+        ["No Attorney", 27, "color: #84b1f9"]
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage'},
+        title: "Percent of DUI Cases Dismissed in Judge Myers' Courtroom",
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("dui_diss"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="dui_diss" class="chart" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 What about DUI cases reduced to the lesser charge of Reckless Driving?</h3> 
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 37% of DUI cases are reduced to the lesser charge of Reckless Driving in Judge Myers' courtroom. People who hire a private attorney have their case reduced to Reckless Driving 44% of the time, while people represented by the Public Defender have their case reduced only 23% of the time. People who go without an attorney ("Pro Se") get their case reduced to Reckless Driving 22% of the time.</p>
-<p style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460105/hills-dui/myers/DUI_R2RD_BY_ATTY_MYERS.png" rel="attachment wp-att-399"><img class="aligncenter wp-image-2071 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460105/hills-dui/myers/DUI_R2RD_BY_ATTY_MYERS.png" alt="dui cases reduced to reckless driving judge myers hillsborough county florida" width="760" height="497" /></a></p>
+
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 44, "color: #121ca5", '%'],
+        ["Public Defender", 23, "color: #4651f2",'%'],
+        ["No Attorney", 22, "color: #84b1f9", '%']
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage'},
+        
+        title: "Percent of DUI Cases Reduced to Reckless Driving in Judge Myers' Courtroom",
+        titlePosition: 'out',
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("dui_reduced"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="dui_reduced" class="chart" align="center" size="75%"></div>
+
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 Shouldn't I just represent myself?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 Just 5% people accused of DUI represent themselves in Judge Myers' courtroom. These people, on average, are more likely to receive a DUI conviction than people who hire private attorneys. People who go without an attorney are convicted of a DUI charge 48% of the time, while those with the public defender are convicted 46% of the time. People who hire a private attorney are convicted 46% of the time.</p>
-<p style="text-align: center"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460103/hills-dui/myers/DUI_CONV_BY_ATTY_MYERS.png" rel="attachment wp-att-400"><img class="aligncenter wp-image-2069 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474460103/hills-dui/myers/DUI_CONV_BY_ATTY_MYERS.png" alt="dui convictions judge myers hillsborough county florida" width="760" height="497" /></a></p>
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 46, "color: #121ca5", '%'],
+        ["Public Defender", 46, "color: #4651f2",'%'],
+        ["No Attorney", 48, "color: #84b1f9", '%']
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+        
+        title: "Percent of DUI Convictions in Judge Myers' Courtroom",
+        titlePosition: 'out',
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("dui_conv"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="dui_conv" class="chart" align="center" size="75%"></div>
 
 
 <footer class="footer"  role="contentinfo">
