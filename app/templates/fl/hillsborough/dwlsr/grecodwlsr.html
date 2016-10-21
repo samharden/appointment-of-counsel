@@ -25,7 +25,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <link rel='stylesheet' id='thefour-fonts-css'  href='https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C300italic%2C400italic%7CMontserrat%3A400&#038;subset=latin%2Clatin-ext&#038;ver=4.6.1' type='text/css' media='all' />
 
@@ -63,7 +63,7 @@ img.wp-smiley, img.emoji { display: inline !important; border: none
 				<header class="header" style="background-image: url(http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474467770/background_qx4qte.png)" role="banner">
 			<div class="navbar">
 				<div class="container clearfix">
-										<a class="brand" href="https://mycourtcase.herokuapp.com/">HOME</a>
+										<a class="brand" href="http://www.mycourtcase.com/">HOME</a>
 
 					<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
 				</div>
@@ -80,11 +80,48 @@ img.wp-smiley, img.emoji { display: inline !important; border: none
 
 53% of people charged with Driving While License Suspended With Knowledge are convicted. 25% of cases are dismissed, and 22% of people receive a withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.
 
-</p> <p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474577196/hill-dwlsr/greco/DWLSR_OUTCOMES_GRECO.png" rel="attachment wp-att-180"><img class="aligncenter
-wp-image-2027 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474577196/hill-dwlsr/greco/DWLSR_OUTCOMES_GRECO.png" alt="hillsborough county suspended license cases judge Greco
-outcomes" width="760" height="661" /></a></p>
+</p> 
+
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Outcome', 'Percent'],
+          ['Convicted',     53],
+          ['Dismissed',      25],
+          ['Withhold of Adjudication',  22],
+        ]);
+
+        var options = {
+          align: 'center',
+          backgroundColor: {fill: 'transparent'}, 
+          chartArea:{width:'90%'},
+          is3D: true,
+          title: "What Happens in Suspended License Cases in Judge Greco's Courtroom",
+          legend: {position: 'bottom',
+      				maxLines: '3',
+      				textStyle: {fontSize: '16'}
+      			},
+      	  slices: {
+            0: { color: '#121ca5' },
+            1: { color: '#4651f2' },
+            2: { color: '#84b1f9'}},
+      	  pieSliceText: 'percentage',
+      	  tooltip: {text: 'percentage'},
+      	  animation: {"startup": true}
+        };
+
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('dwlsr-outcomes'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+    <div class='chart' id="dwlsr-outcomes" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 Do people hire an attorney for Driving While License Suspended cases
@@ -92,13 +129,49 @@ in Judge Greco's courtroom?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-Only 16% of people charged with Driving While License Suspended With Knowledge hire a private attorney in Judge Greco's courtroom. 9% go with the Public Defender. 75% decide to handle their cases on their own, which is called "Pro Se."
+Only 16% of people charged with Driving While License Suspended With Knowledge hire a private attorney in Judge Greco's courtroom. 9% go with the Public Defender. 75% decide to handle their cases on their own without an attorney.
 
-</p> <p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474577195/hill-dwlsr/greco/DWLSR_ATTY_HIRE_GRECO.png" rel="attachment wp-att-199"><img class="aligncenter
-wp-image-2028 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474577195/hill-dwlsr/greco/DWLSR_ATTY_HIRE_GRECO.png" alt="suspended license attorney hiring judge Greco
-hillsborough county" width="760" height="661" /></a></p>
+</p> 
+
+<script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Attorney Hire', 'Percent'],
+          ['Private Attorney',     16],
+          ['Public Defender',      9],
+          ['No Attorney',  75],
+        ]);
+
+        var options = {
+          align: 'center',
+          backgroundColor: {fill: 'transparent'}, 
+          chartArea:{width:'90%'},
+          is3D: true,
+          title: "Who Hires an Attorney for Their Suspended License Case in Judge Greco's Courtroom",
+          legend: {position: 'bottom',
+      				maxLines: '3',
+      				textStyle: {fontSize: '16'}
+      			},
+      	  slices: {
+            0: { color: '#121ca5' },
+            1: { color: '#4651f2' },
+            2: { color: '#84b1f9'}},
+      	  pieSliceText: 'percentage',
+      	  tooltip: {text: 'percentage'},
+      	  animation: {"startup": true}
+        };
+
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('dwlsr-atty-hire'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+    <div class='chart' id="dwlsr-atty-hire" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 Does hiring a private attorney make a difference?</h3> 
@@ -107,15 +180,112 @@ Does hiring a private attorney make a difference?</h3>
 Having a private attorney is an advantage in these cases in Judge Greco's courtroom. People who hire a private attorney are convicted 42% of the time, while people who have the public defender are convicted 70% of the time. People without an attorney, also known as "Pro Se," are convicted 53% of the time.
 
 </p> 
-<p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474577197/hill-dwlsr/greco/DWLSR_CONV_BY_ATTY_GRECO.png" rel="attachment wp-att-370"><img
-class="aligncenter wp-image-2029 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474577197/hill-dwlsr/greco/DWLSR_CONV_BY_ATTY_GRECO.png" alt="hillsborough county suspended license cases judge
-Greco avoiding conviction" width="760" height="496" /></a></p>
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 42, "color: #121ca5", '%'],
+        ["Public Defender", 70, "color: #4651f2",'%'],
+        ["No Attorney", 53, "color: #84b1f9", '%']
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+        
+        title: "Convictions for Suspended License in Judge Greco's Courtroom",
+        titlePosition: 'out',
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("DWLSR_CONV_BY_ATTY"));
+      chart.draw(view, options);
+  }
+  </script>
+
+<div id="DWLSR_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
+
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-Across Hillsborough County people who hired a private attorney are convicted of Driving While License Suspended With Knowledge 43% of the time, while people represented by the public defender are convicted 69% of the time. People who handle their cases on their own, also known as "Pro Se", are convicted 46% of the time.</p>
-<p style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576117/hill-dwlsr/DWLSR_CONV_BY_ATTY.png" rel="attachment wp-att-183"><img class="aligncenter wp-image-2024 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576117/hill-dwlsr/DWLSR_CONV_BY_ATTY.png" alt="hillsborough county suspended license cases who avoided conviction" width="760" height="504" /></a></p>
+Across Hillsborough County people who hired a private attorney are convicted of Driving While License Suspended With Knowledge 43% of the time, while people represented by the public defender are convicted 69% of the time. People who handle their cases on their own without an attorney are convicted 46% of the time.</p>
+
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 43, "color: #121ca5", '%'],
+        ["Public Defender", 69, "color: #4651f2",'%'],
+        ["No Attorney", 46, "color: #84b1f9", '%']
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+        
+        title: "Convictions for Suspended License in Hillsborough County",
+        titlePosition: 'out',
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("HC_DWLSR_CONV_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="HC_DWLSR_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">Can I get my Driving While License Suspended
 case dismissed or dropped?</h3> 
@@ -123,12 +293,57 @@ case dismissed or dropped?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 People who hire a private attorney have their cases dismissed 35% of the time, while people who have the public defender have their cases dismissed 21% of the time. People without an attorney, also known as "Pro Se," have their case dismissed 23% of the time.
 
-</p> <p
-style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474577197/hill-dwlsr/greco/DWLSR_DISS_BY_ATTY_GRECO.png" rel="attachment wp-att-419"><img class="aligncenter
-wp-image-2030 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474577197/hill-dwlsr/greco/DWLSR_DISS_BY_ATTY_GRECO.png" alt="judge Greco suspended license cases dismissed" width="760"
-height="497" /></a></p>
+</p> 
 
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 35, "color: #121ca5", '%'],
+        ["Public Defender", 21, "color: #4651f2",'%'],
+        ["No Attorney", 23, "color: #84b1f9", '%']
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+        
+        title: "Suspended License Cases Dismissed in Judge Greco's Courtroom",
+        titlePosition: 'out',
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("DWLSR_DISS_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+  </script>
+
+<div id="DWLSR_DISS_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
@@ -139,11 +354,58 @@ People who hire a private attorney receive a withhold of adjudication 23% of the
 
 </p>
 
-<p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474577197/hill-dwlsr/greco/DWLSR_WH_BY_ATTY_GRECO.png" rel="attachment wp-att-374"><img class="aligncenter
-wp-image-2032 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474577197/hill-dwlsr/greco/DWLSR_WH_BY_ATTY_GRECO.png" alt="hillsborough county suspended license cases judge greco
-adjudication withheld" width="760" height="497" /></a></p>
+
+ <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 23, "color: #121ca5", '%'],
+        ["Public Defender", 9, "color: #4651f2",'%'],
+        ["No Attorney", 24, "color: #84b1f9", '%']
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+        
+        title: "Suspended License Cases in Judge Greco's Courtroom: Adjudication Withheld",
+        titlePosition: 'out',
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("DWLSR_WH_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="DWLSR_WH_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 What is the typical penalty for Driving While License Suspended?</h3>

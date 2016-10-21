@@ -25,7 +25,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <link rel='stylesheet' id='thefour-fonts-css'  href='https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C300italic%2C400italic%7CMontserrat%3A400&#038;subset=latin%2Clatin-ext&#038;ver=4.6.1' type='text/css' media='all' />
 
@@ -63,13 +63,14 @@ img.wp-smiley, img.emoji { display: inline !important; border: none
 				<header class="header" style="background-image: url(http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474467770/background_qx4qte.png)" role="banner">
 			<div class="navbar">
 				<div class="container clearfix">
-										<a class="brand" href="https://mycourtcase.herokuapp.com/">HOME</a>
+										<a class="brand" href="http://www.mycourtcase.com/">HOME</a>
 
 					<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
 				</div>
 			</div>
 			<div class="header-inner container title-center">
-				<h1 class="site-title">Driving While License Suspended Cases in Judge Farr's Courtroom</a></h1><h3 class="site-description">Know Your Case, Know Your Chances.</h3>	</div>
+				<h1 class="site-title">Driving While License Suspended Cases in Judge Farr's Courtroom</a></h1><h3 class="site-description">
+				Know Your Case, Know Your Chances</h3>	</div>
 		</header>
 	</div>
 
@@ -77,14 +78,47 @@ img.wp-smiley, img.emoji { display: inline !important; border: none
   class="inner">
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+42% of people charged with Driving While License Suspended With Knowledge are convicted. 44% of these cases are dismissed, and 14% of people receive a withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.</p> 
 
-42% of people charged with Driving While License Suspended With Knowledge are convicted. 44% of these cases are dismissed, and 14% of people receive a withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Outcome', 'Percent'],
+          ['Convicted',     42],
+          ['Dismissed',      44],
+          ['Withhold of Adjudication',  14],
+        ]);
 
-</p> <p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576806/hill-dwlsr/farr/DWLSR_OUTCOMES_FARR.png" rel="attachment wp-att-180"><img class="aligncenter
-wp-image-2027 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576806/hill-dwlsr/farr/DWLSR_OUTCOMES_FARR.png" alt="hillsborough county suspended license cases judge Farr
-outcomes" width="760" height="661" /></a></p>
+        var options = {
+          align: 'center',
+          backgroundColor: {fill: 'transparent'}, 
+          chartArea:{width:'90%'},
+          is3D: true,
+          title: "What Happens in Suspended License Cases in Judge Farr's Courtroom",
+          legend: {position: 'bottom',
+      				maxLines: '3',
+      				textStyle: {fontSize: '16'}
+      			},
+      	  slices: {
+            0: { color: '#121ca5' },
+            1: { color: '#4651f2' },
+            2: { color: '#84b1f9'}},
+      	  pieSliceText: 'percentage',
+      	  tooltip: {text: 'percentage'},
+      	  animation: {"startup": true}
+        };
+
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('farr-dwlsr-outcomes'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+    <div class='chart' id="farr-dwlsr-outcomes" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 Do people hire an attorney for Driving While License Suspended cases
@@ -92,45 +126,221 @@ in Judge Farr's courtroom?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-Only 13% of people charged with Driving While License Suspended With Knowledge hire a private attorney in Judge Farr's courtroom. 15% go with the Public Defender. 72% decide to handle their cases on their own, which is called "Pro Se."
+Only 13% of people charged with Driving While License Suspended With Knowledge hire a private attorney in Judge Farr's courtroom. 15% go with the Public Defender. 72% decide to handle their cases on their own without an attorney.
 
-</p> <p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576806/hill-dwlsr/farr/dwlsr_atty_hire_farr.png" rel="attachment wp-att-199"><img class="aligncenter
-wp-image-2028 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576806/hill-dwlsr/farr/dwlsr_atty_hire_farr.png" alt="suspended license attorney hiring judge Farr
-hillsborough county" width="760" height="661" /></a></p>
+</p> 
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Attorney Hire', 'Percent'],
+          ['Private Attorney',     13],
+          ['Public Defender',      15],
+          ['No Attorney',  72],
+        ]);
+
+        var options = {
+          align: 'center',
+          backgroundColor: {fill: 'transparent'}, 
+          chartArea:{width:'90%'},
+          is3D: true,
+          title: "Who Hires an Attorney for Their Suspended License Case in Judge Farr's Courtroom",
+          legend: {position: 'bottom',
+      				maxLines: '3',
+      				textStyle: {fontSize: '16'}
+      			},
+      	  slices: {
+            0: { color: '#121ca5' },
+            1: { color: '#4651f2' },
+            2: { color: '#84b1f9'}},
+      	  pieSliceText: 'percentage',
+      	  tooltip: {text: 'percentage'},
+      	  animation: {"startup": true}
+        };
+
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('farr-dwlsr-atty-hire'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+    <div class='chart' id="farr-dwlsr-atty-hire" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 Does hiring a private attorney make a difference?</h3> 
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-Having a private attorney is not a clear advantage in Judge Farr's courtroom. People who hire a private attorney are convicted 39% of the time, while people who have the public defender are convicted 74% of the time. People without an attorney, also known as "Pro Se," are convicted 36% of the time.
+Having a private attorney is not a clear advantage in Judge Farr's courtroom for these cases. People who hire a private attorney are convicted 39% of the time, while people who have the public defender are convicted 74% of the time. People without an attorney, also known as "Pro Se," are convicted 36% of the time.
 
 </p> 
-<p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576807/hill-dwlsr/farr/DWLSR_CONV_BY_ATTY_FARR.png" rel="attachment wp-att-370"><img
-class="aligncenter wp-image-2029 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576807/hill-dwlsr/farr/DWLSR_CONV_BY_ATTY_FARR.png" alt="hillsborough county suspended license cases judge
-Farr conviction" width="760" height="496" /></a></p>
+
+ <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 39, "color: #121ca5", '%'],
+        ["Public Defender", 74, "color: #4651f2",'%'],
+        ["No Attorney", 36, "color: #84b1f9", '%']
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+        
+        title: "Convictions for Suspended License in Judge Farr's Courtroom",
+        titlePosition: 'out',
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("farr_DWLSR_CONV_BY_ATTY"));
+      chart.draw(view, options);
+  }
+  </script>
+
+<div id="farr_DWLSR_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 Across Hillsborough County people who hired a private attorney are convicted of Driving While License Suspended With Knowledge 43% of the time, while people represented by the public defender are convicted 69% of the time. People who handle their cases on their own, also known as "Pro Se", are convicted 46% of the time.</p>
-<p style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576117/hill-dwlsr/DWLSR_CONV_BY_ATTY.png" rel="attachment wp-att-183"><img class="aligncenter wp-image-2024 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576117/hill-dwlsr/DWLSR_CONV_BY_ATTY.png" alt="hillsborough county suspended license cases who avoided conviction" width="760" height="504" /></a></p>
+
+ <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 43, "color: #121ca5", '%'],
+        ["Public Defender", 69, "color: #4651f2",'%'],
+        ["No Attorney", 46, "color: #84b1f9", '%']
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+        
+        title: "Convictions for Suspended License in Hillsborough County",
+        titlePosition: 'out',
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("HC_DWLSR_CONV_BY_ATTY"));
+      chart.draw(view, options);
+  }
 
 
 
-<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">Can I get my Driving While License Suspended
-case dismissed or dropped?</h3> 
+  </script>
+
+<div id="HC_DWLSR_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">Can I get my Driving While License Suspended case dismissed or dropped?</h3> 
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
 In Judge Farr's courtroom, people who hire a private attorney have their cases dismissed 48% of the time, while people who have the public defender have their cases dismissed 17% of the time. People without an attorney, also known as "Pro Se," have their case dismissed 49% of the time.
 
-</p> <p
-style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576807/hill-dwlsr/farr/DWLSR_DISS_BY_ATTY_FARR.png" rel="attachment wp-att-419"><img class="aligncenter
-wp-image-2030 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576807/hill-dwlsr/farr/DWLSR_DISS_BY_ATTY_FARR.png" alt="judge Farr suspended license cases dismissed" width="760"
-height="497" /></a></p>
+</p> 
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 48, "color: #121ca5", '%'],
+        ["Public Defender", 17, "color: #4651f2",'%'],
+        ["No Attorney", 49, "color: #84b1f9", '%']
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+        
+        title: "Suspended License Cases Dismissed in Judge Farr's Courtroom",
+        titlePosition: 'out',
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("farr_DWLSR_DISS_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+  </script>
+
+<div id="farr_DWLSR_DISS_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 
 
@@ -138,16 +348,59 @@ height="497" /></a></p>
 What about getting a Withhold of Adjudication?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-People who hire a private attorney receive a withhold of adjudication 13% of the time, while people with the public defender receive a withhold of adjudication 8% of the time. People without an attorney receive a withhold of adjudication 15% of the time.
+People who hire a private attorney receive a withhold of adjudication 13% of the time, while people with the public defender receive a withhold of adjudication 8% of the time. People without an attorney receive a withhold of adjudication 15% of the time.</p>
+
+ <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 13, "color: #121ca5", '%'],
+        ["Public Defender", 8, "color: #4651f2",'%'],
+        ["No Attorney", 15, "color: #84b1f9", '%']
+      ]);
+      
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+                
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+        
+        title: "Suspended License Cases in Judge Farr's Courtroom: Adjudication Withheld",
+        titlePosition: 'out',
+
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("farr_DWLSR_WH_BY_ATTY"));
+      chart.draw(view, options);
+  }
 
 
-</p>
 
-<p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576807/hill-dwlsr/farr/DWLSR_WH_BY_ATTY_FARR.png" rel="attachment wp-att-374"><img class="aligncenter
-wp-image-2032 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474576807/hill-dwlsr/farr/DWLSR_WH_BY_ATTY_FARR.png" alt="hillsborough county suspended license cases judge Farr
-adjudication withheld" width="760" height="497" /></a></p>
+  </script>
+
+<div id="farr_DWLSR_WH_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 What is the typical penalty for Driving While License Suspended?</h3>
@@ -156,6 +409,10 @@ The most common penalty for Driving While License Suspended with Knowledge is a 
 
 
 </p>
+
+
+
+
 <footer class="footer"  role="contentinfo">
 	<div class="container">
 				
