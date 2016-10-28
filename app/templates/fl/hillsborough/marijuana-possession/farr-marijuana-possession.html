@@ -25,7 +25,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <link rel='stylesheet' id='thefour-fonts-css'  href='https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C300italic%2C400italic%7CMontserrat%3A400&#038;subset=latin%2Clatin-ext&#038;ver=4.6.1' type='text/css' media='all' />
 
@@ -82,53 +82,262 @@ img.wp-smiley, img.emoji { display: inline !important; border: none
 
 In Marijuana Possession cases getting a withhold of adjudication is especially important because a conviction carries with it a one-year driver's license suspension.
 
-</p> <p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475848754/hill-mjposs/Farr/mj_poss_outcomes_Farr.png" rel="attachment wp-att-180"><img class="aligncenter
-wp-image-2027 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475848754/hill-mjposs/Farr/mj_poss_outcomes_Farr.png" alt="hillsborough county marijuana cases judge Farr
-outcomes" width="760" height="661" /></a></p>
+</p>
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:["corechart"]});
+	google.charts.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Outcome', 'Percent'],
+			['Convicted',     15],
+			['Dismissed',      27],
+			['Withhold of Adjudication',  58],
+		]);
+
+		var options = {
+			align: 'center',
+			backgroundColor: {fill: 'transparent'},
+			chartArea:{width:'90%'},
+			is3D: true,
+			title: "What Happens in Marijuana Possession Cases in Judge Farr's Courtroom",
+			legend: {position: 'bottom',
+					maxLines: '3',
+					textStyle: {fontSize: '16'}
+				},
+			slices: {
+				0: { color: '#121ca5' },
+				1: { color: '#4651f2' },
+				2: { color: '#84b1f9'}},
+			pieSliceText: 'percentage',
+			tooltip: {text: 'percentage'},
+			animation: {"startup": true}
+		};
+
+
+
+		var chart = new google.visualization.PieChart(document.getElementById('mjposs-outcomes'));
+		chart.draw(data, options);
+	}
+
+</script>
+
+<div class='chart' id="mjposs-outcomes" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Do people hire an attorney for Marijuana Possession cases in Judge Farr's courtroom?</h3> 
+Do people hire an attorney for Marijuana Possession cases in Judge Farr's courtroom?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-59% of people charged with Marijuana Possession hire a private attorney in Judge Farr's courtroom. 30% go with the Public Defender, while 11% decide to handle their cases on their own, which is called "Pro Se."
+59% of people charged with Marijuana Possession hire a private attorney in Judge Farr's courtroom. 30% go with the Public Defender, while 11% decide to handle their cases on their own without an attorney.
 
-</p> <p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475848754/hill-mjposs/Farr/mj_poss_atty_hire_Farr.png" rel="attachment wp-att-199"><img class="aligncenter
-wp-image-2028 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475848754/hill-mjposs/Farr/mj_poss_atty_hire_Farr.png" alt="marijuana possession attorney hiring judge Farr
-hillsborough county" width="760" height="661" /></a></p>
+</p>
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:["corechart"]});
+	google.charts.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Attorney Hire', 'Percent'],
+			['Private Attorney',     59],
+			['Public Defender',      30],
+			['No Attorney', 11],
+		]);
+
+		var options = {
+			align: 'center',
+			backgroundColor: {fill: 'transparent'},
+			chartArea:{width:'90%'},
+			is3D: true,
+			title: "Who Hires an Attorney for Marijuana Possession Case in Judge Farr's Courtroom",
+			legend: {position: 'bottom',
+					maxLines: '3',
+					textStyle: {fontSize: '16'}
+				},
+			slices: {
+				0: { color: '#121ca5' },
+				1: { color: '#4651f2' },
+				2: { color: '#84b1f9'}},
+			pieSliceText: 'percentage',
+			tooltip: {text: 'percentage'},
+			animation: {"startup": true}
+		};
+
+
+
+		var chart = new google.visualization.PieChart(document.getElementById('atty-hire'));
+		chart.draw(data, options);
+	}
+
+</script>
+
+<div class='chart' id="atty-hire" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Does hiring a private attorney make a difference?</h3> 
+Does hiring a private attorney make a difference?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 Having a private attorney is a clear advantage over the public defender in these cases in Judge Farr's courtroom. People who hired a private attorney were convicted just 8% of the time, while people who had the public defender were convicted 31% of the time. People without an attorney, also known as "Pro Se," were convicted 11% of the time.
 
-</p> 
-<p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475848755/hill-mjposs/Farr/mj_poss_conv_Farr.png" rel="attachment wp-att-370"><img
-class="aligncenter wp-image-2029 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475848755/hill-mjposs/Farr/mj_poss_conv_Farr.png" alt="hillsborough county suspended license cases judge
-Farr avoiding conviction" width="760" height="496" /></a></p>
+</p>
+<script type="text/javascript">
+	 google.charts.load("current", {packages:['corechart']});
+	 google.charts.setOnLoadCallback(drawChart);
+	 var inView = false;
+	 function drawChart() {
+		 var data = google.visualization.arrayToDataTable([
+			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+			 ["Private Attorney", 8, "color: #121ca5", '%'],
+			 ["Public Defender", 31, "color: #4651f2",'%'],
+			 ["No Attorney", 11, "color: #84b1f9", '%']
+		 ]);
+
+		 var view = new google.visualization.DataView(data);
+		 view.setColumns([0, 1,
+
+												{ calc: "stringify",
+												sourceColumn: 1,
+												type: "string",
+												role: "annotation",
+												size: 50
+												 },
+											2]);
+
+		 var options = {
+			 inView: false,
+			 is3d: true,
+			 vAxis: {format: '#\'%\''},
+			 backgroundColor: {fill: 'transparent'},
+			 bar: {groupWidth: "85%"},
+			 legend: { position: "none" },
+			 animation: {
+							 duration: 1000,
+							 startup: true,
+
+					 },
+			 tooltip: {text: 'percentage', format: '#\'%\''},
+
+			 title: "Convictions for Marijuana Possession in Judge Farr's Courtroom",
+			 titlePosition: 'out',
+
+
+		 };
+		 var chart = new google.visualization.ColumnChart(document.getElementById("CONV_BY_ATTY"));
+		 chart.draw(view, options);
+ }
+ </script>
+
+<div id="CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 Across Hillsborough County people who hired a private attorney are convicted of Marijuana Possession 15% of the time, while people represented by the public defender are convicted 38% of the time. People who handle their cases on their own, also known as "Pro Se", are convicted 19% of the time.</p>
-<p style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475692637/hill-mjposs/conv_by_atty.png" rel="attachment wp-att-183"><img class="aligncenter wp-image-2024 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475692637/hill-mjposs/conv_by_atty.png" alt="hillsborough county marijuana cases convictions" width="760" height="504" /></a></p>
+
+<script type="text/javascript">
+	 google.charts.load("current", {packages:['corechart']});
+	 google.charts.setOnLoadCallback(drawChart);
+	 var inView = false;
+	 function drawChart() {
+		 var data = google.visualization.arrayToDataTable([
+			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+			 ["Private Attorney", 15, "color: #121ca5", '%'],
+			 ["Public Defender", 38, "color: #4651f2",'%'],
+			 ["No Attorney", 19, "color: #84b1f9", '%']
+		 ]);
+
+		 var view = new google.visualization.DataView(data);
+		 view.setColumns([0, 1,
+
+												{ calc: "stringify",
+												sourceColumn: 1,
+												type: "string",
+												role: "annotation",
+												size: 50
+												 },
+											2]);
+
+		 var options = {
+			 inView: false,
+			 is3d: true,
+			 vAxis: {format: '#\'%\''},
+			 backgroundColor: {fill: 'transparent'},
+			 bar: {groupWidth: "85%"},
+			 legend: { position: "none" },
+			 animation: {
+							 duration: 1000,
+							 startup: true,
+
+					 },
+			 tooltip: {text: 'percentage', format: '#\'%\''},
+
+			 title: "Convictions for Marijuana Possession in Hillsborough County",
+			 titlePosition: 'out',
+
+
+		 };
+		 var chart = new google.visualization.ColumnChart(document.getElementById("HC_CONV_BY_ATTY"));
+		 chart.draw(view, options);
+ }
+ </script>
+
+<div id="HC_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">Can I get my Marijuana Possession
-case dismissed or dropped?</h3> 
+case dismissed or dropped?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 People who hire a private attorney have their cases dismissed 27% of the time, while people who use the public defender also have their cases dismissed 27% of the time. People without an attorney, also known as "Pro Se," have their case dismissed 27% of the time.
 
-</p> <p
-style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475848756/hill-mjposs/Farr/mj_poss_diss_Farr.png" rel="attachment wp-att-419"><img class="aligncenter
-wp-image-2030 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475848756/hill-mjposs/Farr/mj_poss_diss_Farr.png" alt="judge Farr suspended license cases dismissed" width="760"
-height="497" /></a></p>
+</p>
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 27, "color: #121ca5", '%'],
+        ["Public Defender", 27, "color: #4651f2",'%'],
+        ["No Attorney", 27, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Marijuana Possession Cases Dismissed in Judge Farr's Courtroom",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("DISS_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+  </script>
+
+<div id="DISS_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 
 
@@ -145,16 +354,61 @@ Remember that getting a withhold of adjudication instead of a conviction is espe
 
 </p>
 
-<p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475848756/hill-mjposs/Farr/mj_poss_wh_Farr.png" rel="attachment wp-att-374"><img class="aligncenter
-wp-image-2032 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1475848756/hill-mjposs/Farr/mj_poss_wh_Farr.png" alt="hillsborough county suspended license cases judge Farr
-adjudication withheld" width="760" height="497" /></a></p>
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 65, "color: #121ca5", '%'],
+        ["Public Defender", 42, "color: #4651f2",'%'],
+        ["No Attorney", 61, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Marijuana Possession Cases in Judge Farr's Courtroom: Adjudication Withheld",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("WH_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+  </script>
+
+<div id="WH_BY_ATTY" class="chart" align="center" size="75%"></div>
+
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 What is the typical penalty for Marijuana Possession?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-The most common penalty for Marijuana Possession is six months probation, community service, a drug class, and a fine in the range of $200-300. 
+The most common penalty for Marijuana Possession is six months probation, community service, a drug class, and a fine in the range of $200-300.
 
 
 </p>
@@ -162,19 +416,19 @@ The most common penalty for Marijuana Possession is six months probation, commun
 
 <footer class="footer"  role="contentinfo">
 	<div class="container">
-				
+
 		<div class="credits clearfix">
 
-			
+
 			<div class="left">
 				<a href="mailto:info@mycourtcase.org">Contact Us</a>.			</div>
 			<div class="right">
 				<a href="http://www.mycourtcase.org/open-source-data/">Open Source Data</a>.			</div>
-					
-	
+
+
 <p style="text-align: justify;"><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license"><img class="aligncenter" style="border-width: 0;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="Creative Commons License" /></a>
 This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
-			
+
 
 
 		</div>
