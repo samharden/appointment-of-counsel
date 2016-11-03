@@ -25,7 +25,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <link rel='stylesheet' id='thefour-fonts-css'  href='https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C300italic%2C400italic%7CMontserrat%3A400&#038;subset=latin%2Clatin-ext&#038;ver=4.6.1' type='text/css' media='all' />
 
@@ -80,66 +80,330 @@ img.wp-smiley, img.emoji { display: inline !important; border: none
 
 60% of people charged with Misdemeanor Battery cases in Judge Jeske's courtroom have their cases dismissed. 18% of people receive a conviction, and 22% of people receive withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.
 
-</p> <p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474490813/hill-batt/jeske/batt_outcomes_jeske.png" rel="attachment wp-att-180"><img class="aligncenter
-wp-image-2027 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474490813/hill-batt/jeske/batt_outcomes_jeske.png" alt="hillsborough county Battery cases judge Jeske
-outcomes" width="760" height="661" /></a></p>
+</p>
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:["corechart"]});
+	google.charts.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Outcome', 'Percent'],
+			['Convicted',     18],
+			['Dismissed',      60],
+			['Withhold of Adjudication',  22],
+		]);
+
+		var options = {
+			align: 'center',
+			backgroundColor: {fill: 'transparent'},
+			chartArea:{width:'90%'},
+			is3D: true,
+			title: "What Happens in Misdemeanor Battery Cases in Judge Jeske's Courtroom",
+			legend: {position: 'bottom',
+					maxLines: '3',
+					textStyle: {fontSize: '16'}
+				},
+			slices: {
+				0: { color: '#121ca5' },
+				1: { color: '#4651f2' },
+				2: { color: '#84b1f9'}},
+			pieSliceText: 'percentage',
+			tooltip: {text: 'percentage'},
+			animation: {"startup": true}
+		};
+
+
+
+		var chart = new google.visualization.PieChart(document.getElementById('battery-outcomes'));
+		chart.draw(data, options);
+	}
+
+</script>
+<div class='chart' id="battery-outcomes" align="center" size="75%"></div>
+
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Do people hire an attorney for Battery cases in Judge Jeske's courtroom?</h3> 
+Do people hire an attorney for Battery cases in Judge Jeske's courtroom?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
 24% of people accused of Battery hire a private attorney in Judge Jeske's courtroom. 61% use the public defender. Only 15% of people go without an attorney and handle their cases on their own, which is called "Pro Se."
 
-</p> <p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474490812/hill-batt/jeske/batt_atty_hire_jeske.png" rel="attachment wp-att-199"><img class="aligncenter
-wp-image-2028 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474490812/hill-batt/jeske/batt_atty_hire_jeske.png" alt="Battery attorney hiring judge Jeske
-hillsborough county" width="760" height="661" /></a></p>
+</p>
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:["corechart"]});
+	google.charts.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Attorney Hire', 'Percent'],
+			['Private Attorney',     24],
+			['Public Defender',      61],
+			['No Attorney',  15],
+		]);
+
+		var options = {
+			align: 'center',
+			backgroundColor: {fill: 'transparent'},
+			chartArea:{width:'90%'},
+			is3D: true,
+			title: "Who Hires an Attorney for Their Battery Case in Judge Jeske's Courtroom",
+			legend: {position: 'bottom',
+					maxLines: '3',
+					textStyle: {fontSize: '16'}
+				},
+			slices: {
+				0: { color: '#121ca5' },
+				1: { color: '#4651f2' },
+				2: { color: '#84b1f9'}},
+			pieSliceText: 'percentage',
+			tooltip: {text: 'percentage'},
+			animation: {"startup": true}
+		};
+
+
+
+		var chart = new google.visualization.PieChart(document.getElementById('battery-atty-hire'));
+		chart.draw(data, options);
+	}
+
+</script>
+
+<div class='chart' id="battery-atty-hire" align="center" size="75%"></div>
+
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Does hiring a private attorney make a difference?</h3> 
+Does hiring a private attorney make a difference?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 Having a private attorney is a big advantage in Judge Jeske's courtroom. People who hire a private attorney are convicted of Battery just 9% of the time, while people who use the public defender are convicted 25% of the time. People without an attorney ("Pro Se") are convicted 4% of the time.
-</p> 
-<p style="text-align: center;"><a
-href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474490813/hill-batt/jeske/batt_conv_by_atty_jeske.png" rel="attachment wp-att-370"><img
-class="aligncenter wp-image-2029 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474490813/hill-batt/jeske/batt_conv_by_atty_jeske.png" alt="hillsborough county Battery cases judge
-Jeske avoiding conviction" width="760" height="496" /></a></p>
+</p>
+
+<script type="text/javascript">
+	 google.charts.load("current", {packages:['corechart']});
+	 google.charts.setOnLoadCallback(drawChart);
+	 var inView = false;
+	 function drawChart() {
+		 var data = google.visualization.arrayToDataTable([
+			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+			 ["Private Attorney", 9, "color: #121ca5", '%'],
+			 ["Public Defender", 25, "color: #4651f2",'%'],
+			 ["No Attorney", 4, "color: #84b1f9", '%']
+		 ]);
+
+		 var view = new google.visualization.DataView(data);
+		 view.setColumns([0, 1,
+
+												{ calc: "stringify",
+												sourceColumn: 1,
+												type: "string",
+												role: "annotation",
+												size: 50
+												 },
+											2]);
+
+		 var options = {
+			 inView: false,
+			 is3d: true,
+			 vAxis: {format: '#\'%\''},
+			 backgroundColor: {fill: 'transparent'},
+			 bar: {groupWidth: "85%"},
+			 legend: { position: "none" },
+			 animation: {
+							 duration: 1000,
+							 startup: true,
+
+					 },
+			 tooltip: {text: 'percentage', format: '#\'%\''},
+
+			 title: "Convictions for Battery in Judge Jeske's Courtroom",
+			 titlePosition: 'out',
+
+
+		 };
+		 var chart = new google.visualization.ColumnChart(document.getElementById("battery_CONV_BY_ATTY"));
+		 chart.draw(view, options);
+ }
+ </script>
+
+<div id="battery_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 The average conviction rate for judges in Hillsborough County is higher for people represented by private attorneys and for those represented by the public defender. People who hire a private attorney are convicted of Misdemeanor Battery 11% of the time, while people who use the public defender are convicted 29% of the time. People without an attorney are convicted 12% of the time.
 </p>
-<p style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474484082/hill-batt/battery_conv_by_atty.png" rel="attachment wp-att-183"><img class="aligncenter wp-image-2024 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474484082/hill-batt/battery_conv_by_atty.png" alt="hillsborough county Battery cases who avoided conviction" width="760" height="504" /></a></p>
+
+<script type="text/javascript">
+	 google.charts.load("current", {packages:['corechart']});
+	 google.charts.setOnLoadCallback(drawChart);
+	 var inView = false;
+	 function drawChart() {
+		 var data = google.visualization.arrayToDataTable([
+			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+			 ["Private Attorney", 11, "color: #121ca5", '%'],
+			 ["Public Defender", 29, "color: #4651f2",'%'],
+			 ["No Attorney", 12, "color: #84b1f9", '%']
+		 ]);
+
+		 var view = new google.visualization.DataView(data);
+		 view.setColumns([0, 1,
+
+												{ calc: "stringify",
+												sourceColumn: 1,
+												type: "string",
+												role: "annotation",
+												size: 50
+												 },
+											2]);
+
+		 var options = {
+			 inView: false,
+			 is3d: true,
+			 vAxis: {format: '#\'%\''},
+			 backgroundColor: {fill: 'transparent'},
+			 bar: {groupWidth: "85%"},
+			 legend: { position: "none" },
+			 animation: {
+							 duration: 1000,
+							 startup: true,
+
+					 },
+			 tooltip: {text: 'percentage', format: '#\'%\''},
+
+			 title: "Convictions for Battery in Hillsborough County",
+			 titlePosition: 'out',
+
+
+		 };
+		 var chart = new google.visualization.ColumnChart(document.getElementById("HC_battery_CONV_BY_ATTY"));
+		 chart.draw(view, options);
+ }
+ </script>
+
+<div id="HC_battery_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
+
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Can I get my Battery case dismissed or dropped?</h3> 
+Can I get my Battery case dismissed or dropped?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 People who hire a private attorney have their case dismissed or dropped 57% of the time, while people who use the Public Defender have their case dismissed or dropped 61% of the time, and people who go without an attorney ("Pro Se") have their case dismissed or dropped 63% of the time.
 
-</p> <p
-style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474490814/hill-batt/jeske/batt_diss_by_atty_jeske.png" rel="attachment wp-att-419"><img class="aligncenter
-wp-image-2030 size-large"
-src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474490814/hill-batt/jeske/batt_diss_by_atty_jeske.png" alt="judge Jeske Battery cases dismissed" width="760"
-height="497" /></a></p>
+</p>
 
 
-<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">What about a withhold of adjudication?</h3> 
+<script type="text/javascript">
+	 google.charts.load("current", {packages:['corechart']});
+	 google.charts.setOnLoadCallback(drawChart);
+	 var inView = false;
+	 function drawChart() {
+		 var data = google.visualization.arrayToDataTable([
+			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+			 ["Private Attorney", 57, "color: #121ca5", '%'],
+			 ["Public Defender", 61, "color: #4651f2",'%'],
+			 ["No Attorney", 63, "color: #84b1f9", '%']
+		 ]);
+
+		 var view = new google.visualization.DataView(data);
+		 view.setColumns([0, 1,
+
+												{ calc: "stringify",
+												sourceColumn: 1,
+												type: "string",
+												role: "annotation",
+												size: 50
+												 },
+											2]);
+
+		 var options = {
+			 inView: false,
+			 is3d: true,
+			 vAxis: {format: '#\'%\''},
+			 backgroundColor: {fill: 'transparent'},
+			 bar: {groupWidth: "85%"},
+			 legend: { position: "none" },
+			 animation: {
+							 duration: 1000,
+							 startup: true,
+
+					 },
+			 tooltip: {text: 'percentage', format: '#\'%\''},
+
+			 title: "Battery Cases Dismissed in Judge Jeske's Courtroom",
+			 titlePosition: 'out',
+
+
+		 };
+		 var chart = new google.visualization.ColumnChart(document.getElementById("Battery_Diss_BY_ATTY"));
+		 chart.draw(view, options);
+ }
+
+
+
+ </script>
+
+<div id="Battery_Diss_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">What about a withhold of adjudication?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
 Getting a withhold of adjudication means that you do not receive a conviction on your record, even though you may receive a penalty for the crime. This can be very important in applying for emloyment or on a background check. People who hire a private attorney in Judge Jeske's courtroom receive a withhold of adjudication 34% of the time, while people who use the Public Defender receive a withhold of adjudication 14% of the time. People who go without an attorney receive a withhold of adjudication 33% of the time.
 
-</p> <p
-style="text-align: center;"><a href="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474490814/hill-batt/jeske/batt_wh_by_atty_jeske.png" rel="attachment wp-att-419"><img class="aligncenter
-wp-image-2030 size-large" src="http://res.cloudinary.com/hjbqakjln/image/upload/q_auto:good/v1474490814/hill-batt/jeske/batt_wh_by_atty_jeske.png" alt="judge Jeske dui cases dismissed" width="760" height="497" /></a></p>
+</p>
+<script type="text/javascript">
+	 google.charts.load("current", {packages:['corechart']});
+	 google.charts.setOnLoadCallback(drawChart);
+	 var inView = false;
+	 function drawChart() {
+		 var data = google.visualization.arrayToDataTable([
+			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+			 ["Private Attorney", 34, "color: #121ca5", '%'],
+			 ["Public Defender", 14, "color: #4651f2",'%'],
+			 ["No Attorney", 33, "color: #84b1f9", '%']
+		 ]);
+
+		 var view = new google.visualization.DataView(data);
+		 view.setColumns([0, 1,
+
+												{ calc: "stringify",
+												sourceColumn: 1,
+												type: "string",
+												role: "annotati@samuelharden on",
+												size: 50
+												 },
+											2]);
+
+		 var options = {
+			 inView: false,
+			 is3d: true,
+			 vAxis: {format: '#\'%\''},
+			 backgroundColor: {fill: 'transparent'},
+			 bar: {groupWidth: "85%"},
+			 legend: { position: "none" },
+			 animation: {
+							 duration: 1000,
+							 startup: true,
+
+					 },
+			 tooltip: {text: 'percentage', format: '#\'%\''},
+
+			 title: "Battery Cases in Judge Jeske's Courtroom: Adjudication Withheld",
+			 titlePosition: 'out',
 
 
+		 };
+		 var chart = new google.visualization.ColumnChart(document.getElementById("battery_WH_BY_ATTY"));
+		 chart.draw(view, options);
+ }
+
+
+
+ </script>
+
+<div id="battery_WH_BY_ATTY" class="chart" align="center" size="75%"></div>
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 What is the typical penalty for battery?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
@@ -151,19 +415,19 @@ The typical penalty for battery is 6 months probation and a fine in the amount o
 
 <footer class="footer"  role="contentinfo">
 	<div class="container">
-				
+
 		<div class="credits clearfix">
 
-			
+
 			<div class="left">
 				<a href="mailto:info@mycourtcase.org">Contact Us</a>.			</div>
 			<div class="right">
 				<a href="http://www.mycourtcase.org/open-source-data/">Open Source Data</a>.			</div>
-					
-	
+
+
 <p style="text-align: justify;"><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license"><img class="aligncenter" style="border-width: 0;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="Creative Commons License" /></a>
 This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
-			
+
 
 
 		</div>
@@ -175,5 +439,3 @@ This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc
 
 </body>
 </html>
-
-
