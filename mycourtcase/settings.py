@@ -25,7 +25,7 @@ SECRET_KEY = 'd4t-w5-qvtslkpi-ab4ww-1k)mnzq3#1cuzpv^qupv+zoee4m$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mycourtcase2.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['mycourtcase2.herokuapp.com', 'localhost', 'www.mycourtcase.org', 'mycourtcase.herokuapp.com']
 
 
 # Application definition
