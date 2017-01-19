@@ -1,0 +1,26 @@
+
+{% extends "crim/base0.html" %}
+
+{% block content %}
+
+
+
+
+
+<h3 class="title-border" style="text-align: center;">Florida Criminal Case Information</h3>
+<p class="landing-section-heading" style="text-align: justify;">Our system has analyzed over 500,000 criminal cases like yours. Find out
+  what happens in cases like yours, how judges rule, and whether or not hiring
+  a private attorney is an advantage.</p>
+<p style="text-align: center;"><b>
+  Provide the following information about your case to get started:
+</b></p>
+
+<form  method="post" action "">
+      {% csrf_token %}
+<center>{{ crimform.as_p }}
+
+
+            <p><input type="submit" value="continue" /></p></center>
+</form>
+
+{% endblock %}

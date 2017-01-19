@@ -1,0 +1,19 @@
+
+{% extends "main/base0.html" %}
+
+{% block content %}
+
+
+
+
+
+<h3 class="title-border" style="text-align: center;">To get started please choose the type of case:</h3>
+<form  method="post" action "">
+      {% csrf_token %}
+<center>{{ form.as_p }}
+        <p><input type="submit" value="continue" /></p></center>
+</form>
+
+
+
+{% endblock %}

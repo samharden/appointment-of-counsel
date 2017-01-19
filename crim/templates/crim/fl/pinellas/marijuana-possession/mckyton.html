@@ -1,0 +1,371 @@
+<title>Marijuana Possession Cases in Judge McKyton's Courtroom</title>
+
+{% extends "crim/base0.html" %}
+
+{% block content %}
+
+
+<center>
+		<h2 class="site-title">Marijuana Possession Cases in Judge McKyton's Courtroom</a></h2></div>
+</center>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+42% of people charged with Marijuana Possession are convicted. 9% of cases are
+dismissed, and 49% of people receive a withhold of adjudication, meaning that
+while they may receive a penalty for the crime, they do not receive a conviction
+on their record.
+
+In Marijuana Possession cases getting a withhold of adjudication is especially
+important because a conviction carries with it a one-year driver's license
+suspension.
+
+</p>
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:["corechart"]});
+	google.charts.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Outcome', 'Percent'],
+			['Convicted',     42],
+			['Dismissed',      9],
+			['Withhold of Adjudication',  49],
+		]);
+
+		var options = {
+			align: 'center',
+			backgroundColor: {fill: 'transparent'},
+			chartArea:{width:'90%'},
+			is3D: true,
+			title: "What Happens in Marijuana Possession Cases in Judge McKyton's Courtroom",
+			legend: {position: 'bottom',
+					maxLines: '3',
+					textStyle: {fontSize: '16'}
+				},
+			slices: {
+				0: { color: '#121ca5' },
+				1: { color: '#4651f2' },
+				2: { color: '#84b1f9'}},
+			pieSliceText: 'percentage',
+			tooltip: {text: 'percentage'},
+			animation: {"startup": true}
+		};
+
+
+
+		var chart = new google.visualization.PieChart(document.getElementById('mjposs-outcomes'));
+		chart.draw(data, options);
+	}
+
+</script>
+
+<div class='chart' id="mjposs-outcomes" align="center" size="75%"></div>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Do people hire an attorney for Marijuana Possession cases in Judge McKyton's courtroom?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+20% of people charged with Marijuana Possession hire a private attorney in Judge
+McKyton's courtroom. 35% go with the Public Defender, while 45% decide to
+handle their cases on their own without an attorney.
+
+</p>
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:["corechart"]});
+	google.charts.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Attorney Hire', 'Percent'],
+			['Private Attorney',     20],
+			['Public Defender',      35],
+			['No Attorney', 45],
+		]);
+
+		var options = {
+			align: 'center',
+			backgroundColor: {fill: 'transparent'},
+			chartArea:{width:'90%'},
+			is3D: true,
+			title: "Who Hires an Attorney for Marijuana Possession Case in Judge McKyton's Courtroom",
+			legend: {position: 'bottom',
+					maxLines: '3',
+					textStyle: {fontSize: '16'}
+				},
+			slices: {
+				0: { color: '#121ca5' },
+				1: { color: '#4651f2' },
+				2: { color: '#84b1f9'}},
+			pieSliceText: 'percentage',
+			tooltip: {text: 'percentage'},
+			animation: {"startup": true}
+		};
+
+
+
+		var chart = new google.visualization.PieChart(document.getElementById('atty-hire'));
+		chart.draw(data, options);
+	}
+
+</script>
+
+<div class='chart' id="atty-hire" align="center" size="75%"></div>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Does hiring a private attorney make a difference?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Having a private attorney is a clear advantage over the public defender in
+these cases in Judge McKyton's courtroom. People who hired a private
+attorney were convicted 33% of the time, while people who had the public
+ defender were convicted 65% of the time. People without an attorney, also
+ known as "Pro Se," were convicted 29% of the time.
+
+</p>
+<script type="text/javascript">
+	 google.charts.load("current", {packages:['corechart']});
+	 google.charts.setOnLoadCallback(drawChart);
+	 var inView = false;
+	 function drawChart() {
+		 var data = google.visualization.arrayToDataTable([
+			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+			 ["Private Attorney", 33, "color: #121ca5", '%'],
+			 ["Public Defender", 65, "color: #4651f2",'%'],
+			 ["No Attorney", 29, "color: #84b1f9", '%']
+		 ]);
+
+		 var view = new google.visualization.DataView(data);
+		 view.setColumns([0, 1,
+
+												{ calc: "stringify",
+												sourceColumn: 1,
+												type: "string",
+												role: "annotation",
+												size: 50
+												 },
+											2]);
+
+		 var options = {
+			 inView: false,
+			 is3d: true,
+			 vAxis: {format: '#\'%\''},
+			 backgroundColor: {fill: 'transparent'},
+			 bar: {groupWidth: "85%"},
+			 legend: { position: "none" },
+			 animation: {
+							 duration: 1000,
+							 startup: true,
+
+					 },
+			 tooltip: {text: 'percentage', format: '#\'%\''},
+
+			 title: "Convictions for Marijuana Possession in Judge McKyton's Courtroom",
+			 titlePosition: 'out',
+
+
+		 };
+		 var chart = new google.visualization.ColumnChart(document.getElementById("CONV_BY_ATTY"));
+		 chart.draw(view, options);
+ }
+ </script>
+
+<div id="CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Across Pinellas County people who hired a private attorney are convicted of
+Marijuana Possession 29% of the time, while people represented by the public
+defender are convicted 62% of the time. People who handle their cases on their
+own, also known as "Pro Se", are convicted 28% of the time.</p>
+
+<script type="text/javascript">
+	 google.charts.load("current", {packages:['corechart']});
+	 google.charts.setOnLoadCallback(drawChart);
+	 var inView = false;
+	 function drawChart() {
+		 var data = google.visualization.arrayToDataTable([
+			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+			 ["Private Attorney", 29, "color: #121ca5", '%'],
+			 ["Public Defender", 62, "color: #4651f2",'%'],
+			 ["No Attorney", 28, "color: #84b1f9", '%']
+		 ]);
+
+		 var view = new google.visualization.DataView(data);
+		 view.setColumns([0, 1,
+
+												{ calc: "stringify",
+												sourceColumn: 1,
+												type: "string",
+												role: "annotation",
+												size: 50
+												 },
+											2]);
+
+		 var options = {
+			 inView: false,
+			 is3d: true,
+			 vAxis: {format: '#\'%\''},
+			 backgroundColor: {fill: 'transparent'},
+			 bar: {groupWidth: "85%"},
+			 legend: { position: "none" },
+			 animation: {
+							 duration: 1000,
+							 startup: true,
+
+					 },
+			 tooltip: {text: 'percentage', format: '#\'%\''},
+
+			 title: "Convictions for Marijuana Possession in Pinellas County",
+			 titlePosition: 'out',
+
+
+		 };
+		 var chart = new google.visualization.ColumnChart(document.getElementById("HC_CONV_BY_ATTY"));
+		 chart.draw(view, options);
+ }
+ </script>
+
+<div id="HC_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+  Can I get my Marijuana Possession case dismissed or dropped?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+People who hire a private attorney have their cases dismissed 15% of the time,
+while people who use the public defender have their cases dismissed 5% of
+the time. People without an attorney have their case dismissed 9% of the time.
+
+</p>
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 15, "color: #121ca5", '%'],
+        ["Public Defender", 5, "color: #4651f2",'%'],
+        ["No Attorney", 9, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Marijuana Possession Cases Dismissed in Judge McKyton's Courtroom",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("DISS_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+  </script>
+
+<div id="DISS_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+What about getting a Withhold of Adjudication?</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+People who hired a private attorney receive a withhold of adjudication 52% of
+the time, while people with the public defender receive a withhold of
+adjudication 30% of the time. People without an attorney receive a withhold
+of adjudication 62% of the time.
+</p>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+Remember that getting a withhold of adjudication instead of a conviction is
+especially important in Marijuana Possession cases, because a conviction carries
+with it a one-year license suspension.
+
+
+</p>
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 52, "color: #121ca5", '%'],
+        ["Public Defender", 30, "color: #4651f2",'%'],
+        ["No Attorney", 62, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Marijuana Possession Cases in Judge McKyton's Courtroom: Adjudication Withheld",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("WH_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+  </script>
+
+<div id="WH_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+What is the typical penalty for Marijuana Possession?</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+The most common penalty for Marijuana Possession is six months probation,
+community service, a drug class, and a fine in the range of $200-300.
+
+
+</p>
+
+{% endblock %}

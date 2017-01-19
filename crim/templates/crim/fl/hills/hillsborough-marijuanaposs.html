@@ -1,0 +1,20 @@
+
+{% extends "crim/base0.html" %}
+
+{% block content %}
+
+<form  method="post" action "">
+      {% csrf_token %}
+<div width="50%">
+<p><center>If you already know who the judge is for this Marijuana Possession case, choose them here,
+otherwise choose "Not sure": </center></p>
+<p><center>{{ hillsb_judge.as_p }}</center></p>
+</div>
+<br>
+
+
+
+            <center><p><input type="submit" value="continue" /></p></center>
+</form>
+
+{% endblock %}

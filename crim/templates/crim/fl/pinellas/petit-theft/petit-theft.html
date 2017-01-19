@@ -1,0 +1,500 @@
+<title>Petit Theft Cases in Pinellas County</title>
+
+{% extends "crim/base0.html" %}
+
+{% block content %}
+
+
+<center>
+		<h2 class="site-title">Petit Theft Cases in Pinellas County</a></h2></div>
+</center>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+60% of people charged with Petit Theft are convicted. 15% of cases are
+dismissed, and 25% of people receive a withhold of adjudication, meaning that
+while they may receive a penalty for the crime, they do not receive a conviction
+on their record.
+
+</p>
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:["corechart"]});
+	google.charts.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Outcome', 'Percent'],
+			['Convicted',     60],
+			['Dismissed',      15],
+			['Withhold of Adjudication',  25],
+		]);
+
+		var options = {
+			align: 'center',
+			backgroundColor: {fill: 'transparent'},
+			chartArea:{width:'90%'},
+			is3D: true,
+			title: "What Happens in Petit Theft Cases in Pinellas County",
+			legend: {position: 'bottom',
+					maxLines: '3',
+					textStyle: {fontSize: '16'}
+				},
+			slices: {
+				0: { color: '#121ca5' },
+				1: { color: '#4651f2' },
+				2: { color: '#84b1f9'}},
+			pieSliceText: 'percentage',
+			tooltip: {text: 'percentage'},
+			animation: {"startup": true}
+		};
+
+
+
+		var chart = new google.visualization.PieChart(document.getElementById('Petit Theft-outcomes'));
+		chart.draw(data, options);
+	}
+
+</script>
+
+<div class='chart' id="Petit Theft-outcomes" align="center" size="75%"></div>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Do people hire an attorney for Petit Theft cases in Pinellas County?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+13% of people charged with Petit Theft hire a private attorney in Pinellas County.
+54% go with the Public Defender, while 33% decide to
+handle their cases on their own without an attorney.
+
+</p>
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:["corechart"]});
+	google.charts.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Attorney Hire', 'Percent'],
+			['Private Attorney',     13],
+			['Public Defender',      54],
+			['No Attorney', 33],
+		]);
+
+		var options = {
+			align: 'center',
+			backgroundColor: {fill: 'transparent'},
+			chartArea:{width:'90%'},
+			is3D: true,
+			title: "Who Hires an Attorney for Petit Theft Case in Pinellas County",
+			legend: {position: 'bottom',
+					maxLines: '3',
+					textStyle: {fontSize: '16'}
+				},
+			slices: {
+				0: { color: '#121ca5' },
+				1: { color: '#4651f2' },
+				2: { color: '#84b1f9'}},
+			pieSliceText: 'percentage',
+			tooltip: {text: 'percentage'},
+			animation: {"startup": true}
+		};
+
+
+
+		var chart = new google.visualization.PieChart(document.getElementById('atty-hire'));
+		chart.draw(data, options);
+	}
+
+</script>
+
+<div class='chart' id="atty-hire" align="center" size="75%"></div>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Does hiring a private attorney make a difference?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Having a private attorney is a clear advantage over the public defender in
+these cases in Pinellas County. People who hired a private
+attorney were convicted just 35% of the time, while people who had the public
+ defender were convicted 78% of the time. People without an attorney, also
+ known as "Pro Se," were convicted 39% of the time.
+
+</p>
+<script type="text/javascript">
+	 google.charts.load("current", {packages:['corechart']});
+	 google.charts.setOnLoadCallback(drawChart);
+	 var inView = false;
+	 function drawChart() {
+		 var data = google.visualization.arrayToDataTable([
+			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+			 ["Private Attorney", 35, "color: #121ca5", '%'],
+			 ["Public Defender", 78, "color: #4651f2",'%'],
+			 ["No Attorney", 39, "color: #84b1f9", '%']
+		 ]);
+
+		 var view = new google.visualization.DataView(data);
+		 view.setColumns([0, 1,
+
+												{ calc: "stringify",
+												sourceColumn: 1,
+												type: "string",
+												role: "annotation",
+												size: 50
+												 },
+											2]);
+
+		 var options = {
+			 inView: false,
+			 is3d: true,
+			 vAxis: {format: '#\'%\''},
+			 backgroundColor: {fill: 'transparent'},
+			 bar: {groupWidth: "85%"},
+			 legend: { position: "none" },
+			 animation: {
+							 duration: 1000,
+							 startup: true,
+
+					 },
+			 tooltip: {text: 'percentage', format: '#\'%\''},
+
+			 title: "Convictions for Petit Theft in Pinellas County",
+			 titlePosition: 'out',
+
+
+		 };
+		 var chart = new google.visualization.ColumnChart(document.getElementById("CONV_BY_ATTY"));
+		 chart.draw(view, options);
+ }
+ </script>
+
+<div id="CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+  Can I get my Petit Theft case dismissed or dropped?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+People who hire a private attorney have their cases dismissed 31% of the time,
+while people who use the public defender have their cases dismissed 7% of
+the time. People without an attorney have their case dismissed 23% of the time.
+
+</p>
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 31, "color: #121ca5", '%'],
+        ["Public Defender", 7, "color: #4651f2",'%'],
+        ["No Attorney", 23, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Petit Theft Cases Dismissed in Pinellas County",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("DISS_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+  </script>
+
+<div id="DISS_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+What about getting a Withhold of Adjudication?</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+People who hired a private attorney receive a withhold of adjudication 34% of
+the time, while people with the public defender receive a withhold of
+adjudication 15% of the time. People without an attorney receive a withhold
+of adjudication 38% of the time.
+</p>
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 34, "color: #121ca5", '%'],
+        ["Public Defender", 15, "color: #4651f2",'%'],
+        ["No Attorney", 38, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Petit Theft Cases in Pinellas County: Adjudication Withheld",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("WH_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+  </script>
+
+<div id="WH_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Does what judge I have make a difference?</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+People with cases in front of Judge Pierce are convicted
+of Petit Theft 91% of the time, while people with cases in front of
+Judge Carballo are convicted 52% of the time.
+
+</p>
+
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
+	var inView = false;
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			["Judge", "Percentage", { role: "style" }, {role: "annotation"} ],
+      ["Bedinghaus", 63, "color: #121ca5", '%'],
+      ["Carballo", 52, "color: #4651f2",'%'],
+      ["Dittmer", 58, "color: #84b1f9", '%'],
+      ["Horrox", 58, "color: #121ca5", '%'],
+      ["Levine", 62, "color: #4651f2",'%'],
+      ["McKyton", 64, "color: #84b1f9", '%'],
+      ["Overton", 67, "color: #4651f2",'%'],
+      ["Pierce", 91, "color: #84b1f9", '%'],
+		]);
+
+		var view = new google.visualization.DataView(data);
+		view.setColumns([0, 1,
+
+											 { calc: "stringify",
+											 sourceColumn: 1,
+											 type: "string",
+											 role: "annotation",
+											 size: 50
+												},
+										 2]);
+
+		var options = {
+			inView: false,
+			is3d: true,
+			vAxis: {format: '#\'%\''},
+			backgroundColor: {fill: 'transparent'},
+			bar: {groupWidth: "85%"},
+			legend: { position: "none" },
+			animation: {
+							duration: 1000,
+							startup: true,
+
+					},
+			tooltip: {text: 'percentage', format: '#\'%\''},
+
+			title: "Petit Theft Convictions by Judge in Pinellas County",
+			titlePosition: 'out',
+
+
+		};
+		var chart = new google.visualization.ColumnChart(document.getElementById("Petit Theft_judge_conv"));
+		chart.draw(view, options);
+}
+
+</script>
+
+<div id="Petit Theft_judge_conv" class="chart" align="center" size="75%"></div>
+
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+People with cases in front of Judges Carballo and Horrox have their cases dismissed 19% of
+the time, while 0% of people with a Petit Theft case in Judge Pierce's or Overton's courtrooms
+have their cases dismissed.
+
+</p>
+
+
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
+	var inView = false;
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			["Judge", "Percentage", { role: "style" }, {role: "annotation"} ],
+      ["Bedinghaus", 8, "color: #121ca5", '%'],
+      ["Carballo", 19, "color: #4651f2",'%'],
+      ["Dittmer", 15, "color: #84b1f9", '%'],
+      ["Horrox", 19, "color: #121ca5", '%'],
+      ["Levine", 13, "color: #4651f2",'%'],
+      ["McKyton", 14, "color: #84b1f9", '%'],
+      ["Overton", 0, "color: #4651f2",'%'],
+      ["Pierce", 0, "color: #84b1f9", '%'],
+		]);
+
+		var view = new google.visualization.DataView(data);
+		view.setColumns([0, 1,
+
+											 { calc: "stringify",
+											 sourceColumn: 1,
+											 type: "string",
+											 role: "annotation",
+											 size: 50
+												},
+										 2]);
+
+		var options = {
+			inView: false,
+			is3d: true,
+			vAxis: {format: '#\'%\''},
+			backgroundColor: {fill: 'transparent'},
+			bar: {groupWidth: "85%"},
+			legend: { position: "none" },
+			animation: {
+							duration: 1000,
+							startup: true,
+
+					},
+			tooltip: {text: 'percentage', format: '#\'%\''},
+
+			title: "Petit Theft Cases Dismissed by Judge in Pinellas County",
+			titlePosition: 'out',
+
+
+		};
+		var chart = new google.visualization.ColumnChart(document.getElementById("Petit Theft_conv_by_judge"));
+		chart.draw(view, options);
+}
+
+</script>
+
+<div id="Petit Theft_conv_by_judge" class="chart" align="center" size="75%"></div>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+People with cases in front of Judges Bedinghaus and Carballo receive a withhold of adjudication 29%
+of the time, while just 9% of people with cases in front of Judge Pierce received a withhold
+of adjudication over the past five years.
+
+</p>
+
+<script type="text/javascript">
+	google.charts.load("current", {packages:['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
+	var inView = false;
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			["Judge", "Percentage", { role: "style" }, {role: "annotation"} ],
+      ["Bedinghaus", 29, "color: #121ca5", '%'],
+      ["Carballo", 29, "color: #4651f2",'%'],
+      ["Dittmer", 27, "color: #84b1f9", '%'],
+      ["Horrox", 24, "color: #121ca5", '%'],
+      ["Levine", 25, "color: #4651f2",'%'],
+      ["McKyton", 22, "color: #84b1f9", '%'],
+      ["Overton", 33, "color: #4651f2",'%'],
+      ["Pierce", 9, "color: #84b1f9", '%'],
+		]);
+
+		var view = new google.visualization.DataView(data);
+		view.setColumns([0, 1,
+
+											 { calc: "stringify",
+											 sourceColumn: 1,
+											 type: "string",
+											 role: "annotation",
+											 size: 50
+												},
+										 2]);
+
+		var options = {
+			inView: false,
+			is3d: true,
+			vAxis: {format: '#\'%\''},
+			backgroundColor: {fill: 'transparent'},
+			bar: {groupWidth: "85%"},
+			legend: { position: "none" },
+			animation: {
+							duration: 1000,
+							startup: true,
+
+					},
+			tooltip: {text: 'percentage', format: '#\'%\''},
+
+			title: "Petit Theft Cases in Pinellas County: Adjudication Withheld",
+			titlePosition: 'out',
+
+
+		};
+		var chart = new google.visualization.ColumnChart(document.getElementById("Petit Theft_wh_by_judge"));
+		chart.draw(view, options);
+}
+
+</script>
+
+<div id="Petit Theft_wh_by_judge" class="chart" align="center" size="75%"></div>
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+What is the typical penalty for Petit Theft?</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+The most common penalty for Petit Theft is 6 months probation and a fine in the amount of $200-300.
+
+
+
+</p>
+
+{% endblock %}

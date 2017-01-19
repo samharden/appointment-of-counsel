@@ -1,0 +1,53 @@
+
+
+{% extends "fl-discrim-helper/base0.html" %}
+
+{% block content %}
+
+
+    <center>
+
+    <h2>Florida Discrimination Complaint Builder:</h2>
+
+        <form action="" method="post">
+{% csrf_token %}
+
+  {{ complaint_type_form.as_p }}
+
+          <p><input type="submit" value="Go"></p>
+        </form>
+    </div></center>
+<body><td>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+  Welcome to the Florida Discrimination Complaint Assistant. The Assistant is
+  designed to guide you through the steps of determining if you have a potential
+  discrimination claim, and filing that claim with the Florida Commission on Human
+  Relations. </p>
+
+<center><h3>Public Accomodation</h3><center>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+  If you've been denied service at a restaurant, hotel, bar, theater,
+  gas station, store, or any other kind of business that accomodates the public
+  because of your race, sex, a disability, marital status, national origin,
+  or various other reasons, you may be the victim of Public Accomodation discrimination. </p>
+
+
+<center><h3>Employment</h3><center>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+  If you were fired, denied a job, or turned down for a promotion because of
+  your race, sex, a disability, marital status, national origin,
+  or various other reasons, you may be the victim of Employment discrimination.</p>
+
+<center><h3>Housing</h3><center>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+  If you were evicted or denied housing because of
+  your race, sex, a disability, marital status, national origin,
+  or various other reasons, you may be the victim of Employment discrimination.</p>
+
+</body>
+
+{% endblock %}

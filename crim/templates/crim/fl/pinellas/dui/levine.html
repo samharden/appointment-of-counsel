@@ -1,0 +1,467 @@
+
+<title>DUI Cases in Judge Levine's Courtroom</title>
+
+{% extends "crim/base0.html" %}
+
+{% block content %}
+
+
+<center>
+				<h2 class="site-title">DUI Cases in Judge Levine's Courtroom</a></h2></div>
+</center>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+In Judge Levine's courtroom 94% of people accused of a DUI are convicted. Only
+3% have their case reduced to the lesser charge of Reckless Driving, and only
+3% of DUI cases are dismissed or dropped.</p>
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Outcome', 'Percent'],
+          ['Convicted of DUI',     94],
+          ['Dismissed',      3],
+          ['Reduced to Reckless Driving',  3],
+        ]);
+
+        var options = {
+          align: 'center',
+          backgroundColor: {fill: 'transparent'},
+          chartArea:{width:'90%'},
+          is3D: true,
+          title: "What Happens in DUI Cases in Judge Levine's Courtroom",
+          legend: {position: 'bottom',
+      				maxLines: '3',
+      				textStyle: {fontSize: '16'}
+      			},
+      	  slices: {
+            0: { color: '#121ca5' },
+            1: { color: '#4651f2' },
+            2: { color: '#84b1f9'}},
+      	  pieSliceText: 'percentage',
+      	  tooltip: {text: 'percentage'},
+      	  animation: {"startup": true}
+        };
+
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('DUI-outcomes'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+    <div class='chart' id="DUI-outcomes" align="center" size="75%"></div>
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Do people hire an attorney for DUI cases in Judge Levine's courtroom?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+98% of people in Judge Levine's courtroom who are accused of DUI has an attorney
+for their case. 29% of people hire a private attorney,
+while 68% use the public defender. Only 3% of people do not hire an attorney.</p>
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Attorney', 'Percent', { role: "style" }],
+          ['Private Attorney',     29, "color: #121ca5"],
+          ['Public Defender',      68, "color: #4651f2"],
+          ['No Attorney',  3, "color: #84b1f9"],
+        ]);
+
+        var options = {
+          align: 'center',
+          backgroundColor: {fill: 'transparent'},
+          chartArea:{width:'90%'},
+          is3D: true,
+          legend: {position: 'bottom',
+      				maxLines: '3',
+      				textStyle: {fontSize: '16'}
+      			},
+      	  title: "Who Hired an Attorney for Their DUI Case in Judge Levine's Courtroom",
+      	  pieSliceText: 'percentage',
+      	  slices: {
+            0: { color: '#121ca5' },
+            1: { color: '#4651f2' },
+            2: { color: '#84b1f9'}},
+      	  tooltip: {text: 'percentage'},
+      	  animation: {"startup": true}
+        };
+
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('DUI-atty-hire'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+    <div class='chart' id="DUI-atty-hire" align="center" size="75%"></div>
+
+</p>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Does hiring a private attorney make a difference?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Having a private attorney is a slight advantage in DUI cases in Judge Levine's courtroom.
+People who hire a private attorney are able to avoid a DUI conviction,
+either through having their case dismissed or reduced to reckless
+driving, 8% of the time, while people who had the public defender only
+avoided a DUI conviction 5% of the time. 14% of people who went without an attorney avoided
+a DUI conviction.</p>
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" } ],
+        ["Private Attorney", 8, "color: #121ca5"],
+        ["Public Defender", 5, "color: #4651f2"],
+        ["No Attorney", 14, "color: #84b1f9"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage'},
+        title: "Percent of People who Avoid a DUI Conviction in Judge Levine's Courtroom",
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("dui_avoidance"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="dui_avoidance" class="chart" align="center" size="75%"></div>
+
+</p>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+The average for judges in Pinellas County is higher for private attorneys,
+and higher for those represented by the public defender. People who hire
+a private attorney are able to avoid a DUI conviction 17% of the time, while
+people who use the public defender only avoid a DUI conviction 10% of the time.
+People who go without an attorney avoid a DUI conviction only 7% of the time.</p>
+
+<script type="text/javascript">
+google.charts.load("current", {packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+var inView = false;
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+    ["Private Attorney", 17, "color: #121ca5", '%'],
+    ["Public Defender", 10, "color: #4651f2",'%'],
+    ["No Attorney", 7, "color: #84b1f9", '%']
+  ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+
+                     { calc: "stringify",
+                     sourceColumn: 1,
+                     type: "string",
+                     role: "annotation",
+                     size: 50
+                      },
+                   2]);
+
+  var options = {
+    inView: false,
+    is3d: true,
+    vAxis: {format: '#\'%\''},
+    backgroundColor: {fill: 'transparent'},
+    bar: {groupWidth: "85%"},
+    legend: { position: "none" },
+    animation: {
+            duration: 1000,
+            startup: true,
+
+        },
+    tooltip: {text: 'percentage', format: '#\'%\''},
+
+    title: "Percent of People who Avoided a DUI Conviction in Pinellas County",
+    titlePosition: 'out',
+
+
+  };
+  var chart = new google.visualization.ColumnChart(document.getElementById("PC_DUI_AVOIDANCE"));
+  chart.draw(view, options);
+}
+
+
+
+</script>
+
+<div id="PC_DUI_AVOIDANCE" class="chart" align="center" size="75%"></div>
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Why is avoiding a DUI conviction so important?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+DUI convictions not only carry stiff penalties, they can have lasting economic consequences for
+both your insurance and employment. If you are convicted of a DUI, your
+car insurance rates will increase and can add up to thousands of dollars
+over time. If you hold a professional license a DUI conviction can put
+your ability to work in jeopardy.</p>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">A Comparison of DUI and Reckless Driving
+Penalties in Pinellas County:</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+These are the average penalties for First-Time DUI and
+Reckless Driving convictions for Pinellas county.</p>
+
+<p style="align: center;">
+<table style="height: auto; margin:1em auto"  width="590"> <tbody style="align:center"> <tr> <td
+style="text-align: center;" width="91"><strong>Penalties</strong></td>
+<td style="text-align: center;" width="91"><strong>DUI </strong></td>
+<td style="text-align: center;" width="91"><strong>Reckless
+Driving</strong></td> </tr> <tr> <td style="text-align: center;"
+width="91"><strong>Fines</strong></td> <td style="text-align: center;"
+width="91">$1,030.00</td> <td style="text-align: center;"
+width="91">$390.00</td> </tr> <tr> <td style="text-align: center;"
+width="91"><strong>Probation</strong></td> <td style="text-align:
+center;" width="91">12 Months</td> <td style="text-align: center;"
+width="91">12 Months</td> </tr> <tr> <td style="text-align: center;"
+width="91"><strong>Community Service</strong></td> <td
+style="text-align: center;" width="91">50 Hours</td> <td
+style="text-align: center;" width="91">50 Hours</td> </tr> <tr> <td
+style="text-align: center;" width="91"><strong>6 Month Driver's
+License Suspension</strong></td> <td style="text-align: center;"
+width="91">Yes</td> <td style="text-align: center;" width="91">No</td>
+</tr> <tr> <td style="text-align: center;" width="91"><strong>10 Day
+Vehicle Impound</strong></td> <td style="text-align: center;"
+width="91">Yes</td> <td style="text-align: center;" width="91">No</td>
+</tr> <tr> <td style="text-align: center;" width="91"><strong>DUI
+School</strong></td> <td style="text-align: center;" width="91">Yes</td>
+<td style="text-align: center;" width="91">Yes</td> </tr> <tr> <td
+style="text-align: center;" width="91"><strong>Increased Insurance
+Requirement</strong></td> <td style="text-align: center;"
+width="91">Yes</td> <td style="text-align: center;" width="91">No</td>
+</tr> </tbody></table> </p>
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">Can I get my DUI
+case dismissed or dropped?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Only 3% of DUI cases in Judge Levine's courtroom are dismissed.<br>
+People who hire a private attorney have their case dropped or dismissed only 3% of the
+time, while people represented by the Public Defender have their case
+dismissed or dropped 2% of the time, while 14% of the people went without
+an attorney had their DUI case dismissed or dropped.</p>
+
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" } ],
+        ["Private Attorney", 3, "color: #121ca5"],
+        ["Public Defender", 2, "color: #4651f2"],
+        ["No Attorney", 14, "color: #84b1f9"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage'},
+        title: "Percent of DUI Cases Dismissed in Judge Levine's Courtroom",
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("dui_diss"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="dui_diss" class="chart" align="center" size="75%"></div>
+
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+What about DUI cases reduced to the lesser charge of Reckless Driving?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Only 3% of DUI cases in Judge Levine's courtroom are reduced to the
+lesser charge of Reckless Driving.<br>People who hire a private attorney have their case reduced to
+Reckless Driving 5% of the time, while people represented by the Public
+Defender have their case reduced only 3% of the time. No one who went without
+an attorney had their DUI case reduced to Reckless Driving.</p>
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 5, "color: #121ca5", '%'],
+        ["Public Defender", 3, "color: #4651f2",'%'],
+        ["No Attorney", 0, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage'},
+
+        title: "Percent of DUI Cases Reduced to Reckless Driving in Judge Levine's Courtroom",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("dui_reduced"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="dui_reduced" class="chart" align="center" size="75%"></div>
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Shouldn't I just represent myself?</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Over the past five years only 22 people represented themselves in a DUI case in
+Judge Levine's courtroom. While they were convicted at a slightly lower rate than
+people who hire a private attorney or were represented by the public defender,
+22 court cases is too small a sample size upon which to make any reliable determination.</p>
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 92, "color: #121ca5", '%'],
+        ["Public Defender", 95, "color: #4651f2",'%'],
+        ["No Attorney", 86, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Percent of DUI Convictions in Judge Levine's Courtroom",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("dui_conv"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="dui_conv" class="chart" align="center" size="75%"></div>
+
+{% endblock %}

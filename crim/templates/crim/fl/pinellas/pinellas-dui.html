@@ -1,0 +1,22 @@
+
+{% extends "crim/base0.html" %}
+
+{% block content %}
+
+
+
+
+
+<form  method="post" action "">
+      {% csrf_token %}
+
+<center>If you already know who the judge is for this DUI case choose them here,
+otherwise choose "Not sure": </center>
+<center> {{ pinell_judge.as_p }}</center>
+
+
+
+            <p><center><input type="submit" value="continue" /></p></center>
+</form>
+
+{% endblock %}

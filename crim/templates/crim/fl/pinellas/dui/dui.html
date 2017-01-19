@@ -1,0 +1,471 @@
+<title>DUI Cases in Pinellas County</title>
+
+{% extends "crim/base0.html" %}
+
+{% block content %}
+
+<center>
+    <h2 class="site-title">DUI Cases in Pinellas County</a></h2></div>
+</center>
+
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+86% of DUI cases in Pinellas County result in a DUI conviction. 10% of DUI
+cases are reduced to the lesser charge of Reckless Driving. Only 4% of
+people avoid a DUI conviction by having their case dismissed.</p>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Outcome', 'Percent'],
+      ['Convicted of DUI',     86],
+      ['Dismissed',      4],
+      ['Reduced to Reckless Driving',  10],
+    ]);
+
+    var options = {
+      align: 'center',
+      backgroundColor: {fill: 'transparent'},
+      chartArea:{width:'90%'},
+      is3D: true,
+      title: "What Happens in DUI Cases in Pinellas County",
+      legend: {position: 'bottom',
+          maxLines: '3',
+          textStyle: {fontSize: '16'}
+        },
+      slices: {
+        0: { color: '#121ca5' },
+        1: { color: '#4651f2' },
+        2: { color: '#84b1f9'}},
+      pieSliceText: 'percentage',
+      tooltip: {text: 'percentage'},
+      animation: {"startup": true}
+    };
+
+
+
+    var chart = new google.visualization.PieChart(document.getElementById('pc-dui-outcomes'));
+    chart.draw(data, options);
+  }
+
+</script>
+
+<div class='chart' id="pc-dui-outcomes" align="center" size="75%"></div>
+
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Do people hire an attorney for DUI cases in Pinellas County?
+</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Yes. More people hire an attorney for a DUI charge than for any other
+misdemeanor traffic crime in Pinellas county. 52% of people charged
+with a DUI hire a private attorney. 36% are represented by the Public Defender.
+11% decide to handle their cases on their own without an attorney, which is
+called "Pro Se."</p>
+
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Attorney', 'Percent', { role: "style" }],
+      ['Private Attorney',     52, "color: #121ca5"],
+      ['Public Defender',      36, "color: #4651f2"],
+      ['No Attorney',  11, "color: #84b1f9"],
+    ]);
+
+    var options = {
+      align: 'center',
+      backgroundColor: {fill: 'transparent'},
+      chartArea:{width:'90%'},
+      is3D: true,
+      legend: {position: 'bottom',
+          maxLines: '3',
+          textStyle: {fontSize: '16'}
+        },
+      title: "Who Hires an Attorney for Their DUI Case in Pinellas County",
+      pieSliceText: 'percentage',
+      slices: {
+        0: { color: '#121ca5' },
+        1: { color: '#4651f2' },
+        2: { color: '#84b1f9'}},
+      tooltip: {text: 'percentage'},
+      animation: {"startup": true}
+    };
+
+
+
+    var chart = new google.visualization.PieChart(document.getElementById('DUI-atty-hire'));
+    chart.draw(data, options);
+  }
+
+</script>
+
+<div class='chart' id="DUI-atty-hire" align="center" size="75%"></div>
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Does hiring a private attorney make a difference?
+</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Yes. People who hire a private attorney avoid a DUI conviction 17% of the time,
+while people who had the public defender avoid a DUI conviction
+10% of the time. People who do not have an attorney and represent themselves
+("Pro Se") only avoid a DUI conviction 7% of the time.</p>
+
+<script type="text/javascript">
+google.charts.load("current", {packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+var inView = false;
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+    ["Private Attorney", 17, "color: #121ca5", '%'],
+    ["Public Defender", 10, "color: #4651f2",'%'],
+    ["No Attorney", 7, "color: #84b1f9", '%']
+  ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+
+                     { calc: "stringify",
+                     sourceColumn: 1,
+                     type: "string",
+                     role: "annotation",
+                     size: 50
+                      },
+                   2]);
+
+  var options = {
+    inView: false,
+    is3d: true,
+    vAxis: {format: '#\'%\''},
+    backgroundColor: {fill: 'transparent'},
+    bar: {groupWidth: "85%"},
+    legend: { position: "none" },
+    animation: {
+            duration: 1000,
+            startup: true,
+
+        },
+    tooltip: {text: 'percentage', format: '#\'%\''},
+
+    title: "Percent of People who Avoided a DUI Conviction in Pinellas County",
+    titlePosition: 'out',
+
+
+  };
+  var chart = new google.visualization.ColumnChart(document.getElementById("PC_DUI_AVOIDANCE"));
+  chart.draw(view, options);
+}
+
+
+
+</script>
+
+<div id="PC_DUI_AVOIDANCE" class="chart" align="center" size="75%"></div>
+
+
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+  People who hire a private attorney are convicted of DUI in 83% of cases.
+  People who use the public defender are convicted of DUI 90% of
+  the time. People who go without an attorney and represent themselves
+  ("Pro Se") are convicted of DUI 93% of the time.</p>
+
+<script type="text/javascript">
+google.charts.load("current", {packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+var inView = false;
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+    ["Private Attorney", 83, "color: #121ca5", '%'],
+    ["Public Defender", 90, "color: #4651f2",'%'],
+    ["No Attorney", 93, "color: #84b1f9", '%']
+  ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+
+                     { calc: "stringify",
+                     sourceColumn: 1,
+                     type: "string",
+                     role: "annotation",
+                     size: 50
+                      },
+                   2]);
+
+  var options = {
+    inView: false,
+    is3d: true,
+    vAxis: {format: '#\'%\''},
+    backgroundColor: {fill: 'transparent'},
+    bar: {groupWidth: "85%"},
+    legend: { position: "none" },
+    animation: {
+            duration: 1000,
+            startup: true,
+
+        },
+    tooltip: {text: 'percentage', format: '#\'%\''},
+
+    title: "Percent of DUI Convictions in Pinellas County",
+    titlePosition: 'out',
+
+
+  };
+  var chart = new google.visualization.ColumnChart(document.getElementById("PC_DUI_conv"));
+  chart.draw(view, options);
+}
+
+
+
+</script>
+
+<div id="PC_DUI_conv" class="chart" align="center" size="75%"></div>
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+  Why is avoiding a DUI conviction so important?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+DUI convictions not only carry stiff penalties, they can have lasting economic
+consequences for both your insurance and employment. If you are convicted of a
+DUI, your car insurance rates will increase and can add up to thousands of
+dollars over time. If you hold a professional license a DUI conviction can put
+your ability to work in jeopardy.</p>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">A Comparison of DUI and Reckless Driving
+Penalties in Pinellas County:</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+These are the average penalties for First-Time DUI and
+Reckless Driving convictions for Pinellas county.</p>
+
+<p style="align: center;">
+<table style="height: auto; margin:1em auto"  width="590"> <tbody style="align:center"> <tr> <td
+style="text-align: center;" width="91"><strong>Penalties</strong></td>
+<td style="text-align: center;" width="91"><strong>DUI </strong></td>
+<td style="text-align: center;" width="91"><strong>Reckless
+Driving</strong></td> </tr> <tr> <td style="text-align: center;"
+width="91"><strong>Fines</strong></td> <td style="text-align: center;"
+width="91">$1,030.00</td> <td style="text-align: center;"
+width="91">$390.00</td> </tr> <tr> <td style="text-align: center;"
+width="91"><strong>Probation</strong></td> <td style="text-align:
+center;" width="91">12 Months</td> <td style="text-align: center;"
+width="91">12 Months</td> </tr> <tr> <td style="text-align: center;"
+width="91"><strong>Community Service</strong></td> <td
+style="text-align: center;" width="91">50 Hours</td> <td
+style="text-align: center;" width="91">50 Hours</td> </tr> <tr> <td
+style="text-align: center;" width="91"><strong>6 Month Driver's
+License Suspension</strong></td> <td style="text-align: center;"
+width="91">Yes</td> <td style="text-align: center;" width="91">No</td>
+</tr> <tr> <td style="text-align: center;" width="91"><strong>10 Day
+Vehicle Impound</strong></td> <td style="text-align: center;"
+width="91">Yes</td> <td style="text-align: center;" width="91">No</td>
+</tr> <tr> <td style="text-align: center;" width="91"><strong>DUI
+School</strong></td> <td style="text-align: center;" width="91">Yes</td>
+<td style="text-align: center;" width="91">Yes</td> </tr> <tr> <td
+style="text-align: center;" width="91"><strong>Increased Insurance
+Requirement</strong></td> <td style="text-align: center;"
+width="91">Yes</td> <td style="text-align: center;" width="91">No</td>
+</tr> </tbody></table> </p>
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+  Does what judge I have make a difference?</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+  The average rate of conviction for DUI cases across all judges is 87%.
+  People with private attorneys are convicted less often than average in most 
+  judge's courtrooms.</p>
+
+
+<script type="text/javascript">
+google.charts.load("current", {packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+var inView = false;
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ["Judge", "Percentage", { role: "style" }, {role: "annotation"} ],
+    ["Bedinghaus", 68, "color: #121ca5", '%'],
+    ["Carballo", 91, "color: #4651f2",'%'],
+    ["Dittmer", 88, "color: #84b1f9", '%'],
+    ["Horrox", 89, "color: #121ca5", '%'],
+    ["Levine", 92, "color: #4651f2",'%'],
+    ["McKyton", 90, "color: #84b1f9", '%'],
+    ["Overton", 76, "color: #4651f2",'%'],
+    ["Pierce", 70, "color: #84b1f9", '%'],
+  ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+
+                     { calc: "stringify",
+                     sourceColumn: 1,
+                     type: "string",
+                     role: "annotation",
+                     size: 50
+                      },
+                   2]);
+
+  var options = {
+    inView: false,
+    is3d: true,
+    vAxis: {format: '#\'%\''},
+    backgroundColor: {fill: 'transparent'},
+    bar: {groupWidth: "85%"},
+    legend: { position: "none" },
+    animation: {
+            duration: 1000,
+            startup: true,
+
+        },
+    tooltip: {text: 'percentage', format: '#\'%\''},
+
+    title: "DUI Convictions by Judge for Private Attorneys",
+    titlePosition: 'out',
+
+
+  };
+  var chart = new google.visualization.ColumnChart(document.getElementById("PC_DUI_judge_pa_conv"));
+  chart.draw(view, options);
+}
+
+
+
+</script>
+
+<div id="PC_DUI_judge_pa_conv" class="chart" align="center" size="75%"></div>
+
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+  People with the public defender are convicted more often than the average in
+  all judge’s courtrooms in Pinellas County.</p>
+
+<script type="text/javascript">
+google.charts.load("current", {packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+var inView = false;
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ["Judge", "Percentage", { role: "style" }, {role: "annotation"} ],
+    ["Bedinghaus", 88, "color: #121ca5", '%'],
+    ["Carballo", 94, "color: #4651f2",'%'],
+    ["Dittmer", 88, "color: #84b1f9", '%'],
+    ["Horrox", 92, "color: #121ca5", '%'],
+    ["Levine", 95, "color: #4651f2",'%'],
+    ["McKyton", 93, "color: #84b1f9", '%'],
+    ["Overton", 88, "color: #4651f2",'%'],
+    ["Pierce", 83, "color: #84b1f9", '%'],
+  ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+
+                     { calc: "stringify",
+                     sourceColumn: 1,
+                     type: "string",
+                     role: "annotation",
+                     size: 50
+                      },
+                   2]);
+
+  var options = {
+    inView: false,
+    is3d: true,
+    vAxis: {format: '#\'%\''},
+    backgroundColor: {fill: 'transparent'},
+    bar: {groupWidth: "85%"},
+    legend: { position: "none" },
+    animation: {
+            duration: 1000,
+            startup: true,
+
+        },
+    tooltip: {text: 'percentage', format: '#\'%\''},
+
+    title: "DUI Convictions by Judge for the Public Defender",
+    titlePosition: 'out',
+
+
+  };
+  var chart = new google.visualization.ColumnChart(document.getElementById("PC_DUI_judge_pd_conv"));
+  chart.draw(view, options);
+}
+
+
+
+</script>
+
+<div id="PC_DUI_judge_pd_conv" class="chart" align="center" size="75%"></div>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+  People who go without an attorney and represent themselves are convicted more
+  often than the average in nearly every judge’s courtroom.</p>
+
+
+<script type="text/javascript">
+google.charts.load("current", {packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+var inView = false;
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ["Judge", "Percentage", { role: "style" }, {role: "annotation"} ],
+    ["Bedinghaus", 85, "color: #121ca5", '%'],
+    ["Carballo", 100, "color: #4651f2",'%'],
+    ["Dittmer", 78, "color: #84b1f9", '%'],
+    ["Horrox", 83, "color: #121ca5", '%'],
+    ["Levine", 86, "color: #4651f2",'%'],
+    ["McKyton", 89, "color: #84b1f9", '%'],
+    ["Overton", 92, "color: #4651f2",'%'],
+    ["Pierce", 91, "color: #84b1f9", '%'],
+  ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+
+                     { calc: "stringify",
+                     sourceColumn: 1,
+                     type: "string",
+                     role: "annotation",
+                     size: 50
+                      },
+                   2]);
+
+  var options = {
+    inView: false,
+    is3d: true,
+    vAxis: {format: '#\'%\''},
+    backgroundColor: {fill: 'transparent'},
+    bar: {groupWidth: "85%"},
+    legend: { position: "none" },
+    animation: {
+            duration: 1000,
+            startup: true,
+
+        },
+    tooltip: {text: 'percentage', format: '#\'%\''},
+
+    title: "DUI Convictions by Judge for the Public Defender",
+    titlePosition: 'out',
+
+
+  };
+  var chart = new google.visualization.ColumnChart(document.getElementById("PC_DUI_judge_ps_conv"));
+  chart.draw(view, options);
+}
+
+
+
+</script>
+
+<div id="PC_DUI_judge_ps_conv" class="chart" align="center" size="75%"></div>
+
+{% endblock %}
