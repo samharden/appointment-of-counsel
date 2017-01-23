@@ -12,39 +12,43 @@
     Builder. To generate your complaint, fill in all of the information below.</p>
 
 <blockquote>
-    <center><b>Your personal information:</b></center>
+    <center><b><h4>Your personal information:</h4></b></center>
         <form action="" method="post">
 {% csrf_token %}
   <p>{{ cx_pub_acc_form.as_p}}</p>
 </blockquote>
 
 <blockquote>
-  <center><b> Please provide the name of a person we can contact if we are unable to reach you:</b></center>
+  <center><b> <h4>Please provide the name of a person we can contact if we are
+    unable to reach you:</h4></b></center>
   <p>{{ op_pub_acc_form.as_p}}</p>
 </blockquote>
 
 <blockquote>
-  <center><b> I believe that I was discriminated against by the following organization:</b></center>
+  <center><b> <h4>I believe that I was discriminated against by the following
+    organization:</h4></b></center>
   <p>{{ disorg_pub_acc_form.as_p}}</p>
 </blockquote>
 
 <blockquote>
-  <center><b> Organization Representative Contact Information (If known):</b></center>
+  <center><b><h4> Organization Representative Contact Information (If known):</h4></b></center>
   <p>{{ reporg_pub_acc_form.as_p}}</p>
 
 </blockquote>
 
 <blockquote>
-  <center><b> What is the reason for your claim of public accomodation discrimination?</b></center>
-  <p>{{ disreason_pub_acc_form.as_p }}
+  <center><h4><b> What is the reason for your claim of public accomodation discrimination?
+              Check all that apply.<br></center></h4><br>
+            <justify>For example, if you feel that you were treated worse than someone
+              else because of race, you should check the box next to race.
+              If you feel you were treated worse for several reasons, such as
+              your sex, religion and national origin, check all of these bases.
+  </b></justify>
+  <p>{{ disreason_pub_acc_form.as_p}}</p>
 
+</blockquote>
 <br><br>
 
-
-  <p>Race: {{ disreason_pub_acc_form.reason_race }} &nbsp Your Race: {{ disreason_pub_acc_form.reason_race_choose }}</p>
-
-  <p>Please describe what happend: </p>
-  <p>{{ disreason_pub_acc_form.reason_description }}</p>
 
 </blockquote>
       <center>

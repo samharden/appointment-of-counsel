@@ -9,7 +9,8 @@ from fl_discrim_helper.view_routes import (
                                     choose_complaint_type,
 
                                     )
-
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
 
 
 def pub_acc_complaint(request):
@@ -29,7 +30,7 @@ def pub_acc_complaint(request):
         op_pub_acc_form = OpPubAccForm(request.POST)
         disorg_pub_acc_form = DisOrgPubAccForm(request.POST)
         reporg_pub_acc_form = RepOrgPubAccForm(request.POST)
-        disreason_pub_acc_form = DisReasonPubAccForm(request)
+        disreason_pub_acc_form = DisReasonPubAccForm(request.POST)
 
         if cx_pub_acc_form.is_valid():
             print("Valid")
@@ -37,9 +38,27 @@ def pub_acc_complaint(request):
             print(cx_state)
             request.session['cx_state'] = cx_state
 
-            cx_first_name = request.POST.get('cx_first_name')
-            print(cx_first_name)
-            request.session['cx_first_name'] = cx_first_name
+            cx_last_name = request.POST.get('cx_last_name')
+            print(cx_last_name)
+            request.session['cx_last_name'] = cx_last_name
+
+            from fl_discrim_helper.view_routes.pub_acc_cx_pdf import pub_acc_cx_pdf
+
+            
+
+            p = pub_acc_cx_pdf(request, cx_last_name)
+
+            # response = pub_acc_cx_pdf(cx_last_name)
+
+            # response = HttpResponse(content_type='application/pdf')
+            # response['Content-Disposition'] = 'attachment; filename="filename.pdf"'
+
+            # p = canvas.Canvas(response)
+            # p.drawString(100, 800, cx_first_name)
+            # #
+            # p.showPage()
+            # p.save()
+
 
 
 
