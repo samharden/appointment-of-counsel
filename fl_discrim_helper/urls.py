@@ -3,6 +3,7 @@ from . import views
 from fl_discrim_helper.view_routes import (
                                     choose_complaint_type,
                                     pub_acc_complaint,
+                                    pub_acc_cx_pdf,
                                     )
 
 urlpatterns = [
