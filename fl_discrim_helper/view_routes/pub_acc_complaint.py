@@ -11,6 +11,7 @@ from fl_discrim_helper.view_routes import (
                                     )
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
+from io import StringIO
 
 
 def pub_acc_complaint(request):
@@ -44,9 +45,18 @@ def pub_acc_complaint(request):
 
             from fl_discrim_helper.view_routes.pub_acc_cx_pdf import pub_acc_cx_pdf
 
-            
 
-            p = pub_acc_cx_pdf(request, cx_last_name)
+
+            pdf = pub_acc_cx_pdf(cx_last_name)
+
+
+
+
+            # response = HttpResponse(pdf, content_type='application/pdf')
+            # buff = StringIO()
+            # response.write(pdf)
+            # buff.close()
+            # return response
 
             # response = pub_acc_cx_pdf(cx_last_name)
 

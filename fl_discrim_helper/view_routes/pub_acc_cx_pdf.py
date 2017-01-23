@@ -1,5 +1,5 @@
 
-def pub_acc_cx_pdf(request, cx_last_name):
+def pub_acc_cx_pdf(cx_last_name):
     import time
     from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER
     from reportlab.lib.pagesizes import letter
@@ -7,10 +7,12 @@ def pub_acc_cx_pdf(request, cx_last_name):
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
     from reportlab.lib.units import inch
     from django.http import HttpResponse
+    from django.core.files.storage import FileSystemStorage
     from reportlab.pdfgen import canvas
+    from io import StringIO
 
 # response['Content-Disposition'] = 'attachment; filename="filename.pdf"'
-    doc = SimpleDocTemplate("public-accomodation-complaint2.pdf",
+    doc = SimpleDocTemplate("public-accomodation-complaint4.pdf",
                             pagesize=letter,
                             rightMargin=72,leftMargin=72,
                             topMargin=72,bottomMargin=50)
@@ -299,21 +301,17 @@ def pub_acc_cx_pdf(request, cx_last_name):
 
 
 
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="filename.pdf"'
 
 
 
     pdf = doc.build(Complaint)
+    # # return pdf
+    response = HttpResponse(pdf, content_type='application/pdf')
+    buff = StringIO()
     response.write(pdf)
+    buff.close()
+    return response
 
-    # pdf.save()
-    # return pdf
-    # response = HttpResponse(content_type='application/pdf')
-    # response['Content-Disposition'] = 'attachment; filename="filename.pdf"'
-    #
-    # p = canvas.Canvas(pdf)
-    # p.showPage()
-    # p.save()
 
-    # return HttpResponse(content_type='application/pdf', pdf)
+    # # pdf = doc.build(Complaint)
+    # # response.write(pdf)
