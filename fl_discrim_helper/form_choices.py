@@ -1,14 +1,14 @@
 
 INDEX_CHOICES = (
     ('complaint', ("Begin Complaint")),
-    ('research', ("Research Decisions"))
+    # ('research', ("Research Decisions"))
 )
 
 
 DISCRIM_CASETYPE_CHOICES = (
     ('pubacc', ("Public Accomodation")),
-    ('employment', ("Employment")),
-    ('housing', ("Housing")),
+    # ('employment', ("Employment")),
+    # ('housing', ("Housing")),
 
 )
 
@@ -20,37 +20,41 @@ STATE_CHOICES = (
 )
 
 SEX_CHOICES = (
-    ('female', ("Female")),
-    ('male', ("Male")),
+    ('N/A', ("N/A")),
+    ('Female', ("Female")),
+    ('Male', ("Male")),
 )
 RACE_CHOICES = (
-    ('black', ("Black")),
-    ('white', ("White")),
-    ('asian', ("Asian")),
-    ('nat-ha-pac', ("Native Hawaiian / Pacific Islander")),
-    ('amerindian', ('American Indian / First Peoples')),
+    ('N/A', ("N/A")),
+    ('Black', ("Black")),
+    ('White', ("White")),
+    ('Asian', ("Asian")),
+    ('Native Hawaiian / Pacific Islander"', ("Native Hawaiian / Pacific Islander")),
+    ('American Indian / First Peoples', ('American Indian / First Peoples')),
 )
 
 COLOR_CHOICES = (
-    ('lightskinned', ("Light Skinned")),
-    ('darkskinned', ("Dark Skinned")),
-    ('other', ("Other")),
+    ('Light Skinned', ("Light Skinned")),
+    ('Dark Skinned', ("Dark Skinned")),
+    ('Other', ("Other")),
 )
 
 NATORIGIN_CHOICES = (
-    ('hispanic', ("Hispanic")),
-    ('mexican', ("Mexican")),
-    ('middleeastern', ("Middle Eastern")),
-    ('eastindian', ("East Indian")),
+    ('N/A', ("N/A")),
+    ('Hispanic', ("Hispanic")),
+    ('Mexican', ("Mexican")),
+    ('Middle Eastern', ("Middle Eastern")),
+    ('East Indian', ("East Indian")),
     ('Asian', ("Asian")),
     ('African', ("African")),
-    ('amerindian', ("Native American / First Peoples")),
+    ('Native American / First Peoples', ("Native American / First Peoples")),
 )
 
 DISABILITY_CHOICES = (
-    ('mental', ("Mental")),
-    ('physical', ("Physical")),
-    ('physical', ("Mental & Physical")),
+    ('N/A', ("N/A")),
+    ('Mental', ("Mental")),
+    ('Physical', ("Physical")),
+    ('Mental & Physical', ("Mental & Physical")),
 
 
 )

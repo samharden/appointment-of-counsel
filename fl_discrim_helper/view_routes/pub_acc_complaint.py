@@ -93,29 +93,51 @@ def pub_acc_complaint(request):
             reason_color_choose = request.POST.get('reason_color_choose')
 
             reason_natorigin = request.POST.get('reason_natorigin')
-
+            if reason_natorigin == "on":
+                reason_natorigin = "X"
+            else:
+                reason_natorigin = "_"
             reason_natorigin_choose = request.POST.get('reason_natorigin_choose')
 
             reason_sex = request.POST.get('reason_sex')
-
+            if reason_sex == "on":
+                reason_sex = "X"
+            else:
+                reason_sex = "_"
             reason_sex_choose = request.POST.get('reason_sex_choose')
 
             reason_preg = request.POST.get('reason_preg')
+            if reason_preg == "on":
+                reason_preg = "X"
+            else:
+                reason_preg = "_"
 
             reason_religion = request.POST.get('reason_religion')
-
+            if reason_religion == "on":
+                reason_religion = "X"
+            else:
+                reason_religion = "_"
             reason_religion_desc = request.POST.get('reason_religion_desc')
 
             reason_disability = request.POST.get('reason_disability')
-
+            if reason_disability == "on":
+                reason_disability = "X"
+            else:
+                reason_disability = "_"
             reason_disability_choose = request.POST.get('reason_disability_choose')
 
             reason_familial = request.POST.get('reason_familial')
-
+            if reason_familial == "on":
+                reason_familial = "X"
+            else:
+                reason_familial = "_"
             reason_familial_desc = request.POST.get('reason_familial_desc')
 
             reason_other = request.POST.get('reason_other')
-
+            if reason_other == "on":
+                reason_other = "X"
+            else:
+                reason_other = "_"
             reason_other_desc = request.POST.get('reason_other_desc')
 
             reason_description = request.POST.get('reason_description')
@@ -282,15 +304,15 @@ def pub_acc_complaint(request):
 
             description = '<font size=12><b>5. What is the reason (basis) for your claim of \
                     public accommodations discrimination? </b>  <br></br> <br></br>\
-                    %s <b>Race:</b> %s  <br></br>\
-                    %s <b>Color:</b> %s  <br></br>\
-                    %s <b>National Origin:</b> %s  <br></br>\
-                    %s <b>Sex:</b> %s  <br></br>\
-                    %s <b>Pregnant or Condition Related to Pregnancy or Childbirth</b>  <br></br>\
-                    %s <b>Religion:</b> %s  <br></br>\
-                    %s <b>Disability/Handicap:</b> %s  <br></br>\
-                    %s <b>Familial Status:</b> %s  <br></br>\
-                    %s <b>Other Reason:</b> %s  <br></br>\
+                    %s <b>Race:</b> %s  <br></br><br></br>\
+                    %s <b>Color:</b> %s  <br></br><br></br>\
+                    %s <b>National Origin:</b> %s  <br></br><br></br>\
+                    %s <b>Sex:</b> %s  <br></br><br></br>\
+                    %s <b>Pregnant or Condition Related to Pregnancy or Childbirth</b>  <br></br><br></br>\
+                    %s <b>Religion:</b> %s  <br></br><br></br>\
+                    %s <b>Disability/Handicap:</b> %s  <br></br><br></br>\
+                    %s <b>Familial Status:</b> %s  <br></br><br></br>\
+                    %s <b>Other Reason:</b> %s  <br></br><br></br>\
                     </font>' % (reason_race,
                                 reason_race_choose,
                                 reason_color,

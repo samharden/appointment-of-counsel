@@ -15,7 +15,7 @@ class CxPubAccForm(forms.Form):
                                 )
 
     cx_mi = forms.CharField(label = 'Middle Initial ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput(attrs={'size': '4'})
                                 )
 
@@ -25,7 +25,7 @@ class CxPubAccForm(forms.Form):
                                 )
 
     cx_apt_num = forms.CharField(label = 'Apartment Number ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput(attrs={'size': '6'})
                                 )
 
@@ -51,12 +51,12 @@ class CxPubAccForm(forms.Form):
                                 )
 
     cx_phone = forms.CharField(label = 'Phone ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
     cx_email = forms.CharField(label = 'Email ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
@@ -75,12 +75,12 @@ class OpPubAccForm(forms.Form):
 
 
     op_first_name = forms.CharField(label = 'First Name ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
     op_last_name = forms.CharField(label = 'Last Name ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
@@ -95,38 +95,38 @@ class OpPubAccForm(forms.Form):
                                         )
 
     op_street_address = forms.CharField(label = 'Street Address ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
     op_apt_num = forms.CharField(label = 'Apartment Number ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput(attrs={'size': '6'})
                                 )
 
 
     op_city = forms.CharField(label = 'City ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
     op_state = forms.ChoiceField(label = 'State ',
                                 choices = STATE_CHOICES,
-                                required = True,
+                                required = False,
                                 )
 
     op_county = forms.CharField(label = 'County ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
     op_zip = forms.CharField(label = 'Zip Code ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
     op_phone = forms.CharField(label = 'Phone ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
@@ -144,8 +144,8 @@ class DisOrgPubAccForm(forms.Form):
                                 widget = forms.TextInput()
                                 )
 
-    disorg_apt_num = forms.CharField(label = 'Apartment Number ',
-                                required = True,
+    disorg_apt_num = forms.CharField(label = 'Suite or Office Number ',
+                                required = False,
                                 widget = forms.TextInput(attrs={'size': '6'})
                                 )
 
@@ -181,18 +181,18 @@ class DisOrgPubAccForm(forms.Form):
                                     )
 
     disorg_owner = forms.CharField(label = 'Owner of Organization ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
     disorg_owner_phone = forms.CharField(label = "Owner's Telephone " ,
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
 class RepOrgPubAccForm(forms.Form):
 
-    reporg_name = forms.CharField(label = 'Last Name ',
+    reporg_name = forms.CharField(label = 'Representative Name ',
                                 required = False,
                                 widget = forms.TextInput()
                                 )
