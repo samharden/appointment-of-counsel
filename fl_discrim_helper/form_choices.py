@@ -34,6 +34,7 @@ RACE_CHOICES = (
 )
 
 COLOR_CHOICES = (
+    ('N/A', ("N/A")),
     ('Light Skinned', ("Light Skinned")),
     ('Dark Skinned', ("Dark Skinned")),
     ('Other', ("Other")),
