@@ -13,17 +13,13 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 
 
-def pub_acc_complaint(request):
+def housing_complaint(request):
 
     cx_pub_acc_form = CxPubAccForm(request)
     op_pub_acc_form = OpPubAccForm(request)
     disorg_pub_acc_form = DisOrgPubAccForm(request)
     reporg_pub_acc_form = RepOrgPubAccForm(request)
     disreason_pub_acc_form = DisReasonPubAccForm(request)
-    disability_ynm = DisabilityYNM(request)
-    prior_agency_help = PriorAgencySoughtHelp(request)
-    prior_sought_help = PriorSoughtHelp(request)
-    box_1_2 = Box_1_2(request)
 
     if request.method == 'POST':
 
@@ -32,10 +28,6 @@ def pub_acc_complaint(request):
         disorg_pub_acc_form = DisOrgPubAccForm(request.POST)
         reporg_pub_acc_form = RepOrgPubAccForm(request.POST)
         disreason_pub_acc_form = DisReasonPubAccForm(request.POST)
-        disability_ynm = DisabilityYNM(request.POST)
-        prior_agency_help = PriorAgencySoughtHelp(request.POST)
-        prior_sought_help = PriorSoughtHelp(request.POST)
-        box_1_2 = Box_1_2(request.POST)
 
         if cx_pub_acc_form.is_valid():
             print("Valid")
@@ -149,27 +141,6 @@ def pub_acc_complaint(request):
             reason_other_desc = request.POST.get('reason_other_desc')
 
             reason_description = request.POST.get('reason_description')
-
-            disability_ynm = request.POST.get('disability_ynm')
-
-            prior_agency_help = request.POST.get('prior_help')
-            prior_agency_help_description = request.POST.get('prior_help_description')
-
-            prior_help = request.POST.get('prior_help')
-            prior_help_description = request.POST.get('prior_help_description')
-
-            box_1 = request.POST.get('box_1')
-            if box_1 == "on":
-                box_1 = "X"
-            else:
-                box_1 = "_"
-            box_2 = request.POST.get('box_2')
-            if box_2 == "on":
-                box_2 = "X"
-            else:
-                box_2 = "_"
-
-
 
             response = HttpResponse(content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="%s-complaint.pdf"' % cx_last_name
@@ -364,124 +335,18 @@ def pub_acc_complaint(request):
 
             Complaint.append(Paragraph(description, styles["Normal"]))
 
-            ### Description ###
+            ### DISCRIMINATING ORGANIZATION REP CONTACT ###
 
-            description_info = '<font size=12><b>6. What happened to you that you believe was \
+            name_info = '<font size=12><b>6. What happened to you that you believe was \
                     discriminatory? Include the date(s) of harm, the action(s), and the \
                     name(s) and title(s) of the person(s) who you believe discriminated \
                     against you. Please attach additional pages if needed.  \
                     (Example: 08/08/2011 – Refused service by Mr. John Smith, waiter):\
                     </b><br></br> <br></br> \
                     %s \
-                    <br></br> <br></br> \
                     </font>' % reason_description
 
-            Complaint.append(Paragraph(description_info, styles["Normal"]))
-
-            ### DISABILITY ###
-
-            disab_info = '<font size=12><b>7. Do you have a disability, which is \
-                        a physical or mental impairment that substantially \
-                        limits a major life activity, such as caring for yourself, \
-                        performing manual tasks, walking, seeing, hearing, \
-                        speaking, breathing, learning, or working?\
-                    </b><br></br> <br></br> \
-                    <b>Answer:</b> %s  \
-                    <br></br> <br></br> \
-                    </font>' % disability_ynm
-
-
-            Complaint.append(Paragraph(disab_info, styles["Normal"]))
-
-            ### PRIOR FILE? ###
-
-            prior_file_info = '<font size=12><b>8. Have you filed this charge \
-                        previously with another agency?<br></br> <br></br> \
-                        Answer:</b> %s \
-                    <br></br> <br></br> \
-                    <b>If so, provide the name of the agency and date of filing:</b> %s  \
-                    <br></br> <br></br> \
-                    </font>' % (prior_agency_help, prior_agency_help_description)
-
-
-            Complaint.append(Paragraph(prior_file_info, styles["Normal"]))
-
-            ### PRIOR HELP? ###
-
-            disab_info = '<font size=12><b>9. Have you sought help about this \
-                        situation from a union, attorney, or other source?<br></br> <br></br> \
-                        Answer:</b> %s \
-                    <br></br> <br></br> \
-                    <b>If so, provide the name of the organization or person you\
-                    spoke with, the date, and the outsome if any:</b> %s  \
-                    <br></br> <br></br> \
-                    </font>' % (prior_help, prior_help_description)
-
-
-            Complaint.append(Paragraph(disab_info, styles["Normal"]))
-
-            ### BOX 1 or 2 ###
-
-            boxes_12 = '<font size=12><b>Please check one of the boxes below to \
-            tell us what you would like us to do with the information you are \
-            providing on this questionnaire.  If you would like to file a charge \
-            of public accommodations discrimination, you must do so within 365 \
-            days from the date you were allegedly discriminated against.  \
-            If you do not file a charge of discrimination within the time limit, \
-            you will lose your ability to file a charge.  If you would like more \
-            information before filing a charge or you have concerns about the \
-            FCHR notifying the organization about your charge, you may wish to \
-            check Box 1.  If you want to file a charge, you should check Box 2.</b>\
-            <br></br> <br></br> \
-                        <b>Box 1:</b> %s I want to talk to an FCHR employee \
-                        before deciding whether to file a charge.  I understand \
-                        that by checking this box, I have not filed a charge with \
-                        the FCHR.  I also understand that I could lose my ability \
-                        to file a charge if I do not file in time. \
-                        \
-                    <br></br> <br></br> \
-                    <b>Box 2:</b> %s I want to file a charge of discrimination, \
-                    and I authorize the FCHR to look into the discrimination I \
-                    described above.  I understand that the FCHR must give the \
-                    organization that I accuse of discrimination information \
-                    about the charge, including my name.  I also understand that \
-                    the FCHR can only accept charges of discrimination based on \
-                    race, religion, sex, pregnancy, national origin, disability, \
-                    age, genetic information, or retaliation for opposing discrimination.\
-                    <br></br> <br></br> \
-                    </font>' % (box_1, box_2)
-
-
-            Complaint.append(Paragraph(boxes_12, styles["Normal"]))
-
-            ### sIGNATURE ###
-
-            signature = '<font size=12><b>  NOTE: If you have checked Box 2 above, \
-            and your case is already 350 days or more from the alleged \
-            discrimination, the FCHR will accept this form as a charge if it \
-            meets the elements of a charge. </b> \
-            <br></br> <br></br> \
-            <b>BY SIGNING BELOW, I VERIFY THAT I HAVE READ THE ABOVE INFORMATION \
-            AND THE FACTS STATED ARE TRUE.</b> \
-            <br></br> <br></br> \
-            Signature: ______________________________       Date: _______________\
-            <br></br> <br></br> \
-            <b><center>Mail or Fax this form to:</center></b><br></br> \
-	        Florida Commission on Human Relations <br></br> \
-		4075 Esplanade Way, Suite 110 <br></br> \
-		Tallahassee, Florida 32399-7020 <br></br> \
-		Telephone (850) 488-7082 <br></br> \
-        		Facsimile (850) 487-1007\
-                    <br></br> <br></br> \
-                    </font>'
-
-
-            Complaint.append(Paragraph(signature, styles["Normal"]))
-
-
-
-
-
+            Complaint.append(Paragraph(name_info, styles["Normal"]))
             doc.build(Complaint)
             pdf = buffer.getvalue()
             buffer.close()
@@ -494,26 +359,15 @@ def pub_acc_complaint(request):
         disorg_pub_acc_form = DisOrgPubAccForm()
         reporg_pub_acc_form = RepOrgPubAccForm()
         disreason_pub_acc_form = DisReasonPubAccForm()
-        disability_ynm = DisabilityYNM()
-        prior_agency_sought_help = PriorAgencySoughtHelp()
-        prior_sought_help = PriorSoughtHelp()
-
-        box_1_2 = Box_1_2()
-
 
 
     return render(request,
-                    'fl-discrim-helper/pub-acc-complaint.html',
+                    'fl-discrim-helper/housing-complaint.html',
                     {'cx_pub_acc_form': cx_pub_acc_form,
                     'op_pub_acc_form': op_pub_acc_form,
                     'disorg_pub_acc_form': disorg_pub_acc_form,
                     'reporg_pub_acc_form': reporg_pub_acc_form,
                     'disreason_pub_acc_form': disreason_pub_acc_form,
-                    'disability_ynm': disability_ynm,
-                    'prior_agency_sought_help': prior_agency_sought_help,
-                    'prior_sought_help': prior_sought_help,
-                    'box_1_2': box_1_2,
-
                     }
                     )
 

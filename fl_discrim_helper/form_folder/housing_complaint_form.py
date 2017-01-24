@@ -1,7 +1,7 @@
 from django import forms
 from fl_discrim_helper.form_choices import *
 
-class CxPubAccForm(forms.Form):
+class CxHousingForm(forms.Form):
 
 
     cx_first_name = forms.CharField(label = 'First Name ',
@@ -71,7 +71,14 @@ class CxPubAccForm(forms.Form):
                                 required = True,
                                 )
 
-class OpPubAccForm(forms.Form):
+class CxOtherOccForm(forms.Form):
+
+    other_occupants = forms.CharField(label = 'Are there any children or \
+                                                other occupants? If so, list \
+                                                them here along with their \
+                                                dates of birth:')
+
+class OpHousingForm(forms.Form):
 
 
     op_first_name = forms.CharField(label = 'First Name ',
@@ -115,11 +122,6 @@ class OpPubAccForm(forms.Form):
                                 required = False,
                                 )
 
-    op_county = forms.CharField(label = 'County ',
-                                required = False,
-                                widget = forms.TextInput()
-                                )
-
     op_zip = forms.CharField(label = 'Zip Code ',
                                 required = False,
                                 widget = forms.TextInput()
@@ -131,9 +133,10 @@ class OpPubAccForm(forms.Form):
                                 )
 
 
-class DisOrgPubAccForm(forms.Form):
+class DisHousingForm(forms.Form):
 
-    disorg_name = forms.CharField(label = 'Organization Name ',
+    disorg_name = forms.CharField(label = 'Who or what company do you believe \
+                                            discriminated against you?',
                                 required = True,
                                 widget = forms.TextInput()
                                 )
@@ -160,8 +163,7 @@ class DisOrgPubAccForm(forms.Form):
                                 required = True,
                                 )
 
-    disorg_county = forms.CharField(label = 'County ',
-                                required = True,
+    disporg_county = forms.CharField(label = 'County ', required = False,
                                 widget = forms.TextInput()
                                 )
 
@@ -175,18 +177,14 @@ class DisOrgPubAccForm(forms.Form):
                                 widget = forms.TextInput()
                                 )
 
-    disorg_type = forms.CharField(label = 'Type of Business ',
-                                    required = True,
-                                    widget = forms.TextInput()
-                                    )
-
-    disorg_owner = forms.CharField(label = 'Owner of Organization ',
+    disorg_type = forms.ChoiceField(label = 'This person or company is a:',
                                 required = False,
-                                widget = forms.TextInput()
+                                choices = HOUSING_ORG_CHOICES,
                                 )
 
-    disorg_owner_phone = forms.CharField(label = "Owner's Telephone " ,
-                                required = False,
+    disorg_other_type = forms.CharField(label = 'If you selected "Other" please \
+                                describe:',
+                                required = True,
                                 widget = forms.TextInput()
                                 )
 
@@ -230,7 +228,7 @@ class RepOrgPubAccForm(forms.Form):
                                 )
 
 
-class DisReasonPubAccForm(forms.Form):
+class DisReasonHousingForm(forms.Form):
 
     reason_race = forms.BooleanField(label = 'Race ', required = False,)
 
@@ -250,13 +248,25 @@ class DisReasonPubAccForm(forms.Form):
                                             choices = NATORIGIN_CHOICES,
                                             )
 
+    reason_familial = forms.BooleanField(label = 'Familial Status ', required = False,)
+
+    reason_familial_choose = forms.ChoiceField(label = 'Your Familial Status ', required = False,
+                                            choices = FAM_STAT_CHOICES,
+                                            )
+
+
     reason_sex = forms.BooleanField(label = 'Sex ', required = False,)
+
+
 
     reason_sex_choose = forms.ChoiceField(label = 'Your Sex', required = False,
                                             choices = SEX_CHOICES,
                                             )
 
-    reason_preg = forms.BooleanField(label = 'Pregnancy ', required = False,)
+    reason_retaliation = forms.BooleanField(label = 'Retaliation (for \
+                                        exercising or encouraging another \
+                                        person to exercise a right under the \
+                                        Fair Housing Act) ', required = False,)
 
     reason_religion = forms.BooleanField(label = 'Religion ', required = False,)
 
@@ -270,11 +280,7 @@ class DisReasonPubAccForm(forms.Form):
                                             choices = DISABILITY_CHOICES,
                                             )
 
-    reason_familial = forms.BooleanField(label = 'Familial Status ', required = False,)
 
-    reason_familial_desc = forms.CharField(label = 'Your Familial Status ', required = False,
-                                widget = forms.TextInput(),
-                                )
 
     reason_other = forms.BooleanField(label = 'Other Reason ', required = False,)
 
@@ -282,30 +288,70 @@ class DisReasonPubAccForm(forms.Form):
                                 widget = forms.TextInput(),
                                 )
 
-    reason_description = forms.CharField(label = 'Please describe what happened:', required = False,
-                                widget = forms.Textarea(),
+class HousingPropType(forms.Form):
+
+    housing_type_choose = forms.ChoiceField(label = 'Type of Property ', required = True,
+                                                choices = HOUSING_TYPE_CHOICES,
+                                                )
+    housing_other_desc = forms.CharField(label = 'If You Checked Other, Please Describe ', required = False,
+                                widget = forms.TextInput(),
                                 )
 
-class DisabilityYNM(forms.Form):
 
-    disability_ynm = forms.ChoiceField(label = '', choices = DISAB_YNM_CHOICES,
-                                            required = False)
-
-
-
-class PriorAgencySoughtHelp(forms.Form):
-
-    prior_agency_help = forms.ChoiceField(label = 'Have you Filed This Charge With \
-                                            Another Agency?', required = True,
-                                                choices = YNM_CHOICES,
-                                                )
-    prior_agency_help_description = forms.CharField(label = 'If so, Please Provide the \
-                                                    Name of the Agency and the \
-                                                    Date of Filing:', required = False,
+class HousingAddress(forms.Form):
+    housing_street_address = forms.CharField(label = 'Street Address ',
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
+    housing_apt_num = forms.CharField(label = 'Apartment Number ',
+                                required = False,
+                                widget = forms.TextInput(attrs={'size': '6'})
+                                )
 
+
+    housing_city = forms.CharField(label = 'City ', required = False,
+                                widget = forms.TextInput()
+                                )
+
+    housing_state = forms.ChoiceField(label = 'State ', required = False,
+                                choices = STATE_CHOICES,
+                                )
+
+    housing_county = forms.CharField(label = 'County ', required = False,
+                                widget = forms.TextInput()
+                                )
+
+    housing_zip = forms.CharField(label = 'Zip Code ', required = False,
+                                widget = forms.TextInput()
+                                )
+
+class OwnerLiveThere(forms.Form):
+
+    owner_live_choose = forms.ChoiceField(label = 'Does the Owner Live There? ', required = True,
+                                                choices = YNM_CHOICES,
+                                                )
+
+class DescribeHousingForm(forms.Form):
+
+
+    reason_description = forms.CharField(label = 'Please Describe What Happened:', required = False,
+                                widget = forms.Textarea(),
+                                )
+
+
+class PriorComplaint(forms.Form):
+
+    prior_complaint = forms.ChoiceField(label = 'Have you Filed a Charge \
+                                                Previously on this Matter with \
+                                                HUD or Another Agency?', required = True,
+                                                choices = YNM_CHOICES,
+                                                )
+    prior_complaint_agency = forms.CharField(label = 'If so, Please Provide the \
+                                                    Name of the Agency and the \
+                                                    Date of Filing', required = False,
+                                widget = forms.TextInput()
+                                )
 class PriorSoughtHelp(forms.Form):
 
     prior_help = forms.ChoiceField(label = 'Have you Sought Help About this \
@@ -320,14 +366,10 @@ class PriorSoughtHelp(forms.Form):
                                 widget = forms.TextInput()
                                 )
 
-
-
 class Box_1_2(forms.Form):
 
     box_1 = forms.BooleanField(label = '', required = False,)
 
-    box_2 = forms.BooleanField(label = ' ', required = False,)
-
-
+    box_2 = forms.BooleanField(label = '', required = False,)
 
     ###

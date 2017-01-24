@@ -8,8 +8,15 @@
 
     <h2>Florida Public Accomodation Discrimination Complaint Builder:</h2>
   </center>
-  <p><justify>Welcome to the Florida Public Accomodation Discriminaiton Complaint
+  <p style="text-align: justify; margin: 10px 50px 10px 50px !important;">
+    Welcome to the Florida Public Accomodation Discriminaiton Complaint
     Builder. To generate your complaint, fill in all of the information below.</p>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;">
+    The questionnaire must be received by the Florida Commission on Human
+    Relations within 365 days of the date of the alleged violation. Creating
+    the complaint on this website does not file it with the FCHR.</p>
+
+
 
 <blockquote>
     <center><b><h3>Your personal information:</h3></b></center>
@@ -48,12 +55,60 @@
 
 </blockquote>
 
+<blockquote>
+    <justify><p><b>Do you have a disability, which is a physical or mental impairment
+                that substantially limits a major life activity, such as caring for
+                yourself, performing manual tasks, walking, seeing, hearing,
+                speaking, breathing, learning, or working? <justify></p>
+  <p>{{ disability_ynm.as_p}}</p>
+
+</blockquote>
+
+<blockquote>
+  <center><h3><b> Have you filed this charge previously with another Agency?</center></h3><br>
+  <p>{{ prior_agency_sought_help.as_p}}</p>
+
+</blockquote>
+
+<blockquote>
+  <center><h3><b> Have you sought help about this situation from an attorney or any other source?</center></h3><br>
+  <p>{{ prior_sought_help.as_p}}</p>
+
+</blockquote>
+
+
+<blockquote>
+  <center><h3><b> Please check one of the boxes below to tell the FCHR what you would
+    like them to do with the information you are providing on this questionnaire.<br></center></h3><br>
+    <justify>If you would like to file a charge of public accommodations discrimination,
+        you must do so within 365 days from the date you were allegedly discriminated
+        against. If you do not file a charge of discrimination within the time limit,
+        you will lose your ability to file a charge.  If you would like more information
+        before filing a charge or you have concerns about the FCHR notifying the
+        organization about your charge, you may wish to check Box 1. If you want
+        to file a charge, you should check Box 2.</justify><br>
+  <p>Box 1: {{ box_1_2.box_1}} I want to talk to an FCHR employee before
+      deciding whether to file a charge. I understand that by checking this box,
+      I have not filed a charge with the FCHR. I also understand that I could lose my
+      ability to file a charge if I do not file in time. </p>
+  <p><b><i>or:</i></b></p>
+  <p>Box 2: {{ box_1_2.box_2}} I want to file a charge of discrimination, and I
+    authorize the FCHR to look into the discrimination I described above.
+    I understand that the FCHR must give the individual or organization that I accuse
+    of discrimination information about the charge, including my name.  I also
+    understand that the FCHR can only accept charges of housing discrimination based
+    on race, color, national origin, sex, disability, familial status, religion or
+    retaliation for opposing discrimination.   </p>
+
+</blockquote>
+
+
       <center>
           <h3>Create a PDF Copy of Your Complaint:<h3>
           <p><input type="submit" value="Create Complaint"></p>
         </form>  </center>
 
-  <h3><center>After the form is printed, please mail or fax it to:</center></h3>
+  <h3><center>After the form is printed, please sign and date it, then mail or fax it to:</center></h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 The Florida Commission on Human Relations
@@ -66,8 +121,9 @@ Fax: 850-487-1007
 <br><br>
 Phone: 850-488-7082
 <br><br>
-<b>The questionnaire must be received by the Florida Commission on Human Relations
-within 365 days of the date of the alleged violation.</p></b>
+<h4 style="text-align: justify; margin: 10px 50px 10px 50px !important;">The questionnaire must be received by the Florida Commission on Human Relations
+within 365 days of the date of the alleged violation. Creating the complaint on
+this website does not file it with the FCHR.</h4></b>
 
 <body><td>
 
