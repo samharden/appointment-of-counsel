@@ -193,7 +193,7 @@ def pub_acc_complaint(request):
             Complaint.append(Spacer(1, 12))
 
             styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY))
-            ptext = '<font size=12>Please complete this entire form please print) and \
+            ptext = '<font size=12>Please complete this entire form and \
                     return it to the Commission at the address listed at the bottom of \
                     this form.  Answer all questions completely.  Attac <br></br>h additional pages \
                     if needed to complete your responses. If you do not know the answer to \
