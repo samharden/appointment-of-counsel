@@ -12,33 +12,33 @@
     Builder. To generate your complaint, fill in all of the information below.</p>
 
 <blockquote>
-    <center><b><h4>Your personal information:</h4></b></center>
+    <center><b><h3>Your personal information:</h3></b></center>
         <form action="" method="post">
 {% csrf_token %}
   <p>{{ cx_pub_acc_form.as_p}}</p>
 </blockquote>
 
 <blockquote>
-  <center><b> <h4>Please provide the name of a person we can contact if we are
-    unable to reach you:</h4></b></center>
+  <center><b> <h3>Please provide the name of a person we can contact if we are
+    unable to reach you:</h3></b></center>
   <p>{{ op_pub_acc_form.as_p}}</p>
 </blockquote>
 
 <blockquote>
-  <center><b> <h4>I believe that I was discriminated against by the following
-    organization:</h4></b></center>
+  <center><b> <h3>I believe that I was discriminated against by the following
+    organization:</h3></b></center>
   <p>{{ disorg_pub_acc_form.as_p}}</p>
 </blockquote>
 
 <blockquote>
-  <center><b><h4> Organization Representative Contact Information (If known):</h4></b></center>
+  <center><b><h3> Organization Representative Contact Information (If known):</h3></b></center>
   <p>{{ reporg_pub_acc_form.as_p}}</p>
 
 </blockquote>
 
 <blockquote>
-  <center><h4><b> What is the reason for your claim of public accomodation discrimination?
-              Check all that apply.<br></center></h4><br>
+  <center><h3><b> What is the reason for your claim of public accomodation discrimination?
+              Check all that apply.<br></center></h3><br>
             <justify>For example, if you feel that you were treated worse than someone
               else because of race, you should check the box next to race.
               If you feel you were treated worse for several reasons, such as
@@ -47,15 +47,28 @@
   <p>{{ disreason_pub_acc_form.as_p}}</p>
 
 </blockquote>
-<br><br>
 
-
-</blockquote>
       <center>
+          <h3>Create a PDF Copy of Your Complaint:<h3>
           <p><input type="submit" value="Create Complaint"></p>
-        </form>
-      </blockquote>
-    </center>
+        </form>  </center>
+
+  <h3><center>After the form is printed, please mail or fax it to:</center></h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+The Florida Commission on Human Relations
+<br>
+4075 Esplanade Way Room 110
+<br>
+Tallahassee, FL 32399
+<br><br>
+Fax: 850-487-1007
+<br><br>
+Phone: 850-488-7082
+<br><br>
+<b>The questionnaire must be received by the Florida Commission on Human Relations
+within 365 days of the date of the alleged violation.</p></b>
+
 <body><td>
 
 </justify>
