@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
-from fl_discrim_helper.form_folder.pub_acc_complaint_form import *
+from fl_discrim_helper.form_folder.housing_complaint_form import *
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from io import StringIO, BytesIO
@@ -15,22 +15,40 @@ from reportlab.lib.units import inch
 
 def housing_complaint(request):
 
-    cx_pub_acc_form = CxPubAccForm(request)
-    op_pub_acc_form = OpPubAccForm(request)
-    disorg_pub_acc_form = DisOrgPubAccForm(request)
-    reporg_pub_acc_form = RepOrgPubAccForm(request)
-    disreason_pub_acc_form = DisReasonPubAccForm(request)
+    cx_housing_form = CxHousingForm(request)
+    cx_other_occ_form = CxOtherOccForm(request)
+    op_housing_form = OpHousingForm(request)
+    dis_housing_form = DisHousingForm(request)
+    rep_housing_form = RepHousingForm(request)
+    dis_reason_housing_form = DisReasonHousingForm(request)
+    housing_prop_type_form = HousingPropType(request)
+    housing_address_form = HousingAddress(request)
+    owner_live_form = OwnerLiveThere(request)
+    describe_housing_form = DescribeHousingForm(request)
+    prior_agency_help = PriorComplaint(request)
+    prior_sought_help = PriorSoughtHelp(request)
+    box_1_2 = Box_1_2(request)
+
 
     if request.method == 'POST':
 
-        cx_pub_acc_form = CxPubAccForm(request.POST)
-        op_pub_acc_form = OpPubAccForm(request.POST)
-        disorg_pub_acc_form = DisOrgPubAccForm(request.POST)
-        reporg_pub_acc_form = RepOrgPubAccForm(request.POST)
-        disreason_pub_acc_form = DisReasonPubAccForm(request.POST)
+        cx_housing_form = CxHousingForm(request.POST)
+        cx_other_occ_form = CxOtherOccForm(request.POST)
+        op_housing_form = OpHousingForm(request.POST)
+        dis_housing_form = DisHousingForm(request.POST)
+        rep_housing_form = RepHousingForm(request.POST)
+        dis_reason_housing_form = DisReasonHousingForm(request.POST)
+        housing_prop_type_form = HousingPropType(request.POST)
+        housing_address_form = HousingAddress(request.POST)
+        owner_live_form = OwnerLiveThere(request.POST)
+        describe_housing_form = DescribeHousingForm(request.POST)
+        prior_agency_help = PriorComplaint(request.POST)
+        prior_sought_help = PriorSoughtHelp(request.POST)
+        box_1_2 = Box_1_2(request.POST)
 
-        if cx_pub_acc_form.is_valid():
+        if cx_housing_form.is_valid():
             print("Valid")
+
 
             cx_last_name = request.POST.get('cx_last_name')
 
@@ -46,6 +64,8 @@ def housing_complaint(request):
             cx_email = request.POST.get('cx_email')
             cx_dob = request.POST.get('cx_dob')
             cx_sex = request.POST.get('cx_sex')
+
+            other_occupants = request.POST.get('other_occupants')
 
             op_last_name = request.POST.get('op_last_name')
             op_first_name = request.POST.get('op_first_name')
@@ -67,8 +87,7 @@ def housing_complaint(request):
             disorg_zip = request.POST.get('disorg_zip')
             disorg_phone = request.POST.get('disorg_phone')
             disorg_type = request.POST.get('disorg_type')
-            disorg_owner = request.POST.get('disorg_owner')
-            disorg_owner_phone = request.POST.get('disorg_owner_phone')
+            disorg_other_type = request.POST.get('disorg_other_type')
 
             reporg_name = request.POST.get('reporg_name')
             reporg_street_address = request.POST.get('reporg_street_address')
@@ -133,6 +152,14 @@ def housing_complaint(request):
                 reason_familial = "_"
             reason_familial_desc = request.POST.get('reason_familial_desc')
 
+
+
+            reason_retaliation = request.POST.get('reason_retaliation')
+            if reason_retaliation == "on":
+                reason_retaliation = "X"
+            else:
+                reason_retaliation = "_"
+
             reason_other = request.POST.get('reason_other')
             if reason_other == "on":
                 reason_other = "X"
@@ -140,7 +167,40 @@ def housing_complaint(request):
                 reason_other = "_"
             reason_other_desc = request.POST.get('reason_other_desc')
 
+            housing_type_choose = request.POST.get('housing_type_choose')
+
+            housing_other_desc = request.POST.get('housing_other_desc')
+
+            housing_street_address = request.POST.get('housing_street_address')
+            housing_apt_num = request.POST.get('housing_apt_num')
+            housing_city = request.POST.get('housing_city')
+            housing_state = request.POST.get('housing_state')
+            housing_county = request.POST.get('housing_county')
+            housing_zip = request.POST.get('housing_zip')
+
+            owner_live_choose = request.POST.get('owner_live_choose')
+
             reason_description = request.POST.get('reason_description')
+
+
+            prior_complaint = request.POST.get('prior_complaint')
+            prior_complaint_agency = request.POST.get('prior_complaint_agency')
+
+            prior_help = request.POST.get('prior_help')
+            prior_help_description = request.POST.get('prior_help_description')
+
+            box_1 = request.POST.get('box_1')
+            if box_1 == "on":
+                box_1 = "X"
+            else:
+                box_1 = "_"
+            box_2 = request.POST.get('box_2')
+            if box_2 == "on":
+                box_2 = "X"
+            else:
+                box_2 = "_"
+
+
 
             response = HttpResponse(content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="%s-complaint.pdf"' % cx_last_name
@@ -157,24 +217,40 @@ def housing_complaint(request):
 
             styles.add(ParagraphStyle(name='Center', alignment=TA_CENTER))
             ptext = '<font size=14> <style="center"> <b>Florida Commission on Human Relations \
-                    Technical Assistance Questionnaire for Public Accommodation \
+                    Technical Assistance Questionnaire for Housing \
                     Complaints </b></style></font>'
 
             Complaint.append(Paragraph(ptext, styles["Center"]))
             Complaint.append(Spacer(1, 12))
 
             styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY))
-            ptext = '<font size=12>Please complete this entire form please print) and \
-                    return it to the Commission at the address listed at the bottom of \
-                    this form.  Answer all questions completely.  Attac <br></br>h additional pages \
-                    if needed to complete your responses. If you do not know the answer to \
-                    a question, answer by stating “not known.” If a question is not \
-                    applicable, write “N/A.”</font>'
+            ptext = '<font size=12> The primary purpose of this questionnaire is \
+            to solicit information about claims of housing discrimination, \
+            determine whether the Florida Commission on Human Relations (FCHR) \
+            has jurisdiction over those claims and provide charge filing counseling, \
+            as appropriate.  Providing this information is voluntary, but failure \
+            to do so may impede the Commission’s investigation of a charge.  \
+            It is not mandatory that this form be used to provide the requested \
+            information.  NOTE: The FCHR may disclose the information included on \
+            this form to other state, local and federal agencies, as appropriate \
+            or necessary to carry out the Commission’s functions, or if the FCHR \
+            becomes aware of a civil or criminal law violation. </font>'
 
             Complaint.append(Paragraph(ptext, styles["Normal"]))
             Complaint.append(Spacer(1, 12))
 
-            ptext = '<font size=12><b>REMEMBER, a charge of public accommodation \
+
+            ptext = '<font size=12> Please complete this entire form (please print) \
+            and return it to the Commission at the address listed at the bottom of \
+            this form.  Answer all questions completely.  Attach additional pages, \
+            if needed, to complete your responses. If you do not know the answer \
+            to a question, answer by stating “not known.” If a question is not \
+            applicable, write “N/A.”  </font>'
+
+            Complaint.append(Paragraph(ptext, styles["Normal"]))
+            Complaint.append(Spacer(1, 12))
+
+            ptext = '<font size=12><b>REMEMBER, a charge of housing \
                     discrimination must be filed within 365 days of the alleged act of \
                     discrimination.</b></font>'
 
@@ -214,9 +290,19 @@ def housing_complaint(request):
             Complaint.append(Paragraph(address_info, styles["Normal"]))
             Complaint.append(Spacer(1, 24))
 
+            ### OTHER OCCUPANTS ###
+
+            other_occ = '<font size=12><b>2. Other occupants, including names and \
+            dates of birth: </b><br></br> <br></br> \
+                     %s \
+                    </font>' % other_occupants
+
+            Complaint.append(Paragraph(other_occ, styles["Normal"]))
+            Complaint.append(Spacer(1, 24))
+
             ### OTHER CONTACT INFORMATION ###
 
-            name_info = '<font size=12><b>2. Please provide the name of a person we can \
+            name_info = '<font size=12><b>3. Please provide the name of a person we can \
                     contact if we are unable to reach you: </b><br></br> <br></br> \
                     <b>Last Name:</b> %s <b>First Name: </b> %s <b>MI:</b> %s\
                     <b>Relationship:</b> %s\
@@ -246,8 +332,7 @@ def housing_complaint(request):
 
             ### DISCRIMINATING ORGANIZATION ###
 
-            name_info = '<font size=12><b>3. I believe that I was discriminated against by \
-                    the following organization(s):</b><br></br> <br></br> \
+            name_info = '<font size=12><b>4. I believe that I was discriminated against by:</b><br></br> <br></br> \
                     <b>Organization Name:</b> %s \
                     </font>' % disorg_name
 
@@ -258,9 +343,8 @@ def housing_complaint(request):
                     ><b>County:</b> %s <br></br><b>State:</b> %s <br></br>\
                     <b>ZIP Code:</b> %s<br></br>\
                     <b>Telephone Number:</b> %s <br></br>\
-                    <b>Type of Business:</b> %s <br></br>\
-                    <b>Owner Name:</b> %s <br></br>\
-                    <b>Owner Telephone:</b> %s <br></br>\
+                    <b>This person / entity is a:</b> %s <br></br>\
+                    <b>If you selected other, please describe:</b> %s <br></br>\
                     </font>' % (disorg_street_address,
                                 disorg_city,
                                 disorg_county,
@@ -268,8 +352,7 @@ def housing_complaint(request):
                                 disorg_zip,
                                 disorg_phone,
                                 disorg_type,
-                                disorg_owner,
-                                disorg_owner_phone,
+                                disorg_other_type,
                                 )
 
             Complaint.append(Paragraph(address_info, styles["Normal"]))
@@ -277,7 +360,7 @@ def housing_complaint(request):
 
             ### DISCRIMINATING ORGANIZATION REP CONTACT ###
 
-            name_info = '<font size=12><b>4. Organization Representative Contact \
+            name_info = '<font size=12><b>Representative Contact \
                     Information (If known):</b><br></br> <br></br> \
                     <b>Representative Name:</b> %s \
                     </font>' % reporg_name
@@ -307,11 +390,12 @@ def housing_complaint(request):
                     %s <b>Race:</b> %s  <br></br><br></br>\
                     %s <b>Color:</b> %s  <br></br><br></br>\
                     %s <b>National Origin:</b> %s  <br></br><br></br>\
+                    %s <b>Familial Status:</b> %s  <br></br><br></br>\
                     %s <b>Sex:</b> %s  <br></br><br></br>\
-                    %s <b>Pregnant or Condition Related to Pregnancy or Childbirth</b>  <br></br><br></br>\
+                    %s <b>Retaliation (for exercising or encouraging another \
+                    person to exercise a right under the Fair Housing Act)</b> <br></br><br></br>\
                     %s <b>Religion:</b> %s  <br></br><br></br>\
                     %s <b>Disability/Handicap:</b> %s  <br></br><br></br>\
-                    %s <b>Familial Status:</b> %s  <br></br><br></br>\
                     %s <b>Other Reason:</b> %s  <br></br><br></br>\
                     </font>' % (reason_race,
                                 reason_race_choose,
@@ -319,15 +403,15 @@ def housing_complaint(request):
                                 reason_color_choose,
                                 reason_natorigin,
                                 reason_natorigin_choose,
+                                reason_familial,
+                                reason_familial_desc,
                                 reason_sex,
                                 reason_sex_choose,
-                                reason_preg,
+                                reason_retaliation,
                                 reason_religion,
                                 reason_religion_desc,
                                 reason_disability,
                                 reason_disability_choose,
-                                reason_familial,
-                                reason_familial_desc,
                                 reason_other,
                                 reason_other_desc,
 
@@ -335,18 +419,141 @@ def housing_complaint(request):
 
             Complaint.append(Paragraph(description, styles["Normal"]))
 
-            ### DISCRIMINATING ORGANIZATION REP CONTACT ###
 
-            name_info = '<font size=12><b>6. What happened to you that you believe was \
+            housing_type = '<font size=12><b>6. What type of property was involved:</b><br></br> \
+                    %s <br></br> \
+                    <b>If "other" please describe:</b> %s <br></br> \
+                    </font>' % (housing_type_choose, housing_other_desc)
+
+            Complaint.append(Paragraph(housing_type, styles["Normal"]))
+            Complaint.append(Spacer(1, 24))
+
+            ### HOUSING ADDRESS ########
+
+            housing_address = '<font size=12><b>7. What is the property address?</b><br></br> \
+                    <font size=12><b>Street or Mailing Address:</b> %s <br></br> \
+                    <b>City: </b> %s <br></br \
+                    <b>County:</b> %s <br></br><b>State:</b> %s <br></br>\
+                    <b>ZIP Code:</b> %s<br></br>\
+                    </font>' % (housing_street_address,
+                                housing_city,
+                                housing_county,
+                                housing_state,
+                                housing_zip,
+                                )
+
+            housing_address = '<font size=12><b>8. Does the owner live there?</b><br></br> \
+                    %s <br></br> \
+                    </font>' % owner_live_choose
+
+            Complaint.append(Paragraph(housing_address, styles["Normal"]))
+            Complaint.append(Spacer(1, 24))
+
+
+            ### Description ###
+
+            description_info = '<font size=12><b>9. What happened to you that you believe was \
                     discriminatory? Include the date(s) of harm, the action(s), and the \
                     name(s) and title(s) of the person(s) who you believe discriminated \
                     against you. Please attach additional pages if needed.  \
-                    (Example: 08/08/2011 – Refused service by Mr. John Smith, waiter):\
+                    (Example: 08/08/2011 – Accommodation request refused by Mr. John Smith, Property Manager):\
                     </b><br></br> <br></br> \
                     %s \
+                    <br></br> <br></br> \
                     </font>' % reason_description
 
-            Complaint.append(Paragraph(name_info, styles["Normal"]))
+            Complaint.append(Paragraph(description_info, styles["Normal"]))
+
+
+            ### PRIOR FILE? ###
+
+            prior_file_info = '<font size=12><b>8. Have you filed this charge \
+                        previously with HUD or another agency?<br></br> <br></br> \
+                        Answer:</b> %s \
+                    <br></br> <br></br> \
+                    <b>If so, provide the name of the agency and date of filing:</b> %s  \
+                    <br></br> <br></br> \
+                    </font>' % (prior_complaint, prior_complaint_agency)
+
+
+            Complaint.append(Paragraph(prior_file_info, styles["Normal"]))
+
+            ### PRIOR HELP? ###
+
+            disab_info = '<font size=12><b>9. Have you sought help about this \
+                        situation from an attorney, or other source?<br></br> <br></br> \
+                        Answer:</b> %s \
+                    <br></br> <br></br> \
+                    <b>If so, provide the name of the organization or person you\
+                    spoke with, the date, and the outsome if any:</b> %s  \
+                    <br></br> <br></br> \
+                    </font>' % (prior_help, prior_help_description)
+
+
+            Complaint.append(Paragraph(disab_info, styles["Normal"]))
+
+            ### BOX 1 or 2 ###
+
+            boxes_12 = '<font size=12><b>Please check one of the boxes below to \
+            tell us what you would like us to do with the information you are \
+            providing on this questionnaire.  If you would like to file a charge \
+            of housing discrimination, you must do so within 365 \
+            days from the date you were allegedly discriminated against.  \
+            If you do not file a charge of discrimination within the time limit, \
+            you will lose your ability to file a charge.  If you would like more \
+            information before filing a charge or you have concerns about the \
+            FCHR notifying the organization about your charge, you may wish to \
+            check Box 1.  If you want to file a charge, you should check Box 2.</b>\
+            <br></br> <br></br> \
+                        <b>Box 1:</b> %s I want to talk to an FCHR employee \
+                        before deciding whether to file a charge.  I understand \
+                        that by checking this box, I have not filed a charge with \
+                        the FCHR.  I also understand that I could lose my ability \
+                        to file a charge if I do not file in time. \
+                        \
+                    <br></br> <br></br> \
+                    <b>Box 2:</b> %s I want to file a charge of discrimination, \
+                    and I authorize the FCHR to look into the discrimination I \
+                    described above.  I understand that the FCHR must give the \
+                    organization that I accuse of discrimination information \
+                    about the charge, including my name.  I also understand that \
+                    the FCHR can only accept charges of discrimination based on \
+                    race, religion, sex, pregnancy, national origin, disability, \
+                    age, genetic information, or retaliation for opposing discrimination.\
+                    <br></br> <br></br> \
+                    </font>' % (box_1, box_2)
+
+
+            Complaint.append(Paragraph(boxes_12, styles["Normal"]))
+
+            ### sIGNATURE ###
+
+            signature = '<font size=12><b>  NOTE: If you have checked Box 2 above, \
+            and your case is already 350 days or more from the alleged \
+            discrimination, the FCHR will accept this form as a charge if it \
+            meets the elements of a charge. </b> \
+            <br></br> <br></br> \
+            <b>BY SIGNING BELOW, I VERIFY THAT I HAVE READ THE ABOVE INFORMATION \
+            AND THE FACTS STATED ARE TRUE.</b> \
+            <br></br> <br></br> \
+            Signature: ______________________________       Date: _______________\
+            <br></br> <br></br> \
+            <b><center>Mail or Fax this form to:</center></b><br></br> \
+	        Florida Commission on Human Relations <br></br> \
+		4075 Esplanade Way, Suite 110 <br></br> \
+		Tallahassee, Florida 32399-7020 <br></br> \
+		Telephone (850) 488-7082 <br></br> \
+        		Facsimile (850) 487-1007\
+                    <br></br> <br></br> \
+                    </font>'
+
+
+            Complaint.append(Paragraph(signature, styles["Normal"]))
+
+
+
+
+
             doc.build(Complaint)
             pdf = buffer.getvalue()
             buffer.close()
@@ -354,20 +561,36 @@ def housing_complaint(request):
             return response
 
     else:
-        cx_pub_acc_form = CxPubAccForm()
-        op_pub_acc_form = OpPubAccForm()
-        disorg_pub_acc_form = DisOrgPubAccForm()
-        reporg_pub_acc_form = RepOrgPubAccForm()
-        disreason_pub_acc_form = DisReasonPubAccForm()
+        cx_housing_form = CxHousingForm()
+        cx_other_occ_form = CxOtherOccForm()
+        op_housing_form = OpHousingForm()
+        dis_housing_form = DisHousingForm()
+        rep_housing_form = RepHousingForm()
+        dis_reason_housing_form = DisReasonHousingForm()
+        housing_prop_type_form = HousingPropType()
+        housing_address_form = HousingAddress()
+        owner_live_form = OwnerLiveThere()
+        describe_housing_form = DescribeHousingForm()
+        prior_agency_help = PriorComplaint()
+        prior_sought_help = PriorSoughtHelp()
+        box_1_2 = Box_1_2()
 
 
     return render(request,
                     'fl-discrim-helper/housing-complaint.html',
-                    {'cx_pub_acc_form': cx_pub_acc_form,
-                    'op_pub_acc_form': op_pub_acc_form,
-                    'disorg_pub_acc_form': disorg_pub_acc_form,
-                    'reporg_pub_acc_form': reporg_pub_acc_form,
-                    'disreason_pub_acc_form': disreason_pub_acc_form,
+                    {'cx_housing_form': cx_housing_form,
+                    'cx_other_occ_form': cx_other_occ_form,
+                    'op_housing_form': op_housing_form,
+                    'dis_housing_form': dis_housing_form,
+                    'rep_housing_form': rep_housing_form,
+                    'dis_reason_housing_form': dis_reason_housing_form,
+                    'housing_prop_type_form': housing_prop_type_form,
+                    'housing_address_form': housing_address_form,
+                    'owner_live_form': owner_live_form,
+                    'describe_housing_form': describe_housing_form,
+                    'prior_agency_help': prior_agency_help,
+                    'prior_sought_help': prior_sought_help,
+                    'box_1_2': box_1_2,
                     }
                     )
 

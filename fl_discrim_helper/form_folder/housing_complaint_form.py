@@ -76,7 +76,8 @@ class CxOtherOccForm(forms.Form):
     other_occupants = forms.CharField(label = 'Are there any children or \
                                                 other occupants? If so, list \
                                                 them here along with their \
-                                                dates of birth:')
+                                                dates of birth:',
+                                                widget= forms.Textarea(),)
 
 class OpHousingForm(forms.Form):
 
@@ -184,11 +185,11 @@ class DisHousingForm(forms.Form):
 
     disorg_other_type = forms.CharField(label = 'If you selected "Other" please \
                                 describe:',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
-class RepOrgPubAccForm(forms.Form):
+class RepHousingForm(forms.Form):
 
     reporg_name = forms.CharField(label = 'Representative Name ',
                                 required = False,
@@ -335,7 +336,7 @@ class OwnerLiveThere(forms.Form):
 class DescribeHousingForm(forms.Form):
 
 
-    reason_description = forms.CharField(label = 'Please Describe What Happened:', required = False,
+    reason_description = forms.CharField(label = '', required = False,
                                 widget = forms.Textarea(),
                                 )
 

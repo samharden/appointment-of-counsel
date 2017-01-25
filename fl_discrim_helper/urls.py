@@ -3,7 +3,7 @@ from . import views
 from fl_discrim_helper.view_routes import (
                                     choose_complaint_type,
                                     pub_acc_complaint,
-                                    pub_acc_cx_pdf,
+                                    housing_complaint,
                                     )
 
 urlpatterns = [
@@ -17,5 +17,9 @@ urlpatterns = [
     url(r'^pub-acc-complaint.html$',
         pub_acc_complaint.pub_acc_complaint,
         name='pub-acc-complaint'),
+
+    url(r'^housing-complaint.html$',
+        housing_complaint.housing_complaint,
+        name='housing-complaint'),
 
 ]

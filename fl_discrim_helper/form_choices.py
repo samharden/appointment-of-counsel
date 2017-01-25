@@ -8,7 +8,7 @@ INDEX_CHOICES = (
 DISCRIM_CASETYPE_CHOICES = (
     ('pubacc', ("Public Accomodation")),
     # ('employment', ("Employment")),
-    # ('housing', ("Housing")),
+    ('housing', ("Housing")),
 
 )
 
