@@ -82,7 +82,7 @@ HOUSING_TYPE_CHOICES = (
     ('Single Family House', ("Single Family House")),
     ('A House or Building for 2, 3 or 4 Families', ("A House or Building for 2, 3 or 4 Families")),
     ('A Building for 5 Families or More', ("A Building for 5 Families or More")),
-    ('Other, Including Vacant Land Held for Residential Use', ("Other, Including Vacant Land Held for Residential Use")),
+    ('Other', ("Other")),
 
 )
 
