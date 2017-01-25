@@ -152,7 +152,7 @@ def pub_acc_complaint(request):
 
             disability_ynm = request.POST.get('disability_ynm')
 
-            prior_agency_help = request.POST.get('prior_help')
+            prior_agency_help = request.POST.get('prior_agency_help')
             prior_agency_help_description = request.POST.get('prior_help_description')
 
             prior_help = request.POST.get('prior_help')
