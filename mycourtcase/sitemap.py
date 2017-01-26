@@ -112,6 +112,10 @@ class SiteMap(sitemaps.Sitemap):
             'pinellas-petit-theft-overton',
             'pinellas-petit-theft-pierce',
             'pinellas-petit-theft-petit-theft',
+
+            'choose-complaint-type',
+            'pub-acc-complaint',
+            'housing-complaint',
             ]
 
 

@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
-from fl_discrim_helper.form_folder.pub_acc_complaint_form import *
+from fl_discrim_helper.form_folder.employment_form import *
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from io import StringIO, BytesIO
@@ -13,32 +13,39 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 
 
-def pub_acc_complaint(request):
+def employment_complaint(request):
 
-    cx_pub_acc_form = CxPubAccForm(request)
-    op_pub_acc_form = OpPubAccForm(request)
-    disorg_pub_acc_form = DisOrgPubAccForm(request)
-    reporg_pub_acc_form = RepOrgPubAccForm(request)
-    disreason_pub_acc_form = DisReasonPubAccForm(request)
-    disability_ynm = DisabilityYNM(request)
-    prior_agency_help = PriorAgencySoughtHelp(request)
+    cx_employment_form = CxEmploymentForm(request)
+    cx_other_per_form = OpEmploymentForm(request)
+    dis_employment_form = DisEmploymentForm(request)
+    rep_employment_form = RepEmploymentForm(request)
+    dis_employment_num_form = DisEmploymentNumForm(request)
+    dis_employment_data_form = DisEmploymentDataForm(request)
+    dis_reason_employment_form = DisReasonEmploymentForm(request)
+    describe_employment_form = DescribeEmploymentForm(request)
+    disability_ynm_form = DisabilityYNM(request)
+    prior_agency_help = PriorComplaint(request)
     prior_sought_help = PriorSoughtHelp(request)
     box_1_2 = Box_1_2(request)
 
     if request.method == 'POST':
 
-        cx_pub_acc_form = CxPubAccForm(request.POST)
-        op_pub_acc_form = OpPubAccForm(request.POST)
-        disorg_pub_acc_form = DisOrgPubAccForm(request.POST)
-        reporg_pub_acc_form = RepOrgPubAccForm(request.POST)
-        disreason_pub_acc_form = DisReasonPubAccForm(request.POST)
-        disability_ynm = DisabilityYNM(request.POST)
-        prior_agency_help = PriorAgencySoughtHelp(request.POST)
+        cx_employment_form = CxEmploymentForm(request.POST)
+        cx_other_per_form = OpEmploymentForm(request.POST)
+        dis_employment_form = DisEmploymentForm(request.POST)
+        rep_employment_form = RepEmploymentForm(request.POST)
+        dis_employment_num_form = DisEmploymentNumForm(request.POST)
+        dis_employment_data_form = DisEmploymentDataForm(request.POST)
+        dis_reason_employment_form = DisReasonEmploymentForm(request.POST)
+        describe_employment_form = DescribeEmploymentForm(request.POST)
+        disability_ynm_form = DisabilityYNM(request.POST)
+        prior_agency_help = PriorComplaint(request.POST)
         prior_sought_help = PriorSoughtHelp(request.POST)
         box_1_2 = Box_1_2(request.POST)
 
-        if cx_pub_acc_form.is_valid():
+        if cx_housing_form.is_valid():
             print("Valid")
+
 
             cx_last_name = request.POST.get('cx_last_name')
 
@@ -67,6 +74,7 @@ def pub_acc_complaint(request):
             op_zip = request.POST.get('op_zip')
             op_phone = request.POST.get('op_phone')
 
+            disorg_type = request.POST.get('disorg_type')
             disorg_name = request.POST.get('disorg_name')
             disorg_street_address = request.POST.get('disorg_street_address')
             disorg_city = request.POST.get('disorg_city')
@@ -74,9 +82,9 @@ def pub_acc_complaint(request):
             disorg_state = request.POST.get('disorg_state')
             disorg_zip = request.POST.get('disorg_zip')
             disorg_phone = request.POST.get('disorg_phone')
-            disorg_type = request.POST.get('disorg_type')
-            disorg_owner = request.POST.get('disorg_owner')
-            disorg_owner_phone = request.POST.get('disorg_owner_phone')
+            disorg_type_biz = request.POST.get('disorg_type_biz')
+            disorg_hr_dir = request.POST.get('disorg_hr_dir')
+            disorg_hr_dir_phone = request.POST.get('disorg_hr_dir_phone')
 
             reporg_name = request.POST.get('reporg_name')
             reporg_street_address = request.POST.get('reporg_street_address')
@@ -85,6 +93,17 @@ def pub_acc_complaint(request):
             reporg_state = request.POST.get('reporg_state')
             reporg_zip = request.POST.get('reporg_zip')
             reporg_phone = request.POST.get('reporg_phone')
+
+            employee_number_choose = request.POST.get('employee_number_choose')
+
+            date_hired = request.POST.get('date_hired')
+            job_title_at_hire = request.POST.get('job_title_at_hire')
+            job_title_at_discrim = request.POST.get('job_title_at_discrim')
+            date_quit_discharge = request.POST.get('date_quit_discharge')
+            supervisor = request.POST.get('supervisor')
+            applicant_date = request.POST.get('applicant_date')
+            applicant_title = request.POST.get('applicant_title')
+
 
             reason_race = request.POST.get('reason_race')
             if reason_race == "on":
@@ -107,6 +126,13 @@ def pub_acc_complaint(request):
                 reason_natorigin = "_"
             reason_natorigin_choose = request.POST.get('reason_natorigin_choose')
 
+            reason_marital = request.POST.get('reason_marital')
+            if reason_marital == "on":
+                reason_marital = "X"
+            else:
+                reason_marital = "_"
+            reason_marital_choose = request.POST.get('reason_marital_choose')
+
             reason_sex = request.POST.get('reason_sex')
             if reason_sex == "on":
                 reason_sex = "X"
@@ -119,6 +145,21 @@ def pub_acc_complaint(request):
                 reason_preg = "X"
             else:
                 reason_preg = "_"
+
+            reason_age = request.POST.get('reason_age')
+            if reason_age == "on":
+                reason_age = "X"
+            else:
+                reason_age = "_"
+
+            reason_age_choose = request.POST.get('reason_age_choose')
+
+            reason_retaliation = request.POST.get('reason_retaliation')
+            if reason_retaliation == "on":
+                reason_retaliation = "X"
+            else:
+                reason_retaliation = "_"
+
 
             reason_religion = request.POST.get('reason_religion')
             if reason_religion == "on":
@@ -134,12 +175,12 @@ def pub_acc_complaint(request):
                 reason_disability = "_"
             reason_disability_choose = request.POST.get('reason_disability_choose')
 
-            reason_familial = request.POST.get('reason_familial')
-            if reason_familial == "on":
-                reason_familial = "X"
+            reason_genetic = request.POST.get('reason_genetic')
+            if reason_genetic == "on":
+                reason_genetic = "X"
             else:
-                reason_familial = "_"
-            reason_familial_desc = request.POST.get('reason_familial_desc')
+                reason_genetic = "_"
+            reason_genetic_choose = request.POST.get('reason_genetic_choose')
 
             reason_other = request.POST.get('reason_other')
             if reason_other == "on":
@@ -148,12 +189,13 @@ def pub_acc_complaint(request):
                 reason_other = "_"
             reason_other_desc = request.POST.get('reason_other_desc')
 
+
             reason_description = request.POST.get('reason_description')
 
             disability_ynm = request.POST.get('disability_ynm')
 
-            prior_agency_help = request.POST.get('prior_agency_help')
-            prior_agency_help_description = request.POST.get('prior_help_description')
+            prior_complaint = request.POST.get('prior_complaint')
+            prior_complaint_agency = request.POST.get('prior_complaint_agency')
 
             prior_help = request.POST.get('prior_help')
             prior_help_description = request.POST.get('prior_help_description')
@@ -186,24 +228,40 @@ def pub_acc_complaint(request):
 
             styles.add(ParagraphStyle(name='Center', alignment=TA_CENTER))
             ptext = '<font size=14> <style="center"> <b>Florida Commission on Human Relations \
-                    Technical Assistance Questionnaire for Public Accommodation \
+                    Technical Assistance Questionnaire for Employment \
                     Complaints </b></style></font>'
 
             Complaint.append(Paragraph(ptext, styles["Center"]))
             Complaint.append(Spacer(1, 12))
 
             styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY))
-            ptext = '<font size=12>Please complete this entire form and \
-                    return it to the Commission at the address listed at the bottom of \
-                    this form.  Answer all questions completely. Attach additional pages \
-                    if needed to complete your responses. If you do not know the answer to \
-                    a question, answer by stating “not known.” If a question is not \
-                    applicable, write “N/A.”</font>'
+            ptext = '<font size=12> The primary purpose of this questionnaire is \
+            to solicit information about claims of housing discrimination, \
+            determine whether the Florida Commission on Human Relations (FCHR) \
+            has jurisdiction over those claims and provide charge filing counseling, \
+            as appropriate.  Providing this information is voluntary, but failure \
+            to do so may impede the Commission’s investigation of a charge.  \
+            It is not mandatory that this form be used to provide the requested \
+            information.  NOTE: The FCHR may disclose the information included on \
+            this form to other state, local and federal agencies, as appropriate \
+            or necessary to carry out the Commission’s functions, or if the FCHR \
+            becomes aware of a civil or criminal law violation. </font>'
 
             Complaint.append(Paragraph(ptext, styles["Normal"]))
             Complaint.append(Spacer(1, 12))
 
-            ptext = '<font size=12><b>REMEMBER, a charge of public accommodation \
+
+            ptext = '<font size=12> Please complete this entire form (please print) \
+            and return it to the Commission at the address listed at the bottom of \
+            this form.  Answer all questions completely.  Attach additional pages, \
+            if needed, to complete your responses. If you do not know the answer \
+            to a question, answer by stating “not known.” If a question is not \
+            applicable, write “N/A.”  </font>'
+
+            Complaint.append(Paragraph(ptext, styles["Normal"]))
+            Complaint.append(Spacer(1, 12))
+
+            ptext = '<font size=12><b>REMEMBER, a charge of housing \
                     discrimination must be filed within 365 days of the alleged act of \
                     discrimination.</b></font>'
 
@@ -243,9 +301,10 @@ def pub_acc_complaint(request):
             Complaint.append(Paragraph(address_info, styles["Normal"]))
             Complaint.append(Spacer(1, 24))
 
+
             ### OTHER CONTACT INFORMATION ###
 
-            name_info = '<font size=12><b>2. Please provide the name of a person we can \
+            name_info = '<font size=12><b>3. Please provide the name of a person we can \
                     contact if we are unable to reach you: </b><br></br> <br></br> \
                     <b>Last Name:</b> %s <b>First Name: </b> %s <b>MI:</b> %s\
                     <b>Relationship:</b> %s\
@@ -275,30 +334,31 @@ def pub_acc_complaint(request):
 
             ### DISCRIMINATING ORGANIZATION ###
 
-            name_info = '<font size=12><b>3. I believe that I was discriminated against by \
-                    the following organization(s):</b><br></br> <br></br> \
-                    <b>Organization Name:</b> %s \
-                    </font>' % disorg_name
+            name_info = '<font size=12><b>3. I believe that I was discriminated against by:</b><br></br> <br></br> \
+                    <b>Organization Type:</b> %s \
+                    </font>' % disorg_type
 
             Complaint.append(Paragraph(name_info, styles["Normal"]))
 
-            address_info = '<font size=12><b>Street or Mailing Address:</b> %s <br></br> \
-                    <b>City: </b> %s <br></br \
-                    ><b>County:</b> %s <br></br><b>State:</b> %s <br></br>\
+            address_info = '<font size=12><b>Organization Name: </b> %s <br></br>\
+                    <b>Street or Mailing Address:</b> %s <br></br> \
+                    <b>City: </b> %s <br></br> \
+                    <b>County:</b> %s <br></br><b>State:</b> %s <br></br>\
                     <b>ZIP Code:</b> %s<br></br>\
                     <b>Telephone Number:</b> %s <br></br>\
-                    <b>Type of Business:</b> %s <br></br>\
-                    <b>Owner Name:</b> %s <br></br>\
-                    <b>Owner Telephone:</b> %s <br></br>\
-                    </font>' % (disorg_street_address,
+                    <b>This person / entity is a:</b> %s <br></br>\
+                    <b>Human Resources Director / Owner Name:</b> %s <br></br>\
+                    <b>PR:</b> %s <br></br>\
+                    </font>' % (disorg_name,
+                                disorg_street_address,
                                 disorg_city,
                                 disorg_county,
                                 disorg_state,
                                 disorg_zip,
                                 disorg_phone,
-                                disorg_type,
-                                disorg_owner,
-                                disorg_owner_phone,
+                                disorg_type_biz,
+                                disorg_hr_dir,
+                                disorg_hr_dir_phone,
                                 )
 
             Complaint.append(Paragraph(address_info, styles["Normal"]))
@@ -306,7 +366,7 @@ def pub_acc_complaint(request):
 
             ### DISCRIMINATING ORGANIZATION REP CONTACT ###
 
-            name_info = '<font size=12><b>4. Organization Representative Contact \
+            name_info = '<font size=12><b>Representative Contact \
                     Information (If known):</b><br></br> <br></br> \
                     <b>Representative Name:</b> %s \
                     </font>' % reporg_name
@@ -336,11 +396,12 @@ def pub_acc_complaint(request):
                     %s <b>Race:</b> %s  <br></br><br></br>\
                     %s <b>Color:</b> %s  <br></br><br></br>\
                     %s <b>National Origin:</b> %s  <br></br><br></br>\
+                    %s <b>Familial Status:</b> %s  <br></br><br></br>\
                     %s <b>Sex:</b> %s  <br></br><br></br>\
-                    %s <b>Pregnant or Condition Related to Pregnancy or Childbirth</b>  <br></br><br></br>\
+                    %s <b>Retaliation (for exercising or encouraging another \
+                    person to exercise a right under the Fair Housing Act)</b> <br></br><br></br>\
                     %s <b>Religion:</b> %s  <br></br><br></br>\
                     %s <b>Disability/Handicap:</b> %s  <br></br><br></br>\
-                    %s <b>Familial Status:</b> %s  <br></br><br></br>\
                     %s <b>Other Reason:</b> %s  <br></br><br></br>\
                     </font>' % (reason_race,
                                 reason_race_choose,
@@ -348,15 +409,15 @@ def pub_acc_complaint(request):
                                 reason_color_choose,
                                 reason_natorigin,
                                 reason_natorigin_choose,
+                                reason_familial,
+                                reason_familial_desc,
                                 reason_sex,
                                 reason_sex_choose,
-                                reason_preg,
+                                reason_retaliation,
                                 reason_religion,
                                 reason_religion_desc,
                                 reason_disability,
                                 reason_disability_choose,
-                                reason_familial,
-                                reason_familial_desc,
                                 reason_other,
                                 reason_other_desc,
 
@@ -364,13 +425,44 @@ def pub_acc_complaint(request):
 
             Complaint.append(Paragraph(description, styles["Normal"]))
 
+
+            housing_type = '<font size=12><b>6. What type of property was involved:</b><br></br> \
+                    %s <br></br> \
+                    <b>If "other" please describe:</b> %s <br></br> \
+                    </font>' % (housing_type_choose, housing_other_desc)
+
+            Complaint.append(Paragraph(housing_type, styles["Normal"]))
+            Complaint.append(Spacer(1, 24))
+
+            ### HOUSING ADDRESS ########
+
+            housing_address = '<font size=12><b>7. What is the property address?</b><br></br> \
+                    <font size=12><b>Street or Mailing Address:</b> %s <br></br> \
+                    <b>City: </b> %s <br></br \
+                    <b>County:</b> %s <br></br><b>State:</b> %s <br></br>\
+                    <b>ZIP Code:</b> %s<br></br>\
+                    </font>' % (housing_street_address,
+                                housing_city,
+                                housing_county,
+                                housing_state,
+                                housing_zip,
+                                )
+
+            housing_address = '<font size=12><b>8. Does the owner live there?</b><br></br> \
+                    %s <br></br> \
+                    </font>' % owner_live_choose
+
+            Complaint.append(Paragraph(housing_address, styles["Normal"]))
+            Complaint.append(Spacer(1, 24))
+
+
             ### Description ###
 
-            description_info = '<font size=12><b>6. What happened to you that you believe was \
+            description_info = '<font size=12><b>9. What happened to you that you believe was \
                     discriminatory? Include the date(s) of harm, the action(s), and the \
                     name(s) and title(s) of the person(s) who you believe discriminated \
                     against you. Please attach additional pages if needed.  \
-                    (Example: 08/08/2011 – Refused service by Mr. John Smith, waiter):\
+                    (Example: 08/08/2011 – Accommodation request refused by Mr. John Smith, Property Manager):\
                     </b><br></br> <br></br> \
                     %s \
                     <br></br> <br></br> \
@@ -378,30 +470,16 @@ def pub_acc_complaint(request):
 
             Complaint.append(Paragraph(description_info, styles["Normal"]))
 
-            ### DISABILITY ###
-
-            disab_info = '<font size=12><b>7. Do you have a disability, which is \
-                        a physical or mental impairment that substantially \
-                        limits a major life activity, such as caring for yourself, \
-                        performing manual tasks, walking, seeing, hearing, \
-                        speaking, breathing, learning, or working?\
-                    </b><br></br> <br></br> \
-                    <b>Answer:</b> %s  \
-                    <br></br> <br></br> \
-                    </font>' % disability_ynm
-
-
-            Complaint.append(Paragraph(disab_info, styles["Normal"]))
 
             ### PRIOR FILE? ###
 
             prior_file_info = '<font size=12><b>8. Have you filed this charge \
-                        previously with another agency?<br></br> <br></br> \
+                        previously with HUD or another agency?<br></br> <br></br> \
                         Answer:</b> %s \
                     <br></br> <br></br> \
                     <b>If so, provide the name of the agency and date of filing:</b> %s  \
                     <br></br> <br></br> \
-                    </font>' % (prior_agency_help, prior_agency_help_description)
+                    </font>' % (prior_complaint, prior_complaint_agency)
 
 
             Complaint.append(Paragraph(prior_file_info, styles["Normal"]))
@@ -409,7 +487,7 @@ def pub_acc_complaint(request):
             ### PRIOR HELP? ###
 
             disab_info = '<font size=12><b>9. Have you sought help about this \
-                        situation from a union, attorney, or other source?<br></br> <br></br> \
+                        situation from an attorney, or other source?<br></br> <br></br> \
                         Answer:</b> %s \
                     <br></br> <br></br> \
                     <b>If so, provide the name of the organization or person you\
@@ -425,7 +503,7 @@ def pub_acc_complaint(request):
             boxes_12 = '<font size=12><b>Please check one of the boxes below to \
             tell us what you would like us to do with the information you are \
             providing on this questionnaire.  If you would like to file a charge \
-            of public accommodations discrimination, you must do so within 365 \
+            of housing discrimination, you must do so within 365 \
             days from the date you were allegedly discriminated against.  \
             If you do not file a charge of discrimination within the time limit, \
             you will lose your ability to file a charge.  If you would like more \
@@ -489,31 +567,34 @@ def pub_acc_complaint(request):
             return response
 
     else:
-        cx_pub_acc_form = CxPubAccForm()
-        op_pub_acc_form = OpPubAccForm()
-        disorg_pub_acc_form = DisOrgPubAccForm()
-        reporg_pub_acc_form = RepOrgPubAccForm()
-        disreason_pub_acc_form = DisReasonPubAccForm()
-        disability_ynm = DisabilityYNM()
-        prior_agency_sought_help = PriorAgencySoughtHelp()
+        cx_employment_form = CxEmploymentForm()
+        cx_other_per_form = OpEmploymentForm()
+        dis_employment_form = DisEmploymentForm()
+        rep_employment_form = RepEmploymentForm()
+        dis_employment_num_form = DisEmploymentNumForm()
+        dis_employment_data_form = DisEmploymentDataForm()
+        dis_reason_employment_form = DisReasonEmploymentForm()
+        describe_employment_form = DescribeEmploymentForm()
+        disability_ynm_form = DisabilityYNM()
+        prior_agency_help = PriorComplaint()
         prior_sought_help = PriorSoughtHelp()
-
         box_1_2 = Box_1_2()
 
 
-
     return render(request,
-                    'fl-discrim-helper/pub-acc-complaint.html',
-                    {'cx_pub_acc_form': cx_pub_acc_form,
-                    'op_pub_acc_form': op_pub_acc_form,
-                    'disorg_pub_acc_form': disorg_pub_acc_form,
-                    'reporg_pub_acc_form': reporg_pub_acc_form,
-                    'disreason_pub_acc_form': disreason_pub_acc_form,
-                    'disability_ynm': disability_ynm,
-                    'prior_agency_sought_help': prior_agency_sought_help,
+                    'fl-discrim-helper/employment-complaint.html',
+                    {'cx_employment_form': cx_employment_form,
+                    'cx_other_per_form': cx_other_per_form,
+                    'dis_employment_form': dis_employment_form,
+                    'rep_employment_form': rep_employment_form,
+                    'dis_employment_num_form': dis_employment_num_form,
+                    'dis_employment_data_form': dis_employment_data_form,
+                    'dis_reason_employment_form': dis_reason_employment_form,
+                    'describe_employment_form': describe_employment_form,
+                    'disability_ynm_form': disability_ynm_form,
+                    'prior_agency_help': prior_agency_help,
                     'prior_sought_help': prior_sought_help,
                     'box_1_2': box_1_2,
-
                     }
                     )
 

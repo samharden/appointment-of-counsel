@@ -8,7 +8,8 @@ from fl_discrim_helper.forms import *
 from fl_discrim_helper.view_routes import (
                                     choose_complaint_type,
                                     pub_acc_complaint,
-                                    housing_complaint
+                                    housing_complaint,
+                                    employment_complaint,
                                     )
 
 
@@ -27,7 +28,7 @@ def choose_complaint_type(request):
 
 
             if complaint_type == 'employment':
-                return HttpResponse(complaint_type)
+                return HttpResponseRedirect('employment-complaint.html', complaint_type)
             elif complaint_type == 'pubacc':
 
                 print(complaint_type)

@@ -6,10 +6,10 @@
 
     <center>
 
-    <h2>Florida Public Accommodation Discrimination Complaint Builder:</h2>
+    <h2>Florida Employment Discrimination Complaint Builder:</h2>
   </center>
   <p style="text-align: justify; margin: 10px 50px 10px 50px !important;">
-    Welcome to the Florida Public Accommodation Discriminaiton Complaint
+    Welcome to the Florida Employment Discriminaiton Complaint
     Builder. To generate your complaint, fill in all of the information below.</p>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;">
     The questionnaire must be received by the Florida Commission on Human
@@ -22,51 +22,71 @@
     <center><b><h3>Your personal information:</h3></b></center>
         <form action="" method="post">
 {% csrf_token %}
-  <p>{{ cx_pub_acc_form.as_p}}</p>
+  <p>{{ cx_employment_form.as_p}}</p>
 </blockquote>
 
 <blockquote>
-  <center><b> <h3>Please provide the name of a person we can contact if we are
-    unable to reach you:</h3></b></center>
-  <p>{{ op_pub_acc_form.as_p}}</p>
+  <center><b> <h3>Please provide the name of a person we can contact
+    if we are unable to reach you:</h3></b></center>
+  <p>{{ cx_other_per_form.as_p}}</p>
 </blockquote>
 
 <blockquote>
-  <center><b> <h3>I believe that I was discriminated against by the following
-    organization:</h3></b></center>
-  <p>{{ disorg_pub_acc_form.as_p}}</p>
-</blockquote>
-
-<blockquote>
-  <center><b><h3> Organization Representative Contact Information (If known):</h3></b></center>
-  <p>{{ reporg_pub_acc_form.as_p}}</p>
+  <center><b><h3> I believe that I was discriminated against by:</h3></b></center>
+  <p>{{ dis_employment_form.as_p}}</p>
 
 </blockquote>
 
 <blockquote>
-  <center><h3><b> What is the reason for your claim of public Accommodation discrimination?
+  <center><b><h3> Representative contact information (if known):</h3></b></center>
+  <p>{{ rep_employment_form.as_p}}</p>
+
+</blockquote>
+
+
+<blockquote>
+  <center><b><h3> Does the organization employ 15 or more employees across all locations
+      and branches?</h3></b></center>
+  <center>{{ dis_employment_num_form}}</center>
+
+</blockquote>
+
+<blockquote>
+  <center><b><h3>Your employment data:</h3></b></center>
+  <p>{{ dis_employment_data_form.as_p}}</p>
+
+</blockquote>
+<blockquote>
+  <center><h3><b> What are the reasons for your claim of employment discrimination?
               Check all that apply.<br></center></h3><br>
-            <justify>For example, if you feel that you were treated worse than someone
-              else because of race, you should check the box next to race.
+            <justify>For example, if you feel that you were treated worse than
+              someone else because of race, you should check the box next to Race.
               If you feel you were treated worse for several reasons, such as
-              your sex, religion and national origin, check all of these boxes.
+              your sex, religion and national origin, check all that apply. If
+              you complained about discrimination, participated in someone else’s
+              complaint or filed a charge of discrimination and a negative action
+              was threatened or taken, you should check the box next to Retaliation.
   </b></justify>
-  <p>{{ disreason_pub_acc_form.as_p}}</p>
+  <p>{{ dis_reason_employment_form.as_p}}</p>
 
 </blockquote>
 
+
+
 <blockquote>
-    <justify><p><b>Do you have a disability, which is a physical or mental impairment
-                that substantially limits a major life activity, such as caring for
-                yourself, performing manual tasks, walking, seeing, hearing,
-                speaking, breathing, learning, or working? <justify></p>
-  <p>{{ disability_ynm.as_p}}</p>
+    <center><h3><b>What happened to you that you believe was discriminatory?</h3><center>
+    <justify>Include the date(s) of harm, the action(s), and the
+name(s) and title(s) of the person(s) who you believe discriminated against you. </justify></h3>
+  <p>{{ describe_employment_form.as_p}}</p>
 
 </blockquote>
 
+
+
+
 <blockquote>
-  <center><h3><b> Have you filed this charge previously with another Agency?</center></h3><br>
-  <p>{{ prior_agency_sought_help.as_p}}</p>
+  <center><h3><b> Have you filed this charge previously with the EEOC or another Agency?</center></h3><br>
+  <p>{{ prior_agency_help.as_p}}</p>
 
 </blockquote>
 
@@ -80,7 +100,7 @@
 <blockquote>
   <center><h3><b> Please check one of the boxes below to tell the FCHR what you would
     like them to do with the information you are providing on this questionnaire.<br></center></h3><br>
-    <justify>If you would like to file a charge of public accommodations discrimination,
+    <justify>If you would like to file a charge of employment discrimination,
         you must do so within 365 days from the date you were allegedly discriminated
         against. If you do not file a charge of discrimination within the time limit,
         you will lose your ability to file a charge.  If you would like more information
@@ -96,7 +116,7 @@
     authorize the FCHR to look into the discrimination I described above.
     I understand that the FCHR must give the individual or organization that I accuse
     of discrimination information about the charge, including my name.  I also
-    understand that the FCHR can only accept charges of housing discrimination based
+    understand that the FCHR can only accept charges of employment discrimination based
     on race, color, national origin, sex, disability, familial status, religion or
     retaliation for opposing discrimination.   </p>
 

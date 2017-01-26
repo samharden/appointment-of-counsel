@@ -4,6 +4,7 @@ from fl_discrim_helper.view_routes import (
                                     choose_complaint_type,
                                     pub_acc_complaint,
                                     housing_complaint,
+                                    employment_complaint,
                                     )
 
 urlpatterns = [
@@ -22,4 +23,8 @@ urlpatterns = [
         housing_complaint.housing_complaint,
         name='housing-complaint'),
 
+
+    url(r'^employment-complaint.html$',
+        employment_complaint.employment_complaint,
+        name='employment-complaint'),
 ]

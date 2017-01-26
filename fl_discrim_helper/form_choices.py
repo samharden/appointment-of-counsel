@@ -102,10 +102,44 @@ DISAB_YNM_CHOICES = (
 
 )
 
+EMPLOYER_TYPE_CHOICES = (
+    ('Employer', ("Employer")),
+    ('Union', ("Union")),
+    ("Employment Agency", ("Employment Agency")),
+    ('Other', ("Other")),
+)
 
+MARITAL_STAT_CHOICES = (
+    ('N/A', ("N/A")),
+    ('Married', ("Married")),
+    ('Single', ("Single")),
+    ("Divorced", ("Divorced")),
+    ('Widowed', ("Widowed")),
 
+)
+AGE_CHOICES = (
+    ('N/A', ("N/A")),
+    ('Under 40', ("Under 40")),
+    ('Over 40', ("Over 40")),
 
+)
 
+GENETIC_CHOICES = (
+    ('N/A', ("N/A")),
+    ('Genetic Testing', ("Genetic Testing")),
+    ('Family Medical History', ("Family Medical History")),
+    ('Genetic Services', ("Genetic Services")),
+)
 
+EMP_DISAB_YNM_CHOICES = (
+    ('N/A', ("N/A")),
+    ('Yes I Have a Disability', ("Yes I Have a Disability")),
+    ('None Now but I Did Have One', ("None Now but I Did Have One")),
+    ('No but the Business Treats me as if I am',
+    ("No but the Business Treats me as if I am")),
+    ('No but the Business Knows I Care for a Disabled Person',
+    ("No but the Business Knows I Care for a Disabled Person")),
+
+)
 
 ###
