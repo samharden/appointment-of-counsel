@@ -43,7 +43,7 @@ def employment_complaint(request):
         prior_sought_help = PriorSoughtHelp(request.POST)
         box_1_2 = Box_1_2(request.POST)
 
-        if cx_housing_form.is_valid():
+        if cx_employment_form.is_valid():
             print("Valid")
 
 
@@ -236,7 +236,7 @@ def employment_complaint(request):
 
             styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY))
             ptext = '<font size=12> The primary purpose of this questionnaire is \
-            to solicit information about claims of housing discrimination, \
+            to solicit information about claims of employment discrimination, \
             determine whether the Florida Commission on Human Relations (FCHR) \
             has jurisdiction over those claims and provide charge filing counseling, \
             as appropriate.  Providing this information is voluntary, but failure \
@@ -245,7 +245,9 @@ def employment_complaint(request):
             information.  NOTE: The FCHR may disclose the information included on \
             this form to other state, local and federal agencies, as appropriate \
             or necessary to carry out the Commission’s functions, or if the FCHR \
-            becomes aware of a civil or criminal law violation. </font>'
+            becomes aware of a civil or criminal law violation. If the FCHR accepts \
+            this form as a charge, this form will be provided to the employer, \
+            union or employment agency identified.  </font>'
 
             Complaint.append(Paragraph(ptext, styles["Normal"]))
             Complaint.append(Spacer(1, 12))
@@ -261,7 +263,7 @@ def employment_complaint(request):
             Complaint.append(Paragraph(ptext, styles["Normal"]))
             Complaint.append(Spacer(1, 12))
 
-            ptext = '<font size=12><b>REMEMBER, a charge of housing \
+            ptext = '<font size=12><b>REMEMBER, a charge of employment \
                     discrimination must be filed within 365 days of the alleged act of \
                     discrimination.</b></font>'
 
@@ -340,7 +342,8 @@ def employment_complaint(request):
 
             Complaint.append(Paragraph(name_info, styles["Normal"]))
 
-            address_info = '<font size=12><b>Organization Name: </b> %s <br></br>\
+            address_info = '<font size=12><b>Organization Contact Information:</b><br></br>\
+                    <b>Organization Name: </b> %s <br></br>\
                     <b>Street or Mailing Address:</b> %s <br></br> \
                     <b>City: </b> %s <br></br> \
                     <b>County:</b> %s <br></br><b>State:</b> %s <br></br>\
@@ -366,7 +369,7 @@ def employment_complaint(request):
 
             ### DISCRIMINATING ORGANIZATION REP CONTACT ###
 
-            name_info = '<font size=12><b>Representative Contact \
+            name_info = '<font size=12><b>4. Organization Representative Contact \
                     Information (If known):</b><br></br> <br></br> \
                     <b>Representative Name:</b> %s \
                     </font>' % reporg_name
@@ -389,19 +392,52 @@ def employment_complaint(request):
             Complaint.append(Paragraph(address_info, styles["Normal"]))
             Complaint.append(Spacer(1, 24))
 
+            ### MORE THAN 15 EMPLOYEES? ###
+
+            emp_num_info = '<font size=12><b>5. Does the Organization Employ 15 \
+                    or More Employees?</b><br></br> <br></br> \
+                    <b>Answer:</b> %s \
+                    </font>' % employee_number_choose
+
+            Complaint.append(Paragraph(emp_num_info, styles["Normal"]))
+            Complaint.append(Spacer(1, 24))
+            ### EMPLOYMENT DATA: ###
+
+            emp_data_info = '<font size=12><b>6. Your employment data: \
+                    </b><br></br> <br></br> \
+                    <b>Date hired:</b> %s  <br></br> \
+                    <b>Job title at hire:</b> %s  <br></br> \
+                    <b>Job title at time of alleged discrimination:</b> %s  <br></br> \
+                    <b>Date quit / discharged:</b> %s  <br></br> \
+                    <b>Name and title of immediate supervisor:</b> %s  <br></br> \
+                    <b>If job applicant, date applied for job:</b> %s  <br></br> \
+                    <b>Job title applied for:</b> %s  <br></br> \
+                    </font>' % (date_hired,
+                                job_title_at_hire,
+                                job_title_at_discrim,
+                                date_quit_discharge,
+                                supervisor,
+                                applicant_date,
+                                applicant_title,
+                                )
+
+            Complaint.append(Paragraph(emp_data_info, styles["Normal"]))
+
             ### DISCRIMINATION REASONS ###
 
-            description = '<font size=12><b>5. What is the reason (basis) for your claim of \
-                    public accommodations discrimination? </b>  <br></br> <br></br>\
+            description = '<font size=12><b>7. What is the reason (basis) for your claim of \
+                    employment discrimination? </b>  <br></br> <br></br>\
                     %s <b>Race:</b> %s  <br></br><br></br>\
                     %s <b>Color:</b> %s  <br></br><br></br>\
                     %s <b>National Origin:</b> %s  <br></br><br></br>\
-                    %s <b>Familial Status:</b> %s  <br></br><br></br>\
+                    %s <b>Marital Status:</b> %s  <br></br><br></br>\
                     %s <b>Sex:</b> %s  <br></br><br></br>\
-                    %s <b>Retaliation (for exercising or encouraging another \
-                    person to exercise a right under the Fair Housing Act)</b> <br></br><br></br>\
+                    %s <b>Pregnant or condition related to pregnancy or childbirth:</b><br></br><br></br>\
+                    %s <b>Age:</b> %s  <br></br><br></br>\
+                    %s <b>Retaliation</b> <br></br><br></br>\
                     %s <b>Religion:</b> %s  <br></br><br></br>\
                     %s <b>Disability/Handicap:</b> %s  <br></br><br></br>\
+                    %s <b>Genetic Information:</b> %s  <br></br><br></br>\
                     %s <b>Other Reason:</b> %s  <br></br><br></br>\
                     </font>' % (reason_race,
                                 reason_race_choose,
@@ -409,15 +445,20 @@ def employment_complaint(request):
                                 reason_color_choose,
                                 reason_natorigin,
                                 reason_natorigin_choose,
-                                reason_familial,
-                                reason_familial_desc,
+                                reason_marital,
+                                reason_marital_choose,
                                 reason_sex,
                                 reason_sex_choose,
+                                reason_preg,
+                                reason_age,
+                                reason_age_choose,
                                 reason_retaliation,
                                 reason_religion,
                                 reason_religion_desc,
                                 reason_disability,
                                 reason_disability_choose,
+                                reason_genetic,
+                                reason_genetic_choose,
                                 reason_other,
                                 reason_other_desc,
 
@@ -426,43 +467,13 @@ def employment_complaint(request):
             Complaint.append(Paragraph(description, styles["Normal"]))
 
 
-            housing_type = '<font size=12><b>6. What type of property was involved:</b><br></br> \
-                    %s <br></br> \
-                    <b>If "other" please describe:</b> %s <br></br> \
-                    </font>' % (housing_type_choose, housing_other_desc)
-
-            Complaint.append(Paragraph(housing_type, styles["Normal"]))
-            Complaint.append(Spacer(1, 24))
-
-            ### HOUSING ADDRESS ########
-
-            housing_address = '<font size=12><b>7. What is the property address?</b><br></br> \
-                    <font size=12><b>Street or Mailing Address:</b> %s <br></br> \
-                    <b>City: </b> %s <br></br \
-                    <b>County:</b> %s <br></br><b>State:</b> %s <br></br>\
-                    <b>ZIP Code:</b> %s<br></br>\
-                    </font>' % (housing_street_address,
-                                housing_city,
-                                housing_county,
-                                housing_state,
-                                housing_zip,
-                                )
-
-            housing_address = '<font size=12><b>8. Does the owner live there?</b><br></br> \
-                    %s <br></br> \
-                    </font>' % owner_live_choose
-
-            Complaint.append(Paragraph(housing_address, styles["Normal"]))
-            Complaint.append(Spacer(1, 24))
-
-
             ### Description ###
 
-            description_info = '<font size=12><b>9. What happened to you that you believe was \
+            description_info = '<font size=12><b>8. What happened to you that you believe was \
                     discriminatory? Include the date(s) of harm, the action(s), and the \
                     name(s) and title(s) of the person(s) who you believe discriminated \
                     against you. Please attach additional pages if needed.  \
-                    (Example: 08/08/2011 – Accommodation request refused by Mr. John Smith, Property Manager):\
+                    (Example: 08/08/2011 – Discharged by Mr. John Smith, supervisor):\
                     </b><br></br> <br></br> \
                     %s \
                     <br></br> <br></br> \
@@ -471,18 +482,35 @@ def employment_complaint(request):
             Complaint.append(Paragraph(description_info, styles["Normal"]))
 
 
-            ### PRIOR FILE? ###
+            ### DISABILITY? ###
 
-            prior_file_info = '<font size=12><b>8. Have you filed this charge \
-                        previously with HUD or another agency?<br></br> <br></br> \
+            disability_info = '<font size=12><b>9. Do you have a disability, \
+                        which is a physical or mental impairment that substantially \
+                        limits a major life activity, such as caring for yourself, \
+                        performing manual tasks, walking, seeing, hearing, speaking, \
+                        breathing, learning, or working?  Please check all that apply: \
+                        <br></br> <br></br> \
                         Answer:</b> %s \
                     <br></br> <br></br> \
-                    <b>If so, provide the name of the agency and date of filing:</b> %s  \
+                    </font>' % disability_ynm
+
+
+            Complaint.append(Paragraph(disability_info, styles["Normal"]))
+
+
+            ### PRIOR FILE? ###
+
+            disab_info = '<font size=12><b>9.Have you filed a charge previously \
+                        on this matter with the EEOC or another agency?\
+                        <br></br> <br></br> \
+                        Answer:</b> %s \
+                    <br></br> <br></br> \
+                    <b>If so, provide the name of the agency and the date of filing:</b> %s  \
                     <br></br> <br></br> \
                     </font>' % (prior_complaint, prior_complaint_agency)
 
 
-            Complaint.append(Paragraph(prior_file_info, styles["Normal"]))
+            Complaint.append(Paragraph(disab_info, styles["Normal"]))
 
             ### PRIOR HELP? ###
 
@@ -503,13 +531,14 @@ def employment_complaint(request):
             boxes_12 = '<font size=12><b>Please check one of the boxes below to \
             tell us what you would like us to do with the information you are \
             providing on this questionnaire.  If you would like to file a charge \
-            of housing discrimination, you must do so within 365 \
+            of employment discrimination, you must do so within 365 \
             days from the date you were allegedly discriminated against.  \
             If you do not file a charge of discrimination within the time limit, \
             you will lose your ability to file a charge.  If you would like more \
             information before filing a charge or you have concerns about the \
-            FCHR notifying the organization about your charge, you may wish to \
-            check Box 1.  If you want to file a charge, you should check Box 2.</b>\
+            FCHR notifying the employer, union or employment agency about your \
+            charge, you may wish to check Box 1.  If you want to file a charge, \
+            you should check Box 2.</b>\
             <br></br> <br></br> \
                         <b>Box 1:</b> %s I want to talk to an FCHR employee \
                         before deciding whether to file a charge.  I understand \

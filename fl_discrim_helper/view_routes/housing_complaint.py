@@ -386,7 +386,7 @@ def housing_complaint(request):
             ### DISCRIMINATION REASONS ###
 
             description = '<font size=12><b>5. What is the reason (basis) for your claim of \
-                    public accommodations discrimination? </b>  <br></br> <br></br>\
+                    housing discrimination? </b>  <br></br> <br></br>\
                     %s <b>Race:</b> %s  <br></br><br></br>\
                     %s <b>Color:</b> %s  <br></br><br></br>\
                     %s <b>National Origin:</b> %s  <br></br><br></br>\
