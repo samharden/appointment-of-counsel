@@ -116,6 +116,7 @@ class SiteMap(sitemaps.Sitemap):
             'choose-complaint-type',
             'pub-acc-complaint',
             'housing-complaint',
+            'employment-complaint',
             ]
 
 

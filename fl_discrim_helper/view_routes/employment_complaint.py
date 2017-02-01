@@ -626,7 +626,3 @@ def employment_complaint(request):
                     'box_1_2': box_1_2,
                     }
                     )
-
-
-
-#

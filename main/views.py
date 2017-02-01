@@ -1,7 +1,6 @@
 
 
 # Create your views here.
-from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
@@ -53,6 +52,8 @@ def search_page(request):
                 return HttpResponseRedirect('/crim')
             elif case_type == 'discrim':
                 return HttpResponseRedirect('/fl-discrim-helper')
+            elif case_type == 'mental-health':
+                return HttpResponseRedirect('/fl-mental-health')
         else:
             form = ProblemForm()
 

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'fl_discrim_helper',
-
+    'mental_health',
     'main',
     'crim',
 ]

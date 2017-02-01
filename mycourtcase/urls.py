@@ -33,5 +33,6 @@ urlpatterns = [
     url(r'^$', views.home_page, name='home'),
     url(r'^main/', include('main.urls')),
     url(r'^crim/', include('crim.urls')),
+    url(r'^fl-mental-health/', include('mental_health.urls')),
 
 ]
