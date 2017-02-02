@@ -1,0 +1,69 @@
+<!-- extend from base layout -->
+
+<!DOCTYPE html>
+
+
+{% extends "fl-mental-health/base0.html" %}
+
+{% block content %}
+
+
+<html lang="en">
+<head>
+
+  <p class="hidden-print">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+    <center>
+
+    <h2>Florida Marchman Act Petition:</h2>
+
+  </center>
+  <blockquote>
+      <center><b><h3>Information:</h3></b></center>
+          <form action="" method="post">
+  {% csrf_token %}
+    <p>What County does the Person live in? {{ header_info.county}}</p>
+    <p>What is the Person's name? {{ header_info.respondent}}</p>
+    <p>Are they 18 years of age or older? {{ header_info.respondent_age_choose}}</p>
+    <p>How old are they?&nbsp &nbsp {{ header_info.respondent_age}}</p>
+    <p>What is your name?&nbsp {{ header_info.petitioner}}</p>
+  </blockquote>
+  <blockquote>
+      <center><b><h3>Your Address and Location Information:</h3></b></center>
+    <p>Your street address: {{ location_info.petitioner_address}}</p>
+    <p>City:&nbsp &nbsp &nbsp &nbsp &nbsp{{ location_info.petitioner_city}}</p>
+    <p>State:&nbsp &nbsp &nbsp &nbsp{{ location_info.petitioner_state}}</p>
+    <p>Zip code: &nbsp{{ location_info.petitioner_zip}}</p>
+    <p>Phone:&nbsp &nbsp &nbsp {{ location_info.petitioner_phone}}</p>
+    <center><b><h3>The Person's Address and Location Information:</h3></b></center>
+  <p>Street address: {{ location_info.respondent_address}}</p>
+  <p>City: {{ location_info.respondent_city}}</p>
+  <p>State address: {{ location_info.respondent_state}}</p>
+  <p>Zip code: {{ location_info.respondent_zip}}</p>
+  <center><b><h3>If the Person has an Alternate Address, Please List it Here:</h3></b></center>
+<p>Street address: {{ location_info.respondent_address}}</p>
+<p>City: {{ location_info.respondent_city}}</p>
+<p>State address: {{ location_info.respondent_state}}</p>
+<p>Zip code: {{ location_info.respondent_zip}}</p>
+  </blockquote>
+
+  <blockquote>
+      <center><b><h3>Relationship:</h3></b></center>
+    <p>{{ relationship_info.as_p}}</p>
+
+    <p>{{ good_terms_info.as_p}}</p>
+  </blockquote>
+  <blockquote>
+    <center><b><h3></h3></b></center>
+  <p>{{ previous_allegations_info.as_p}}</p>
+
+  </blockquote>
+
+  <center>
+      <h3>Create a PDF Copy of Your Baker Act Petition:<h3>
+      <p><input type="submit" value="Create Petition"></p>
+    </form>  </center>
+{% endblock %}
