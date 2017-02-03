@@ -42,19 +42,45 @@
 <blockquote>
   <center><b> <h3>Please provide the name of a person we can contact
     if we are unable to reach you:</h3></b></center>
-  <p>{{ cx_other_per_form.as_p}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">First name: &nbsp&nbsp&nbsp{{ cx_other_per_form.op_first_name}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Last name: &nbsp&nbsp&nbsp{{ cx_other_per_form.op_last_name}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Middle initial: {{ cx_other_per_form.op_mi}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_other_per_form.op_street_address}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Apartment number: {{ cx_other_per_form.op_apt_num}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_other_per_form.op_city}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_other_per_form.op_state}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_other_per_form.op_zip}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{ cx_other_per_form.op_phone}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Relationship: {{ cx_other_per_form.op_relationship}}</p>
 </blockquote>
 
 <blockquote>
   <center><b><h3> I believe that I was discriminated against by:</h3></b></center>
-  <p>{{ dis_employment_form.as_p}}</p>
-
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Choose what best describes the business: {{ dis_employment_form.disorg_type}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">If you chose 'other' please describe: {{ dis_employment_form.disorg_other_type}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Name of business: {{ dis_employment_form.disorg_name}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_employment_form.disorg_street_address}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Suite No: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_employment_form.disorg_apt_num}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_employment_form.disorg_city}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_employment_form.disorg_state}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_employment_form.disorg_county}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_employment_form.disorg_zip}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Phone:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_employment_form.disorg_phone}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Type of business: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_employment_form.disorg_type_biz}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Name of HR Director (if known):&nbsp&nbsp {{ dis_employment_form.disorg_hr_dir}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Phone for HR Director (if known): {{ dis_employment_form.disorg_hr_dir_phone}}</p>
 </blockquote>
 
 <blockquote>
   <center><b><h3> Representative contact information (if known):</h3></b></center>
-  <p>{{ rep_employment_form.as_p}}</p>
-
+<p style="text-align: left; margin: 10px 30px 10px 30px">Name: &nbsp&nbsp&nbsp&nbsp{{ rep_employment_form.reporg_name}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp{{ rep_employment_form.reporg_street_address}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Suite No: {{ rep_employment_form.reporg_apt_num}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_employment_form.reporg_city}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_employment_form.reporg_state}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp{{ rep_employment_form.reporg_county}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_employment_form.reporg_zip}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Phone:&nbsp&nbsp&nbsp&nbsp {{ rep_employment_form.reporg_phone}}</p>
 </blockquote>
 
 

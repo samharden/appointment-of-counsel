@@ -75,6 +75,7 @@ def employment_complaint(request):
             op_phone = request.POST.get('op_phone')
 
             disorg_type = request.POST.get('disorg_type')
+            disorg_other_type = request.POST.get('disorg_other_type')
             disorg_name = request.POST.get('disorg_name')
             disorg_street_address = request.POST.get('disorg_street_address')
             disorg_city = request.POST.get('disorg_city')
@@ -337,12 +338,13 @@ def employment_complaint(request):
             ### DISCRIMINATING ORGANIZATION ###
 
             name_info = '<font size=12><b>3. I believe that I was discriminated against by:</b><br></br> <br></br> \
-                    <b>Organization Type:</b> %s \
-                    </font>' % disorg_type
+                    <b>Organization Type:</b> %s %s\
+                    </font>' % (disorg_type, disorg_other_type)
 
             Complaint.append(Paragraph(name_info, styles["Normal"]))
+            Complaint.append(Spacer(1, 12))
 
-            address_info = '<font size=12><b>Organization Contact Information:</b><br></br>\
+            address_info = '<font size=12><b>Organization Contact Information:</b><br></br><br></br>\
                     <b>Organization Name: </b> %s <br></br>\
                     <b>Street or Mailing Address:</b> %s <br></br> \
                     <b>City: </b> %s <br></br> \

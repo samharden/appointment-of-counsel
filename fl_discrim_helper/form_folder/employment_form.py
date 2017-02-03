@@ -6,12 +6,16 @@ class CxEmploymentForm(forms.Form):
 
     cx_first_name = forms.CharField(label = 'First Name ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_last_name = forms.CharField(label = 'Last Name ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_mi = forms.CharField(label = 'Middle Initial ',
@@ -21,7 +25,9 @@ class CxEmploymentForm(forms.Form):
 
     cx_street_address = forms.CharField(label = 'Street Address ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_apt_num = forms.CharField(label = 'Apartment Number ',
@@ -32,7 +38,9 @@ class CxEmploymentForm(forms.Form):
 
     cx_city = forms.CharField(label = 'City ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_state = forms.ChoiceField(label = 'State ',
@@ -42,12 +50,16 @@ class CxEmploymentForm(forms.Form):
 
     cx_county = forms.CharField(label = 'County ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_zip = forms.CharField(label = 'Zip Code ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_phone = forms.CharField(label = 'Phone ',
@@ -62,7 +74,9 @@ class CxEmploymentForm(forms.Form):
 
     cx_dob = forms.CharField(label = 'Date of Birth',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
 
@@ -142,13 +156,17 @@ class DisEmploymentForm(forms.Form):
 
     disorg_name = forms.CharField(label = 'Organization Name:',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
 
     disorg_street_address = forms.CharField(label = 'Street Address ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     disorg_apt_num = forms.CharField(label = 'Suite or Office Number ',
@@ -159,7 +177,9 @@ class DisEmploymentForm(forms.Form):
 
     disorg_city = forms.CharField(label = 'City ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     disorg_state = forms.ChoiceField(label = 'State ',
@@ -167,30 +187,36 @@ class DisEmploymentForm(forms.Form):
                                 required = True,
                                 )
 
-    disporg_county = forms.CharField(label = 'County ', required = False,
+    disorg_county = forms.CharField(label = 'County ', required = False,
                                 widget = forms.TextInput()
                                 )
 
     disorg_zip = forms.CharField(label = 'Zip Code ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     disorg_phone = forms.CharField(label = 'Phone ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     disorg_type_biz = forms.CharField(label = 'Type of Business ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
     disorg_hr_dir = forms.CharField(label = 'Human Resporces Director / Owner Name: ',
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
     disorg_hr_dir_phone = forms.CharField(label = "HR Director or Owner's Phone: ",
-                                required = True,
+                                required = False,
                                 widget = forms.TextInput()
                                 )
 
@@ -199,13 +225,17 @@ class RepEmploymentForm(forms.Form):
 
     reporg_name = forms.CharField(label = 'Representative Name ',
                                 required = False,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'i.e. John Smith',
+                                })
                                 )
 
 
     reporg_street_address = forms.CharField(label = 'Street Address ',
                                 required = False,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': '',
+                                })
                                 )
 
     reporg_apt_num = forms.CharField(label = 'Apartment Number ',
