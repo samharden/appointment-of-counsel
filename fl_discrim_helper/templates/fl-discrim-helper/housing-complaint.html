@@ -18,28 +18,59 @@
 
 
 
-<blockquote>
+<blockquote style="">
     <center><b><h3>Your personal information:</h3></b></center>
         <form action="" method="post">
 {% csrf_token %}
-  <p>{{ cx_housing_form.as_p}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">First name: &nbsp&nbsp&nbsp{{ cx_housing_form.cx_first_name}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Last name: &nbsp&nbsp&nbsp{{ cx_housing_form.cx_last_name}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Middle initial: {{ cx_housing_form.cx_mi}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px"> Address: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_housing_form.cx_street_address}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Apartment number: {{ cx_housing_form.cx_apt_num}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_housing_form.cx_city}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp&nbsp{{ cx_housing_form.cx_county}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_housing_form.cx_state}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_housing_form.cx_zip}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{ cx_housing_form.cx_phone}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Email: &nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_housing_form.cx_email}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">DOB: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_housing_form.cx_dob}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your sex: {{ cx_housing_form.cx_sex}}</p>
+
 </blockquote>
 
 <blockquote>
-  <center><b> <h3>Other occupants and / or children::</h3></b></center>
+  <center><b> <h3>Other occupants and / or children:</h3></b></center>
   <p>{{ cx_other_occ_form.as_p}}</p>
 </blockquote>
 
-<blockquote>
+<blockquote >
   <center><b> <h3>Please provide the name of a person we can contact
     if we are unable to reach you:</h3></b></center>
-  <p>{{ op_housing_form.as_p}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">First name: &nbsp&nbsp&nbsp{{ op_housing_form.op_first_name}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Last name: &nbsp&nbsp&nbsp{{ op_housing_form.op_last_name}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Middle initial: {{ op_housing_form.op_mi}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ op_housing_form.op_street_address}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Apartment number: {{ op_housing_form.op_apt_num}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ op_housing_form.op_city}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp&nbsp{{ op_housing_form.cx_county}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ op_housing_form.op_state}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ op_housing_form.op_zip}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{ op_housing_form.op_phone}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">Relationship: {{ op_housing_form.op_relationship}}</p>
 </blockquote>
 
 <blockquote>
   <center><b><h3> I believe that I was discriminated against by:</h3></b></center>
-  <p>{{ dis_housing_form.as_p}}</p>
-
+  <p style="text-align: left; margin: 10px 30px 10px 30px"> Organization name: {{ dis_housing_form.disorg_name}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Address: {{ dis_housing_form.disorg_street_address}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Suite No: {{ dis_housing_form.disorg_apt_num}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_housing_form.disorg_city}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_housing_form.disorg_state}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">County: {{ dis_housing_form.disorg_county}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_housing_form.disorg_zip}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp{{ dis_housing_form.disorg_phone}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Type: &nbsp&nbsp&nbsp&nbsp{{ dis_housing_form.disorg_type}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">If 'other', please specify: <br>{{ dis_housing_form.disorg_other_type}}</p>
 </blockquote>
 
 <blockquote>
