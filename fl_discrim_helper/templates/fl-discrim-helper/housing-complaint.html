@@ -62,9 +62,9 @@
 <blockquote>
   <center><b><h3> I believe that I was discriminated against by:</h3></b></center>
   <p style="text-align: left; margin: 10px 30px 10px 30px"> Organization name: {{ dis_housing_form.disorg_name}}</p>
-  <p style="text-align: left; margin: 10px 30px 10px 30px">Address: {{ dis_housing_form.disorg_street_address}}</p>
-  <p style="text-align: left; margin: 10px 30px 10px 30px">Suite No: {{ dis_housing_form.disorg_apt_num}}</p>
-  <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_housing_form.disorg_city}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp{{ dis_housing_form.disorg_street_address}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Suite No:&nbsp{{ dis_housing_form.disorg_apt_num}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_housing_form.disorg_city}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_housing_form.disorg_state}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">County: {{ dis_housing_form.disorg_county}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_housing_form.disorg_zip}}</p>
@@ -75,7 +75,15 @@
 
 <blockquote>
   <center><b><h3> Representative contact information (if known):</h3></b></center>
-  <p>{{ rep_housing_form.as_p}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Name: &nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_name}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp{{ rep_housing_form.reporg_street_address}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Suite: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_apt_num}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_city}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_state}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp&nbsp{{ rep_housing_form.reporg_county}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_zip}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_phone}}</p>
+
 
 </blockquote>
 
@@ -93,8 +101,23 @@
               complaint or filed a charge of discrimination and a negative action
               was threatened or taken, you should check the box next to Retaliation.
   </b></justify>
-  <p>{{ dis_reason_housing_form.as_p}}</p>
-
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ dis_reason_housing_form.reason_race}} Race</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your race: {{ dis_reason_housing_form.reason_race_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ dis_reason_housing_form.reason_color}} Color</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your color: {{ dis_reason_housing_form.reason_color_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ dis_reason_housing_form.reason_natorigin}} National origin</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your national origin: {{ dis_reason_housing_form.reason_natorigin_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ dis_reason_housing_form.reason_familial}} Familial status</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your familial status: {{ dis_reason_housing_form.reason_familial_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ dis_reason_housing_form.reason_sex}} Sex</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your sex: {{ dis_reason_housing_form.reason_sex_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ dis_reason_housing_form.reason_retaliation}} Retaliation</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ dis_reason_housing_form.reason_religion}} Religion</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your religion: {{ dis_reason_housing_form.reason_religion_desc}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ dis_reason_housing_form.reason_disability}} Disability</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your disability: {{ dis_reason_housing_form.reason_disability_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ dis_reason_housing_form.reason_other}} Other</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">If you selected 'other,' please describe: {{ dis_reason_housing_form.reason_other_desc}}</p>
 </blockquote>
 
 <blockquote>
@@ -105,7 +128,12 @@
 
 <blockquote>
     <center><h3><b>What is the address of the propery involved? </center></h3>
-  <p>{{ housing_address_form.as_p}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp&nbsp&nbsp{{ housing_address_form.housing_street_address }}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Apt. No.: &nbsp&nbsp&nbsp{{ housing_address_form.housing_apt_num }}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ housing_address_form.housing_city }}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ housing_address_form.housing_state }}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp&nbsp&nbsp&nbsp{{ housing_address_form.housing_county }}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ housing_address_form.housing_zip }}</p>
 
 </blockquote>
 
