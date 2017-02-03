@@ -6,12 +6,16 @@ class CxPubAccForm(forms.Form):
 
     cx_first_name = forms.CharField(label = 'First Name ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_last_name = forms.CharField(label = 'Last Name ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_mi = forms.CharField(label = 'Middle Initial ',
@@ -21,7 +25,9 @@ class CxPubAccForm(forms.Form):
 
     cx_street_address = forms.CharField(label = 'Street Address ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_apt_num = forms.CharField(label = 'Apartment Number ',
@@ -32,7 +38,9 @@ class CxPubAccForm(forms.Form):
 
     cx_city = forms.CharField(label = 'City ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_state = forms.ChoiceField(label = 'State ',
@@ -42,12 +50,16 @@ class CxPubAccForm(forms.Form):
 
     cx_county = forms.CharField(label = 'County ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_zip = forms.CharField(label = 'Zip Code ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     cx_phone = forms.CharField(label = 'Phone ',
@@ -62,7 +74,9 @@ class CxPubAccForm(forms.Form):
 
     cx_dob = forms.CharField(label = 'Date of Birth',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
 
@@ -135,13 +149,17 @@ class DisOrgPubAccForm(forms.Form):
 
     disorg_name = forms.CharField(label = 'Organization Name ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
 
     disorg_street_address = forms.CharField(label = 'Street Address ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     disorg_apt_num = forms.CharField(label = 'Suite or Office Number ',
@@ -152,7 +170,9 @@ class DisOrgPubAccForm(forms.Form):
 
     disorg_city = forms.CharField(label = 'City ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     disorg_state = forms.ChoiceField(label = 'State ',
@@ -162,22 +182,30 @@ class DisOrgPubAccForm(forms.Form):
 
     disorg_county = forms.CharField(label = 'County ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     disorg_zip = forms.CharField(label = 'Zip Code ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     disorg_phone = forms.CharField(label = 'Phone ',
                                 required = True,
-                                widget = forms.TextInput()
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'REQUIRED',
+                                })
                                 )
 
     disorg_type = forms.CharField(label = 'Type of Business ',
                                     required = True,
-                                    widget = forms.TextInput()
+                                    widget = forms.TextInput(attrs={
+                                    'placeholder': 'REQUIRED',
+                                    })
                                     )
 
     disorg_owner = forms.CharField(label = 'Owner of Organization ',
