@@ -22,8 +22,22 @@
     <center><b><h3>Your personal information:</h3></b></center>
         <form action="" method="post">
 {% csrf_token %}
-  <p>{{ cx_employment_form.as_p}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">First name: &nbsp&nbsp&nbsp{{ cx_employment_form.cx_first_name}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Last name: &nbsp&nbsp&nbsp&nbsp{{ cx_employment_form.cx_last_name}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Middle initial: {{ cx_employment_form.cx_mi}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px"> Address: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_employment_form.cx_street_address}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Apartment number: {{ cx_employment_form.cx_apt_num}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_employment_form.cx_city}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp&nbsp{{ cx_employment_form.cx_county}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_employment_form.cx_state}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_employment_form.cx_zip}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{ cx_employment_form.cx_phone}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Email: &nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_employment_form.cx_email}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">DOB: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_employment_form.cx_dob}}</p>
+<p style="text-align: left; margin: 10px 30px 10px 30px">Your sex: {{ cx_employment_form.cx_sex}}</p>
+
 </blockquote>
+
 
 <blockquote>
   <center><b> <h3>Please provide the name of a person we can contact

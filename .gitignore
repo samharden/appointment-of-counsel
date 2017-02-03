@@ -1,2 +1,4 @@
-*.pyc
+*.cpython-35.pyc
+*__pycache__/
 *.pdf
+crim/__pycache__/__init__.cpython-35.pyc
