@@ -75,8 +75,8 @@
 <blockquote>
   <center><b><h3> Representative contact information (if known):</h3></b></center>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Name: &nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_name}}</p>
-  <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp{{ rep_housing_form.reporg_street_address}}</p>
-  <p style="text-align: left; margin: 10px 30px 10px 30px">Suite: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_apt_num}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp {{ rep_housing_form.reporg_street_address}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Suite: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ rep_housing_form.reporg_apt_num}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_city}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_state}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp&nbsp{{ rep_housing_form.reporg_county}}</p>
@@ -132,13 +132,13 @@
   <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ housing_address_form.housing_city }}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ housing_address_form.housing_state }}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp&nbsp&nbsp&nbsp{{ housing_address_form.housing_county }}</p>
-  <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ housing_address_form.housing_zip }}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ housing_address_form.housing_zip }}</p>
 
 </blockquote>
 
 <blockquote>
-    <center><h3><b>Does the owner live there? </center></h3>
-  <p>{{ owner_live_form.as_p}}</p>
+    <center><h3><b>Does the owner live there? </h3>
+  <p>{{ owner_live_form.as_p}}</p></center>
 
 </blockquote>
 

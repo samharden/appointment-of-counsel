@@ -354,7 +354,7 @@ class HousingAddress(forms.Form):
 
 class OwnerLiveThere(forms.Form):
 
-    owner_live_choose = forms.ChoiceField(label = 'Does the Owner Live There? ', required = True,
+    owner_live_choose = forms.ChoiceField(label = '', required = True,
                                                 choices = YNM_CHOICES,
                                                 )
 
