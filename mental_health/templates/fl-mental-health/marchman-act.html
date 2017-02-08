@@ -14,6 +14,7 @@
   <p class="hidden-print">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 </head>
 
     <center>
@@ -57,13 +58,85 @@
     <p>{{ good_terms_info.as_p}}</p>
   </blockquote>
   <blockquote>
-    <center><b><h3></h3></b></center>
+    <center><b><h3>Prior Court Cases:</h3></b></center>
   <p>{{ previous_allegations_info.as_p}}</p>
 
   </blockquote>
 
+  <blockquote>
+    <center><b><h3>Please Check and Complete All That Apply:</h3></b></center>
+  <p>{{ knowledge_sub_abuse_info.question_9}} I believe that the Person is
+    substance abuse impaired (defined in s. 397.311(18), F.S., as a condition
+    involving the use of alcoholic beverages or any psychoactive or mood-altering
+    substance in such a manner as to induce mental, emotional, or physical
+    problems and cause socially dysfunctional behavior) or has a co-occurring
+    mental health disorder.</p>
+    <p>{{ knowledge_sub_abuse_info.question_9_desc}}</p>
+      <div>
+  <p>{{ knowledge_sub_abuse_info.question_10}} I believe that because of such
+    impairment or disorder, the Person has lost the power of self-control with
+    respect to substance abuse.</p>
+    <p>{{ knowledge_sub_abuse_info.question_10_desc}}</p>
+      <div>
+  <p>{{ knowledge_sub_abuse_info.question_11}} I believe the person is in
+    need of substance abuse services by reason of substance abuse impairment and
+    he or she is incapable of appreciating his or her need for services and of
+     making a rational decision in that regard (a mere refusal to receive services
+     is not enough to constitute lack of judgment).</p>
+    <p>{{ knowledge_sub_abuse_info.question_11_desc}}</p>
+      <div>
+  <p>{{ knowledge_sub_abuse_info.question_12}} I believe that without care
+    or treatment, he or she is likely to suffer from neglect or refuse to care
+    for himself or herself and that such neglect or refusal poses a real and
+    present threat of substantial harm to his or her well-being.</p>
+    <p>{{ knowledge_sub_abuse_info.question_12_desc}}</p>
+      <div>
+  <p>{{ knowledge_sub_abuse_info.question_13 }} I do not believe that such
+    harm may be avoided through the help of willing family members or friends
+    or the provision of other services. </p>
+    <p>{{ knowledge_sub_abuse_info.question_13_desc}}</p>
+      <div>
+  <p>{{ knowledge_sub_abuse_info.question_14}}  I believe there is substantial
+    likelihood that the Person has inflicted, or threatened to or attempted to
+    inflict, or, unless admitted, is likely to inflict, physical harm on himself,
+     herself, or another. </p>
+    <p>{{ knowledge_sub_abuse_info.question_14_desc}}</p>
+      <div>
+  <p>{{ knowledge_sub_abuse_info.question_15a}}  I have attempted to get the
+    Person to seek assistance for a substance abuse problem(s) as follows: </p>
+    <p>{{ knowledge_sub_abuse_info.question_15a_desc}}</p>
+      <div>
+
+  <p>{{ knowledge_sub_abuse_info.question_15b}} I did not try to get the Person
+    to agree to a voluntary assessment or treatment because: </p>
+    <p>{{ knowledge_sub_abuse_info.question_15b_desc}}</p>
+      <div>
+
+  <p>{{ knowledge_sub_abuse_info.question_15c}}  The Person refused a
+    voluntary assessment or treatment because: </p>
+    <p>{{ knowledge_sub_abuse_info.question_15c_desc}}</p>
+      <div>
+
+  </blockquote>
+
+
+  <blockquote>
+    <center><b><h3>Identifying Information:</h3></b></center>
+    {{ identifying_info.as_p }}
+</blockquote>
+
+
+  <blockquote>
+    <center><b><h3>Violence:</h3></b></center>
+    {{ violence_info.as_p }}
+</blockquote>
+
+<blockquote>
+  <center><b><h3>Atty Guardian Ifno:</h3></b></center>
+  {{ atty_guardian_info.as_p }}
+</blockquote>
   <center>
-      <h3>Create a PDF Copy of Your Baker Act Petition:<h3>
+      <h3>Create a PDF Copy of Your Marchman Act Petition:<h3>
       <p><input type="submit" value="Create Petition"></p>
     </form>  </center>
 {% endblock %}

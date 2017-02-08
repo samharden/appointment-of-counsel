@@ -42,3 +42,8 @@ LOS_CHOICES = (
     ('only recently', ("only recently")),
     ('over time', ("over time")),
 )
+YNM_CHOICES = (
+    ('Yes', ("Yes")),
+    ('No', ("No")),
+    ('Unknown', ("Unknown")),
+)

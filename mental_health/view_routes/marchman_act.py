@@ -12,6 +12,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
+from mental_health.models import *
 
 def marchman_act(request):
 
@@ -20,6 +21,11 @@ def marchman_act(request):
     relationship_info = RelationshipInfo(request)
     good_terms_info = GoodTermsInfo(request)
     previous_allegations_info = PreviousAllegationsInfo(request)
+    knowledge_sub_abuse_info = KnowledgeAboutPersonInfo(request)
+    identifying_info = IdentifyingInfo(request)
+    picture_form = PictureID(request)
+    violence_info = ViolenceInfo(request)
+    atty_guardian_info = AttyGuardianInfo(request)
 
     if request.method == 'POST':
 
@@ -28,6 +34,12 @@ def marchman_act(request):
         relationship_info = RelationshipInfo(request.POST)
         good_terms_info = GoodTermsInfo(request.POST)
         previous_allegations_info = PreviousAllegationsInfo(request.POST)
+        knowledge_sub_abuse_info = KnowledgeAboutPersonInfo(request.POST)
+        identifying_info = IdentifyingInfo(request.POST)
+        picture_form = PictureID(request.POST, request.FILES)
+        violence_info = ViolenceInfo(request.POST)
+        atty_guardian_info = AttyGuardianInfo(request.POST)
+
         circuit = ''
         if header_info.is_valid():
             print("Valid")
@@ -77,6 +89,62 @@ def marchman_act(request):
             how_long_known = request.POST.get('how_long_known')
             length_of_substance = request.POST.get('length_of_substance')
             length_of_substance_time = request.POST.get('length_of_substance_time')
+
+            question_9 = request.POST.get('question_9')
+            question_9_desc = request.POST.get('question_9_desc')
+            question_10 = request.POST.get('question_10')
+            question_10_desc = request.POST.get('question_10_desc')
+            question_11 = request.POST.get('question_11')
+            question_11_desc = request.POST.get('question_11_desc')
+            question_12 = request.POST.get('question_12')
+            question_12_desc = request.POST.get('question_12_desc')
+            question_13 = request.POST.get('question_13')
+            question_13_desc = request.POST.get('question_13_desc')
+            question_14 = request.POST.get('question_14')
+            question_14_desc = request.POST.get('question_14_desc')
+            question_15a = request.POST.get('question_15a')
+            question_15a_desc = request.POST.get('question_15a_desc')
+            question_15b = request.POST.get('question_15b')
+            question_15b_desc = request.POST.get('question_15b_desc')
+            question_15c = request.POST.get('question_15c')
+            question_15c_desc = request.POST.get('question_15c_desc')
+
+            respondent_county = request.POST.get('respondent_county')
+            respondent_age = request.POST.get('respondent_age')
+            respondent_race = request.POST.get('respondent_race')
+            respondent_sex = request.POST.get('respondent_sex')
+            respondent_ssn = request.POST.get('respondent_ssn')
+            respondent_height = request.POST.get('respondent_height')
+            respondent_weight = request.POST.get('respondent_weight')
+            respondent_haircolor = request.POST.get('respondent_haircolor')
+            respondent_eyecolor = request.POST.get('respondent_eyecolor')
+
+            question_16 = request.POST.get('question_16')
+            question_16_desc = request.POST.get('question_16_desc')
+            question_17 = request.POST.get('question_17_desc')
+            question_17_desc = request.POST.get('question_17_desc')
+            question_18 = request.POST.get('question_18')
+            question_18_desc = request.POST.get('question_18_desc')
+            question_19 = request.POST.get('question_19')
+            question_19_desc = request.POST.get('question_19_desc')
+
+            question_20 = request.POST.get('question_20')
+            question_20_desc = request.POST.get('question_20_desc')
+            question_21 = request.POST.get('question_21')
+            question_22 = request.POST.get('question_22')
+            question_23 = request.POST.get('question_23')
+            guardian_name = request.POST.get('guardian_name')
+            guardian_phone = request.POST.get('guardian_phone')
+            guardian_address = request.POST.get('guardian_address')
+            guardian_city = request.POST.get('guardian_city')
+            guardian_state = request.POST.get('guardian_state')
+            guardian_zip = request.POST.get('guardian_zip')
+
+            physician_name = request.POST.get('physician_name')
+            physician_phone = request.POST.get('physician_phone')
+
+
+
 
             response = HttpResponse(content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="%s-marchman-\
@@ -151,7 +219,7 @@ def marchman_act(request):
 
             address_text = '<font size=12> <style="justify"> <b>1. a. Petitioner \
                     lives at the following address: <br></br><br></br></b> \
-                    &nbsp &nbsp &nbsp &nbsp %s, %s, %s, %s <br></br><br></br>\
+                    &nbsp &nbsp &nbsp &nbsp %s, <br></br> &nbsp &nbsp &nbsp &nbsp %s, %s, %s <br></br><br></br>\
                     &nbsp &nbsp &nbsp &nbsp Phone: %s \
                     </style></font>' % (petitioner_address,
                                         petitioner_city,
@@ -162,6 +230,24 @@ def marchman_act(request):
 
             Complaint.append(Paragraph(address_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
+
+            address_text = '<font size=12> <style="justify"> <b>&nbsp &nbsp b. The Persont \
+                    lives or may be found at the following address: <br></br><br></br></b> \
+                    &nbsp &nbsp &nbsp &nbsp %s, %s, %s, %s <br></br><br></br>\
+                    </style></font>' % (respondent_address,
+                                        respondent_city,
+                                        respondent_state,
+                                        respondent_zip,
+                                        )
+
+            Complaint.append(Paragraph(address_text, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
+
+
+
+
+
+
 
 
             doc.build(Complaint)
@@ -175,6 +261,11 @@ def marchman_act(request):
         relationship_info = RelationshipInfo(request.POST)
         good_terms_info = GoodTermsInfo(request.POST)
         previous_allegations_info = PreviousAllegationsInfo(request.POST)
+        knowledge_sub_abuse_info = KnowledgeAboutPersonInfo(request.POST)
+        identifying_info = IdentifyingInfo(request.POST)
+        picture_form = PictureID(request.POST, request.FILES)
+        violence_info = ViolenceInfo(request.POST)
+        atty_guardian_info = AttyGuardianInfo(request.POST)
 
     return render(request,'fl-mental-health/marchman-act.html',
                     {'header_info': header_info,
@@ -182,4 +273,9 @@ def marchman_act(request):
                     'relationship_info': relationship_info,
                     'good_terms_info': good_terms_info,
                     'previous_allegations_info': previous_allegations_info,
+                    'knowledge_sub_abuse_info': knowledge_sub_abuse_info,
+                    'identifying_info': identifying_info,
+                    'picture_form': picture_form,
+                    'violence_info': violence_info,
+                    'atty_guardian_info': atty_guardian_info,
                     })
