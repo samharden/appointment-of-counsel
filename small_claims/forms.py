@@ -18,3 +18,9 @@ class SmallClaimsComplaintChoiceForm(forms.Form):
                                         required = False,
 
                                         )
+class SmallClaimsAutoComplaintChoiceForm(forms.Form):
+    choice = forms.ChoiceField(label = '',
+                                        choices = YN_CHOICES,
+                                        required = False,
+
+                                        )

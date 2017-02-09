@@ -21,23 +21,16 @@
     <h2>Florida Small Claims Assistant</h2>
 
   </center>
-    <p><justify>This app is designed to assist you in small claims complaint in County Court.
-      To build a complaint all you have to do is anwser some simple questions.
-      The app will build a pdf copy of your small claims complaint that you can
-      save and print.</p>
+    <p><center><b>Are you filing this complaint as a result of an automobile accident?</b></p>
 
 
-
-
-<center>
         <form action="" method="post">
 {% csrf_token %}
-          {{ indexform.as_p }}
+          {{ choicesform.as_p }}
 
-          <p><input type="submit" value="Get Started"></p>
+          <p><input type="submit" value="Continue"></p>
         </form>
     </div></center>
-<br>
 
 
 {% endblock %}

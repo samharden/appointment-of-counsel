@@ -61,7 +61,7 @@ def complaint_choices(request):
 
             elif choice == 'auto':
 
-                return HttpResponseRedirect('marchman-act.html')
+                return HttpResponseRedirect('auto-complaint-choices.html')
 
         else:
             choicesform = SmallClaimsComplaintChoiceForm()
@@ -76,7 +76,39 @@ def complaint_choices(request):
 
     return render(request, 'fl-small-claims/complaint-choices.html',  {'choicesform': choicesform})
 
+def complaint_choices_auto(request):
 
+    choicesform = SmallClaimsAutoComplaintChoiceForm(request.POST)
+
+    if request.method == 'POST':
+        print("Hello")
+        choicesform = SmallClaimsAutoComplaintChoiceForm(request.POST)
+
+        if choicesform.is_valid():
+            print("Valid index")
+            choice = choicesform.cleaned_data['choice']
+            print(choice)
+
+            if choice == 'Yes':
+
+                return HttpResponseRedirect('small-claim-auto-md.html')
+
+            elif choice == 'No':
+
+                return HttpResponseRedirect('small-claim-auto.html')
+
+        else:
+            choicesform = SmallClaimsAutoComplaintChoiceForm()
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        choicesform = SmallClaimsAutoComplaintChoiceForm()
+
+
+    print("Top of index")
+
+
+    return render(request, 'fl-small-claims/auto-complaint-choices.html',  {'choicesform': choicesform})
 
 
 def sitemap():

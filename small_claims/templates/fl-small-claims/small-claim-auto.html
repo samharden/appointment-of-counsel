@@ -19,7 +19,7 @@
 
     <center>
 
-    <h2>Florida Small Claims Complaint:</h2>
+    <h2>Florida Small Claims Automobile Accident Complaint:</h2>
 
   </center>
   <blockquote>
@@ -51,8 +51,10 @@
 </blockquote>
 
 <blockquote>
-    <center><b><h3>Your Basis for Filing a Lawsuit:</h3></b></center>
-  <p style="text-align: left; margin: 10px 30px 10px 30px"> {{ description_info.as_p}}</p>
+    <center><b><h3>Please Complete the Following Questions:</h3></b></center>
+  <p style="text-align: left; margin: 10px 30px 10px 30px"> The date of the accident:  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp {{ description_info.date_of_accident}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px"> The city or town nearest to the accident location: {{ description_info.city_of_accident}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px"> Were you physically injured as a result of the accident? {{ description_info.physical_injuries}}</p>
 </blockquote>
   <center>
       <h3>Create a PDF Copy of Your Small Claims Complaint:<h3>

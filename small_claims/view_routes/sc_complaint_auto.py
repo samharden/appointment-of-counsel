@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
-from small_claims.form_folder.small_claim import *
+from small_claims.form_folder.small_claim_auto import *
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from io import StringIO, BytesIO
@@ -14,7 +14,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 
 
-def sc_complaint(request):
+def sc_complaint_auto(request):
 
     header_info = HeaderInfo(request)
     location_info = LocationInfo(request)
@@ -39,6 +39,8 @@ def sc_complaint(request):
                 circuit = 'THIRTEENTH'
             elif county == 'PINELLAS':
                 circuit = 'SIXTH'
+            elif county == 'PASCO':
+                circuit = 'SIXTH'
             else:
                 circuit = '__________'
             respondent = request.POST.get('respondent')
@@ -55,9 +57,14 @@ def sc_complaint(request):
             respondent_state = request.POST.get('respondent_state')
             respondent_zip = request.POST.get('respondent_zip')
             amount_info = request.POST.get('amount')
-            description_info = request.POST.get('description')
+            date_of_accident = request.POST.get('date_of_accident')
+            city_of_accident = request.POST.get('city_of_accident')
+            physical_injuries = request.POST.get('physical_injuries')
 
-
+            if physical_injuries == 'Yes':
+                injury_desc = " and Plaintiff has suffered physical injuries."
+            elif physical_injuries == 'No':
+                injury_desc = "."
 
             response = HttpResponse(content_type='application/pdf')
             response['Content-Disposition'] = 'attachment; filename="%s-marchman-\
@@ -116,7 +123,7 @@ def sc_complaint(request):
             Complaint.append(Spacer(1, 12))
 
 
-            title = '<font size=14> <style="center"> <b>STATEMENT OF CLAIM \
+            title = '<font size=14> <style="center"> <b>STATEMENT OF CLAIM FOR AUTOMOBILE NEGLIGENCE\
                     </b></style></font>'
 
             Complaint.append(Paragraph(title, styles["Center"]))
@@ -137,25 +144,31 @@ def sc_complaint(request):
             Complaint.append(Paragraph(one_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
-            two_text = '<font size=12> <style="justify"> <b> 2. &nbsp Plaintiff \
-                    claims the amount of $%s as being due from Defendant, and alleges as \
-                    the basis for such suit: </b><br></br> <br></br> %s\
-                    </style></font>' % (amount_info, description_info)
+            two_text = "<font size=12> <style='justify'> <b> 2. &nbsp On or about \
+                    %s in the vicinity of %s, on a public highway in %s County, Florida, \
+                    Plaintiff's motor vehicle, being operated and owned by %s \
+                    collided with Defendant's motor vehicle, being operated and \
+                    owned by %s.\
+                    </b></style></font>" % (date_of_accident, city_of_accident, county, petitioner, respondent)
 
             Complaint.append(Paragraph(two_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
-            three_text = '<font size=12> <style="justify"> <b> 3. &nbsp Demand \
-                    has been made for payment of said amount due, but Defendant\
-                    has not paid Plaintiff.\
-                    </b></style></font>'
+            three_text = "<font size=12> <style='justify'> <b> 3. &nbsp The collision\
+                    was caused by Defendant's negligent and careless operation of their\
+                    vehicle, whereby Plaintiff's vehicle was damaged and depreciated in\
+                    value%s\
+                    </b></style></font>" % injury_desc
 
             Complaint.append(Paragraph(three_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
+
+
+
             wherefore_text = '<font size=12> <style="justify"> <b> WHEREFORE \
                     Plaintiff demands judgement in the amount of $%s, plus all \
-                    costs of this action\
+                    costs of this action.\
                     </b></style></font>' % amount_info
 
             Complaint.append(Paragraph(wherefore_text, styles["Justify"]))
@@ -226,8 +239,6 @@ def sc_complaint(request):
             Complaint.append(Paragraph(respondent_text, styles["Justify"]))
             Complaint.append(Spacer(1, 14))
 
-            
-
 
 
             doc.build(Complaint)
@@ -241,7 +252,7 @@ def sc_complaint(request):
         amount_info = AmountInfo()
         description_info = DescriptionInfo()
 
-    return render(request,'fl-small-claims/small-claims-complaint.html',
+    return render(request,'fl-small-claims/small-claim-auto.html',
                     {'header_info': header_info,
                     'location_info': location_info,
                     'amount_info': amount_info,

@@ -1,5 +1,5 @@
 from django import forms
-from mental_health.form_choices import *
+from small_claims.form_choices import *
 
 class HeaderInfo(forms.Form):
 
@@ -8,11 +8,21 @@ class HeaderInfo(forms.Form):
                                 required = True,
                                 )
 
-    respondent = forms.CharField(label = 'Respondent ',
+    respondent = forms.CharField(label = '',
                                 required = True,
                                 widget = forms.TextInput()
                                 )
-    petitioner = forms.CharField(label = 'Petitioner ',
+    petitioner = forms.CharField(label = '',
+                                required = True,
+                                widget = forms.TextInput()
+                                )
+
+    respondent_state = forms.ChoiceField(label = 'State ',
+                                choices = STATE_CHOICES,
+                                required = False,
+                                )
+
+    owner_name = forms.CharField(label = '',
                                 required = True,
                                 widget = forms.TextInput()
                                 )
@@ -63,6 +73,25 @@ class LocationInfo(forms.Form):
                                 widget = forms.TextInput()
                                 )
 
+    owner_address = forms.CharField(label = 'Street address ',
+                                required = True,
+                                widget = forms.TextInput()
+                                )
+
+    owner_city = forms.CharField(label = 'City ',
+                                required = True,
+                                widget = forms.TextInput()
+                                )
+
+    owner_state = forms.ChoiceField(label = 'State ',
+                                choices = STATE_CHOICES,
+                                required = False,
+                                )
+
+    owner_zip = forms.CharField(label = 'Zip ',
+                                required = True,
+                                widget = forms.TextInput()
+                                )
 
 class AmountInfo(forms.Form):
     amount = forms.CharField(label = 'Amount of money in damages you are seeking',
@@ -74,7 +103,21 @@ class AmountInfo(forms.Form):
 
 class DescriptionInfo(forms.Form):
 
-    description = forms.CharField(label = 'Please explain what happened, being as specific as you can, and include the dates where possible.',
+    date_of_accident = forms.CharField(label = '',
+                                required = True,
+                                widget = forms.TextInput(attrs={
+                                'placeholder': 'i.e. May 31, 2015',
+                                })
+                                )
+
+    city_of_accident = forms.CharField(label = '',
+                                required = True,
+                                widget = forms.TextInput(attrs={
+                                'placeholder': '',
+                                })
+                                )
+
+    physical_injuries = forms.ChoiceField(label = '',
+                                choices = YN_CHOICES,
                                 required = False,
-                                widget = forms.Textarea()
                                 )

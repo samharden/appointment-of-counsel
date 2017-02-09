@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
-from small_claims.form_folder.small_claim import *
+from small_claims.form_folder.small_claim_auto import *
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from io import StringIO, BytesIO
@@ -14,7 +14,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 
 
-def sc_complaint(request):
+def sc_complaint_auto_md(request):
 
     header_info = HeaderInfo(request)
     location_info = LocationInfo(request)
@@ -39,29 +39,42 @@ def sc_complaint(request):
                 circuit = 'THIRTEENTH'
             elif county == 'PINELLAS':
                 circuit = 'SIXTH'
+            elif county == 'PASCO':
+                circuit = 'SIXTH'
             else:
                 circuit = '__________'
             respondent = request.POST.get('respondent')
             petitioner = request.POST.get('petitioner')
-
+            owner_name = request.POST.get('owner_name')
 
             petitioner_address = request.POST.get('petitioner_address')
             petitioner_city = request.POST.get('petitioner_city')
             petitioner_state = request.POST.get('petitioner_state')
             petitioner_zip = request.POST.get('petitioner_zip')
-            petitioner_phone = request.POST.get('petitioner_phone')
+
             respondent_address = request.POST.get('respondent_address')
             respondent_city = request.POST.get('respondent_city')
             respondent_state = request.POST.get('respondent_state')
             respondent_zip = request.POST.get('respondent_zip')
+
+            owner_address = request.POST.get('owner_address')
+            owner_city = request.POST.get('owner_city')
+            owner_state = request.POST.get('owner_state')
+            owner_zip = request.POST.get('owner_zip')
+
             amount_info = request.POST.get('amount')
-            description_info = request.POST.get('description')
+            date_of_accident = request.POST.get('date_of_accident')
+            city_of_accident = request.POST.get('city_of_accident')
+            physical_injuries = request.POST.get('physical_injuries')
 
-
+            if physical_injuries == 'Yes':
+                injury_desc = " and Plaintiff has suffered physical injuries."
+            elif physical_injuries == 'No':
+                injury_desc = "."
 
             response = HttpResponse(content_type='application/pdf')
-            response['Content-Disposition'] = 'attachment; filename="%s-marchman-\
-                                                act-petition.pdf"' % respondent
+            response['Content-Disposition'] = 'attachment; filename="%s-v-%s-auto-\
+                                                complaint.pdf"' % (petitioner, respondent)
 
             buffer = BytesIO()
             doc = SimpleDocTemplate(buffer,
@@ -93,73 +106,127 @@ def sc_complaint(request):
 
             styles.add(ParagraphStyle(name='Justify', alignment=TA_JUSTIFY))
             respondent_text = '<font size=12> <style="justify"> <b> %s, <br></br> Plaintiff,<br></br>\
-                    %s <br></br>\
-                    %s, %s &nbsp %s \
-                    </b></style></font>' % (petitioner, petitioner_address, petitioner_city, petitioner_state, petitioner_zip)
+                    </b></style></font>' % petitioner
 
             Complaint.append(Paragraph(respondent_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
-            vs = '<font size=14> <style="left"> <b>vs. \
+            vs = '<font size=12> <style="left"> <b>vs. \
                     </b></style></font>'
 
             Complaint.append(Paragraph(vs, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
 
-            respondent_text = '<font size=12> <style="justify"> <b> %s, <br></br> Defendant,<br></br>\
-                    %s <br></br>\
-                    %s, %s &nbsp %s \
-                    </b></style></font>' % (respondent, respondent_address, respondent_city, respondent_state, respondent_zip)
+            respondent_text = '<font size=12> <style="justify"> <b> %s, <br></br>\
+                    and %s <br></br>\
+                    Defendants,<br></br>\
+                    </b></style></font>' % (respondent, owner_name)
 
             Complaint.append(Paragraph(respondent_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
 
-            title = '<font size=14> <style="center"> <b>STATEMENT OF CLAIM \
+            title = '<font size=14> <style="center"> <b>STATEMENT OF CLAIM FOR AUTOMOBILE NEGLIGENCE\
                     </b></style></font>'
 
             Complaint.append(Paragraph(title, styles["Center"]))
-            Complaint.append(Spacer(1, 12))
+            Complaint.append(Spacer(1, 24))
 
 
             intro_text = '<font size=12> <style="justify"> <b> &nbsp &nbsp &nbsp Plaintiff %s \
-                    sues Defendant, %s, and alleges:\
-                    </b></style></font>' % (petitioner, respondent)
+                    sues Defendants, %s and %s, and alleges:\
+                    </b></style></font>' % (petitioner, respondent, owner_name)
 
             Complaint.append(Paragraph(intro_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
-            one_text = '<font size=12> <style="justify"> <b> 1. &nbsp &nbsp This \
+            one_text = '<font size=12> <style="justify"> 1. &nbsp &nbsp This \
                     is an action for damages which does not exceed $5,000.00.\
-                    </b></style></font>'
+                    </style></font>'
 
             Complaint.append(Paragraph(one_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
-            two_text = '<font size=12> <style="justify"> <b> 2. &nbsp Plaintiff \
-                    claims the amount of $%s as being due from Defendant, and alleges as \
-                    the basis for such suit: </b><br></br> <br></br> %s\
-                    </style></font>' % (amount_info, description_info)
+            two_text = "<font size=12> <style='justify'>  2. &nbsp Plaintiff \
+                    %s lives at the following address: %s, %s, %s %s.\
+                    </style></font>" % (petitioner,
+                                            petitioner_address,
+                                            petitioner_city,
+                                            petitioner_state,
+                                            petitioner_zip)
 
             Complaint.append(Paragraph(two_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
-            three_text = '<font size=12> <style="justify"> <b> 3. &nbsp Demand \
-                    has been made for payment of said amount due, but Defendant\
-                    has not paid Plaintiff.\
-                    </b></style></font>'
+            two_text = "<font size=12> <style='justify'>3. &nbsp Defendant \
+                    %s lives at the following address: %s, %s, %s %s.\
+                    </style></font>" % (respondent,
+                                            respondent_address,
+                                            respondent_city,
+                                            respondent_state,
+                                            respondent_zip)
+
+            Complaint.append(Paragraph(two_text, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
+
+
+            two_text = "<font size=12> <style='justify'>  4. &nbsp Defendant \
+                    %s lives at the following address: %s, %s, %s %s.\
+                    </style></font>" % (owner_name,
+                                            owner_address,
+                                            owner_city,
+                                            owner_state,
+                                            owner_zip)
+
+            Complaint.append(Paragraph(two_text, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
+
+
+
+            two_text = "<font size=12> <style='justify'>  5. &nbsp On or about \
+                    %s in the vicinity of %s, on a public highway in %s County, Florida, \
+                    Plaintiff's motor vehicle, being operated and owned by %s \
+                    collided with Defendant's motor vehicle, being operated by %s.\
+                    </style></font>" % (date_of_accident, city_of_accident, county, petitioner, respondent)
+
+            Complaint.append(Paragraph(two_text, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
+
+            three_text = "<font size=12> <style='justify'>  6. &nbsp The collision\
+                    was caused by Defendant %s's negligent and careless operation of their\
+                    vehicle, whereby Plaintiff's vehicle was damaged and depreciated in\
+                    value%s\
+                    </style></font>" % (respondent, injury_desc)
 
             Complaint.append(Paragraph(three_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
-            wherefore_text = '<font size=12> <style="justify"> <b> WHEREFORE \
+            three_text = "<font size=12> <style='justify'> 7. &nbsp At the time of the collision\
+                    Defendant %s was the owner of the vehicle driven by Defendant %s.\
+                    </style></font>" % (owner_name, respondent)
+
+            Complaint.append(Paragraph(three_text, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
+
+
+            three_text = "<font size=12> <style='justify'>  8. &nbsp The collision\
+                    was caused by Defendant %s's negligent and careless operation of their\
+                    vehicle, whereby Plaintiff's vehicle was damaged and depreciated in\
+                    value%s\
+                    </style></font>" % (respondent, injury_desc)
+
+            Complaint.append(Paragraph(three_text, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
+
+
+            wherefore_text = '<font size=12> <style="justify">  WHEREFORE \
                     Plaintiff demands judgement in the amount of $%s, plus all \
-                    costs of this action\
-                    </b></style></font>' % amount_info
+                    costs of this action.\
+                    </style></font>' % amount_info
 
             Complaint.append(Paragraph(wherefore_text, styles["Justify"]))
-            Complaint.append(Spacer(1, 12))
+            Complaint.append(Spacer(1, 24))
 
 
             swear_text = '<font size=12> <style="justify"> <b> %s being first \
@@ -226,8 +293,6 @@ def sc_complaint(request):
             Complaint.append(Paragraph(respondent_text, styles["Justify"]))
             Complaint.append(Spacer(1, 14))
 
-            
-
 
 
             doc.build(Complaint)
@@ -241,7 +306,7 @@ def sc_complaint(request):
         amount_info = AmountInfo()
         description_info = DescriptionInfo()
 
-    return render(request,'fl-small-claims/small-claims-complaint.html',
+    return render(request,'fl-small-claims/small-claim-auto-md.html',
                     {'header_info': header_info,
                     'location_info': location_info,
                     'amount_info': amount_info,

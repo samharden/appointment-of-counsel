@@ -1,11 +1,11 @@
 INDEX_CHOICES = (
     ('complaint', ("I want to file a small claim")),
-    ('respond', ("I was served with a complaint"))
+    # ('respond', ("I was served with a complaint"))
 )
 
 STATE_CHOICES = (
     ('FL', ("FL")),
-    ('GA', ("GA")),
+
 )
 
 SEX_CHOICES = (
@@ -30,7 +30,10 @@ COLOR_CHOICES = (
 )
 
 COUNTY_CHOICES = (
+
+
     ('HILLSBOROUGH', ("Hillsborough")),
+    ('PASCO', ("Pasco")),
     ('PINELLAS', ("Pinellas")),
 )
 
