@@ -39,6 +39,8 @@ def sc_complaint(request):
                 circuit = 'THIRTEENTH'
             elif county == 'PINELLAS':
                 circuit = 'SIXTH'
+            elif county == 'PASCO':
+                circuit = 'SIXTH'
             else:
                 circuit = '__________'
             respondent = request.POST.get('respondent')
@@ -60,8 +62,8 @@ def sc_complaint(request):
 
 
             response = HttpResponse(content_type='application/pdf')
-            response['Content-Disposition'] = 'attachment; filename="%s-marchman-\
-                                                act-petition.pdf"' % respondent
+            response['Content-Disposition'] = 'attachment; filename="%s-vs-\
+                                                %s-complaint.pdf"' % (petitioner, respondent)
 
             buffer = BytesIO()
             doc = SimpleDocTemplate(buffer,
@@ -226,7 +228,7 @@ def sc_complaint(request):
             Complaint.append(Paragraph(respondent_text, styles["Justify"]))
             Complaint.append(Spacer(1, 14))
 
-            
+
 
 
 

@@ -1,5 +1,5 @@
 from django import forms
-from mental_health.form_choices import *
+from small_claims.form_choices import *
 
 class HeaderInfo(forms.Form):
 

@@ -67,8 +67,8 @@ def sc_complaint_auto(request):
                 injury_desc = "."
 
             response = HttpResponse(content_type='application/pdf')
-            response['Content-Disposition'] = 'attachment; filename="%s-marchman-\
-                                                act-petition.pdf"' % respondent
+            response['Content-Disposition'] = 'attachment; filename="%s-vs-%s\
+                                                complaint.pdf"' % (petitioner, respondent)
 
             buffer = BytesIO()
             doc = SimpleDocTemplate(buffer,
