@@ -34,5 +34,5 @@ urlpatterns = [
     url(r'^main/', include('main.urls')),
     url(r'^crim/', include('crim.urls')),
     url(r'^fl-mental-health/', include('mental_health.urls')),
-
+    url(r'^fl-small-claims/', include('small_claims.urls')),
 ]

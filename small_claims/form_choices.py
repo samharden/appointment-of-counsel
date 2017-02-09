@@ -1,6 +1,6 @@
 INDEX_CHOICES = (
-    ('baker_act', ("Baker Act")),
-    ('marchman_act', ("Marchman Act"))
+    ('complaint', ("I want to file a small claim")),
+    ('respond', ("I was served with a complaint"))
 )
 
 STATE_CHOICES = (
@@ -46,4 +46,8 @@ YNM_CHOICES = (
     ('Yes', ("Yes")),
     ('No', ("No")),
     ('Unknown', ("Unknown")),
+)
+COMPLAINT_TYPE_CHOICES = (
+    ('auto', ("Yes")),
+    ('nonauto', ("No")),
 )

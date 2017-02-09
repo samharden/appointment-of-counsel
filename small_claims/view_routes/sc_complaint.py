@@ -23,9 +23,8 @@ def sc_complaint(request):
     previous_allegations_info = PreviousAllegationsInfo(request)
     knowledge_sub_abuse_info = KnowledgeAboutPersonInfo(request)
     identifying_info = IdentifyingInfo(request)
-    picture_form = PictureID(request)
-    violence_info = ViolenceInfo(request)
-    atty_guardian_info = AttyGuardianInfo(request)
+
+
 
     if request.method == 'POST':
 
@@ -36,9 +35,8 @@ def sc_complaint(request):
         previous_allegations_info = PreviousAllegationsInfo(request.POST)
         knowledge_sub_abuse_info = KnowledgeAboutPersonInfo(request.POST)
         identifying_info = IdentifyingInfo(request.POST)
-        picture_form = PictureID(request.POST, request.FILES)
-        violence_info = ViolenceInfo(request.POST)
-        atty_guardian_info = AttyGuardianInfo(request.POST)
+
+
 
         circuit = ''
         if header_info.is_valid():
@@ -263,11 +261,9 @@ def sc_complaint(request):
         previous_allegations_info = PreviousAllegationsInfo(request.POST)
         knowledge_sub_abuse_info = KnowledgeAboutPersonInfo(request.POST)
         identifying_info = IdentifyingInfo(request.POST)
-        picture_form = PictureID(request.POST, request.FILES)
-        violence_info = ViolenceInfo(request.POST)
-        atty_guardian_info = AttyGuardianInfo(request.POST)
 
-    return render(request,'fl-mental-health/marchman-act.html',
+
+    return render(request,'fl-small-claims/small-claims-complaint.html',
                     {'header_info': header_info,
                     'location_info': location_info,
                     'relationship_info': relationship_info,
@@ -275,7 +271,5 @@ def sc_complaint(request):
                     'previous_allegations_info': previous_allegations_info,
                     'knowledge_sub_abuse_info': knowledge_sub_abuse_info,
                     'identifying_info': identifying_info,
-                    'picture_form': picture_form,
-                    'violence_info': violence_info,
-                    'atty_guardian_info': atty_guardian_info,
+
                     })

@@ -54,6 +54,8 @@ def search_page(request):
                 return HttpResponseRedirect('/fl-discrim-helper')
             elif case_type == 'mental-health':
                 return HttpResponseRedirect('/fl-mental-health')
+            elif case_type == 'small-claim':
+                return HttpResponseRedirect('/fl-small-claims')
         else:
             form = ProblemForm()
 

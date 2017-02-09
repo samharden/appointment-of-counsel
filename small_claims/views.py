@@ -21,9 +21,9 @@ def index(request):
             choice = indexform.cleaned_data['choice']
             print(choice)
 
-            if choice == 'baker_act':
+            if choice == 'complaint':
 
-                return HttpResponseRedirect('baker-act.html')
+                return HttpResponseRedirect('complaint-choices.html')
 
             elif choice == 'marchman_act':
 
@@ -40,9 +40,41 @@ def index(request):
     print("Top of index")
 
 
-    return render(request, 'fl-small-claims/index.html', {'indexform': indexform})
+    return render(request, 'fl-small-claims/index.html',  {'indexform': indexform})
+
+def complaint_choices(request):
+
+    choicesform = SmallClaimsComplaintChoiceForm(request.POST)
+
+    if request.method == 'POST':
+        print("Hello")
+        choicesform = SmallClaimsComplaintChoiceForm(request.POST)
+
+        if choicesform.is_valid():
+            print("Valid index")
+            choice = choicesform.cleaned_data['choice']
+            print(choice)
+
+            if choice == 'nonauto':
+
+                return HttpResponseRedirect('small-claims-complaint.html')
+
+            elif choice == 'auto':
+
+                return HttpResponseRedirect('marchman-act.html')
+
+        else:
+            choicesform = SmallClaimsComplaintChoiceForm()
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        choicesform = SmallClaimsComplaintChoiceForm()
 
 
+    print("Top of index")
+
+
+    return render(request, 'fl-small-claims/complaint-choices.html',  {'choicesform': choicesform})
 
 
 

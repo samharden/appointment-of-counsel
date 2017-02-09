@@ -6,7 +6,8 @@ from small_claims.view_routes import (
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^complaint-builder.html$',
+    url(r'^complaint-choices.html', views.complaint_choices, name='complaint-choices'),
+    url(r'^small-claims-complaint.html$',
         sc_complaint.sc_complaint,
         name='sc_complaint'),
     ]

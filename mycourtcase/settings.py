@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'mental_health',
     'main',
     'crim',
+    'small_claims',
 ]
 
 

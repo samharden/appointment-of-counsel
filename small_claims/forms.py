@@ -11,3 +11,10 @@ class SmallClaimsIndexForm(forms.Form):
                                         required = False,
 
                                         )
+
+class SmallClaimsComplaintChoiceForm(forms.Form):
+    choice = forms.ChoiceField(label = '',
+                                        choices = COMPLAINT_TYPE_CHOICES,
+                                        required = False,
+
+                                        )
