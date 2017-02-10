@@ -41,6 +41,8 @@ def marchman_act(request):
         atty_guardian_info = AttyGuardianInfo(request.POST)
 
         circuit = ''
+
+        description_placeholder = ''
         if header_info.is_valid():
             print("Valid")
 
@@ -74,16 +76,41 @@ def marchman_act(request):
             relationship = request.POST.get('relationship')
 
             good_terms = request.POST.get('good_terms')
+            if good_terms == "Yes":
+                good_terms_choice = ""
+            elif good_terms == "No":
+                good_terms_choice = "NOT"
+
             good_terms_describe = request.POST.get('good_terms_describe')
 
             previous_allegation_p = request.POST.get('previous_allegation_p')
+            if previous_allegation_p == "Yes":
+                previous_allegation_p_choice = "have"
+            elif previous_allegation_p == "No":
+                previous_allegation_p_choice = "have not"
+
             previous_allegation_p_describe = request.POST.get('previous_allegation_p_describe')
 
             previous_allegation_r = request.POST.get('previous_allegation_r')
+            if previous_allegation_r == "Yes":
+                previous_allegation_r_choice = "have"
+            elif previous_allegation_r == "No":
+                previous_allegation_r_choice = "have not"
             previous_allegation_r_describe = request.POST.get('previous_allegation_r_describe')
 
             previous_crim = request.POST.get('previous_crim')
+            if previous_crim == "Yes":
+                previous_crim_choice = "has"
+            elif previous_crim == "No":
+                previous_crim_choice = "has not"
+
             previous_court_case = request.POST.get('previous_court_case')
+            if previous_court_case == "Yes":
+                previous_court_case = "I or a family member am not now, and have not in the past, been involved in a court case with the Person."
+            elif previous_court_case == "No":
+                previous_court_case = " I or a family member am now, or was, involved in a court case with the Person.  This case is/was a:"
+
+
             previous_court_case_describe = request.POST.get('previous_court_case_describe')
 
             how_long_known = request.POST.get('how_long_known')
@@ -217,8 +244,8 @@ def marchman_act(request):
             Complaint.append(Paragraph(text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
-            address_text = '<font size=12> <style="justify"> <b>1. a. Petitioner \
-                    lives at the following address: <br></br><br></br></b> \
+            address_text = '<font size=12> <style="justify"> 1. a. Petitioner \
+                    lives at the following address: <br></br><br></br> \
                     &nbsp &nbsp &nbsp &nbsp %s, <br></br> &nbsp &nbsp &nbsp &nbsp %s, %s, %s <br></br><br></br>\
                     &nbsp &nbsp &nbsp &nbsp Phone: %s \
                     </style></font>' % (petitioner_address,
@@ -231,22 +258,86 @@ def marchman_act(request):
             Complaint.append(Paragraph(address_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
-            address_text = '<font size=12> <style="justify"> <b>&nbsp &nbsp b. The Persont \
-                    lives or may be found at the following address: <br></br><br></br></b> \
+            address_text = '<font size=12> <style="justify"> &nbsp &nbsp b. The Person \
+                    lives or may be found at the following address: <br></br><br></br> \
+                    &nbsp &nbsp &nbsp &nbsp %s, %s, %s, %s <br></br><br></br>\
+                    &nbsp &nbsp &nbsp &nbsp or at the following alternate address: <br></br><br></br>\
                     &nbsp &nbsp &nbsp &nbsp %s, %s, %s, %s <br></br><br></br>\
                     </style></font>' % (respondent_address,
                                         respondent_city,
                                         respondent_state,
                                         respondent_zip,
+                                        respondent_address_alt,
+                                        respondent_city_alt,
+                                        respondent_state_alt,
+                                        respondent_zip_alt,
                                         )
 
             Complaint.append(Paragraph(address_text, styles["Justify"]))
             Complaint.append(Spacer(1, 12))
 
 
+            relationship = '<font size=12> <style="justify"> &nbsp &nbsp 2. I have \
+                    the following relationship with the Person: <br></br><br></br> \
+                    %s <br></br><br></br>\
+                    </style></font>' % relationship
 
 
+            Complaint.append(Paragraph(relationship, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
 
+
+            good_terms = '<font size=12> <style="justify"> &nbsp &nbsp 3. I am \
+                    %s on good terms with the Person. <br></br><br></br> \
+                     <br></br>%s<br></br>\
+                    </style></font>' % (good_terms_choice, good_terms_describe)
+
+
+            Complaint.append(Paragraph(good_terms, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
+
+
+            four = '<font size=12> <style="justify"> &nbsp 4. I or \
+                    a family member %s previously made allegations to law \
+                    enforcement involving this Person, such as domestic violence,\
+                    trespassing, battery, child abuse or neglect, Baker Act, \
+                    neighborhood disputes, etc.<br></br> \
+                     <br></br>%s\
+                    </style></font>' % (previous_allegation_p_choice, previous_allegation_p_describe)
+
+
+            Complaint.append(Paragraph(four, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
+
+            five = '<font size=12> <style="justify"> &nbsp 5. The Person \
+                    %s previously made allegations to law \
+                    enforcement about me or my family, such as domestic violence,\
+                    trespassing, battery, child abuse or neglect, Baker Act, \
+                    neighborhood disputes, etc.<br></br> \
+                     <br></br>%s\
+                    </style></font>' % (previous_allegation_r_choice, previous_allegation_r_describe)
+
+
+            Complaint.append(Paragraph(five, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
+
+            six = '<font size=12> <style="justify"> &nbsp 6. The Person \
+                    %s previously (or currently) been involved in criminal or\
+                    delinquency charges.\
+                    <br></br> \
+                    </style></font>' % previous_crim_choice
+
+
+            Complaint.append(Paragraph(six, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
+
+            seven = '<font size=12> <style="justify"> &nbsp 7. %s\
+                    <br></br><br></br> %s\
+                    </style></font>' % (previous_court_case, previous_court_case_describe)
+
+
+            Complaint.append(Paragraph(seven, styles["Justify"]))
+            Complaint.append(Spacer(1, 12))
 
 
 

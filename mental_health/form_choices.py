@@ -5,7 +5,6 @@ INDEX_CHOICES = (
 
 STATE_CHOICES = (
     ('FL', ("FL")),
-    ('GA', ("GA")),
 )
 
 SEX_CHOICES = (

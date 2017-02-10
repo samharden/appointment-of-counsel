@@ -7,7 +7,7 @@ from small_claims.view_routes import (
                                     )
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.index, name='sc-index'),
     url(r'^complaint-choices.html', views.complaint_choices, name='complaint-choices'),
     url(r'^auto-complaint-choices.html', views.complaint_choices_auto, name='complaint-choices-auto'),
     url(r'^small-claims-complaint.html$',
@@ -18,5 +18,5 @@ urlpatterns = [
         name='sc_complaint_auto'),
     url(r'^small-claim-auto-md.html$',
         sc_complaint_auto_md.sc_complaint_auto_md,
-        name='sc_complaint_auto'),
+        name='sc_complaint_auto-md'),
     ]

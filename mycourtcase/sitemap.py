@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
 class SiteMap(sitemaps.Sitemap):
-    changefreq = "never"
+    changefreq = "monthly"
     priority = 0.5
 
     def items(self):
@@ -117,6 +117,13 @@ class SiteMap(sitemaps.Sitemap):
             'pub-acc-complaint',
             'housing-complaint',
             'employment-complaint',
+
+            'complaint-choices',
+            'sc-index',
+            'complaint-choices-auto',
+            'sc_complaint',
+            'sc_complaint_auto',
+            'sc_complaint_auto-md'
             ]
 
 
