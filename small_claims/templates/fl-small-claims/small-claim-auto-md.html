@@ -26,25 +26,25 @@
       <center><b><h3>Jurisdiction Information:</h3></b></center>
           <form action="" method="post">
   {% csrf_token %}
-    <p style="text-align: left; margin: 10px 30px 10px 30px">In what county did the accident happen? &nbsp &nbsp{{ header_info.county}}</p>
-    <p style="text-align: left; margin: 10px 30px 10px 30px">What is the other driver's name? &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp {{ header_info.respondent}}</p>
-    <p style="text-align: left; margin: 10px 30px 10px 30px">What is the name of the vehicle's owner? &nbsp {{ header_info.owner_name}}</p>
-    <p style="text-align: left; margin: 10px 30px 10px 30px">What is your full legal name? &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{ header_info.petitioner}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">In what county did the accident happen? &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{ header_info.county}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">What is the other driver's full legal name? &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp{{ header_info.respondent}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">What is the full legal name of the vehicle's owner? &nbsp{{ header_info.owner_name}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">What is your full legal name? &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{ header_info.petitioner}}</p>
   </blockquote>
   <blockquote>
       <center><b><h3>Your Address and Location Information:</h3></b></center>
     <p style="text-align: left; margin: 10px 30px 10px 30px">Your address: {{ location_info.petitioner_address}}</p>
-    <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{ location_info.petitioner_city}}</p>
+    <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{ location_info.petitioner_city}}</p>
     <p style="text-align: left; margin: 10px 30px 10px 30px">State:&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp{{ location_info.petitioner_state}}</p>
     <p style="text-align: left; margin: 10px 30px 10px 30px">Zip code: &nbsp &nbsp &nbsp &nbsp{{ location_info.petitioner_zip}}</p>
     <center><b><h3>The Other Driver's Address and Location Information:</h3></b></center>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp &nbsp &nbsp &nbsp {{ location_info.respondent_address}}</p>
-  <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{ location_info.respondent_city}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{ location_info.respondent_city}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{ location_info.respondent_state}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Zip code: &nbsp &nbsp &nbsp &nbsp{{ location_info.respondent_zip}}</p>
   <center><b><h3>The Vehicle Owner's Address and Location Information:</h3></b></center>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp &nbsp &nbsp &nbsp {{ location_info.owner_address}}</p>
-  <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{ location_info.owner_city}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">City: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{ location_info.owner_city}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">State: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{ location_info.owner_state}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Zip code: &nbsp &nbsp &nbsp &nbsp{{ location_info.owner_zip}}</p>
 
