@@ -2,3 +2,5 @@
 *__pycache__/
 *.pdf
 crim/__pycache__/__init__.cpython-35.pyc
+*.pyc
+*.log
