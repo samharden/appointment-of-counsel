@@ -25,9 +25,9 @@ def index(request):
 
                 return HttpResponseRedirect('complaint-choices.html')
 
-            elif choice == 'marchman_act':
+            elif choice == 'respond':
 
-                return HttpResponseRedirect('marchman-act.html')
+                return HttpResponseRedirect('find-case.html')
 
         else:
             indexform = SmallClaimsIndexForm()

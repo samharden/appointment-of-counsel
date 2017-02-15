@@ -4,6 +4,7 @@ from small_claims.view_routes import (
                                         sc_complaint,
                                         sc_complaint_auto,
                                         sc_complaint_auto_md,
+                                        sc_defendant,
                                     )
 
 urlpatterns = [
@@ -19,4 +20,7 @@ urlpatterns = [
     url(r'^small-claim-auto-md.html$',
         sc_complaint_auto_md.sc_complaint_auto_md,
         name='sc_complaint_auto-md'),
+    url(r'^find-case.html$',
+        sc_defendant.sc_defendant,
+        name='find_case'),
     ]

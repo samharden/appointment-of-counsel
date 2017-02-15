@@ -1,0 +1,37 @@
+<!-- extend from base layout -->
+
+<!DOCTYPE html>
+
+
+{% extends "fl-small-claims/base0.html" %}
+
+{% block content %}
+
+
+<html lang="en">
+<head>
+
+  <p class="hidden-print">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+</head>
+
+    <center>
+
+    <h2>Search for your case:</h2>
+
+  </center>
+
+      <center><b><h3>Jurisdiction Information:</h3></b></center>
+          <form action="" method="post">
+  {% csrf_token %}
+<blockquote>
+<p>County: {{ case_info.county }}</p>
+<p>Case Number: {{ case_info.case_number }}</p>
+<p>Party Name: {{ case_info.party_name }}</p>
+</blockquote>
+  <center>
+      <p><input type="submit" value="Search"></p>
+    </form>  </center>
+{% endblock %}
