@@ -12,13 +12,13 @@ import os
 from sqlalchemy import create_engine
 
 today_date = str(date.today()-timedelta(1))
-print today_date
+print(today_date)
 year = today_date[:4]
-print year
+print(year)
 month = today_date[5:7]
 day = today_date[8:10]
-print month
-print day
+print(month)
+print(day)
 
 #hill_engine = sa.create_engine('sqlite:///hillsborough_filings.db')
 hill_engine = sa.create_engine('postgres://ovoqaxnmmsxikt:b27443398f6d6ac17a24bd90fe94137be3beb9c1fb94ad467c66b57b84458192@ec2-23-21-204-166.compute-1.amazonaws.com:5432/d6lo6kd16njotm')
