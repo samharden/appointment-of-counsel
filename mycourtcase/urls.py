@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from fl_discrim_helper import views
+from blog import views
 from main import views
 from mycourtcase import sitemap
 from mycourtcase.sitemap import SiteMap
@@ -35,4 +36,5 @@ urlpatterns = [
     url(r'^crim/', include('crim.urls')),
     url(r'^fl-mental-health/', include('mental_health.urls')),
     url(r'^fl-small-claims/', include('small_claims.urls')),
+    url(r'^blog/', include('blog.urls')),
 ]

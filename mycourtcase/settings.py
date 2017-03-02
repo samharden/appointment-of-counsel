@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'main',
     'crim',
     'small_claims',
+    'blog',
 ]
 
 
