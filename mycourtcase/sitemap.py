@@ -123,7 +123,8 @@ class SiteMap(sitemaps.Sitemap):
             'complaint-choices-auto',
             'sc_complaint',
             'sc_complaint_auto',
-            'sc_complaint_auto-md'
+            'sc_complaint_auto-md',
+            'ignition-interlock',
             ]
 
 
