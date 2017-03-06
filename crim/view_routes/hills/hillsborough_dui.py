@@ -5,45 +5,101 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from crim.forms import *
 from crim.templates import *
+from crim.models import search_all
 
 def hillsborough_dui(request):
-    hillsb_judge = HillsboroughJudges(request)
-    crim_desc = CrimDesc(request)
+    party_name = ClientIdentification(request)
+
     print("Hillsborough Page")
+
     if request.method == 'POST':
         print("Hello")
-        hillsb_judge = HillsboroughJudges(request.POST)
-        crim_desc = CrimDesc(request.POST)
+        party_name = ClientIdentification(request.POST)
 
-        if hillsb_judge.is_valid():
-            print("Valid Hello there")
-            judge = hillsb_judge.cleaned_data['hillsb_judge']
-            print(judge)
-            if judge == 'farr':
-                #return render(hills_dui_farr(request), 'hills_dui_farr')
-                return render(request, 'crim/fl/hills/dui/farrdui.html')
-            elif judge == 'greco':
-                return render(request, 'crim/fl/hills/dui/grecodui.html')
-            elif judge == 'jeske':
-                return render(request, 'crim/fl/hills/dui/jeskedui.html')
-            elif judge == 'lefler':
-                return render(request, 'crim/fl/hills/dui/leflerdui.html')
-            elif judge == 'mcneil':
-                return render(request, 'crim/fl/hills/dui/mcneildui.html')
-            elif judge == 'myers':
-                return render(request, 'crim/fl/hills/dui/myersdui.html')
-            elif judge == 'taylor':
-                return render(request, 'crim/fl/hills/dui/taylordui.html')
-            elif judge == 'notsure':
+        if party_name.is_valid():
+
+            notsure = party_name.cleaned_data['notsure']
+            print(notsure)
+            if str(notsure) == 'True':
                 return render(request, 'crim/fl/hills/dui/dui.html')
 
-    else:
-        hillsb_judge = HillsboroughJudges()
+            elif str(notsure) == 'False':
+                first = party_name.cleaned_data['first']
+                last = party_name.cleaned_data['last']
+                county = "hill"
+                print(first, last)
+                #search_all(first, last, county)
+                (judge, case_number, date, appearance_type) = search_all(first, last, county)
+                judge = str(judge)
+                # if ''
+                print("Views says the judge is", judge)
+                print("Views says the date is", date)
+                print("Views says appearance type is", appearance_type)
+                if 'Farr' in str(judge):
 
-    return render(request, 'crim/fl/hills/hillsborough-dui.html', {'hillsb_judge': hillsb_judge})
+                    return render(request,
+                                    'crim/fl/hills/dui/farrdui.html',
+                                    {
+                                    'first': first,
+                                    'last': last,
+                                    })
+                elif 'Greco' in str(judge):
+                    return render(request, 'crim/fl/hills/dui/grecodui.html',
+                                    {
+                                    'first': first,
+                                    'last': last,
+                                    })
+                elif 'Jeske' in str(judge):
+                    return render(request, 'crim/fl/hills/dui/jeskedui.html',
+                                    {
+                                    'first': first,
+                                    'last': last,
+                                    })
+                elif  'Lefler' in str(judge):
+                    return render(request, 'crim/fl/hills/dui/leflerdui.html',
+                                    {
+                                    'first': first,
+                                    'last': last,
+                                    })
+                elif 'McNeil' in str(judge):
+                    return render(request, 'crim/fl/hills/dui/mcneildui.html',
+                                    {
+                                    'first': first,
+                                    'last': last,
+                                    })
+                elif 'Myers' in str(judge):
+                    return render(request, 'crim/fl/hills/dui/myersdui.html',
+                                    {
+                                    'first': first,
+                                    'last': last,
+                                    })
+                elif 'Taylor' in str(judge):
+                    return render(request, 'crim/fl/hills/dui/taylordui.html',
+                                    {
+                                    'first': first,
+                                    'last': last,
+                                    })
+                else:
+                    return render(request, 'crim/fl/hills/dui/dui.html',
+                                    {
+                                    'first': first,
+                                    'last': last,
+                                    })
+
+    else:
+
+        party_name = ClientIdentification()
+
+    return render(request, 'crim/fl/hills/hillsborough-dui.html',
+                            {'party_name': party_name})
 
 def dui(request):
-    return render(request, 'crim/fl/hills/dui/dui.html')
+    client_identification = ClientIdentification(request)
+    if request.method == 'POST':
+        client_identification = ClientIdentification(request.POST)
+    else:
+        client_identification = ClientIdentification()
+    return render(request, 'crim/fl/hills/dui/dui.html', {'client_identification': client_identification})
 
 def farr(request):
     return render(request, 'crim/fl/hills/dui/farrdui.html')
