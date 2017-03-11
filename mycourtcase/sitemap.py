@@ -125,6 +125,7 @@ class SiteMap(sitemaps.Sitemap):
             'sc_complaint_auto',
             'sc_complaint_auto-md',
             'ignition-interlock',
+            'florida-stand-your-ground',
             ]
 
 

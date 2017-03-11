@@ -8,5 +8,7 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^posts/should-first-time-dui-offenders-have-ignition-interlock.html',
-            views.ignition_interlock, name='ignition-interlock')
+            views.ignition_interlock, name='ignition-interlock'),
+    url(r'^posts/florida-stand-your-ground.html',
+        views.stand_your_ground, name='stand-your-ground')
     ]

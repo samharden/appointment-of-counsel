@@ -7,3 +7,6 @@ def index(request):
 
 def ignition_interlock(request):
     return render(request, 'posts/should-first-time-dui-offenders-have-ignition-interlock.html')
+
+def stand_your_ground(request):
+    return render(request, 'posts/florida-stand-your-ground.html')
