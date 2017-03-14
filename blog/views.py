@@ -10,3 +10,5 @@ def ignition_interlock(request):
 
 def stand_your_ground(request):
     return render(request, 'posts/florida-stand-your-ground.html')
+def defendant_and_algorithm(request):
+    return render(request, 'posts/the-defendant-and-the-algorithm.html')
