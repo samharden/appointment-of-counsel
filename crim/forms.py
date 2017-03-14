@@ -3,19 +3,17 @@ from crim.form_choices import *
 
 class ClientIdentification(forms.Form):
     first = forms.CharField(label = '',
-                                required = False,
+                                required = True,
                                 widget = forms.TextInput(attrs={
                                 'placeholder': 'First Name',
                                 })
                                 )
     last = forms.CharField(label = '',
-                                required = False,
+                                required = True,
                                 widget = forms.TextInput(attrs={
                                 'placeholder': 'Last Name',
                                 })
                                 )
-    notsure = forms.BooleanField(label = "I don't want to give my name", initial=True,
-                                    required = False)
 
 class CrimCaseTypeForm(forms.Form):
     case_type = forms.ChoiceField(label = 'Type of case:',
@@ -33,6 +31,13 @@ class CrimCaseTypeForm(forms.Form):
                                     required = False,
 
                                     )
+
+    sepcific_case_search = forms.ChoiceField(label = 'Do you want to search for your specifc case?',
+                                    choices = YN_CHOICES,
+                                    required = False,
+
+                                    )
+
 
 class CrimDesc(forms.Form):
     crim_desc = forms.CharField(label = 'Describe what happened:',

@@ -8,15 +8,13 @@ from crim.templates import *
 
 def hillsborough_dwlsr(request):
     hillsb_judge = HillsboroughJudges(request)
-    crim_desc = CrimDesc(request)
-    print("Hillsborough Battery Page")
+
     if request.method == 'POST':
         print("Hello")
         hillsb_judge = HillsboroughJudges(request.POST)
         crim_desc = CrimDesc(request.POST)
 
         if hillsb_judge.is_valid():
-            print("Valid Hello there")
             judge = hillsb_judge.cleaned_data['hillsb_judge']
             print(judge)
             if judge == 'farr':

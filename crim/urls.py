@@ -4,16 +4,22 @@ from django.contrib.auth import views as auth_views
 from django.views.generic.base import TemplateView
 from . import views
 from crim.view_routes.hills import (hillsborough_dwlsr,
+                                    hillsborough_dwlsr_specific,
                                     hillsborough_dui,
+                                    hillsborough_dui_specific,
                                     hillsborough_battery,
+                                    hillsborough_battery_specific,
                                     hillsborough_petit_theft,
+                                    hillsborough_petit_theft_specific,
                                     hillsborough_marijuanaposs,
+                                    hillsborough_marijuanaposs_specific,
                                     )
 from crim.view_routes.pinel import (pinellas_dui,
                                     pinellas_marijuanaposs,
                                     pinellas_battery,
                                     pinellas_dwlsr,
                                     pinellas_petit_theft,
+
 
                                     )
 
@@ -25,67 +31,106 @@ urlpatterns = [
         hillsborough_dui.hillsborough_dui,
         name='hillsborough-dui'),
 
+    url(r'^fl/hills/hillsborough-dui-case-search.html$',
+        hillsborough_dui_specific.hillsborough_dui_specific,
+        name='hillsborough-dui-case-search'),
+
+
     url(r'^fl/hills/dui/dui.html$',
         hillsborough_dui.dui,
         name='hills-dui-dui'),
 
-    url(r'^fl/hills/dui/farrdui.html$',
+    url(r'^fl/hills/dui/farr-dui.html$',
         hillsborough_dui.farr,
         name='hills-dui-farr'),
 
-    url(r'^fl/hills/dui/grecodui.html$',
+    url(r'^fl/hills/dui/farr-dui-specific.html$',
+        hillsborough_dui_specific.farr_specific,
+        name='hills-dui-farr-specific'),
+
+    url(r'^fl/hills/dui/greco-dui.html$',
         hillsborough_dui.greco,
         name='hills-dui-greco'),
 
-    url(r'^fl/hills/dui/jeskedui.html$',
+    url(r'^fl/hills/dui/greco-dui-specific.html$',
+        hillsborough_dui_specific.greco_specific,
+        name='hills-dui-greco-specific'),
+
+
+    url(r'^fl/hills/dui/jeske-dui.html$',
         hillsborough_dui.jeske,
         name='hills-dui-jeske'),
 
-    url(r'^fl/hills/dui/leflerdui.html$',
+    url(r'^fl/hills/dui/jeske-dui-specific.html$',
+        hillsborough_dui_specific.jeske_specific,
+        name='hills-dui-jeske-specific'),
+
+    url(r'^fl/hills/dui/lefler-dui.html$',
         hillsborough_dui.lefler,
         name='hills-dui-lefler'),
 
-    url(r'^fl/hills/dui/mcneildui.html$',
+    url(r'^fl/hills/dui/lefler-dui-specific.html$',
+        hillsborough_dui_specific.lefler_specific,
+        name='hills-dui-lefler-specific'),
+
+    url(r'^fl/hills/dui/mcneil-dui.html$',
         hillsborough_dui.mcneil,
         name='hills-dui-mcneil'),
 
-    url(r'^fl/hills/dui/myersdui.html$',
+    url(r'^fl/hills/dui/mcneil-dui-specific.html$',
+        hillsborough_dui_specific.mcneil_specific,
+        name='hills-dui-mcneil-specific'),
+
+    url(r'^fl/hills/dui/myers-dui.html$',
         hillsborough_dui.myers,
         name='hills-dui-myers'),
 
-    url(r'^fl/hills/dui/taylordui.html$',
+    url(r'^fl/hills/dui/myers-dui-specific.html$',
+        hillsborough_dui_specific.myers_specific,
+        name='hills-dui-myers-specific'),
+
+    url(r'^fl/hills/dui/taylor-dui.html$',
         hillsborough_dui.taylor,
         name='hills-dui-taylor'),
+
+    url(r'^fl/hills/dui/taylor-dui-specific.html$',
+        hillsborough_dui_specific.taylor_specific,
+        name='hills-dui-taylor-specific'),
 
     url(r'^fl/hills/battery/battery.html$',
         hillsborough_battery.battery,
         name='hills-battery-battery'),
 
-    url(r'^fl/hills/battery/farrbattery.html$',
+    url(r'^fl/hills/hillsborough-battery-case-search.html$',
+        hillsborough_battery_specific.hillsborough_battery_specific,
+        name='hillsborough-battery-case-search'),
+
+
+    url(r'^fl/hills/battery/farr-battery.html$',
         hillsborough_battery.farr,
         name='hills-battery-farr'),
 
-    url(r'^fl/hills/battery/grecobattery.html$',
+    url(r'^fl/hills/battery/greco-battery.html$',
         hillsborough_battery.greco,
         name='hills-battery-greco'),
 
-    url(r'^fl/hills/battery/jeskebattery.html$',
+    url(r'^fl/hills/battery/jeske-battery.html$',
         hillsborough_battery.jeske,
         name='hills-battery-jeske'),
 
-    url(r'^fl/hills/battery/leflerbattery.html$',
+    url(r'^fl/hills/battery/lefler-battery.html$',
         hillsborough_battery.lefler,
         name='hills-battery-lefler'),
 
-    url(r'^fl/hills/battery/mcneilbattery.html$',
+    url(r'^fl/hills/battery/mcneil-battery.html$',
         hillsborough_battery.mcneil,
         name='hills-battery-mcneil'),
 
-    url(r'^fl/hills/battery/myersbattery.html$',
+    url(r'^fl/hills/battery/myers-battery.html$',
         hillsborough_battery.myers,
         name='hills-battery-myers'),
 
-    url(r'^fl/hills/battery/taylorbattery.html$',
+    url(r'^fl/hills/battery/taylor-battery.html$',
         hillsborough_battery.taylor,
         name='hills-battery-taylor'),
 
@@ -93,6 +138,10 @@ urlpatterns = [
     url(r'^fl/hills/dwlsr/dwlsr.html$',
         hillsborough_dwlsr.dwlsr,
         name='hills-dwlsr-dwlsr'),
+
+    url(r'^fl/hills/hillsborough-dwlsr-case-search.html$',
+        hillsborough_dwlsr_specific.hillsborough_dwlsr_specific,
+        name='hillsborough-dwlsr-case-search'),
 
     url(r'^fl/hills/dwlsr/farr.html$',
         hillsborough_dwlsr.farr,
@@ -121,6 +170,11 @@ urlpatterns = [
     url(r'^fl/hills/dwlsr/taylor.html$',
         hillsborough_dwlsr.taylor,
         name='hills-dwlsr-taylor'),
+
+
+    url(r'^fl/hills/hillsborough-marijuana-possession-case-search.html$',
+        hillsborough_marijuanaposs_specific.hillsborough_marijuanaposs_specific,
+        name='hills-marijuana-possession-specific'),
 
     url(r'^fl/hills/marijuana-possession/marijuana-possession.html$',
         hillsborough_marijuanaposs.marijuanapossession,
@@ -157,6 +211,11 @@ urlpatterns = [
     url(r'^fl/hills/petit-theft/petittheft.html$',
         hillsborough_petit_theft.petit_theft,
         name='hills-petit-theft-petit-theft'),
+
+    url(r'^fl/hills/hillsborough-petit-theft-case-search.html$',
+        hillsborough_petit_theft_specific.hillsborough_petit_theft_specific,
+        name='hills-petit-theft-specific'),
+
 
     url(r'^fl/hills/petit-theft/farr.html$',
         hillsborough_marijuanaposs.farr,

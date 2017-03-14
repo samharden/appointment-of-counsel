@@ -35,3 +35,7 @@ CRIM_JUDGE_CHOICES_PINELL = (
     ('pierce', ("Pierce")),
     ('notsure', ("Not Sure")),
 )
+YN_CHOICES = (
+    ('yes', ("Yes")),
+    ('no', ("No")),
+)

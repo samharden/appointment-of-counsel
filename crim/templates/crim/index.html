@@ -17,9 +17,16 @@
 
 <form  method="post" action "">
       {% csrf_token %}
-<center>{{ crimform.as_p }}
-
-
+<h4 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+{{ crimform.case_type }}</h4><br>
+<h4 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+  County: {{ crimform.county }}
+</h4><br>
+<h4 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Do you want our system to look up your case in the court system?<br><br>
+{{ crimform.sepcific_case_search}}
+</h4>
+<center>
             <p><input type="submit" value="continue" /></p></center>
 </form>
 

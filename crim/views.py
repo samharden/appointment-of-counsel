@@ -22,27 +22,48 @@ def index(request):
             print("Valid index")
             case_type = crimform.cleaned_data['case_type']
             print(case_type)
-
+            scs = crimform.cleaned_data['sepcific_case_search']
             county = crimform.cleaned_data['county']
             print(county)
 
-            if case_type == 'dui' and county == 'hillsb':
+            if case_type == 'dui' and county == 'hillsb' and scs == 'yes':
+                hillsb_judge = HillsboroughJudges()
+
+                return HttpResponseRedirect('fl/hills/hillsborough-dui-case-search.html')
+
+            elif case_type == 'dui' and county == 'hillsb' and scs == 'no':
                 hillsb_judge = HillsboroughJudges()
                 return HttpResponseRedirect('fl/hills/hillsborough-dui.html')
 
-            elif case_type == 'battery' and county == 'hillsb':
+            elif case_type == 'battery' and county == 'hillsb' and scs == 'yes':
+                hillsb_judge = HillsboroughJudges()
+                return HttpResponseRedirect('fl/hills/hillsborough-battery-case-search.html')
+
+            elif case_type == 'battery' and county == 'hillsb' and scs == 'no':
                 hillsb_judge = HillsboroughJudges()
                 return HttpResponseRedirect('fl/hills/hillsborough-battery.html')
 
-            elif case_type == 'marijuanaposs' and county == 'hillsb':
+            elif case_type == 'marijuanaposs' and county == 'hillsb' and scs == 'no':
                 hillsb_judge = HillsboroughJudges()
                 return HttpResponseRedirect('fl/hills/hillsborough-marijuanaposs.html')
 
-            elif case_type == 'petit-theft' and county == 'hillsb':
+            elif case_type == 'marijuanaposs' and county == 'hillsb' and scs == 'yes':
+                hillsb_judge = HillsboroughJudges()
+                return HttpResponseRedirect('fl/hills/hillsborough-marijuana-possession-case-search.html')
+
+            elif case_type == 'petit-theft' and county == 'hillsb' and scs == 'no':
                 hillsb_judge = HillsboroughJudges()
                 return HttpResponseRedirect('fl/hills/hillsborough-petit-theft.html')
 
-            elif case_type == 'dwlsr' and county == 'hillsb':
+            elif case_type == 'petit-theft' and county == 'hillsb' and scs == 'yes':
+                hillsb_judge = HillsboroughJudges()
+                return HttpResponseRedirect('fl/hills/hillsborough-petit-theft-case-search.html')
+
+            elif case_type == 'dwlsr' and county == 'hillsb' and scs == 'yes':
+                hillsb_judge = HillsboroughJudges()
+                return HttpResponseRedirect('fl/hills/hillsborough-dwlsr-case-search.html')
+
+            elif case_type == 'dwlsr' and county == 'hillsb' and scs == 'no':
                 hillsb_judge = HillsboroughJudges()
                 return HttpResponseRedirect('fl/hills/hillsborough-dwlsr.html')
 

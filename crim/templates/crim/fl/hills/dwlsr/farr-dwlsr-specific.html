@@ -1,0 +1,346 @@
+<title>Driving While License Suspended Cases in Judge Farr's Courtroom</title>
+
+{% extends "crim/base0.html" %}
+
+{% block content %}
+
+<h2 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Our search shows that {{ first }} {{last}}'s case is assigned to Judge Farr.</h2>
+<br>
+
+
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+42% of people charged with Driving While License Suspended With Knowledge are convicted. 44% of these cases are dismissed, and 14% of people receive a withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.</p>
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Outcome', 'Percent'],
+          ['Convicted',     42],
+          ['Dismissed',      44],
+          ['Withhold of Adjudication',  14],
+        ]);
+
+        var options = {
+          align: 'center',
+          backgroundColor: {fill: 'transparent'},
+          chartArea:{width:'90%'},
+          is3D: true,
+          title: "What Happens in Suspended License Cases in Judge Farr's Courtroom",
+          legend: {position: 'bottom',
+      				maxLines: '3',
+      				textStyle: {fontSize: '16'}
+      			},
+      	  slices: {
+            0: { color: '#121ca5' },
+            1: { color: '#4651f2' },
+            2: { color: '#84b1f9'}},
+      	  pieSliceText: 'percentage',
+      	  tooltip: {text: 'percentage'},
+      	  animation: {"startup": true}
+        };
+
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('farr-dwlsr-outcomes'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+    <div class='chart' id="farr-dwlsr-outcomes" align="center" size="75%"></div>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Do people hire an attorney for Driving While License Suspended cases
+in Judge Farr's courtroom?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+Only 13% of people charged with Driving While License Suspended With Knowledge hire a private attorney in Judge Farr's courtroom. 15% go with the Public Defender. 72% decide to handle their cases on their own without an attorney.
+
+</p>
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Attorney Hire', 'Percent'],
+          ['Private Attorney',     13],
+          ['Public Defender',      15],
+          ['No Attorney',  72],
+        ]);
+
+        var options = {
+          align: 'center',
+          backgroundColor: {fill: 'transparent'},
+          chartArea:{width:'90%'},
+          is3D: true,
+          title: "Who Hires an Attorney for Their Suspended License Case in Judge Farr's Courtroom",
+          legend: {position: 'bottom',
+      				maxLines: '3',
+      				textStyle: {fontSize: '16'}
+      			},
+      	  slices: {
+            0: { color: '#121ca5' },
+            1: { color: '#4651f2' },
+            2: { color: '#84b1f9'}},
+      	  pieSliceText: 'percentage',
+      	  tooltip: {text: 'percentage'},
+      	  animation: {"startup": true}
+        };
+
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('farr-dwlsr-atty-hire'));
+        chart.draw(data, options);
+      }
+
+    </script>
+
+    <div class='chart' id="farr-dwlsr-atty-hire" align="center" size="75%"></div>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Does hiring a private attorney make a difference?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Having a private attorney is not a clear advantage in Judge Farr's courtroom for these cases. People who hire a private attorney are convicted 39% of the time, while people who have the public defender are convicted 74% of the time. People without an attorney, also known as "Pro Se," are convicted 36% of the time.
+
+</p>
+
+ <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 39, "color: #121ca5", '%'],
+        ["Public Defender", 74, "color: #4651f2",'%'],
+        ["No Attorney", 36, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Convictions for Suspended License in Judge Farr's Courtroom",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("farr_DWLSR_CONV_BY_ATTY"));
+      chart.draw(view, options);
+  }
+  </script>
+
+<div id="farr_DWLSR_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+Across Hillsborough County people who hired a private attorney are convicted of Driving While License Suspended With Knowledge 43% of the time, while people represented by the public defender are convicted 69% of the time. People who handle their cases on their own, also known as "Pro Se", are convicted 46% of the time.</p>
+
+ <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 43, "color: #121ca5", '%'],
+        ["Public Defender", 69, "color: #4651f2",'%'],
+        ["No Attorney", 46, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Convictions for Suspended License in Hillsborough County",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("HC_DWLSR_CONV_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="HC_DWLSR_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">Can I get my Driving While License Suspended case dismissed or dropped?</h3>
+
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+In Judge Farr's courtroom, people who hire a private attorney have their cases dismissed 48% of the time, while people who have the public defender have their cases dismissed 17% of the time. People without an attorney, also known as "Pro Se," have their case dismissed 49% of the time.
+
+</p>
+
+<script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 48, "color: #121ca5", '%'],
+        ["Public Defender", 17, "color: #4651f2",'%'],
+        ["No Attorney", 49, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Suspended License Cases Dismissed in Judge Farr's Courtroom",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("farr_DWLSR_DISS_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+  </script>
+
+<div id="farr_DWLSR_DISS_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+What about getting a Withhold of Adjudication?</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+
+People who hire a private attorney receive a withhold of adjudication 13% of the time, while people with the public defender receive a withhold of adjudication 8% of the time. People without an attorney receive a withhold of adjudication 15% of the time.</p>
+
+ <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    var inView = false;
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
+        ["Private Attorney", 13, "color: #121ca5", '%'],
+        ["Public Defender", 8, "color: #4651f2",'%'],
+        ["No Attorney", 15, "color: #84b1f9", '%']
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+
+                         { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation",
+                         size: 50
+                          },
+                       2]);
+
+      var options = {
+        inView: false,
+        is3d: true,
+        vAxis: {format: '#\'%\''},
+        backgroundColor: {fill: 'transparent'},
+        bar: {groupWidth: "85%"},
+        legend: { position: "none" },
+        animation: {
+                duration: 1000,
+                startup: true,
+
+            },
+        tooltip: {text: 'percentage', format: '#\'%\''},
+
+        title: "Suspended License Cases in Judge Farr's Courtroom: Adjudication Withheld",
+        titlePosition: 'out',
+
+
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("farr_DWLSR_WH_BY_ATTY"));
+      chart.draw(view, options);
+  }
+
+
+
+  </script>
+
+<div id="farr_DWLSR_WH_BY_ATTY" class="chart" align="center" size="75%"></div>
+
+<h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+What is the typical penalty for Driving While License Suspended?</h3>
+<p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
+The most common penalty for Driving While License Suspended with Knowledge is a $270 fine. Less than 1% of people receive probation for this charge.
+
+
+</p>
+
+{% endblock %}

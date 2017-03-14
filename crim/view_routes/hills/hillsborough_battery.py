@@ -19,20 +19,20 @@ def hillsborough_battery(request):
             judge = hillsb_judge.cleaned_data['hillsb_judge']
             print(judge)
             if judge == 'farr':
-                
-                return render(request, 'crim/fl/hills/battery/farrbattery.html')
+
+                return render(request, 'crim/fl/hills/battery/farr-battery.html')
             elif judge == 'greco':
-                return render(request, 'crim/fl/hills/battery/grecobattery.html')
+                return render(request, 'crim/fl/hills/battery/greco-battery.html')
             elif judge == 'jeske':
-                return render(request, 'crim/fl/hills/battery/jeskebattery.html')
+                return render(request, 'crim/fl/hills/battery/jeske-battery.html')
             elif judge == 'lefler':
-                return render(request, 'crim/fl/hills/battery/leflerbattery.html')
+                return render(request, 'crim/fl/hills/battery/lefler-battery.html')
             elif judge == 'mcneil':
-                return render(request, 'crim/fl/hills/battery/mcneilbattery.html')
+                return render(request, 'crim/fl/hills/battery/mcneil-battery.html')
             elif judge == 'myers':
-                return render(request, 'crim/fl/hills/battery/myersbattery.html')
+                return render(request, 'crim/fl/hills/battery/myers-battery.html')
             elif judge == 'taylor':
-                return render(request, 'crim/fl/hills/battery/taylorbattery.html')
+                return render(request, 'crim/fl/hills/battery/taylor-battery.html')
             elif judge == 'notsure':
                 return render(request, 'crim/fl/hills/battery/battery.html')
 
@@ -45,22 +45,22 @@ def battery(request):
     return render(request, 'crim/fl/hills/battery/battery.html')
 
 def farr(request):
-    return render(request, 'crim/fl/hills/battery/farrbattery.html')
+    return render(request, 'crim/fl/hills/battery/farr-battery.html')
 
 def greco(request):
-    return render(request, 'crim/fl/hills/battery/grecobattery.html')
+    return render(request, 'crim/fl/hills/battery/greco-battery.html')
 
 def lefler(request):
-    return render(request, 'crim/fl/hills/battery/leflerbattery.html')
+    return render(request, 'crim/fl/hills/battery/lefler-battery.html')
 
 def jeske(request):
-    return render(request, 'crim/fl/hills/battery/jeskebattery.html')
+    return render(request, 'crim/fl/hills/battery/jeske-battery.html')
 
 def mcneil(request):
-    return render(request, 'crim/fl/hills/battery/mcneilbattery.html')
+    return render(request, 'crim/fl/hills/battery/mcneil-battery.html')
 
 def myers(request):
-    return render(request, 'crim/fl/hills/battery/myersbattery.html')
+    return render(request, 'crim/fl/hills/battery/myers-battery.html')
 
 def taylor(request):
-    return render(request, 'crim/fl/hills/battery/taylorbattery.html')
+    return render(request, 'crim/fl/hills/battery/taylor-battery.html')
