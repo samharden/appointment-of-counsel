@@ -69,26 +69,44 @@ def index(request):
 
             #####################################################################
 
-            elif case_type == 'dui' and county == 'pinell':
+            elif case_type == 'dui' and county == 'pinell' and scs == 'no':
                 pinell_judge = PinellasJudges()
                 return HttpResponseRedirect('fl/pinellas/pinellas-dui.html')
 
-            elif case_type == 'marijuanaposs' and county == 'pinell':
+            elif case_type == 'dui' and county == 'pinell' and scs == 'yes':
+                pinell_judge = PinellasJudges()
+                return HttpResponseRedirect('fl/pinellas/pinellas-dui-case-search.html')
+
+            elif case_type == 'marijuanaposs' and county == 'pinell' and scs == 'no':
                 pinell_judge = PinellasJudges()
                 return HttpResponseRedirect('fl/pinellas/marijuana-possession.html')
 
-            elif case_type == 'battery' and county == 'pinell':
+            elif case_type == 'marijuanaposs' and county == 'pinell' and scs == 'yes':
+                pinell_judge = PinellasJudges()
+                return HttpResponseRedirect('fl/pinellas/marijuana-possession-case-search.html')
+
+            elif case_type == 'battery' and county == 'pinell' and scs == 'no':
                 pinell_judge = PinellasJudges()
                 return HttpResponseRedirect('fl/pinellas/battery.html')
+            elif case_type == 'battery' and county == 'pinell' and scs == 'yes':
+                pinell_judge = PinellasJudges()
+                return HttpResponseRedirect('fl/pinellas/battery-case-search.html')
 
-            elif case_type == 'dwlsr' and county == 'pinell':
+            elif case_type == 'dwlsr' and county == 'pinell' and scs == 'no':
                 pinell_judge = PinellasJudges()
                 return HttpResponseRedirect('fl/pinellas/dwlsr.html')
 
-            elif case_type == 'petit-theft' and county == 'pinell':
+            elif case_type == 'dwlsr' and county == 'pinell' and scs == 'yes':
+                pinell_judge = PinellasJudges()
+                return HttpResponseRedirect('fl/pinellas/dwlsr-case-search.html')
+
+            elif case_type == 'petit-theft' and county == 'pinell' and scs == 'no':
                 pinell_judge = PinellasJudges()
                 return HttpResponseRedirect('fl/pinellas/petit-theft.html')
 
+            elif case_type == 'petit-theft' and county == 'pinell' and scs == 'yes':
+                pinell_judge = PinellasJudges()
+                return HttpResponseRedirect('fl/pinellas/petit-theft-case-search.html')
 
         else:
             crimform = CrimCaseTypeForm()

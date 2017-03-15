@@ -15,10 +15,15 @@ from crim.view_routes.hills import (hillsborough_dwlsr,
                                     hillsborough_marijuanaposs_specific,
                                     )
 from crim.view_routes.pinel import (pinellas_dui,
+                                    pinellas_dui_specific,
                                     pinellas_marijuanaposs,
+                                    pinellas_marijuanaposs_specific,
                                     pinellas_battery,
+                                    pinellas_battery_specific,
                                     pinellas_dwlsr,
+                                    pinellas_dwlsr_specific,
                                     pinellas_petit_theft,
+                                    pinellas_petit_theft_specific,
 
 
                                     )
@@ -267,17 +272,32 @@ urlpatterns = [
         pinellas_dui.pinellas_dui,
         name='pinellas-dui'),
 
+    url(r'^fl/pinellas/pinellas-dui-case-search.html$',
+        pinellas_dui_specific.pinellas_dui_specific,
+        name='pinellas-dui'),
+
     url(r'^fl/pinellas/marijuana-possession.html$',
         pinellas_marijuanaposs.pinellas_marijuanaposs,
         name='pinellas-marijuana-possession'),
 
+    url(r'^fl/pinellas/marijuana-possession-case-search.html$',
+        pinellas_marijuanaposs_specific.pinellas_marijuanaposs_specific,
+        name='pinellas-marijuana-possession'),
 
     url(r'^fl/pinellas/battery.html$',
         pinellas_battery.pinellas_battery,
         name='pinellas-battery'),
 
+    url(r'^fl/pinellas/battery-case-search.html$',
+        pinellas_battery_specific.pinellas_battery_specific,
+        name='pinellas-battery'),
+
     url(r'^fl/pinellas/dwlsr.html$',
         pinellas_dwlsr.pinellas_dwlsr,
+        name='pinellas-dwlsr'),
+
+    url(r'^fl/pinellas/dwlsr-case-search.html$',
+        pinellas_dwlsr_specific.pinellas_dwlsr_specific,
         name='pinellas-dwlsr'),
 
     url(r'^fl/pinellas/petit-theft.html$',
@@ -430,6 +450,10 @@ urlpatterns = [
 
     url(r'^fl/pinellas/petit-theft/petit-theft.html$',
         pinellas_petit_theft.petit_theft,
+        name='pinellas-petit-theft-petit-theft'),
+
+    url(r'^fl/pinellas/petit-theft-case-search.html$',
+        pinellas_petit_theft_specific.pinellas_petit_theft_specific,
         name='pinellas-petit-theft-petit-theft'),
 
     url(r'^fl/pinellas/petit-theft/bedinghaus.html$',

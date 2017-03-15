@@ -5,9 +5,9 @@
 {% block content %}
 
 
-<center>
-		<h2 class="site-title">Petit Theft Cases in Judge Dittmer's Courtroom</a></h2>
-</center>
+<h2 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Our search shows that {{ first }} {{last}}'s case is assigned to Judge Dittmer.</h2>
+<br>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
@@ -47,7 +47,6 @@ on their record.
 			tooltip: {text: 'percentage'},
 			animation: {"startup": true}
 		};
-
 
 
 		var chart = new google.visualization.PieChart(document.getElementById('mjposs-outcomes'));

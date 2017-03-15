@@ -1,18 +1,18 @@
-<title>Petit Theft Cases in Judge Dittmer's Courtroom</title>
+<title>Driving While License Suspended Cases in Judge Overton's Courtroom</title>
 
 {% extends "crim/base0.html" %}
 
 {% block content %}
 
 
-<center>
-		<h2 class="site-title">Petit Theft Cases in Judge Dittmer's Courtroom</a></h2>
-</center>
+<h2 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Our search shows that {{ first }} {{last}}'s case is assigned to Judge Overton.</h2>
+<br>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-58% of people charged with Petit Theft are convicted. 15% of cases are
-dismissed, and 27% of people receive a withhold of adjudication, meaning that
+45% of people charged with Driving While License Suspended are convicted. 29% of cases are
+dismissed, and 26% of people receive a withhold of adjudication, meaning that
 while they may receive a penalty for the crime, they do not receive a conviction
 on their record.
 
@@ -24,9 +24,9 @@ on their record.
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 			['Outcome', 'Percent'],
-			['Convicted',     58],
-			['Dismissed',      15],
-			['Withhold of Adjudication',  27],
+			['Convicted',     45],
+			['Dismissed',      29],
+			['Withhold of Adjudication',  26],
 		]);
 
 		var options = {
@@ -34,7 +34,7 @@ on their record.
 			backgroundColor: {fill: 'transparent'},
 			chartArea:{width:'90%'},
 			is3D: true,
-			title: "What Happens in Petit Theft Cases in Judge Dittmer's Courtroom",
+			title: "What Happens in Driving While License Suspended Cases in Judge Overton's Courtroom",
 			legend: {position: 'bottom',
 					maxLines: '3',
 					textStyle: {fontSize: '16'}
@@ -59,12 +59,12 @@ on their record.
 <div class='chart' id="mjposs-outcomes" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Do people hire an attorney for Petit Theft cases in Judge Dittmer's courtroom?</h3>
+Do people hire an attorney for Driving While License Suspended cases in Overton's courtroom?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-13% of people charged with Petit Theft hire a private attorney in Judge
-Dittmer's courtroom. 51% go with the Public Defender, while 36% decide to
+6% of people charged with Driving While License Suspended hire a private attorney in Judge
+Overton's courtroom. 19% go with the Public Defender, while 74% decide to
 handle their cases on their own without an attorney.
 
 </p>
@@ -75,9 +75,9 @@ handle their cases on their own without an attorney.
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 			['Attorney Hire', 'Percent'],
-			['Private Attorney',     13],
-			['Public Defender',      51],
-			['No Attorney', 36],
+			['Private Attorney',     6],
+			['Public Defender',      19],
+			['No Attorney', 74],
 		]);
 
 		var options = {
@@ -85,7 +85,7 @@ handle their cases on their own without an attorney.
 			backgroundColor: {fill: 'transparent'},
 			chartArea:{width:'90%'},
 			is3D: true,
-			title: "Who Hires an Attorney for Petit Theft Case in Judge Dittmer's Courtroom",
+			title: "Who Hires an Attorney for Driving While License Suspended Case in Judge Overton's Courtroom",
 			legend: {position: 'bottom',
 					maxLines: '3',
 					textStyle: {fontSize: '16'}
@@ -114,10 +114,9 @@ Does hiring a private attorney make a difference?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 Having a private attorney is a clear advantage over the public defender in
-these cases in Dittmer's courtroom. People who hire a private
-attorney are convicted just 45% of the time, while people who have the public
- defender are convicted 74% of the time. People without an attorney, also
- known as "Pro Se," are convicted 39% of the time.
+these cases in Overton's courtroom. 53% of people who hire a private
+attorney are convicted n Judge Overton's courtroom, while people who have the public
+ defender are convicted 88% of the time. 33% of people without an attorney are convicted.
 
 </p>
 <script type="text/javascript">
@@ -127,9 +126,9 @@ attorney are convicted just 45% of the time, while people who have the public
 	 function drawChart() {
 		 var data = google.visualization.arrayToDataTable([
 			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-			 ["Private Attorney", 45, "color: #121ca5", '%'],
-			 ["Public Defender", 74, "color: #4651f2",'%'],
-			 ["No Attorney", 39, "color: #84b1f9", '%']
+			 ["Private Attorney", 53, "color: #121ca5", '%'],
+			 ["Public Defender", 88, "color: #4651f2",'%'],
+			 ["No Attorney", 33, "color: #84b1f9", '%']
 		 ]);
 
 		 var view = new google.visualization.DataView(data);
@@ -157,7 +156,7 @@ attorney are convicted just 45% of the time, while people who have the public
 					 },
 			 tooltip: {text: 'percentage', format: '#\'%\''},
 
-			 title: "Convictions for Petit Theft in Judge Dittmer's Courtroom",
+			 title: "Convictions for Driving While License Suspended in Judge Overton's Courtroom",
 			 titlePosition: 'out',
 
 
@@ -171,9 +170,9 @@ attorney are convicted just 45% of the time, while people who have the public
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 Across Pinellas County people who hire a private attorney are convicted of
-Petit Theft 35% of the time, while people represented by the public
-defender are convicted 78% of the time. People who handle their cases on their
-own, also known as "Pro Se", are convicted 39% of the time.</p>
+Driving While License Suspended 62% of the time, while people represented by the public
+defender are convicted 88% of the time. People who handle their cases on their
+own, also known as "Pro Se", are convicted 33% of the time.</p>
 
 <script type="text/javascript">
 	 google.charts.load("current", {packages:['corechart']});
@@ -182,9 +181,9 @@ own, also known as "Pro Se", are convicted 39% of the time.</p>
 	 function drawChart() {
 		 var data = google.visualization.arrayToDataTable([
 			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-			 ["Private Attorney", 35, "color: #121ca5", '%'],
-			 ["Public Defender", 78, "color: #4651f2",'%'],
-			 ["No Attorney", 39, "color: #84b1f9", '%']
+			 ["Private Attorney", 62, "color: #121ca5", '%'],
+			 ["Public Defender", 88, "color: #4651f2",'%'],
+			 ["No Attorney", 33, "color: #84b1f9", '%']
 		 ]);
 
 		 var view = new google.visualization.DataView(data);
@@ -212,7 +211,7 @@ own, also known as "Pro Se", are convicted 39% of the time.</p>
 					 },
 			 tooltip: {text: 'percentage', format: '#\'%\''},
 
-			 title: "Convictions for Petit Theft in Pinellas County",
+			 title: "Convictions for Driving While License Suspended in Pinellas County",
 			 titlePosition: 'out',
 
 
@@ -225,14 +224,14 @@ own, also known as "Pro Se", are convicted 39% of the time.</p>
 <div id="PC_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 
-
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-  Can I get my Petit Theft case dismissed or dropped?</h3>
+  Can I get my Driving While License Suspended case dismissed or dropped?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-People who hire a private attorney have their cases dismissed 28% of the time,
-while people who use the public defender have their cases dismissed 7% of
-the time. People without an attorney have their case dismissed 21% of the time.
+17% of people who hire a private attorney have their Driving While License Suspended
+case dismissed in Judge Overton's courtroom. People who use the public defender
+have their cases dismissed just 3% of the time. People without an attorney
+have their case dismissed 37% of the time.
 
 </p>
 
@@ -243,9 +242,9 @@ the time. People without an attorney have their case dismissed 21% of the time.
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-        ["Private Attorney", 28, "color: #121ca5", '%'],
-        ["Public Defender", 7, "color: #4651f2",'%'],
-        ["No Attorney", 21, "color: #84b1f9", '%']
+        ["Private Attorney", 17, "color: #121ca5", '%'],
+        ["Public Defender", 3, "color: #4651f2",'%'],
+        ["No Attorney", 37, "color: #84b1f9", '%']
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -273,7 +272,7 @@ the time. People without an attorney have their case dismissed 21% of the time.
             },
         tooltip: {text: 'percentage', format: '#\'%\''},
 
-        title: "Petit Theft Cases Dismissed in Judge Dittmer's Courtroom",
+        title: "Driving While License Suspended Cases Dismissed in Judge Overton's Courtroom",
         titlePosition: 'out',
 
 
@@ -292,10 +291,10 @@ the time. People without an attorney have their case dismissed 21% of the time.
 What about getting a Withhold of Adjudication?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-People who hire a private attorney receive a withhold of adjudication 27% of
-the time, while people with the public defender receive a withhold of
-adjudication 19% of the time. People without an attorney receive a withhold
-of adjudication 40% of the time.
+People who hire a private attorney receive a withhold of adjudication 30% of
+the time, while 9% of people with the public defender receive a withhold of
+adjudication. People without an attorney receive a withhold
+of adjudication 30% of the time.
 </p>
 
 
@@ -306,9 +305,9 @@ of adjudication 40% of the time.
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-        ["Private Attorney", 27, "color: #121ca5", '%'],
-        ["Public Defender", 19, "color: #4651f2",'%'],
-        ["No Attorney", 40, "color: #84b1f9", '%']
+        ["Private Attorney", 30, "color: #121ca5", '%'],
+        ["Public Defender", 9, "color: #4651f2",'%'],
+        ["No Attorney", 30, "color: #84b1f9", '%']
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -336,7 +335,7 @@ of adjudication 40% of the time.
             },
         tooltip: {text: 'percentage', format: '#\'%\''},
 
-        title: "Petit Theft Cases in Judge Dittmer's Courtroom: Adjudication Withheld",
+        title: "Driving While License Suspended Cases in Judge Overton's Courtroom: Adjudication Withheld",
         titlePosition: 'out',
 
 
@@ -351,9 +350,11 @@ of adjudication 40% of the time.
 
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-What is the typical penalty for Petit Theft?</h3>
+What is the typical penalty for Driving While License Suspended?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-The most common penalty for Petit Theft is 6 months probation and a fine in the amount of $200-300.
+	The most common penalty for Driving While License Suspended is a $270 fine.
+	Less than 1% of people receive probation for this charge.
+
 
 
 </p>

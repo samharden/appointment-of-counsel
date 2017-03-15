@@ -1,18 +1,18 @@
-<title>Petit Theft Cases in Judge Dittmer's Courtroom</title>
+<title>Petit Theft Cases in Judge McKyton's Courtroom</title>
 
 {% extends "crim/base0.html" %}
 
 {% block content %}
 
 
-<center>
-		<h2 class="site-title">Petit Theft Cases in Judge Dittmer's Courtroom</a></h2>
-</center>
+<h2 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Our search shows that {{ first }} {{last}}'s case is assigned to Judge McKyton.</h2>
+<br>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-58% of people charged with Petit Theft are convicted. 15% of cases are
-dismissed, and 27% of people receive a withhold of adjudication, meaning that
+64% of people charged with Petit Theft are convicted. 14% of cases are
+dismissed, and 22% of people receive a withhold of adjudication, meaning that
 while they may receive a penalty for the crime, they do not receive a conviction
 on their record.
 
@@ -24,9 +24,9 @@ on their record.
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 			['Outcome', 'Percent'],
-			['Convicted',     58],
-			['Dismissed',      15],
-			['Withhold of Adjudication',  27],
+			['Convicted',     64],
+			['Dismissed',      14],
+			['Withhold of Adjudication',  22],
 		]);
 
 		var options = {
@@ -34,7 +34,7 @@ on their record.
 			backgroundColor: {fill: 'transparent'},
 			chartArea:{width:'90%'},
 			is3D: true,
-			title: "What Happens in Petit Theft Cases in Judge Dittmer's Courtroom",
+			title: "What Happens in Petit Theft Cases in Judge McKyton's Courtroom",
 			legend: {position: 'bottom',
 					maxLines: '3',
 					textStyle: {fontSize: '16'}
@@ -59,12 +59,12 @@ on their record.
 <div class='chart' id="mjposs-outcomes" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Do people hire an attorney for Petit Theft cases in Judge Dittmer's courtroom?</h3>
+Do people hire an attorney for Petit Theft cases in Judge McKyton's courtroom?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
 13% of people charged with Petit Theft hire a private attorney in Judge
-Dittmer's courtroom. 51% go with the Public Defender, while 36% decide to
+Levine's courtroom. 57% go with the Public Defender, while 30% decide to
 handle their cases on their own without an attorney.
 
 </p>
@@ -76,8 +76,8 @@ handle their cases on their own without an attorney.
 		var data = google.visualization.arrayToDataTable([
 			['Attorney Hire', 'Percent'],
 			['Private Attorney',     13],
-			['Public Defender',      51],
-			['No Attorney', 36],
+			['Public Defender',      57],
+			['No Attorney', 30],
 		]);
 
 		var options = {
@@ -85,7 +85,7 @@ handle their cases on their own without an attorney.
 			backgroundColor: {fill: 'transparent'},
 			chartArea:{width:'90%'},
 			is3D: true,
-			title: "Who Hires an Attorney for Petit Theft Case in Judge Dittmer's Courtroom",
+			title: "Who Hires an Attorney for Petit Theft Case in Judge McKyton's Courtroom",
 			legend: {position: 'bottom',
 					maxLines: '3',
 					textStyle: {fontSize: '16'}
@@ -114,10 +114,10 @@ Does hiring a private attorney make a difference?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 Having a private attorney is a clear advantage over the public defender in
-these cases in Dittmer's courtroom. People who hire a private
-attorney are convicted just 45% of the time, while people who have the public
- defender are convicted 74% of the time. People without an attorney, also
- known as "Pro Se," are convicted 39% of the time.
+these cases in Judge McKyton's courtroom. People who hire a private
+attorney are convicted just 40% of the time, while people who have the public
+ defender are convicted 80% of the time. People without an attorney, also
+ known as "Pro Se," are convicted 42% of the time.
 
 </p>
 <script type="text/javascript">
@@ -127,9 +127,9 @@ attorney are convicted just 45% of the time, while people who have the public
 	 function drawChart() {
 		 var data = google.visualization.arrayToDataTable([
 			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-			 ["Private Attorney", 45, "color: #121ca5", '%'],
-			 ["Public Defender", 74, "color: #4651f2",'%'],
-			 ["No Attorney", 39, "color: #84b1f9", '%']
+			 ["Private Attorney", 40, "color: #121ca5", '%'],
+			 ["Public Defender", 80, "color: #4651f2",'%'],
+			 ["No Attorney", 42, "color: #84b1f9", '%']
 		 ]);
 
 		 var view = new google.visualization.DataView(data);
@@ -157,7 +157,7 @@ attorney are convicted just 45% of the time, while people who have the public
 					 },
 			 tooltip: {text: 'percentage', format: '#\'%\''},
 
-			 title: "Convictions for Petit Theft in Judge Dittmer's Courtroom",
+			 title: "Convictions for Petit Theft in Judge McKyton's Courtroom",
 			 titlePosition: 'out',
 
 
@@ -230,9 +230,9 @@ own, also known as "Pro Se", are convicted 39% of the time.</p>
   Can I get my Petit Theft case dismissed or dropped?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-People who hire a private attorney have their cases dismissed 28% of the time,
-while people who use the public defender have their cases dismissed 7% of
-the time. People without an attorney have their case dismissed 21% of the time.
+People who hire a private attorney have their cases dismissed 30% of the time,
+while people who use the public defender have their cases dismissed 5% of
+the time. People without an attorney have their case dismissed 24% of the time.
 
 </p>
 
@@ -243,9 +243,9 @@ the time. People without an attorney have their case dismissed 21% of the time.
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-        ["Private Attorney", 28, "color: #121ca5", '%'],
-        ["Public Defender", 7, "color: #4651f2",'%'],
-        ["No Attorney", 21, "color: #84b1f9", '%']
+        ["Private Attorney", 30, "color: #121ca5", '%'],
+        ["Public Defender", 5, "color: #4651f2",'%'],
+        ["No Attorney", 24, "color: #84b1f9", '%']
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -273,7 +273,7 @@ the time. People without an attorney have their case dismissed 21% of the time.
             },
         tooltip: {text: 'percentage', format: '#\'%\''},
 
-        title: "Petit Theft Cases Dismissed in Judge Dittmer's Courtroom",
+        title: "Petit Theft Cases Dismissed in Judge McKyton's Courtroom",
         titlePosition: 'out',
 
 
@@ -292,10 +292,10 @@ the time. People without an attorney have their case dismissed 21% of the time.
 What about getting a Withhold of Adjudication?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-People who hire a private attorney receive a withhold of adjudication 27% of
+People who hire a private attorney receive a withhold of adjudication 30% of
 the time, while people with the public defender receive a withhold of
-adjudication 19% of the time. People without an attorney receive a withhold
-of adjudication 40% of the time.
+adjudication 15% of the time. People without an attorney receive a withhold
+of adjudication 34% of the time.
 </p>
 
 
@@ -306,9 +306,9 @@ of adjudication 40% of the time.
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-        ["Private Attorney", 27, "color: #121ca5", '%'],
-        ["Public Defender", 19, "color: #4651f2",'%'],
-        ["No Attorney", 40, "color: #84b1f9", '%']
+        ["Private Attorney", 30, "color: #121ca5", '%'],
+        ["Public Defender", 15, "color: #4651f2",'%'],
+        ["No Attorney", 34, "color: #84b1f9", '%']
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -336,7 +336,7 @@ of adjudication 40% of the time.
             },
         tooltip: {text: 'percentage', format: '#\'%\''},
 
-        title: "Petit Theft Cases in Judge Dittmer's Courtroom: Adjudication Withheld",
+        title: "Petit Theft Cases in Judge McKyton's Courtroom: Adjudication Withheld",
         titlePosition: 'out',
 
 

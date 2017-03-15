@@ -7,12 +7,12 @@
 
 
 
-<h3 class="title-border" style="text-align: center;">Part II</h3>
+<h3 class="title-border" style="text-align: center;">
+  If you already know who the judge is for this Petit Theft case choose them here,
+  otherwise choose "Not sure": </h3>
 <form  method="post" action "">
       {% csrf_token %}
 
-<center>If you already know who the judge is for this Petit Theft case choose them here,
-otherwise choose "Not sure": </center>
 <center> {{ pinell_judge.as_p }}</center>
 
 

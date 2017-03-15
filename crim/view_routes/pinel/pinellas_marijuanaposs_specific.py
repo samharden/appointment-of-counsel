@@ -7,9 +7,9 @@ from crim.forms import *
 from crim.templates import *
 from crim.models import search_all
 
-def hillsborough_battery_specific(request):
+def pinellas_marijuanaposs_specific(request):
     party_name = ClientIdentification(request)
-    print("Hillsborough Page")
+    print("Pinellas MJ Case Search Page")
 
     if request.method == 'POST':
         print("Hello")
@@ -19,7 +19,7 @@ def hillsborough_battery_specific(request):
 
             first = party_name.cleaned_data['first']
             last = party_name.cleaned_data['last']
-            county = "hill"
+            county = "pine"
             print(first, last)
             #search_all(first, last, county)
             (judge, case_number, date, appearance_type) = search_all(first, last, county)
@@ -32,54 +32,58 @@ def hillsborough_battery_specific(request):
             print("Views says the judge is", judge)
             print("Views says the date is", date)
 
-            if 'Farr' in str(judge):
+            if 'HORROX' in str(judge):
 
                 return render(request,
-                                'crim/fl/hills/battery/farr-battery-specific.html',
-                                {
-                                'first': first,
-                                'last': last,
-                                'date': date,
-                                'case_number': case_number,
-                                })
-            elif 'Conrad' in str(judge):
-                return render(request, 'crim/fl/hills/battery/conrad-battery-specific.html',
+                                'crim/fl/pinellas/marijuana-possession/horrox-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
                                 })
-            elif 'Jeske' in str(judge):
-                return render(request, 'crim/fl/hills/battery/jeske-battery-specific.html',
+            elif 'BEDINGHAUS' in str(judge):
+                return render(request, 'crim/fl/pinellas/marijuana-possession/bedinghaus-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
                                 })
-            elif  'Lefler' in str(judge):
-                return render(request, 'crim/fl/hills/battery/lefler-battery-specific.html',
+            elif 'CARBALLO' in str(judge):
+                return render(request, 'crim/fl/pinellas/marijuana-possession/carballo-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
                                 })
-            elif 'McNeil' in str(judge):
-                return render(request, 'crim/fl/hills/battery/mcneil-battery-specific.html',
+            elif  'DITTMER' in str(judge):
+                return render(request, 'crim/fl/pinellas/marijuana-possession/dittmer-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
                                 })
-            elif 'Myers' in str(judge):
-                return render(request, 'crim/fl/hills/battery/myers-battery-specific.html',
+            elif 'LEVINE' in str(judge):
+                return render(request, 'crim/fl/pinellas/marijuana-possession/levine-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
                                 })
-            elif 'Taylor' in str(judge):
-                return render(request, 'crim/fl/hills/battery/taylor-battery-specific.html',
+            elif 'MCKYTON' in str(judge):
+                return render(request, 'crim/fl/pinellas/marijuana-possession/mckyton-specific.html',
+                                {
+                                'first': first,
+                                'last': last,
+                                })
+            elif 'OVERTON' in str(judge):
+                return render(request, 'crim/fl/pinellas/marijuana-possession/overton-specific.html',
+                                {
+                                'first': first,
+                                'last': last,
+                                })
+            elif 'PIERCE' in str(judge):
+                return render(request, 'crim/fl/pinellas/marijuana-possession/pierce-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
                                 })
             else:
-                return render(request, 'crim/fl/hills/battery/battery.html',
+                return render(request, 'crim/fl/pinellas/marijuana-possession/marijuana-possession.html',
                                 {
                                 'first': first,
                                 'last': last,
@@ -89,7 +93,7 @@ def hillsborough_battery_specific(request):
 
         party_name = ClientIdentification()
 
-    return render(request, 'crim/fl/hills/hillsborough-battery-case-search.html',
+    return render(request, 'crim/fl/pinellas/marijuana-possession-case-search.html',
                             {
                             'party_name': party_name,
                             })
