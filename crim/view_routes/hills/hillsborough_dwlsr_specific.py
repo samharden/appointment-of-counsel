@@ -42,8 +42,8 @@ def hillsborough_dwlsr_specific(request):
                                 'date': date,
                                 'case_number': case_number,
                                 })
-            elif 'Greco' in str(judge):
-                return render(request, 'crim/fl/hills/dwlsr/greco-dwlsr-specific.html',
+            elif 'Conrad' in str(judge):
+                return render(request, 'crim/fl/hills/dwlsr/conrad-dwlsr-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
@@ -106,8 +106,8 @@ def dwlsr(request):
 def farr_specific(request):
     return render(request, 'crim/fl/hills/dwlsr/farr-dwlsr-specific.html')
 
-def greco_specific(request):
-    return render(request, 'crim/fl/hills/dwlsr/greco-dwlsr-specific.html')
+def conrad_specific(request):
+    return render(request, 'crim/fl/hills/dwlsr/conrad-dwlsr-specific.html')
 
 def lefler_specific(request):
     return render(request, 'crim/fl/hills/dwlsr/lefler-dwlsr-specific.html')

@@ -1,4 +1,4 @@
-    <title>Battery Cases in Judge Greco's Courtroom</title>
+    <title>Battery Cases in Judge Conrad's Courtroom</title>
 
 {% extends "crim/base0.html" %}
 
@@ -7,12 +7,16 @@
 
 
 <h2 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Our search shows that {{ first }} {{last}}'s case is assigned to Judge Greco.</h2>
+Our search shows that {{ first }} {{last}}'s case is assigned to Judge Conrad.</h2>
 <br>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-59% of  people charged with Misdemeanor Battery in Judge Greco's courtroom have their cases dismissed. 25% of people receive a conviction, and 16% receive a withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.
+68% of  people charged with Misdemeanor Battery in Judge Conrad's
+courtroom have their cases dismissed. 21% of people receive a
+conviction, and 11% receive a withhold of adjudication, meaning
+that while they may receive a penalty for the crime, they do not
+receive a conviction on their record.
 
 </p>
 
@@ -22,9 +26,9 @@ Our search shows that {{ first }} {{last}}'s case is assigned to Judge Greco.</h
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 			['Outcome', 'Percent'],
-			['Convicted',     59],
-			['Dismissed',      25],
-			['Withhold of Adjudication',  16],
+			['Convicted',     21],
+			['Dismissed',      68],
+			['Withhold of Adjudication',  11],
 		]);
 
 		var options = {
@@ -32,7 +36,7 @@ Our search shows that {{ first }} {{last}}'s case is assigned to Judge Greco.</h
 			backgroundColor: {fill: 'transparent'},
 			chartArea:{width:'90%'},
 			is3D: true,
-			title: "What Happens in Misdemeanor Battery Cases in Judge Greco's Courtroom",
+			title: "What Happens in Misdemeanor Battery Cases in Judge Conrad's Courtroom",
 			legend: {position: 'bottom',
 					maxLines: '3',
 					textStyle: {fontSize: '16'}
@@ -56,11 +60,14 @@ Our search shows that {{ first }} {{last}}'s case is assigned to Judge Greco.</h
 <div class='chart' id="battery-outcomes" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Do people hire an attorney for Battery cases in Judge Greco's courtroom?</h3>
+Do people hire an attorney for Battery cases in Judge Conrad's courtroom?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-25% of people accused of Battery hire a private attorney in Judge Greco's courtroom. 59% use the public defender. 16% of people go without an attorney and handle their cases on their own, which is called "Pro Se."
+16% of people accused of Battery hire a private attorney in
+Judge Conrad's courtroom. 73% use the public defender.
+11% of people go without an attorney and handle their
+cases on their own, which is called "Pro Se."
 
 </p>
 	<script type="text/javascript">
@@ -69,9 +76,9 @@ Do people hire an attorney for Battery cases in Judge Greco's courtroom?</h3>
 		function drawChart() {
 			var data = google.visualization.arrayToDataTable([
 				['Attorney Hire', 'Percent'],
-				['Private Attorney',     25],
-				['Public Defender',      59],
-				['No Attorney',  16],
+				['Private Attorney',     16],
+				['Public Defender',      73],
+				['No Attorney',  11],
 			]);
 
 			var options = {
@@ -79,7 +86,7 @@ Do people hire an attorney for Battery cases in Judge Greco's courtroom?</h3>
 				backgroundColor: {fill: 'transparent'},
 				chartArea:{width:'90%'},
 				is3D: true,
-				title: "Who Hires an Attorney for Their Battery Case in Judge Greco's Courtroom",
+				title: "Who Hires an Attorney for Their Battery Case in Judge Conrad's Courtroom",
 				legend: {position: 'bottom',
 						maxLines: '3',
 						textStyle: {fontSize: '16'}
@@ -108,7 +115,11 @@ Do people hire an attorney for Battery cases in Judge Greco's courtroom?</h3>
 Does hiring a private attorney make a difference?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-Having a private attorney is a big advantage in Judge Greco's courtroom. People who hire a private attorney are convicted of Battery just 10% of the time, while people who use the public defender are convicted 35% of the time. People who go without an attorney ("Pro Se") are convicted 9% of the time.
+Having a private attorney is a big advantage in Judge Conrad's courtroom.
+People who hire a private attorney are convicted of Battery just
+8% of the time, while people who use the public defender are convicted
+27% of the time. People who go without an attorney ("Pro Se") are convicted
+2% of the time.
 </p>
 <script type="text/javascript">
 	 google.charts.load("current", {packages:['corechart']});
@@ -117,9 +128,9 @@ Having a private attorney is a big advantage in Judge Greco's courtroom. People 
 	 function drawChart() {
 		 var data = google.visualization.arrayToDataTable([
 			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-			 ["Private Attorney", 10, "color: #121ca5", '%'],
-			 ["Public Defender", 35, "color: #4651f2",'%'],
-			 ["No Attorney", 9, "color: #84b1f9", '%']
+			 ["Private Attorney", 8, "color: #121ca5", '%'],
+			 ["Public Defender", 27, "color: #4651f2",'%'],
+			 ["No Attorney", 2, "color: #84b1f9", '%']
 		 ]);
 
 		 var view = new google.visualization.DataView(data);
@@ -147,7 +158,7 @@ Having a private attorney is a big advantage in Judge Greco's courtroom. People 
 					 },
 			 tooltip: {text: 'percentage', format: '#\'%\''},
 
-			 title: "Convictions for Battery in Judge Greco's Courtroom",
+			 title: "Convictions for Battery in Judge Conrad's Courtroom",
 			 titlePosition: 'out',
 
 
@@ -160,7 +171,12 @@ Having a private attorney is a big advantage in Judge Greco's courtroom. People 
 <div id="battery_CONV_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-The average conviction rate for judges in Hillsborough County is higher for people represented by private attorneys and lower for those represented by the public defender. People who hire a private attorney are convicted of Misdemeanor Battery 11% of the time, while people who use the public defender are convicted 29% of the time. People without an attorney are convicted 12% of the time.
+The average conviction rate for judges in Hillsborough County is
+higher for people represented by private attorneys and lower for
+those represented by the public defender. People who hire a
+private attorney are convicted of Misdemeanor Battery 11% of
+the time, while people who use the public defender are convicted
+29% of the time. People without an attorney are convicted 12% of the time.
 </p>
 <script type="text/javascript">
 	 google.charts.load("current", {packages:['corechart']});
@@ -213,10 +229,10 @@ The average conviction rate for judges in Hillsborough County is higher for peop
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">Can I get my Battery
 case dismissed or dropped?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-People who hire a private attorney have their case dropped or dismissed 67% of
+People who hire a private attorney have their case dropped or dismissed 75% of
 the time, while people who use the Public Defender have their case dismissed or
-dropped 53% of the time. People who go without an attorney ("Pro Se") have their
- case dismissed or dropped 68% of the time.
+dropped 63% of the time. People who go without an attorney ("Pro Se") have their
+ case dismissed or dropped 91% of the time.
 </p>
 
 <script type="text/javascript">
@@ -226,9 +242,9 @@ dropped 53% of the time. People who go without an attorney ("Pro Se") have their
 	 function drawChart() {
 		 var data = google.visualization.arrayToDataTable([
 			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-			 ["Private Attorney", 23, "color: #121ca5", '%'],
-			 ["Public Defender", 11, "color: #4651f2",'%'],
-			 ["No Attorney", 22, "color: #84b1f9", '%']
+			 ["Private Attorney", 75, "color: #121ca5", '%'],
+			 ["Public Defender", 63, "color: #4651f2",'%'],
+			 ["No Attorney", 91, "color: #84b1f9", '%']
 		 ]);
 
 		 var view = new google.visualization.DataView(data);
@@ -256,7 +272,7 @@ dropped 53% of the time. People who go without an attorney ("Pro Se") have their
 					 },
 			 tooltip: {text: 'percentage', format: '#\'%\''},
 
-			 title: "Battery Cases Dismissed in Judge Greco's Courtroom",
+			 title: "Battery Cases Dismissed in Judge Conrad's Courtroom",
 			 titlePosition: 'out',
 
 
@@ -276,7 +292,10 @@ dropped 53% of the time. People who go without an attorney ("Pro Se") have their
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-People who hire a private attorney receive a withhold of adjudication 23% of the time, while people who use the Public Defender receive a withhold of adjudication 11% of the time. People who go without an attorney ("Pro Se") receive a withhold of adjudication 22% of the time.
+People who hire a private attorney receive a withhold of adjudication
+17% of the time, while people who use the Public Defender receive a withhold of adjudication
+10% of the time. People who go without an attorney ("Pro Se") receive a withhold of adjudication
+7% of the time.
 
 </p>
 
@@ -287,9 +306,9 @@ People who hire a private attorney receive a withhold of adjudication 23% of the
 	 function drawChart() {
 		 var data = google.visualization.arrayToDataTable([
 			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-			 ["Private Attorney", 67, "color: #121ca5", '%'],
-			 ["Public Defender", 53, "color: #4651f2",'%'],
-			 ["No Attorney", 68, "color: #84b1f9", '%']
+			 ["Private Attorney", 17, "color: #121ca5", '%'],
+			 ["Public Defender", 10, "color: #4651f2",'%'],
+			 ["No Attorney", 7, "color: #84b1f9", '%']
 		 ]);
 
 		 var view = new google.visualization.DataView(data);
@@ -317,7 +336,7 @@ People who hire a private attorney receive a withhold of adjudication 23% of the
 					 },
 			 tooltip: {text: 'percentage', format: '#\'%\''},
 
-			 title: "Battery Cases in Judge Greco's Courtroom: Adjudication Withheld",
+			 title: "Battery Cases in Judge Conrad's Courtroom: Adjudication Withheld",
 			 titlePosition: 'out',
 
 

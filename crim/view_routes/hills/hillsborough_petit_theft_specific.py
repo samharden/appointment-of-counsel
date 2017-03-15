@@ -42,8 +42,8 @@ def hillsborough_petit_theft_specific(request):
                                 'date': date,
                                 'case_number': case_number,
                                 })
-            elif 'Greco' in str(judge):
-                return render(request, 'crim/fl/hills/petit-theft/greco-petit-theft-specific.html',
+            elif 'Conrad' in str(judge):
+                return render(request, 'crim/fl/hills/petit-theft/conrad-petit-theft-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
@@ -106,8 +106,8 @@ def petit_theft(request):
 def farr_specific(request):
     return render(request, 'crim/fl/hills/petit-theft/farr-petit-theft-specific.html')
 
-def greco_specific(request):
-    return render(request, 'crim/fl/hills/petit-theft/greco-petit-theft-specific.html')
+def conrad_specific(request):
+    return render(request, 'crim/fl/hills/petit-theft/conrad-petit-theft-specific.html')
 
 def lefler_specific(request):
     return render(request, 'crim/fl/hills/petit-theft/lefler-petit-theft-specific.html')

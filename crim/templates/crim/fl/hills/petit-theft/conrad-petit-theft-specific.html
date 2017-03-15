@@ -1,16 +1,20 @@
-<title>Petit Theft Cases in Judge Greco's Courtroom</title>
+<title>Petit Theft Cases in Judge Conrad's Courtroom</title>
 
 {% extends "crim/base0.html" %}
 
 {% block content %}
 
-<center>
-		<h2 class="site-title">Petit Theft Cases in Judge Greco's Courtroom</a></h2></div>
-</center>
+<h2 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+Our search shows that {{ first }} {{last}}'s case is assigned to Judge Conrad.</h2>
+<br>
+
+
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-29% of people charged with Petit Theft are convicted. 25% of these cases are dismissed, and 46% of people receive a withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.
+44% of people charged with Petit Theft are convicted.
+35% of these cases are dismissed, and
+21% of people receive a withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.
 
 </p>
 
@@ -20,9 +24,9 @@
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 			['Outcome', 'Percent'],
-			['Convicted',     29],
-			['Dismissed',      25],
-			['Withhold of Adjudication',  46],
+			['Convicted',     44],
+			['Dismissed',      35],
+			['Withhold of Adjudication',  21],
 		]);
 
 		var options = {
@@ -30,7 +34,7 @@
 			backgroundColor: {fill: 'transparent'},
 			chartArea:{width:'90%'},
 			is3D: true,
-			title: "What Happens in Petit Theft Cases in Judge Greco's Courtroom",
+			title: "What Happens in Petit Theft Cases in Judge Conrad's Courtroom",
 			legend: {position: 'bottom',
 					maxLines: '3',
 					textStyle: {fontSize: '16'}
@@ -57,11 +61,13 @@
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 Do people hire an attorney for Petit Theft cases
-in Judge Greco's courtroom?</h3>
+in Judge Conrad's courtroom?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-Only 30% of people charged with Petit Theft hire a private attorney in Judge Greco's courtroom. 55% go with the Public Defender. 15% decide to handle their cases on their own, which is called "Pro Se."
+Only 27% of people charged with Petit Theft hire a private attorney in
+Judge Conrad's courtroom. 63% go with the Public Defender.
+10% decide to handle their cases on their own, which is called "Pro Se."
 
 </p>
 
@@ -71,9 +77,9 @@ Only 30% of people charged with Petit Theft hire a private attorney in Judge Gre
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 			['Attorney Hire', 'Percent'],
-			['Private Attorney',     30],
-			['Public Defender',      55],
-			['No Attorney',  15],
+			['Private Attorney',     27],
+			['Public Defender',      63],
+			['No Attorney',  10],
 		]);
 
 		var options = {
@@ -81,7 +87,7 @@ Only 30% of people charged with Petit Theft hire a private attorney in Judge Gre
 			backgroundColor: {fill: 'transparent'},
 			chartArea:{width:'90%'},
 			is3D: true,
-			title: "Who Hires an Attorney for Their Petit Theft Case in Judge Greco's Courtroom",
+			title: "Who Hires an Attorney for Their Petit Theft Case in Judge Conrad's Courtroom",
 			legend: {position: 'bottom',
 					maxLines: '3',
 					textStyle: {fontSize: '16'}
@@ -109,7 +115,11 @@ Only 30% of people charged with Petit Theft hire a private attorney in Judge Gre
 Does hiring a private attorney make a difference?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-Having a private attorney is an advantage in Judge Greco's courtroom. People who hire a private attorney are convicted of petit theft just 14% of the time, while people who use the public defender are convicted 42% of the time. People who go without an attorney ("Pro Se") are convicted 10% of the time.
+Having a private attorney is an advantage in Judge Conrad's courtroom.
+People who hire a private attorney are convicted of petit theft just
+13% of the time, while people who use the public defender are convicted
+61% of the time. People who go without an attorney ("Pro Se") are convicted
+16% of the time.
 
 </p>
 
@@ -120,9 +130,9 @@ Having a private attorney is an advantage in Judge Greco's courtroom. People who
 	 function drawChart() {
 		 var data = google.visualization.arrayToDataTable([
 			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-			 ["Private Attorney", 14, "color: #121ca5", '%'],
-			 ["Public Defender", 42, "color: #4651f2",'%'],
-			 ["No Attorney", 10, "color: #84b1f9", '%']
+			 ["Private Attorney", 13, "color: #121ca5", '%'],
+			 ["Public Defender", 61, "color: #4651f2",'%'],
+			 ["No Attorney", 16, "color: #84b1f9", '%']
 		 ]);
 
 		 var view = new google.visualization.DataView(data);
@@ -150,7 +160,7 @@ Having a private attorney is an advantage in Judge Greco's courtroom. People who
 					 },
 			 tooltip: {text: 'percentage', format: '#\'%\''},
 
-			 title: "Convictions for Petit Theft in Judge Greco's Courtroom",
+			 title: "Convictions for Petit Theft in Judge Conrad's Courtroom",
 			 titlePosition: 'out',
 
 
@@ -222,7 +232,11 @@ Can I get my Petit Theft case dismissed or dropped?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-In Judge Greco's courtroom, people who hire a private attorney have their case dismissed or dropped 31% of the time, while people who use the Public Defender have their case dismissed or dropped 21% of the time. People who go without an attorney ("Pro Se") have their case dismissed or dropped 31% of the time.
+In Judge Conrad's courtroom, people who hire a private attorney have their
+case dismissed or dropped 55% of the time, while people who use the
+Public Defender have their case dismissed or dropped 24% of the time.
+People who go without an attorney ("Pro Se") have their case dismissed or
+dropped 57% of the time.
 
 </p>
 
@@ -233,9 +247,9 @@ In Judge Greco's courtroom, people who hire a private attorney have their case d
 	 function drawChart() {
 		 var data = google.visualization.arrayToDataTable([
 			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-			 ["Private Attorney", 31, "color: #121ca5", '%'],
-			 ["Public Defender", 21, "color: #4651f2",'%'],
-			 ["No Attorney", 31, "color: #84b1f9", '%']
+			 ["Private Attorney", 55, "color: #121ca5", '%'],
+			 ["Public Defender", 24, "color: #4651f2",'%'],
+			 ["No Attorney", 57, "color: #84b1f9", '%']
 		 ]);
 
 		 var view = new google.visualization.DataView(data);
@@ -263,7 +277,7 @@ In Judge Greco's courtroom, people who hire a private attorney have their case d
 					 },
 			 tooltip: {text: 'percentage', format: '#\'%\''},
 
-			 title: "Petit Theft Cases Dismissed in Judge Greco's Courtroom",
+			 title: "Petit Theft Cases Dismissed in Judge Conrad's Courtroom",
 			 titlePosition: 'out',
 
 
@@ -279,7 +293,10 @@ In Judge Greco's courtroom, people who hire a private attorney have their case d
 What about getting a Withhold of Adjudication?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-People who hire a private attorney receive a withhold of adjudication 55% of the time, while people who use the Public Defender receive a withhold of adjudication 36% of the time. People who go without an attorney ("Pro Se") receive a withhold of adjudication 59% of the time.
+People who hire a private attorney receive a withhold of adjudication
+32% of the time, while people who use the Public Defender receive a withhold
+of adjudication 16% of the time. People who go without an attorney ("Pro Se")
+receive a withhold of adjudication 28% of the time.
 
 
 </p>
@@ -291,9 +308,9 @@ People who hire a private attorney receive a withhold of adjudication 55% of the
 	 function drawChart() {
 		 var data = google.visualization.arrayToDataTable([
 			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-			 ["Private Attorney", 55, "color: #121ca5", '%'],
-			 ["Public Defender", 36, "color: #4651f2",'%'],
-			 ["No Attorney", 59, "color: #84b1f9", '%']
+			 ["Private Attorney", 32, "color: #121ca5", '%'],
+			 ["Public Defender", 16, "color: #4651f2",'%'],
+			 ["No Attorney", 28, "color: #84b1f9", '%']
 		 ]);
 
 		 var view = new google.visualization.DataView(data);
@@ -321,7 +338,7 @@ People who hire a private attorney receive a withhold of adjudication 55% of the
 					 },
 			 tooltip: {text: 'percentage', format: '#\'%\''},
 
-			 title: "Petit Theft Cases in Judge Greco's Courtroom: Adjudication Withheld",
+			 title: "Petit Theft Cases in Judge Conrad's Courtroom: Adjudication Withheld",
 			 titlePosition: 'out',
 
 
@@ -337,7 +354,7 @@ People who hire a private attorney receive a withhold of adjudication 55% of the
 <div id="PT-WH_BY_ATTY" class="chart" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-What is the typical penalty for Driving While License Suspended?</h3>
+What is the typical penalty for Petit Theft?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 The most common penalty for Petit Theft is 6 months probation and a fine in the amount of $200-300.
 

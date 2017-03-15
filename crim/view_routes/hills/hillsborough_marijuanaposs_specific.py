@@ -42,8 +42,8 @@ def hillsborough_marijuanaposs_specific(request):
                                 'date': date,
                                 'case_number': case_number,
                                 })
-            elif 'Greco' in str(judge):
-                return render(request, 'crim/fl/hills/marijuana-possession/greco-marijuana-possession-specific.html',
+            elif 'Conrad' in str(judge):
+                return render(request, 'crim/fl/hills/marijuana-possession/conrad-marijuana-possession-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
@@ -106,8 +106,8 @@ def marijuana_possession(request):
 def farr_specific(request):
     return render(request, 'crim/fl/hills/marijuana-possession/farr-marijuana-possession-specific.html')
 
-def greco_specific(request):
-    return render(request, 'crim/fl/hills/marijuana-possession/greco-marijuana-possession-specific.html')
+def conrad_specific(request):
+    return render(request, 'crim/fl/hills/marijuana-possession/conrad-marijuana-possession-specific.html')
 
 def lefler_specific(request):
     return render(request, 'crim/fl/hills/marijuana-possession/lefler-marijuana-possession-specific.html')

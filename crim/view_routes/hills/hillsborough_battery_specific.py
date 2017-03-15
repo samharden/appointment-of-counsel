@@ -42,8 +42,8 @@ def hillsborough_battery_specific(request):
                                 'date': date,
                                 'case_number': case_number,
                                 })
-            elif 'Greco' in str(judge):
-                return render(request, 'crim/fl/hills/battery/greco-battery-specific.html',
+            elif 'Conrad' in str(judge):
+                return render(request, 'crim/fl/hills/battery/conrad-battery-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
@@ -106,8 +106,8 @@ def battery(request):
 def farr_specific(request):
     return render(request, 'crim/fl/hills/battery/farr-battery-specific.html')
 
-def greco_specific(request):
-    return render(request, 'crim/fl/hills/battery/greco-battery-specific.html')
+def conrad_specific(request):
+    return render(request, 'crim/fl/hills/battery/conrad-battery-specific.html')
 
 def lefler_specific(request):
     return render(request, 'crim/fl/hills/battery/lefler-battery-specific.html')

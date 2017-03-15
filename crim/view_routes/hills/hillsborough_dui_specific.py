@@ -42,8 +42,8 @@ def hillsborough_dui_specific(request):
                                 'date': date,
                                 'case_number': case_number,
                                 })
-            elif 'Greco' in str(judge):
-                return render(request, 'crim/fl/hills/dui/greco-dui-specific.html',
+            elif 'Conrad' in str(judge):
+                return render(request, 'crim/fl/hills/dui/conrad-dui-specific.html',
                                 {
                                 'first': first,
                                 'last': last,
@@ -106,8 +106,8 @@ def dui(request):
 def farr_specific(request):
     return render(request, 'crim/fl/hills/dui/farr-dui-specific.html')
 
-def greco_specific(request):
-    return render(request, 'crim/fl/hills/dui/greco-dui-specific.html')
+def conrad_specific(request):
+    return render(request, 'crim/fl/hills/dui/conrad-dui-specific.html')
 
 def lefler_specific(request):
     return render(request, 'crim/fl/hills/dui/lefler-dui-specific.html')

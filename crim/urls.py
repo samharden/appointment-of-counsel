@@ -48,13 +48,13 @@ urlpatterns = [
         hillsborough_dui_specific.farr_specific,
         name='hills-dui-farr-specific'),
 
-    url(r'^fl/hills/dui/greco-dui.html$',
-        hillsborough_dui.greco,
-        name='hills-dui-greco'),
+    url(r'^fl/hills/dui/conrad-dui.html$',
+        hillsborough_dui.conrad,
+        name='hills-dui-conrad'),
 
-    url(r'^fl/hills/dui/greco-dui-specific.html$',
-        hillsborough_dui_specific.greco_specific,
-        name='hills-dui-greco-specific'),
+    url(r'^fl/hills/dui/conrad-dui-specific.html$',
+        hillsborough_dui_specific.conrad_specific,
+        name='hills-dui-conrad-specific'),
 
 
     url(r'^fl/hills/dui/jeske-dui.html$',
@@ -110,9 +110,9 @@ urlpatterns = [
         hillsborough_battery.farr,
         name='hills-battery-farr'),
 
-    url(r'^fl/hills/battery/greco-battery.html$',
-        hillsborough_battery.greco,
-        name='hills-battery-greco'),
+    url(r'^fl/hills/battery/conrad-battery.html$',
+        hillsborough_battery.conrad,
+        name='hills-battery-conrad'),
 
     url(r'^fl/hills/battery/jeske-battery.html$',
         hillsborough_battery.jeske,
@@ -147,9 +147,9 @@ urlpatterns = [
         hillsborough_dwlsr.farr,
         name='hills-dwlsr-farr'),
 
-    url(r'^fl/hills/dwlsr/greco.html$',
-        hillsborough_dwlsr.greco,
-        name='hills-dwlsr-greco'),
+    url(r'^fl/hills/dwlsr/conrad.html$',
+        hillsborough_dwlsr.conrad,
+        name='hills-dwlsr-conrad'),
 
     url(r'^fl/hills/dwlsr/jeske.html$',
         hillsborough_dwlsr.jeske,
@@ -184,9 +184,9 @@ urlpatterns = [
         hillsborough_marijuanaposs.farr,
         name='hills-marijuana-possession-farr'),
 
-    url(r'^fl/hills/marijuana-possession/greco.html$',
-        hillsborough_marijuanaposs.greco,
-        name='hills-marijuana-possession-greco'),
+    url(r'^fl/hills/marijuana-possession/conrad.html$',
+        hillsborough_marijuanaposs.conrad,
+        name='hills-marijuana-possession-conrad'),
 
     url(r'^fl/hills/marijuana-possession/jeske.html$',
         hillsborough_marijuanaposs.jeske,
@@ -221,9 +221,9 @@ urlpatterns = [
         hillsborough_marijuanaposs.farr,
         name='hills-petit-theft-farr'),
 
-    url(r'^fl/hills/petit-theft/greco.html$',
-        hillsborough_marijuanaposs.greco,
-        name='hills-petit-theft-greco'),
+    url(r'^fl/hills/petit-theft/conrad.html$',
+        hillsborough_marijuanaposs.conrad,
+        name='hills-petit-theft-conrad'),
 
     url(r'^fl/hills/petit-theft/jeske.html$',
         hillsborough_marijuanaposs.jeske,

@@ -19,8 +19,8 @@ def hillsborough_dwlsr(request):
             print(judge)
             if judge == 'farr':
                 return render(request, 'crim/fl/hills/dwlsr/farr.html')
-            elif judge == 'greco':
-                return render(request, 'crim/fl/hills/dwlsr/greco.html')
+            elif judge == 'conrad':
+                return render(request, 'crim/fl/hills/dwlsr/conrad.html')
             elif judge == 'jeske':
                 return render(request, 'crim/fl/hills/dwlsr/jeske.html')
             elif judge == 'lefler':
@@ -45,8 +45,8 @@ def dwlsr(request):
 def farr(request):
     return render(request, 'crim/fl/hills/dwlsr/farr.html')
 
-def greco(request):
-    return render(request, 'crim/fl/hills/dwlsr/greco.html')
+def conrad(request):
+    return render(request, 'crim/fl/hills/dwlsr/conrad.html')
 
 def lefler(request):
     return render(request, 'crim/fl/hills/dwlsr/lefler.html')

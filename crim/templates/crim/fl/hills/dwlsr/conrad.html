@@ -1,16 +1,20 @@
-<title>Driving While License Suspended Cases in Judge Greco's Courtroom</title>
+<title>Driving While License Suspended Cases in Judge Conrad's Courtroom</title>
 
 {% extends "crim/base0.html" %}
 
 {% block content %}
 
-<h2 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Our search shows that {{ first }} {{last}}'s case is assigned to Judge Greco.</h2>
-<br>
+<center>
+		<h2 class="site-title">Driving While License Suspended Cases in Judge Conrad's Courtroom</a></h2></div>
+</center>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-53% of people charged with Driving While License Suspended With Knowledge are convicted. 25% of cases are dismissed, and 22% of people receive a withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.
+40% of people charged with Driving While License Suspended With
+Knowledge are convicted. 34% of cases are dismissed, and
+26% of people receive a withhold of adjudication, meaning that while
+they may receive a penalty for the crime, they do not receive a
+conviction on their record.
 
 </p>
 
@@ -21,9 +25,9 @@ Our search shows that {{ first }} {{last}}'s case is assigned to Judge Greco.</h
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Outcome', 'Percent'],
-          ['Convicted',     53],
-          ['Dismissed',      25],
-          ['Withhold of Adjudication',  22],
+          ['Convicted',     40],
+          ['Dismissed',      34],
+          ['Withhold of Adjudication',  26],
         ]);
 
         var options = {
@@ -31,7 +35,7 @@ Our search shows that {{ first }} {{last}}'s case is assigned to Judge Greco.</h
           backgroundColor: {fill: 'transparent'},
           chartArea:{width:'90%'},
           is3D: true,
-          title: "What Happens in Suspended License Cases in Judge Greco's Courtroom",
+          title: "What Happens in Suspended License Cases in Judge Conrad's Courtroom",
           legend: {position: 'bottom',
       				maxLines: '3',
       				textStyle: {fontSize: '16'}
@@ -57,11 +61,14 @@ Our search shows that {{ first }} {{last}}'s case is assigned to Judge Greco.</h
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 Do people hire an attorney for Driving While License Suspended cases
-in Judge Greco's courtroom?</h3>
+in Judge Conrad's courtroom?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-Only 16% of people charged with Driving While License Suspended With Knowledge hire a private attorney in Judge Greco's courtroom. 9% go with the Public Defender. 75% decide to handle their cases on their own without an attorney.
+Only 12% of people charged with Driving While License Suspended With Knowledge
+hire a private attorney in Judge Conrad's courtroom.
+8% go with the Public Defender. 80% decide to handle their cases on their
+own without an attorney.
 
 </p>
 
@@ -71,9 +78,9 @@ Only 16% of people charged with Driving While License Suspended With Knowledge h
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Attorney Hire', 'Percent'],
-          ['Private Attorney',     16],
-          ['Public Defender',      9],
-          ['No Attorney',  75],
+          ['Private Attorney',     12],
+          ['Public Defender',      8],
+          ['No Attorney',  80],
         ]);
 
         var options = {
@@ -81,7 +88,7 @@ Only 16% of people charged with Driving While License Suspended With Knowledge h
           backgroundColor: {fill: 'transparent'},
           chartArea:{width:'90%'},
           is3D: true,
-          title: "Who Hires an Attorney for Their Suspended License Case in Judge Greco's Courtroom",
+          title: "Who Hires an Attorney for Their Suspended License Case in Judge Conrad's Courtroom",
           legend: {position: 'bottom',
       				maxLines: '3',
       				textStyle: {fontSize: '16'}
@@ -109,7 +116,10 @@ Only 16% of people charged with Driving While License Suspended With Knowledge h
 Does hiring a private attorney make a difference?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-Having a private attorney is an advantage in these cases in Judge Greco's courtroom. People who hire a private attorney are convicted 42% of the time, while people who have the public defender are convicted 70% of the time. People without an attorney, also known as "Pro Se," are convicted 53% of the time.
+Having a private attorney is an advantage in these cases in Judge Conrad's courtroom.
+People who hire a private attorney are convicted 40% of the time, while
+people who have the public defender are convicted 68% of the time.
+People without an attorney, also known as "Pro Se," are convicted 38% of the time.
 
 </p>
 
@@ -120,9 +130,9 @@ Having a private attorney is an advantage in these cases in Judge Greco's courtr
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-        ["Private Attorney", 42, "color: #121ca5", '%'],
-        ["Public Defender", 70, "color: #4651f2",'%'],
-        ["No Attorney", 53, "color: #84b1f9", '%']
+        ["Private Attorney", 40, "color: #121ca5", '%'],
+        ["Public Defender", 68, "color: #4651f2",'%'],
+        ["No Attorney", 38, "color: #84b1f9", '%']
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -150,7 +160,7 @@ Having a private attorney is an advantage in these cases in Judge Greco's courtr
             },
         tooltip: {text: 'percentage', format: '#\'%\''},
 
-        title: "Convictions for Suspended License in Judge Greco's Courtroom",
+        title: "Convictions for Suspended License in Judge Conrad's Courtroom",
         titlePosition: 'out',
 
 
@@ -223,7 +233,10 @@ Across Hillsborough County people who hired a private attorney are convicted of 
 case dismissed or dropped?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-People who hire a private attorney have their cases dismissed 35% of the time, while people who have the public defender have their cases dismissed 21% of the time. People without an attorney, also known as "Pro Se," have their case dismissed 23% of the time.
+People who hire a private attorney have their cases dismissed 33% of the
+time, while people who have the public defender have their cases dismissed
+21% of the time. People without an attorney, also known as "Pro Se,"
+have their case dismissed 35% of the time.
 
 </p>
 
@@ -234,9 +247,9 @@ People who hire a private attorney have their cases dismissed 35% of the time, w
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-        ["Private Attorney", 35, "color: #121ca5", '%'],
+        ["Private Attorney", 33, "color: #121ca5", '%'],
         ["Public Defender", 21, "color: #4651f2",'%'],
-        ["No Attorney", 23, "color: #84b1f9", '%']
+        ["No Attorney", 35, "color: #84b1f9", '%']
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -264,7 +277,7 @@ People who hire a private attorney have their cases dismissed 35% of the time, w
             },
         tooltip: {text: 'percentage', format: '#\'%\''},
 
-        title: "Suspended License Cases Dismissed in Judge Greco's Courtroom",
+        title: "Suspended License Cases Dismissed in Judge Conrad's Courtroom",
         titlePosition: 'out',
 
 
@@ -282,7 +295,10 @@ People who hire a private attorney have their cases dismissed 35% of the time, w
 What about getting a Withhold of Adjudication?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-People who hire a private attorney receive a withhold of adjudication 23% of the time, while people with the public defender receive a withhold of adjudication just 9% of the time. People without an attorney receive a withhold of adjudication 24% of the time.
+People who hire a private attorney receive a withhold of adjudication
+27% of the time, while people with the public defender receive a withhold of
+adjudication just 11% of the time. People without an attorney receive
+a withhold of adjudication 28% of the time.
 
 </p>
 
@@ -294,9 +310,9 @@ People who hire a private attorney receive a withhold of adjudication 23% of the
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-        ["Private Attorney", 23, "color: #121ca5", '%'],
-        ["Public Defender", 9, "color: #4651f2",'%'],
-        ["No Attorney", 24, "color: #84b1f9", '%']
+        ["Private Attorney", 27, "color: #121ca5", '%'],
+        ["Public Defender", 11, "color: #4651f2",'%'],
+        ["No Attorney", 28, "color: #84b1f9", '%']
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -324,7 +340,7 @@ People who hire a private attorney receive a withhold of adjudication 23% of the
             },
         tooltip: {text: 'percentage', format: '#\'%\''},
 
-        title: "Suspended License Cases in Judge Greco's Courtroom: Adjudication Withheld",
+        title: "Suspended License Cases in Judge Conrad's Courtroom: Adjudication Withheld",
         titlePosition: 'out',
 
 
@@ -344,5 +360,4 @@ What is the typical penalty for Driving While License Suspended?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 The most common penalty for Driving While License Suspended with Knowledge is a $270 fine. Less than 1% of people receive probation for this charge.
 </p>
-
 {% endblock %}

@@ -20,8 +20,8 @@ def hillsborough_dui(request):
             print(judge)
             if judge == 'farr':
                 return render(request, 'crim/fl/hills/dui/farr-dui.html')
-            elif judge == 'greco':
-                return render(request, 'crim/fl/hills/dui/greco-dui.html')
+            elif judge == 'conrad':
+                return render(request, 'crim/fl/hills/dui/conrad-dui.html')
             elif judge == 'jeske':
                 return render(request, 'crim/fl/hills/dui/jeske-dui.html')
             elif judge == 'lefler':
@@ -47,8 +47,8 @@ def farr(request):
     return render(request, 'crim/fl/hills/dui/farr-dui.html')
 
 
-def greco(request):
-    return render(request, 'crim/fl/hills/dui/grecodui.html')
+def conrad(request):
+    return render(request, 'crim/fl/hills/dui/conrad-dui.html')
 
 def lefler(request):
     return render(request, 'crim/fl/hills/dui/lefler-dui.html')

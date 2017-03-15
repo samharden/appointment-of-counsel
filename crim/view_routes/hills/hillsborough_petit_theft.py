@@ -21,8 +21,8 @@ def hillsborough_petit_theft(request):
             print(judge)
             if judge == 'farr':
                 return render(request, 'crim/fl/hills/petit-theft/farr.html')
-            elif judge == 'greco':
-                return render(request, 'crim/fl/hills/petit-theft/greco.html')
+            elif judge == 'conrad':
+                return render(request, 'crim/fl/hills/petit-theft/conrad.html')
             elif judge == 'jeske':
                 return render(request, 'crim/fl/hills/petit-theft/jeske.html')
             elif judge == 'lefler':
@@ -47,8 +47,8 @@ def petit_theft(request):
 def farr(request):
     return render(request, 'crim/fl/hills/petit-theft/farr.html')
 
-def greco(request):
-    return render(request, 'crim/fl/hills/petit-theft/greco.html')
+def conrad(request):
+    return render(request, 'crim/fl/hills/petit-theft/conrad.html')
 
 def lefler(request):
     return render(request, 'crim/fl/hills/petit-theft/lefler.html')

@@ -1,16 +1,18 @@
-<title>Marijuana Possession Cases in Judge Greco's Courtroom</title>
+<title>Marijuana Possession Cases in Judge Conrad's Courtroom</title>
 
 {% extends "crim/base0.html" %}
 
 {% block content %}
 
 <h2 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Our search shows that {{ first }} {{last}}'s case is assigned to Judge Greco.</h2>
+Our search shows that {{ first }} {{last}}'s case is assigned to Judge Conrad.</h2>
 <br>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-21% of people charged with Marijuana Possession are convicted. 22% of cases are dismissed, and 57% of people receive a withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.
+34% of people charged with Marijuana Possession are convicted.
+24% of cases are dismissed, and
+42% of people receive a withhold of adjudication, meaning that while they may receive a penalty for the crime, they do not receive a conviction on their record.
 
 In Marijuana Possession cases getting a withhold of adjudication is especially important because a conviction carries with it a one-year driver's license suspension.
 
@@ -22,9 +24,9 @@ In Marijuana Possession cases getting a withhold of adjudication is especially i
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 			['Outcome', 'Percent'],
-			['Convicted',     21],
-			['Dismissed',      22],
-			['Withhold of Adjudication',  57],
+			['Convicted',     34],
+			['Dismissed',      24],
+			['Withhold of Adjudication',  42],
 		]);
 
 		var options = {
@@ -32,7 +34,7 @@ In Marijuana Possession cases getting a withhold of adjudication is especially i
 			backgroundColor: {fill: 'transparent'},
 			chartArea:{width:'90%'},
 			is3D: true,
-			title: "What Happens in Marijuana Possession Cases in Judge Greco's Courtroom",
+			title: "What Happens in Marijuana Possession Cases in Judge Conrad's Courtroom",
 			legend: {position: 'bottom',
 					maxLines: '3',
 					textStyle: {fontSize: '16'}
@@ -57,11 +59,11 @@ In Marijuana Possession cases getting a withhold of adjudication is especially i
 <div class='chart' id="mjposs-outcomes" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Do people hire an attorney for Marijuana Possession cases in Judge Greco's courtroom?</h3>
+Do people hire an attorney for Marijuana Possession cases in Judge Conrad's courtroom?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-51% of people charged with Marijuana Possession hire a private attorney in Judge Greco's courtroom. 39% go with the Public Defender, while 10% decide to handle their cases on their own without an attorney.
+51% of people charged with Marijuana Possession hire a private attorney in Judge Conrad's courtroom. 39% go with the Public Defender, while 10% decide to handle their cases on their own without an attorney.
 
 </p>
 
@@ -81,7 +83,7 @@ Do people hire an attorney for Marijuana Possession cases in Judge Greco's court
 			backgroundColor: {fill: 'transparent'},
 			chartArea:{width:'90%'},
 			is3D: true,
-			title: "Who Hires an Attorney for Marijuana Possession Case in Judge Greco's Courtroom",
+			title: "Who Hires an Attorney for Marijuana Possession Case in Judge Conrad's Courtroom",
 			legend: {position: 'bottom',
 					maxLines: '3',
 					textStyle: {fontSize: '16'}
@@ -109,7 +111,11 @@ Do people hire an attorney for Marijuana Possession cases in Judge Greco's court
 Does hiring a private attorney make a difference?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-Having a private attorney is a clear advantage over the public defender in these cases in Judge Greco's courtroom. People who hired a private attorney were convicted just 14% of the time, while people who had the public defender were convicted 32% of the time. People without an attorney, also known as "Pro Se," were convicted 18% of the time.
+Having a private attorney is a clear advantage over the public defender in
+these cases in Judge Conrad's courtroom. People who hired a private attorney
+were convicted just 27% of the time, while people who had the public
+defender were convicted 44% of the time. People without an attorney,
+also known as "Pro Se," were convicted 32% of the time.
 
 </p>
 
@@ -120,9 +126,9 @@ Having a private attorney is a clear advantage over the public defender in these
 	 function drawChart() {
 		 var data = google.visualization.arrayToDataTable([
 			 ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-			 ["Private Attorney", 14, "color: #121ca5", '%'],
-			 ["Public Defender", 32, "color: #4651f2",'%'],
-			 ["No Attorney", 18, "color: #84b1f9", '%']
+			 ["Private Attorney", 27, "color: #121ca5", '%'],
+			 ["Public Defender", 44, "color: #4651f2",'%'],
+			 ["No Attorney", 32, "color: #84b1f9", '%']
 		 ]);
 
 		 var view = new google.visualization.DataView(data);
@@ -150,7 +156,7 @@ Having a private attorney is a clear advantage over the public defender in these
 					 },
 			 tooltip: {text: 'percentage', format: '#\'%\''},
 
-			 title: "Convictions for Marijuana Possession in Judge Greco's Courtroom",
+			 title: "Convictions for Marijuana Possession in Judge Conrad's Courtroom",
 			 titlePosition: 'out',
 
 
@@ -218,7 +224,10 @@ Across Hillsborough County people who hired a private attorney are convicted of 
 case dismissed or dropped?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-People who hire a private attorney have their cases dismissed 22% of the time, while people who use the public defender have their cases dismissed 23% of the time. People without an attorney, also known as "Pro Se," have their case dismissed 18% of the time.
+People who hire a private attorney have their cases dismissed 22% of the
+time, while people who use the public defender have their cases dismissed
+26% of the time. People without an attorney, also known as "Pro Se,"
+have their case dismissed 28% of the time.
 
 </p>
 
@@ -230,8 +239,8 @@ People who hire a private attorney have their cases dismissed 22% of the time, w
       var data = google.visualization.arrayToDataTable([
         ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
         ["Private Attorney", 22, "color: #121ca5", '%'],
-        ["Public Defender", 23, "color: #4651f2",'%'],
-        ["No Attorney", 18, "color: #84b1f9", '%']
+        ["Public Defender", 26, "color: #4651f2",'%'],
+        ["No Attorney", 28, "color: #84b1f9", '%']
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -259,7 +268,7 @@ People who hire a private attorney have their cases dismissed 22% of the time, w
             },
         tooltip: {text: 'percentage', format: '#\'%\''},
 
-        title: "Marijuana Possession Cases Dismissed in Judge Greco's Courtroom",
+        title: "Marijuana Possession Cases Dismissed in Judge Conrad's Courtroom",
         titlePosition: 'out',
 
 
@@ -278,7 +287,10 @@ People who hire a private attorney have their cases dismissed 22% of the time, w
 What about getting a Withhold of Adjudication?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
-People who hired a private attorney receive a withhold of adjudication 65% of the time, while people with the public defender receive a withhold of adjudication 44% of the time. People without an attorney receive a withhold of adjudication 64% of the time.
+People who hired a private attorney receive a withhold of adjudication
+51% of the time, while people with the public defender receive a
+withhold of adjudication 30% of the time. People without an attorney
+receive a withhold of adjudication 40% of the time.
 </p>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
 
@@ -292,9 +304,9 @@ Remember that getting a withhold of adjudication instead of a conviction is espe
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-        ["Private Attorney", 65, "color: #121ca5", '%'],
-        ["Public Defender", 44, "color: #4651f2",'%'],
-        ["No Attorney", 64, "color: #84b1f9", '%']
+        ["Private Attorney", 51, "color: #121ca5", '%'],
+        ["Public Defender", 30, "color: #4651f2",'%'],
+        ["No Attorney", 40, "color: #84b1f9", '%']
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -322,7 +334,7 @@ Remember that getting a withhold of adjudication instead of a conviction is espe
             },
         tooltip: {text: 'percentage', format: '#\'%\''},
 
-        title: "Marijuana Possession Cases in Judge Greco's Courtroom: Adjudication Withheld",
+        title: "Marijuana Possession Cases in Judge Conrad's Courtroom: Adjudication Withheld",
         titlePosition: 'out',
 
 

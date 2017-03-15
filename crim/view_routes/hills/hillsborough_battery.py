@@ -21,8 +21,8 @@ def hillsborough_battery(request):
             if judge == 'farr':
 
                 return render(request, 'crim/fl/hills/battery/farr-battery.html')
-            elif judge == 'greco':
-                return render(request, 'crim/fl/hills/battery/greco-battery.html')
+            elif judge == 'conrad':
+                return render(request, 'crim/fl/hills/battery/conrad-battery.html')
             elif judge == 'jeske':
                 return render(request, 'crim/fl/hills/battery/jeske-battery.html')
             elif judge == 'lefler':
@@ -47,8 +47,8 @@ def battery(request):
 def farr(request):
     return render(request, 'crim/fl/hills/battery/farr-battery.html')
 
-def greco(request):
-    return render(request, 'crim/fl/hills/battery/greco-battery.html')
+def conrad(request):
+    return render(request, 'crim/fl/hills/battery/conrad-battery.html')
 
 def lefler(request):
     return render(request, 'crim/fl/hills/battery/lefler-battery.html')

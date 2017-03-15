@@ -23,8 +23,8 @@ def hillsborough_marijuanaposs(request):
             print(judge)
             if judge == 'farr':
                 return render(request, 'crim/fl/hills/marijuana-possession/farr.html')
-            elif judge == 'greco':
-                return render(request, 'crim/fl/hills/marijuana-possession/greco.html')
+            elif judge == 'conrad':
+                return render(request, 'crim/fl/hills/marijuana-possession/conrad.html')
             elif judge == 'jeske':
                 return render(request, 'crim/fl/hills/marijuana-possession/jeske.html')
             elif judge == 'lefler':
@@ -49,8 +49,8 @@ def marijuanapossession(request):
 def farr(request):
     return render(request, 'crim/fl/hills/marijuana-possession/farr.html')
 
-def greco(request):
-    return render(request, 'crim/fl/hills/marijuana-possession/greco.html')
+def conrad(request):
+    return render(request, 'crim/fl/hills/marijuana-possession/conrad.html')
 
 def lefler(request):
     return render(request, 'crim/fl/hills/marijuana-possession/lefler.html')

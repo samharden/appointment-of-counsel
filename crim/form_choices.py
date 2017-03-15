@@ -15,8 +15,9 @@ CRIM_COUNTY_CHOICES = (
     # ('orange', ("Orange")),
 )
 CRIM_JUDGE_CHOICES_HILLSB = (
+    ('conrad', ("Conrad")),
     ('farr', ("Farr")),
-    ('greco', ("Greco")),
+
     ('jeske', ("Jeske")),
     ('lefler', ("Lefler")),
     ('mcneil', ("McNeil")),

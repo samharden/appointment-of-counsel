@@ -1,17 +1,17 @@
-<title>DUI Cases in Judge Greco's Courtroom</title>
+    <title>DUI Cases in Judge Conrad's Courtroom</title>
 
 {% extends "crim/base0.html" %}
 
 {% block content %}
 
 
-<h2 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Our search shows that {{ first }} {{last}}'s case is assigned to Judge Greco.</h2>
+<h1 style="text-align: center; margin: 10px 50px 10px 50px !important;">
+What Happens in DUI Cases in Judge Conrad's Courtroom</h1>
 <br>
-
-
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-In Judge Greco's courtroom 56% of people accused of a DUI are convicted. 33% have their case reduced to the lesser charge of Reckless Driving, and only 10% of DUI cases are dismissed.</p>
+In Judge Conrad's courtroom 52% of people accused of a DUI are convicted.
+37% have their case reduced to the lesser charge of Reckless Driving,
+and only 11% of DUI cases are dismissed.</p>
 
 <script type="text/javascript">
   google.charts.load("current", {packages:["corechart"]});
@@ -19,9 +19,9 @@ In Judge Greco's courtroom 56% of people accused of a DUI are convicted. 33% hav
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
       ['Outcome', 'Percent'],
-      ['Convicted of DUI',     56],
-      ['Dismissed',      10],
-      ['Reduced to Reckless Driving',  33],
+      ['Convicted of DUI',     52],
+      ['Dismissed',      11],
+      ['Reduced to Reckless Driving',  37],
     ]);
 
     var options = {
@@ -29,7 +29,7 @@ In Judge Greco's courtroom 56% of people accused of a DUI are convicted. 33% hav
       backgroundColor: {fill: 'transparent'},
       chartArea:{width:'90%'},
       is3D: true,
-      title: "What Happens in DUI Cases in Judge Greco's Courtroom",
+      title: "What Happens in DUI Cases in Judge Conrad's Courtroom",
       legend: {position: 'bottom',
           maxLines: '3',
           textStyle: {fontSize: '16'}
@@ -45,19 +45,23 @@ In Judge Greco's courtroom 56% of people accused of a DUI are convicted. 33% hav
 
 
 
-    var chart = new google.visualization.PieChart(document.getElementById('greco-dui-outcomes'));
+    var chart = new google.visualization.PieChart(document.getElementById('Conrad-dui-outcomes'));
     chart.draw(data, options);
   }
 
 </script>
 
-<div class='chart' id="greco-dui-outcomes" align="center" size="75%"></div>
+<div class='chart' id="Conrad-dui-outcomes" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
-Do people hire an attorney for DUI cases in Judge Greco's courtroom?
+Do people hire an attorney for DUI cases in Judge Conrad's courtroom?
 </h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-_Nearly everyone in Judge Greco's courtroom who is accused of DUI has an attorney for their case. The majority of people (68%) hire a private attorney, while less than a quarter (15%) use the public defender. Only 17% of people do not hire an attorney, which is called "Pro Se."</p>
+Nearly everyone in Judge Conrad's courtroom who is accused of DUI
+has an attorney for their case. The majority of people
+(69%) hire a private attorney, while less than a quarter
+(16%) use the public defender. Only 15% of people do not hire an
+attorney, which is called "Pro Se."</p>
 
 
 <script type="text/javascript">
@@ -66,9 +70,9 @@ _Nearly everyone in Judge Greco's courtroom who is accused of DUI has an attorne
   function drawChart() {
     var data = google.visualization.arrayToDataTable([
       ['Attorney', 'Percent', { role: "style" }],
-      ['Private Attorney',     68, "color: #121ca5"],
-      ['Public Defender',      15, "color: #4651f2"],
-      ['No Attorney',  17, "color: #84b1f9"],
+      ['Private Attorney',     69, "color: #121ca5"],
+      ['Public Defender',      16, "color: #4651f2"],
+      ['No Attorney',  15, "color: #84b1f9"],
     ]);
 
     var options = {
@@ -80,7 +84,7 @@ _Nearly everyone in Judge Greco's courtroom who is accused of DUI has an attorne
           maxLines: '3',
           textStyle: {fontSize: '16'}
         },
-      title: "Who Hired an Attorney for Their DUI Case in Judge Greco's Courtroom",
+      title: "Who Hired an Attorney for Their DUI Case in Judge Conrad's Courtroom",
       pieSliceText: 'percentage',
       slices: {
         0: { color: '#121ca5' },
@@ -105,8 +109,11 @@ _Nearly everyone in Judge Greco's courtroom who is accused of DUI has an attorne
 Does hiring a private attorney make a difference?
 </h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-Having a private attorney is a big advantage in DUI cases in Judge Greco's courtroom.
-People who hire a private attorney are able to avoid a DUI conviction 50% of the time, while people who had the public defender avoid a DUI conviction 45% of the time. People who do not have an attorney ("Pro Se") avoid a DUI conviction only 17% of the time.
+Having a private attorney is a big advantage in DUI cases in Judge Conrad's courtroom.
+People who hire a private attorney are able to avoid a DUI conviction
+56% of the time, while people who had the public defender avoid a DUI conviction
+43% of the time. People who do not have an attorney ("Pro Se") avoid a DUI conviction only
+17% of the time.
 </p>
 
 <script type="text/javascript">
@@ -116,8 +123,8 @@ var inView = false;
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-    ["Private Attorney", 50, "color: #121ca5", '%'],
-    ["Public Defender", 45, "color: #4651f2",'%'],
+    ["Private Attorney", 56, "color: #121ca5", '%'],
+    ["Public Defender", 43, "color: #4651f2",'%'],
     ["No Attorney", 17, "color: #84b1f9", '%']
   ]);
 
@@ -146,7 +153,7 @@ function drawChart() {
         },
     tooltip: {text: 'percentage', format: '#\'%\''},
 
-    title: "Percent of People who Avoid a DUI Conviction in Judge Greco's Courtroom",
+    title: "Percent of People who Avoid a DUI Conviction in Judge Conrad's Courtroom",
     titlePosition: 'out',
 
 
@@ -162,7 +169,12 @@ function drawChart() {
 <div id="chart_id" class="chart" align="center" size="75%"></div>
 
 
-<p style="text-align: justify;">The average for judges in Hillsborough County is slightly higher for private attorneys, and slightly lower for those represented by the public defender. People who hire a private attorney are able to avoid a DUI conviction 51% of the time, while people who use the public defender only avoid a DUI conviction 40% of the time. People who go without an attorney avoid a DUI conviction only 26% of the time.</p>
+<p style="text-align: justify;">The average for judges in Hillsborough County
+  is slightly higher for private attorneys, and slightly lower for those
+  represented by the public defender. People who hire a private attorney are
+  able to avoid a DUI conviction 51% of the time, while people who use the
+  public defender only avoid a DUI conviction 40% of the time. People who
+  go without an attorney avoid a DUI conviction only 26% of the time.</p>
 
 <script type="text/javascript">
 google.charts.load("current", {packages:['corechart']});
@@ -262,7 +274,11 @@ width="91">Yes</td> <td style="text-align: center;" width="91">No</td>
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 Can I get my DUI case dismissed or dropped?</h3>
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-Only 10% of DUI cases are dismissed or dropped in Judge Greco's courtroom. People who hire a private attorney have their case dropped or dismissed only 9% of the time, while people represented by the Public Defender have their case dropped or dismissed 22% of the time. People who go without an attorney ("Pro Se") get their case dismissed or dropped 7% of the time.</p>
+Only 10% of DUI cases are dismissed or dropped in Judge Conrad's courtroom. 
+People who hire a private attorney have their case dropped or dismissed only
+10% of the time, while people represented by the Public Defender have their case dropped or dismissed
+22% of the time. People who go without an attorney ("Pro Se") get their case dismissed or dropped
+6% of the time.</p>
 
 
 <script type="text/javascript">
@@ -272,9 +288,9 @@ var inView = false;
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ["Attorney", "Percentage", { role: "style" } ],
-    ["Private Attorney", 9, "color: #121ca5"],
+    ["Private Attorney", 10, "color: #121ca5"],
     ["Public Defender", 22, "color: #4651f2"],
-    ["No Attorney", 7, "color: #84b1f9"]
+    ["No Attorney", 6, "color: #84b1f9"]
   ]);
 
   var view = new google.visualization.DataView(data);
@@ -301,11 +317,11 @@ function drawChart() {
 
         },
     tooltip: {text: 'percentage'},
-    title: "Percent of DUI Cases Dismissed in Judge Greco's Courtroom",
+    title: "Percent of DUI Cases Dismissed in Judge Conrad's Courtroom",
 
 
   };
-  var chart = new google.visualization.ColumnChart(document.getElementById("greco_dui_diss"));
+  var chart = new google.visualization.ColumnChart(document.getElementById("Conrad_dui_diss"));
   chart.draw(view, options);
 }
 
@@ -313,13 +329,20 @@ function drawChart() {
 
 </script>
 
-<div id="greco_dui_diss" class="chart" align="center" size="75%"></div>
+<div id="Conrad_dui_diss" class="chart" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 What about DUI cases reduced to the lesser charge of Reckless Driving?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-33% of DUI cases in Judge Greco's courtroom are reduced to the lesser charge of Reckless Driving. People who hire a private attorney have their case reduced to Reckless Driving 41% of the time, while people represented by the Public Defender have their case reduced only 23% of the time. People who go without an attorney ("Pro Se") get their case reduced to Reckless Driving just 10% of the time.</p>
+37% of DUI cases in Judge Conrad's courtroom are reduced to the
+lesser charge of Reckless Driving. People who hire a private
+attorney have their case reduced to Reckless Driving 
+46% of the time, while people represented by the
+Public Defender have their case reduced only
+21% of the time. People who go without an attorney
+("Pro Se") get their case reduced to Reckless Driving just
+10% of the time.</p>
 
 <script type="text/javascript">
 google.charts.load("current", {packages:['corechart']});
@@ -328,8 +351,8 @@ var inView = false;
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-    ["Private Attorney", 41, "color: #121ca5", '%'],
-    ["Public Defender", 23, "color: #4651f2",'%'],
+    ["Private Attorney", 46, "color: #121ca5", '%'],
+    ["Public Defender", 21, "color: #4651f2",'%'],
     ["No Attorney", 10, "color: #84b1f9", '%']
   ]);
 
@@ -358,12 +381,12 @@ function drawChart() {
         },
     tooltip: {text: 'percentage'},
 
-    title: "Percent of DUI Cases Reduced to Reckless Driving in Judge Greco's Courtroom",
+    title: "Percent of DUI Cases Reduced to Reckless Driving in Judge Conrad's Courtroom",
     titlePosition: 'out',
 
 
   };
-  var chart = new google.visualization.ColumnChart(document.getElementById("greco_dui_reduced"));
+  var chart = new google.visualization.ColumnChart(document.getElementById("Conrad_dui_reduced"));
   chart.draw(view, options);
 }
 
@@ -371,13 +394,17 @@ function drawChart() {
 
 </script>
 
-<div id="greco_dui_reduced" class="chart" align="center" size="75%"></div>
+<div id="Conrad_dui_reduced" class="chart" align="center" size="75%"></div>
 
 <h3 style="text-align: center; margin: 10px 50px 10px 50px !important;">
 Shouldn't I just represent myself?</h3>
 
 <p style="text-align: justify; margin: 10px 50px 10px 50px !important;" >
-7% of people accused of DUI represent themselves in Judge Greco's courtroom. These people, on average, are far more likely to receive a DUI conviction than people who hire private attorneys or are represented by a Public Defender.</p>
+15% of people accused of DUI represent themselves in
+Judge Conrad's courtroom. These people, on average,
+are far more likely to receive a DUI conviction than
+people who hire private attorneys or are represented
+by a Public Defender.</p>
 
 <script type="text/javascript">
 google.charts.load("current", {packages:['corechart']});
@@ -386,8 +413,8 @@ var inView = false;
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ["Attorney", "Percentage", { role: "style" }, {role: "annotation"} ],
-    ["Private Attorney", 50, "color: #121ca5", '%'],
-    ["Public Defender", 55, "color: #4651f2",'%'],
+    ["Private Attorney", 44, "color: #121ca5", '%'],
+    ["Public Defender", 57, "color: #4651f2",'%'],
     ["No Attorney", 83, "color: #84b1f9", '%']
   ]);
 
@@ -416,12 +443,12 @@ function drawChart() {
         },
     tooltip: {text: 'percentage', format: '#\'%\''},
 
-    title: "Percent of DUI Convictions in Judge Greco's Courtroom",
+    title: "Percent of DUI Convictions in Judge Conrad's Courtroom",
     titlePosition: 'out',
 
 
   };
-  var chart = new google.visualization.ColumnChart(document.getElementById("greco_dui_conv"));
+  var chart = new google.visualization.ColumnChart(document.getElementById("Conrad_dui_conv"));
   chart.draw(view, options);
 }
 
@@ -429,6 +456,5 @@ function drawChart() {
 
 </script>
 
-<div id="greco_dui_conv" class="chart" align="center" size="75%"></div>
-
+<div id="Conrad_dui_conv" class="chart" align="center" size="75%"></div>
 {% endblock %}
