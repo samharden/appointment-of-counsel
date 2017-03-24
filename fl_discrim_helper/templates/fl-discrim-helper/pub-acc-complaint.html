@@ -18,7 +18,7 @@
 
 
 
-<blockquote>
+
     <center><b><h3>Your personal information:</h3></b></center>
         <form action="" method="post">
 {% csrf_token %}
@@ -37,9 +37,9 @@
   <p style="text-align: left; margin: 10px 30px 10px 30px">DOB: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_pub_acc_form.cx_dob}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Your sex: &nbsp{{ cx_pub_acc_form.cx_sex}}</p>
 
-</blockquote>
 
-<blockquote>
+
+
   <center><b> <h3>Please provide the name of a person we can contact if we are
     unable to reach you:</h3></b></center>
     <p style="text-align: left; margin: 10px 30px 10px 30px">First name: &nbsp&nbsp&nbsp{{ op_pub_acc_form.op_first_name}}</p>
@@ -52,9 +52,9 @@
     <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ op_pub_acc_form.op_zip}}</p>
     <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ op_pub_acc_form.op_phone}}</p>
     <p style="text-align: left; margin: 10px 30px 10px 30px">Relationship: {{ op_pub_acc_form.op_relationship}}</p>
-</blockquote>
 
-<blockquote>
+
+
   <center><b> <h3>I believe that I was discriminated against by the following
     organization:</h3></b></center>
 
@@ -68,10 +68,10 @@
   <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{disorg_pub_acc_form.disorg_phone}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Type: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{disorg_pub_acc_form.disorg_type}}</p>
 
-</blockquote>
-</blockquote>
 
-<blockquote>
+
+
+
   <center><b><h3> Organization Representative Contact Information (If known):</h3></b></center>
 
   <p style="text-align: left; margin: 10px 30px 10px 30px">Name: &nbsp&nbsp&nbsp&nbsp&nbsp{{ reporg_pub_acc_form.reporg_name}}</p>
@@ -84,9 +84,9 @@
   <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{ reporg_pub_acc_form.reporg_phone}}</p>
 
 
-</blockquote>
 
-<blockquote>
+
+
   <center><h3><b> What is the reason for your claim of public Accommodation discrimination?
               Check all that apply.<br></center></h3><br>
             <justify>For example, if you feel that you were treated worse than someone
@@ -94,33 +94,50 @@
               If you feel you were treated worse for several reasons, such as
               your sex, religion and national origin, check all of these boxes.
   </b></justify>
-  <p>{{ disreason_pub_acc_form.as_p}}</p>
 
-</blockquote>
 
-<blockquote>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ disreason_pub_acc_form.reason_race}} Race</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your race: {{ disreason_pub_acc_form.reason_race_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ disreason_pub_acc_form.reason_color}} Color</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your color: {{ disreason_pub_acc_form.reason_color_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ disreason_pub_acc_form.reason_natorigin}} National origin</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your national origin: {{ disreason_pub_acc_form.reason_natorigin_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ disreason_pub_acc_form.reason_familial}} Familial status</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your familial status: {{ disreason_pub_acc_form.reason_familial_desc}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ disreason_pub_acc_form.reason_sex}} Sex</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your sex: {{ disreason_pub_acc_form.reason_sex_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ disreason_pub_acc_form.reason_religion}} Religion</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your religion: {{ disreason_pub_acc_form.reason_religion_desc}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ disreason_pub_acc_form.reason_disability}} Disability</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">Your disability: {{ disreason_pub_acc_form.reason_disability_choose}}</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">{{ disreason_pub_acc_form.reason_other}} Other</p>
+  <p style="text-align: left; margin: 10px 30px 10px 30px">If you selected 'other,' please describe: {{ disreason_pub_acc_form.reason_other_desc}}</p>
+  <blockquote><p>Please describe what happened: </p>{{ disreason_pub_acc_form.reason_description}}</blockquote>
+
+
+
     <justify><p><b>Do you have a disability, which is a physical or mental impairment
                 that substantially limits a major life activity, such as caring for
                 yourself, performing manual tasks, walking, seeing, hearing,
                 speaking, breathing, learning, or working? <justify></p>
   <center><p>{{ disability_ynm.as_p}}</p></center>
 
-</blockquote>
 
-<blockquote>
+
+
   <center><h3><b> Have you filed this charge previously with another Agency?</center></h3><br>
   <p>{{ prior_agency_sought_help.as_p}}</p>
 
-</blockquote>
 
-<blockquote>
+
+
   <center><h3><b> Have you sought help about this situation from an attorney or any other source?</center></h3><br>
   <p>{{ prior_sought_help.as_p}}</p>
 
-</blockquote>
 
 
-<blockquote>
+
+
   <center><h3><b> Please check one of the boxes below to tell the FCHR what you would
     like them to do with the information you are providing on this questionnaire.<br></center></h3><br>
     <justify>If you would like to file a charge of public accommodations discrimination,
@@ -143,7 +160,7 @@
     on race, color, national origin, sex, disability, familial status, religion or
     retaliation for opposing discrimination.   </p>
 
-</blockquote>
+
 
 
       <center>

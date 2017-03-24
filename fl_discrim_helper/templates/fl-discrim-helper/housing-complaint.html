@@ -18,7 +18,7 @@
 
 
 
-<blockquote style="">
+
     <center><b><h3>Your personal information:</h3></b></center>
         <form action="" method="post">
 {% csrf_token %}
@@ -36,14 +36,14 @@
   <p style="text-align: left; margin: 10px 30px 10px 30px">DOB: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_housing_form.cx_dob}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Your sex: {{ cx_housing_form.cx_sex}}</p>
 
-</blockquote>
 
-<blockquote>
+
+
   <center><b> <h3>Other occupants and / or children:</h3></b></center>
-  <p>{{ cx_other_occ_form.as_p}}</p>
-</blockquote>
+  <blockquote>{{ cx_other_occ_form.as_p}}</blockquote>
 
-<blockquote >
+
+
   <center><b> <h3>Please provide the name of a person we can contact
     if we are unable to reach you:</h3></b></center>
     <p style="text-align: left; margin: 10px 30px 10px 30px">First name: &nbsp&nbsp&nbsp{{ op_housing_form.op_first_name}}</p>
@@ -56,9 +56,9 @@
     <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ op_housing_form.op_zip}}</p>
     <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{ op_housing_form.op_phone}}</p>
     <p style="text-align: left; margin: 10px 30px 10px 30px">Relationship: {{ op_housing_form.op_relationship}}</p>
-</blockquote>
 
-<blockquote>
+
+
   <center><b><h3> I believe that I was discriminated against by:</h3></b></center>
   <p style="text-align: left; margin: 10px 30px 10px 30px"> Organization name: {{ dis_housing_form.disorg_name}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp{{ dis_housing_form.disorg_street_address}}</p>
@@ -70,9 +70,9 @@
   <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{ dis_housing_form.disorg_phone}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Type: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_housing_form.disorg_type}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">If 'other', please specify: {{ dis_housing_form.disorg_other_type}}</p>
-</blockquote>
 
-<blockquote>
+
+
   <center><b><h3> Representative contact information (if known):</h3></b></center>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Name: &nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_name}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp {{ rep_housing_form.reporg_street_address}}</p>
@@ -84,12 +84,12 @@
   <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{ rep_housing_form.reporg_phone}}</p>
 
 
-</blockquote>
 
 
 
 
-<blockquote>
+
+
   <center><h3><b> What is the reason for your claim of housing discrimination?
               Check all that apply.<br></center></h3><br>
             <justify>For example, if you feel that you were treated worse than
@@ -117,15 +117,15 @@
   <p style="text-align: left; margin: 10px 30px 10px 30px">Your disability: {{ dis_reason_housing_form.reason_disability_choose}}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">{{ dis_reason_housing_form.reason_other}} Other</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">If you selected 'other,' please describe: {{ dis_reason_housing_form.reason_other_desc}}</p>
-</blockquote>
 
-<blockquote>
+
+
     <center><h3><b>What type of property was involved? </center></h3>
   <p>{{ housing_prop_type_form.as_p}}</p>
 
-</blockquote>
 
-<blockquote>
+
+
     <center><h3><b>What is the address of the propery involved? </center></h3>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp&nbsp&nbsp{{ housing_address_form.housing_street_address }}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Apt. No.: &nbsp&nbsp&nbsp{{ housing_address_form.housing_apt_num }}</p>
@@ -134,39 +134,39 @@
   <p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp&nbsp&nbsp&nbsp{{ housing_address_form.housing_county }}</p>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ housing_address_form.housing_zip }}</p>
 
-</blockquote>
 
-<blockquote>
+
+
     <center><h3><b>Does the owner live there? </h3>
   <p>{{ owner_live_form.as_p}}</p></center>
 
-</blockquote>
 
-<blockquote>
-    <center><h3><b>What happened to you that you believe was discriminatory?</h3><center>
+
+
+    <center><h3><b>What happened to you that you believe was discriminatory?</h3></center>
     <justify>Include the date(s) of harm, the action(s), and the
 name(s) and title(s) of the person(s) who you believe discriminated against you. </justify></h3>
-  <p>{{ describe_housing_form.as_p}}</p>
-
-</blockquote>
+  <blockquote>{{ describe_housing_form.as_p}}</blockquote>
 
 
 
 
-<blockquote>
+
+
+
   <center><h3><b> Have you filed this charge previously with HUD or another Agency?</center></h3><br>
   <p>{{ prior_agency_help.as_p}}</p>
 
-</blockquote>
 
-<blockquote>
+
+
   <center><h3><b> Have you sought help about this situation from an attorney or any other source?</center></h3><br>
   <p>{{ prior_sought_help.as_p}}</p>
 
-</blockquote>
 
 
-<blockquote>
+
+
   <center><h3><b> Please check one of the boxes below to tell the FCHR what you would
     like them to do with the information you are providing on this questionnaire.<br></center></h3><br>
     <justify>If you would like to file a charge of housing discrimination,
@@ -189,7 +189,7 @@ name(s) and title(s) of the person(s) who you believe discriminated against you.
     on race, color, national origin, sex, disability, familial status, religion or
     retaliation for opposing discrimination.   </p>
 
-</blockquote>
+
 
 
       <center>

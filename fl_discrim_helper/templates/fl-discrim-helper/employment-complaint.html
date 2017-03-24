@@ -18,7 +18,7 @@
 
 
 
-<blockquote>
+
     <center><b><h3>Your personal information:</h3></b></center>
         <form action="" method="post">
 {% csrf_token %}
@@ -36,10 +36,10 @@
 <p style="text-align: left; margin: 10px 30px 10px 30px">DOB: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_employment_form.cx_dob}}</p>
 <p style="text-align: left; margin: 10px 30px 10px 30px">Your sex: {{ cx_employment_form.cx_sex}}</p>
 
-</blockquote>
 
 
-<blockquote>
+
+
   <center><b> <h3>Please provide the name of a person we can contact
     if we are unable to reach you:</h3></b></center>
     <p style="text-align: left; margin: 10px 30px 10px 30px">First name: &nbsp&nbsp&nbsp{{ cx_other_per_form.op_first_name}}</p>
@@ -52,9 +52,9 @@
     <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ cx_other_per_form.op_zip}}</p>
     <p style="text-align: left; margin: 10px 30px 10px 30px">Phone: &nbsp&nbsp&nbsp&nbsp{{ cx_other_per_form.op_phone}}</p>
     <p style="text-align: left; margin: 10px 30px 10px 30px">Relationship: {{ cx_other_per_form.op_relationship}}</p>
-</blockquote>
 
-<blockquote>
+
+
   <center><b><h3> I believe that I was discriminated against by:</h3></b></center>
   <p style="text-align: left; margin: 10px 30px 10px 30px">Choose what best describes the business: {{ dis_employment_form.disorg_type}}</p>
 <p style="text-align: left; margin: 10px 30px 10px 30px">If you chose 'other' please describe: {{ dis_employment_form.disorg_other_type}}</p>
@@ -69,9 +69,9 @@
 <p style="text-align: left; margin: 10px 30px 10px 30px">Type of business: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ dis_employment_form.disorg_type_biz}}</p>
 <p style="text-align: left; margin: 10px 30px 10px 30px">Name of HR Director (if known):&nbsp&nbsp {{ dis_employment_form.disorg_hr_dir}}</p>
 <p style="text-align: left; margin: 10px 30px 10px 30px">Phone for HR Director (if known): {{ dis_employment_form.disorg_hr_dir_phone}}</p>
-</blockquote>
 
-<blockquote>
+
+
   <center><b><h3> Representative contact information (if known):</h3></b></center>
 <p style="text-align: left; margin: 10px 30px 10px 30px">Name: &nbsp&nbsp&nbsp&nbsp{{ rep_employment_form.reporg_name}}</p>
 <p style="text-align: left; margin: 10px 30px 10px 30px">Address: &nbsp{{ rep_employment_form.reporg_street_address}}</p>
@@ -81,22 +81,22 @@
 <p style="text-align: left; margin: 10px 30px 10px 30px">County: &nbsp&nbsp{{ rep_employment_form.reporg_county}}</p>
 <p style="text-align: left; margin: 10px 30px 10px 30px">Zip: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ rep_employment_form.reporg_zip}}</p>
 <p style="text-align: left; margin: 10px 30px 10px 30px">Phone:&nbsp&nbsp&nbsp&nbsp {{ rep_employment_form.reporg_phone}}</p>
-</blockquote>
 
 
-<blockquote>
+
+
   <center><b><h3> Does the organization employ 15 or more employees across all locations
       and branches?</h3></b></center>
   <center>{{ dis_employment_num_form}}</center>
 
-</blockquote>
 
-<blockquote>
+
+
   <center><b><h3>Your employment data:</h3></b></center>
   <p>{{ dis_employment_data_form.as_p}}</p>
 
-</blockquote>
-<blockquote>
+
+
   <center><h3><b> What are the reasons for your claim of employment discrimination?
               Check all that apply.<br></center></h3><br>
             <justify>For example, if you feel that you were treated worse than
@@ -109,35 +109,35 @@
   </b></justify>
   <p>{{ dis_reason_employment_form.as_p}}</p>
 
-</blockquote>
 
 
 
-<blockquote>
-    <center><h3><b>What happened to you that you believe was discriminatory?</h3><center>
+
+
+    <center><h3><b>What happened to you that you believe was discriminatory?</h3></center>
     <justify>Include the date(s) of harm, the action(s), and the
 name(s) and title(s) of the person(s) who you believe discriminated against you. </justify></h3>
-  <p>{{ describe_employment_form.as_p}}</p>
-
-</blockquote>
+  <blockquote>{{ describe_employment_form.as_p}}</blockquote>
 
 
 
 
-<blockquote>
+
+
+
   <center><h3><b> Have you filed this charge previously with the EEOC or another Agency?</center></h3><br>
   <p>{{ prior_agency_help.as_p}}</p>
 
-</blockquote>
 
-<blockquote>
+
+
   <center><h3><b> Have you sought help about this situation from an attorney or any other source?</center></h3><br>
   <p>{{ prior_sought_help.as_p}}</p>
 
-</blockquote>
 
 
-<blockquote>
+
+
   <center><h3><b> Please check one of the boxes below to tell the FCHR what you would
     like them to do with the information you are providing on this questionnaire.<br></center></h3><br>
     <justify>If you would like to file a charge of employment discrimination,
@@ -160,7 +160,7 @@ name(s) and title(s) of the person(s) who you believe discriminated against you.
     on race, color, national origin, sex, disability, familial status, religion or
     retaliation for opposing discrimination.   </p>
 
-</blockquote>
+
 
 
       <center>

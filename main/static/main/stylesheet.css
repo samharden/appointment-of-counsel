@@ -248,6 +248,8 @@ th {
   padding-left: 0;
   padding-right: 0;
 }
+
+
 @media (min-width: 480px) {
   .one-half,
   .one-third,
@@ -516,11 +518,21 @@ h6 {
 
 .formblock {
   padding: 1em;
-  width: 50%;
-  color: #666;
+  width: 100%;
+  color: #f0f0f3;
   background: #f0f0f3;
 
 }
+
+input {
+  text-align: center;
+  line-height: 150%;
+  color: #666;
+  background: #f0f0f3;
+  border-left: 8px solid #13c0a2;
+  border-right: 8px solid #13c0a2;
+}
+
 
 blockquote {
   padding: 1em 1.5em;
@@ -633,8 +645,9 @@ transition: all 0.3s; /* Simple transition for hover effect */
 }
 
 th {
-background: #DFDFDF; /* Darken header a bit */
+background: #434147; /* Darken header a bit */
 font-weight: bold;
+color: white;
 text-align: center;
 }
 
@@ -2584,7 +2597,11 @@ li > div.comment {
     max-height: none;
   }
 }
-@media (max-width: 479px) {
+@media (max-width: 480px) {
+  h1 { font-size: 24px !important; }
+  h2 { font-size: 18px !important; }
+  h3 { font-size: 12px !important; }
+
   body {
     font-size: 15px;
   }
@@ -2716,4 +2733,36 @@ body.home .flourish,
 }
 .features.icon-top p {
   margin-left: 0;
+}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+  text-align: center;
+  line-height: 150%;
+  color: #666;
+  background: #f0f0f3;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border-top: none;
+    width: 100%;
 }

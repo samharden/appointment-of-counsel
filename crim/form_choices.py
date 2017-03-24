@@ -37,6 +37,6 @@ CRIM_JUDGE_CHOICES_PINELL = (
     ('notsure', ("Not Sure")),
 )
 YN_CHOICES = (
-    ('yes', ("Yes I want to look my case up by my name.")),
-    ('no', ("No I'd rather just browse by judge.")),
+    ('yes', ("Look my case up by my name.")),
+    ('no', ("Browse by judge.")),
 )
