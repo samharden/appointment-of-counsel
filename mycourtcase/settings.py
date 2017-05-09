@@ -41,9 +41,9 @@ INSTALLED_APPS = [
     'fl_discrim_helper',
     'mental_health',
     'main',
-    'crim',
+
     'small_claims',
-    'blog',
+
 ]
 
 
