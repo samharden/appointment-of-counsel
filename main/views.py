@@ -33,7 +33,7 @@ def home_page(request):
     else:
         form = LoginForm()
 
-    return render(request, 'main/home.html', {'form': form})
+    return render(request, 'main/home.html')
 
 
 def search_page(request):
