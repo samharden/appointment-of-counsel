@@ -32,7 +32,6 @@ def form_fill(request):
             defendant_name = request.POST.get('defendant_name')
             case_no = request.POST.get('case_no')
             charges = request.POST.get('charges')
-            courthouse_name = request.POST.get('courthouse_name')
             judge = request.POST.get('judge')
             today_date = str(date.today())
             day = today_date[8:10]

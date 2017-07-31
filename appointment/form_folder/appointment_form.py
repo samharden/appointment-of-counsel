@@ -23,10 +23,7 @@ class FormInfo(forms.Form):
                                 widget = forms.TextInput()
                                 )
 
-    courthouse_name = forms.CharField(label = 'Court ',
-                                required = True,
-                                widget = forms.TextInput()
-                                )
+
 
     judge = forms.ChoiceField(label = 'Judge ',
                                 choices = JUDGE_CHOICES,
