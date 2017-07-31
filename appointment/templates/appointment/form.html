@@ -1,0 +1,32 @@
+<!-- extend from base layout -->
+
+<!DOCTYPE html>
+
+
+{% extends "main/base.html" %}
+
+{% block content %}
+
+
+<html lang="en">
+<head>
+
+  <p class="hidden-print">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+</head>
+
+    <center>
+
+    <h2>Appointment of Counsel Form:</h2>
+
+
+
+          <form action="" method="post">
+  {% csrf_token %}
+      {{ form_info.as_p }}
+      <h3>Create PDF:<h3>
+      <p><input type="submit" value="Create Complaint"></p>
+    </form>  </center>
+{% endblock %}

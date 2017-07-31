@@ -7,10 +7,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', auth_views.login, name='homepage'),
-    url(r'^detail.html', views.search_page, name='search'),
-    url(r'^about.html', views.about, name='about'),
-    url(r'^disclaimer.html', views.disclaimer, name='disclaimer'),
-    url(r'^contact.html', views.contact, name='contact'),
+
 
 ]
 
