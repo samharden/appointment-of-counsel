@@ -25,7 +25,7 @@ SECRET_KEY = 'd4t-w5-qvtslkpi-ab4ww-1k)mnzq3#1cuzpv^qupv+zoee4m$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['appointment_form_maker2.herokuapp.com', 'localhost', 'www.appointment_form_maker.org', 'appointment_form_maker.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'appointment-form-test.herokuapp.com']
 
 
 # Application definition
